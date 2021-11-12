@@ -5,7 +5,7 @@ import classnames from "classnames";
 
 import { DropdownProps } from "./types";
 
-import { LeftArrow } from "../../../assets/images";
+import { DownArrow } from "../../../assets/images";
 import classNames from "classnames";
 
 const Dropdown = ({
@@ -27,7 +27,7 @@ const Dropdown = ({
         >
           <div className="label">{defaultValue}</div>
           <div className={classNames("icon", { "icon-visible": isVisible })}>
-            <div className="icon-img"> {LeftArrow}</div>
+            <div className="icon-img"> {DownArrow}</div>
           </div>
         </button>
         <div

@@ -58,20 +58,6 @@
   margin-right: 0.25rem;
 }
 
-#modular-dropdown .container .icon-img {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-rotate: -90deg;
-  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 #modular-dropdown .container .icon:hover {
   animation: pulse 0.7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   transition-property: background-color, border-color, color, fill, stroke,
