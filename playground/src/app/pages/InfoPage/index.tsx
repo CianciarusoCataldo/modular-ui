@@ -1,13 +1,16 @@
 import { useInfoTranslations } from "app/hooks/localization";
 
-import RouterLink from "app/components/atoms/RouterLink";
 import Page from "app/components/molecules/Page";
 import Form from "app/components/molecules/Form";
 import Card from "app/components/molecules/Card";
+import { Link } from "modular-ui-preview";
+import { NavLink } from "react-router-dom";
+import { getRoutesPaths } from "api/state-slices/config/selectors";
+import { useSelector } from "react-redux";
 
 const InfoPage = () => {
   const t = useInfoTranslations();
-
+  const PATHS = useSelector(getRoutesPaths);
   return (
     <Page>
       <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row">
@@ -41,10 +44,9 @@ const InfoPage = () => {
           header={t("homeCard", { context: "header" })}
           body={t("homeCard", { context: "body" })}
           footer={
-            <RouterLink
-              to="HOME"
-              label={t("homeCard", { context: "footer" })}
-            />
+            <NavLink to={PATHS.HOME}>
+              <Link to="HOME" label={t("homeCard", { context: "footer" })} />
+            </NavLink>
           }
         />
       </div>

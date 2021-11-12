@@ -1,6 +1,6 @@
 {
   "name": "@cianciarusocataldo/modular-ui",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "React components for every app, easy to use and customize",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -27,8 +27,7 @@
   "homepage": "https://github.com/CianciarusoCataldo/modular-ui#readme",
   "peerDependencies": {
     "classnames": "^2.2.6",
-    "react": ">=16.x.0",
-    "react-router-dom": "^6.0.2"
+    "react": ">=16.x.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",

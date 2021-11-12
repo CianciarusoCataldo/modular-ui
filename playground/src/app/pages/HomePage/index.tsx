@@ -1,17 +1,20 @@
 import { useHomeTranslations } from "app/hooks/localization";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "api/state-slices/modal/actions";
 import { showToast } from "api/state-slices/ui/actions";
 
 import Card from "app/components/molecules/Card";
 import Page from "app/components/molecules/Page";
-import RouterLink from "app/components/atoms/RouterLink";
+import Link from "app/components/atoms/RouterLink";
 import Dropdown from "app/components/molecules/Dropdown";
+import { getRoutesPaths } from "api/state-slices/config/selectors";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
   const t = useHomeTranslations();
   const dispatch = useDispatch();
+  const PATHS = useSelector(getRoutesPaths);
 
   return (
     <Page>
@@ -21,10 +24,9 @@ const HomePage = () => {
           header={t("infoCard", { context: "header" })}
           body={t("infoCard", { context: "body" })}
           footer={
-            <RouterLink
-              to="INFO"
-              label={t("infoCard", { context: "footer" })}
-            />
+            <NavLink to={PATHS.INFO}>
+              <Link to="INFO" label={t("infoCard", { context: "footer" })} />
+            </NavLink>
           }
         />
         <button

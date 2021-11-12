@@ -1,7 +1,7 @@
 // Atoms
 export { default as Button } from "./components/atoms/Button";
 export { default as Divider } from "./components/atoms/Divider";
-export { default as RouterLink } from "./components/atoms/RouterLink";
+export { default as Link } from "./components/atoms/Link";
 
 // Molecules
 export { default as Card } from "./components/molecules/Card";
