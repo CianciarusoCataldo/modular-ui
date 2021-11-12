@@ -1,0 +1,60 @@
+#modular-button .unstyled {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  text-align: center;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#modular-button .unstyled:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#modular-button .enabled {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#modular-button .disabled {
+  opacity: 0.5;
+}
+
+#modular-button .enabled:hover {
+  --tw-translate-y: -0.25rem /* -4px */;
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  --tw-bg-opacity: 1;
+  background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
+}
+
+#modular-button .styled {
+  --tw-bg-opacity: 1;
+  background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-align: center;
+  font-weight: 800;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#modular-button .styled:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}

@@ -1,0 +1,152 @@
+#modular-dropdown {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#modular-dropdown .container {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --tw-gradient-to: #f3f4f6;
+  --tw-text-opacity: 1;
+  --tw-gradient-from: #fff;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(255, 255, 255, 0));
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  border-width: 1px;
+  border-radius: 0.375rem;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#modular-dropdown .container .button {
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-weight: 500;
+}
+
+#modular-dropdown .container .button:hover {
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+#modular-dropdown .container .button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#modular-dropdown .container .label {
+  padding-right: 0.25rem;
+}
+
+#modular-dropdown .container .icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+#modular-dropdown .container .icon-img {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-rotate: -90deg;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#modular-dropdown .container .icon:hover {
+  animation: pulse 0.7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+#modular-dropdown .container .icon-visible {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -ms-transition: -ms-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+#modular-dropdown .container .options {
+  animation: fadeIn 0.2s ease-in forwards;
+  position: fixed;
+  padding: 0.25rem;
+  margin-top: 2.5rem;
+  margin-right: 1rem;
+  z-index: 10;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --tw-gradient-from: #fff;
+  --tw-gradient-to: #f3f4f6;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-width: 1px;
+  border-radius: 0.375rem;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#modular-dropdown .container .options-hidden {
+  display: none;
+}
+
+#modular-dropdown .container .option .regular {
+  padding: 0.25rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  display: flex;
+  flex-direction: row;
+}
+
+#modular-dropdown .container .option .regular:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#modular-dropdown .container .option .regular:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#modular-dropdown .container .option .last {
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+#modular-dropdown .container .option .last .box,
+#modular-dropdown .container .option .regular .box {
+  display: flex;
+  flex-direction: row;
+}
+
+#modular-dropdown .container .option .last .box .label,
+#modular-dropdown .container .option .regular .box .label {
+  margin-left: 0.25rem;
+}

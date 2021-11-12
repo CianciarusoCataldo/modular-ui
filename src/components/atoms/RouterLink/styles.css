@@ -1,0 +1,15 @@
+#modular-link {
+  font-size: 1rem /* 16px */;
+  line-height: 1.5rem /* 24px */;
+  --tw-text-opacity: 1;
+  color: rgba(96, 165, 250, var(--tw-text-opacity));
+}
+
+#modular-link:hover {
+  --tw-text-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-text-opacity));
+}
+
+#modular-link:active {
+  font-weight: 700;
+}

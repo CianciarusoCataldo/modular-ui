@@ -1,0 +1,80 @@
+/* Card title styles */
+
+#modular-card .title {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#modular-card .title-default {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+/* Card header styles */
+
+#modular-card .header {
+  margin: auto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+#modular-card .header-default {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+
+#modular-card .body-default {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+
+#modular-card .footer-default {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+
+#modular-card .container-full {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+  margin: 0.5rem;
+}
+
+#modular-card .container-main {
+  margin-top: 0.75rem;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #fff;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(255, 255, 255, 0));
+  --tw-gradient-to: #e5e7eb;
+  border-radius: 0.125rem;
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#modular-card .container-header {
+  display: flex;
+  flex-direction: row;
+  padding: 0.25rem;
+}
+
+#modular-card .body {
+  padding: 0.25rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#modular-card .footer {
+  padding: 0.25rem;
+  margin: 0.5rem;
+  text-align: center;
+}

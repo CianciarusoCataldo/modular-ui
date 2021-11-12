@@ -1,0 +1,12 @@
+{
+  "infoCard_title": "Info Page Card title - DE",
+  "infoCard_header": "Info Page Card header - DE",
+  "infoCard_body": "Info Page Card body - DE",
+  "infoCard_footer": "Info Page Card footer - DE",
+  "modalButton_label": "Open modal - DE",
+  "toastButton_label": "Show toasts - DE",
+  "toasts_info": "Info Toast - DE",
+  "toasts_error": "Error Toast - DE",
+  "toasts_warning": "Warning Toast - DE",
+  "toasts_success": "Success Toast - DE"
+}
