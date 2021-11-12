@@ -27,7 +27,7 @@ const Dropdown = ({
         >
           <div className="label">{defaultValue}</div>
           <div className={classNames("icon", { "icon-visible": isVisible })}>
-            {<img alt="" className="icon-img" src={LeftArrow} width={10} />}
+            <div className="icon-img"> {LeftArrow}</div>
           </div>
         </button>
         <div

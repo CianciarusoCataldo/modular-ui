@@ -44,7 +44,7 @@ const Drawer = ({
         <div className="container-internal">
           <div className="buttons-panel">
             <button onClick={onClose} className="close-button">
-              {<img alt="" src={LeftArrow} />}
+              {LeftArrow}
             </button>
           </div>
           <div className="elements">

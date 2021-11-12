@@ -1,7 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
-import svg from "rollup-plugin-svg";
 
 import pkg from "../package.json";
 
@@ -33,7 +32,6 @@ export default [
       },
     ],
     plugins: [
-      svg(),
       postcss({
         plugins: [],
         minimize: true,

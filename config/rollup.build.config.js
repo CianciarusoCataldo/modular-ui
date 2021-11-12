@@ -2,7 +2,6 @@ import typescript from "rollup-plugin-typescript2";
 import del from "rollup-plugin-delete";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
-import svg from "rollup-plugin-svg";
 
 import pkg from "../package.json";
 
@@ -35,7 +34,6 @@ export default [
     ],
     plugins: [
       del({ targets: ["dist/*", "playground/src/modular-ui-preview"] }),
-      svg(),
       postcss({
         plugins: [],
         minimize: true,
