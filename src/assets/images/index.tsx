@@ -19,32 +19,7 @@ export const LeftArrow = (
 );
 
 export const DownArrow = (
-  <svg
-    version="1.1"
-    id="Layer_1"
-    xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
-    width="37px"
-    height="30px"
-    viewBox="0 0 37 30"
-    enable-background="new 0 0 37 30"
-  >
-    <image
-      id="image0"
-      width="37"
-      height="30"
-      x="0"
-      y="0"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAeCAAAAACOSIixAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
-AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
-cwAAAGAAAABgAPBrQs8AAAAHdElNRQflCwwVGjbSIaDhAAAA8ElEQVQ4y73Tv0rDUBTH8W9uRfoE
-naodrKOgQ/IAIkqdfNUsHUMRXCSE7GncHOwTiCDHIf/uzTktHaRnCicfDufe/BIJR5Q7Bv27krfd
-vtdlBcAZSFZXzzMTFXnENeCQrOZnvbMRsqkAJ1kNNityQDZbcB812KzIAZDXb9zVLTZrEZPHKY7E
-Zj16moPDZgHCAcmNYiEiEoD3smmet/c27HTBoEZsNKn/jsFuCnWzvGmrT4UG1bPJr0Ke6plGfr66
-3TQKUuixEIVZTZbd00OARom+b8MYLzigeJkBxHdh1z9jU+mXRlqRXipkKKtO/2//AfqRXzOztOJz
-AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTExLTEyVDIxOjI2OjUzKzAwOjAwubWXWwAAACV0RVh0
-ZGF0ZTptb2RpZnkAMjAyMS0xMS0xMlQyMToyNjo1MyswMDowMMjoL+cAAAAASUVORK5CYII="
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="37">
+    <path d="M480 344.181 268.869 131.889c-15.756-19605.859-41.3-15.859-57.054 0-15.754 15.857-15.754 41.57 0 57.431l237.632 238.937c8.395 8.451 19.562 12.254 30.553 11.698 10.993.556 22.159-3.247 30.555-11.698L748.186 189.32c15.756-15.86 15.756-41.571 0-57.431s-41.299-15.859-57.051 0L480 344.181z" />
   </svg>
 );
