@@ -2,7 +2,13 @@ import { lazy, LazyExoticComponent } from "react";
 
 const PAGES: Record<RouteKey, LazyExoticComponent<() => JSX.Element>> = {
   HOME: lazy(() => import("../../app/pages/HomePage")),
-  INFO: lazy(() => import("../../app/pages/InfoPage")),
+  FORM: lazy(() => import("../../app/pages/Form")),
+  CARD: lazy(() => import("../../app/pages/Card")),
+  DROPDOWN: lazy(() => import("../../app/pages/Dropdown")),
+  BUTTON: lazy(() => import("../../app/pages/Button")),
+  DIVIDER: lazy(() => import("../../app/pages/Divider")),
+  LINK: lazy(() => import("../../app/pages/Link")),
+  MODAL: lazy(() => import("../../app/pages/Modal")),
 };
 
 export const getRoutingLogic = (PATHS: Record<RouteKey, string>) =>

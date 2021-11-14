@@ -1,9 +1,18 @@
 {
-  "APP_NAME": "React Ready to go",
+  "APP_NAME": "Modular-ui",
   "FALLBACK_LANGUAGE": "en",
   "ROUTER": {
-    "BASENAME": "/react-ready-to-go",
-    "ROUTES_PATHS": { "HOME": "/", "INFO": "/about" }
+    "BASENAME": "",
+    "ROUTES_PATHS": {
+      "HOME": "/home",
+      "DROPDOWN": "/components/molecules/dropdown",
+      "CARD": "/components/molecules/card",
+      "FORM": "/components/molecules/form",
+      "BUTTON": "/components/atoms/button",
+      "LINK": "/components/atoms/link",
+      "MODAL": "/components/atoms/modal",
+      "DIVIDER": "/components/atoms/divider"
+    }
   },
   "I18N": {
     "FALLBACK_LANGUAGE": "en",

@@ -58,6 +58,19 @@
   margin-right: 0.25rem;
 }
 
+#modular-dropdown .container .icon-img {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
 #modular-dropdown .container .icon:hover {
   animation: pulse 0.7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   transition-property: background-color, border-color, color, fill, stroke,

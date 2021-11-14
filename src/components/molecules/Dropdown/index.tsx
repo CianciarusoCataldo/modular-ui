@@ -1,11 +1,9 @@
 import "./styles.css";
 import React from "react";
-
 import classnames from "classnames";
 
 import { DropdownProps } from "./types";
 
-import { DownArrow } from "../../../assets/images";
 import classNames from "classnames";
 
 const Dropdown = ({
@@ -27,7 +25,9 @@ const Dropdown = ({
         >
           <div className="label">{defaultValue}</div>
           <div className={classNames("icon", { "icon-visible": isVisible })}>
-            <div className="icon-img"> {DownArrow}</div>
+            <p>
+              <i className="icon-img down"></i>
+            </p>
           </div>
         </button>
         <div

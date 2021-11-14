@@ -8,13 +8,9 @@ import { getRoutesPaths } from "api/state-slices/config/selectors";
 import { getRoutingLogic } from "api/helpers/route-helper";
 
 import { Button, Drawer, Header, Modal } from "modular-ui-preview";
-import { BurgerIcon, LeftArrowIcon, ROUTE_ICONS } from "assets/images";
-import { DrawerElement } from "app/components/molecules/Drawer/types";
-import {
-  useCommonTranslations,
-  usePageTitlesTranlslations,
-} from "app/hooks/localization";
-import { goBack, requestRoute } from "api/state-slices/router/actions";
+import { BurgerIcon, HOME_ICON } from "assets/images";
+import { usePageTitlesTranlslations } from "app/hooks/localization";
+import { requestRoute } from "api/state-slices/router/actions";
 import { closeDrawer, openDrawer } from "api/state-slices/ui/actions";
 import { isDrawerOpen, isHomePage } from "api/state-slices/ui/selectors";
 import classNames from "classnames";
@@ -24,7 +20,6 @@ import { closeModal } from "api/state-slices/modal/actions";
 
 const App = ({ history }: AppProps) => {
   const PATHS = useSelector(getRoutesPaths);
-  const tCommon = useCommonTranslations();
   const t = usePageTitlesTranlslations();
   const dispatch = useDispatch();
   const hideBackButton = useSelector(isHomePage);
@@ -51,14 +46,14 @@ const App = ({ history }: AppProps) => {
       <Button
         aria-label="back button"
         onClick={() => {
-          dispatch(goBack());
+          dispatch(requestRoute(PATHS.HOME));
         }}
         noStyles
         className={classNames("inline-flex py-0 ml-1 outline-none", {
           hidden: hideBackButton,
         })}
       >
-        {LeftArrowIcon}
+        {HOME_ICON}
       </Button>
       <div className="m-auto flex flex-row text-white">
         <div className="m-auto mr-1 md:mr-2 lg:mr-2 xl:mr-2 2xl:mr-2 3xl:mr-2">
@@ -67,10 +62,7 @@ const App = ({ history }: AppProps) => {
         <div className="flex flex-col m-auto mb-3">
           <div className="m-auto">
             <p className="text-xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">
-              {tCommon("header", { context: "title" })}
-            </p>
-            <p className="text-md md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">
-              {tCommon("header", { context: "subTitle" })}
+              modular-ui
             </p>
           </div>
         </div>
@@ -78,9 +70,8 @@ const App = ({ history }: AppProps) => {
     </div>
   );
 
-  const drawerElements: DrawerElement[] = Object.keys(PATHS).map((route) => {
+  const drawerElements: any[] = Object.keys(PATHS).map((route) => {
     return {
-      icon: ROUTE_ICONS[route as RouteKey],
       text: t(route),
       actionCallback: () => {
         dispatch(requestRoute(PATHS[route as RouteKey]));

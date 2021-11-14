@@ -15,10 +15,8 @@ export const DownArrowIcon = (
 );
 export const BurgerIcon = <img alt="" src={Burger} width={60} />;
 
-export const ROUTE_ICONS: Record<RouteKey, JSX.Element> = {
-  HOME: <img alt="" src={Home} width={40} />,
-  INFO: <img alt="" src={Info} width={40} />,
-};
+export const HOME_ICON = <img alt="" src={Home} width={40} />;
+export const INFO_ICON = <img alt="" src={Info} width={40} />;
 
 export const LANGUAGES_ICONS: Record<SupportedLanguage, JSX.Element> = {
   it: <img alt="" width={20} height={20} src={IT_FLAG} />,
