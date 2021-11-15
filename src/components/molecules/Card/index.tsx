@@ -8,6 +8,12 @@ import { CardProps } from "./types";
 import Divider from "../../atoms/Divider";
 import classNames from "classnames";
 
+/**
+ *
+ * @param param0
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 const Card = ({
   title,
   className: parentClassName,

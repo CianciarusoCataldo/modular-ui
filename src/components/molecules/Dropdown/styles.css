@@ -65,11 +65,10 @@
   padding: 3px;
 }
 
-.down {
+#modular-dropdown .container .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-
 
 #modular-dropdown .container .icon:hover {
   animation: pulse 0.7s cubic-bezier(0.4, 0, 0.6, 1) infinite;

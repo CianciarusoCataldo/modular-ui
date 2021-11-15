@@ -6,10 +6,19 @@ import { DropdownProps } from "./types";
 
 import classNames from "classnames";
 
+/**
+ * Show a list of elements in a dropdown menu (by default, with fade-in and out effects).
+ * Can be easily customized and every element style and behaviour (with a callback) can
+ * be customized too.
+ *
+ * @param param0
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 const Dropdown = ({
   className: parentClassName,
-  content,
-  defaultValue,
+  content = [],
+  defaultValue = "",
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
   return (
@@ -36,26 +45,25 @@ const Dropdown = ({
             options: isVisible,
           })}
         >
-          {content &&
-            content.map((item, index) => (
-              <div key={`dropdown_option_${index}`} className="option">
-                <button
-                  onClick={() => {
-                    setVisible(false);
-                    item.action();
-                  }}
-                  key={`item_${index}`}
-                  className={classnames("regular", {
-                    last: index === content.length - 1,
-                  })}
-                >
-                  <div className="box">
-                    {item.icon}
-                    <div className="label">{item.name}</div>
-                  </div>
-                </button>
-              </div>
-            ))}
+          {content.map((item, index) => (
+            <div key={`dropdown_option_${index}`} className="option">
+              <button
+                onClick={() => {
+                  setVisible(false);
+                  item.action();
+                }}
+                key={`item_${index}`}
+                className={classnames("regular", {
+                  last: index === content.length - 1,
+                })}
+              >
+                <div className="box">
+                  {item.icon}
+                  <div className="label">{item.name}</div>
+                </div>
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

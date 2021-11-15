@@ -12,7 +12,9 @@ export const updatePageTitle = (
     ROUTES_MAP[`${window.location.pathname}/`];
 
   const title =
-    route && i18n.isInitialized ? i18n.t(`page-titles:${route}`) : fallback;
+    route && i18n.isInitialized && route !== "HOME"
+      ? `Modular-ui - ${route}`
+      : fallback;
   window.document.title = title;
 };
 

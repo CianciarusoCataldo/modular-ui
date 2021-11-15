@@ -5,6 +5,12 @@ import classNames from "classnames";
 
 import { FormProps } from "./types";
 
+/**
+ *
+ * @param param0
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 const Form = ({
   title,
   fields,

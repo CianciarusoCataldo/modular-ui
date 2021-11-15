@@ -4,4 +4,7 @@ export interface PageProps {
 
   /** Page contents orientation */
   orientation?: "vertical" | "horizontal";
+
+  /** A custom className applied on the component container */
+  className?: string;
 }

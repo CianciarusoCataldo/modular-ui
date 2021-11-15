@@ -5,13 +5,24 @@ import { ModalProps } from "./types";
 
 import classNames from "classnames";
 
+/**
+ *
+ * @param isVisble Modal visibility
+ * @param Content Modal Content
+ * @param onClose Callback triggered when modal is closed
+ * @param title Modal title
+ * @param className A custom className applied on the Modal overlay container
+ * @param overlayClassName A custom className applied on the Modal container
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 const Modal = ({
   isVisible = false,
   Content,
   onClose,
   title,
   className,
-  overlayClassname,
+  overlayClassName,
 }: ModalProps) => (
   <div
     id="modular-modal"
@@ -21,7 +32,7 @@ const Modal = ({
         hidden: !isVisible,
         default: isVisible,
       },
-      overlayClassname
+      overlayClassName
     )}
   >
     <div

@@ -1,4 +1,4 @@
 {
-  "HOME": "Home Page - EN",
-  "INFO": "Info Page - EN"
+  "home": "Modular-ui",
+  "component": " - {{componentName}} component"
 }

@@ -7,6 +7,16 @@ import { DrawerProps } from "./types";
 import Button from "../../atoms/Button";
 import Divider from "../../atoms/Divider";
 
+/**
+ * A modern drawer, easy to integrate and to customize.
+ *
+ * @param elements Drawer elements array
+ * @param className Custom className applied on component main container
+ * @param isOpen Drawer visibility
+ * @param onClose Callback triggered on Drawer close
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 const Drawer = ({
   elements,
   className,

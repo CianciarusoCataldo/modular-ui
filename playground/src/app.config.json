@@ -2,16 +2,16 @@
   "APP_NAME": "Modular-ui",
   "FALLBACK_LANGUAGE": "en",
   "ROUTER": {
-    "BASENAME": "",
+    "BASENAME": "/modular-ui",
     "ROUTES_PATHS": {
       "HOME": "/home",
-      "DROPDOWN": "/components/molecules/dropdown",
-      "CARD": "/components/molecules/card",
-      "FORM": "/components/molecules/form",
-      "BUTTON": "/components/atoms/button",
-      "LINK": "/components/atoms/link",
-      "MODAL": "/components/atoms/modal",
-      "DIVIDER": "/components/atoms/divider"
+      "Dropdown": "/components/molecules/dropdown",
+      "Card": "/components/molecules/card",
+      "Form": "/components/molecules/form",
+      "Button": "/components/atoms/button",
+      "Link": "/components/atoms/link",
+      "Modal": "/components/atoms/modal",
+      "Divider": "/components/atoms/divider"
     }
   },
   "I18N": {
