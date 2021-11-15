@@ -1,0 +1,14 @@
+{
+  "form_title": "Form title - FR",
+  "form_firstField_header": "Field 1 header - FR",
+  "form_firstField_placeholder": "Field 1 default value - FR",
+  "form_firstField_name": "Field 1 name - FR",
+  "form_secondField_header": "Field 2 header - FR",
+  "form_secondField_placeholder": "Field 2 default value - FR",
+  "form_secondField_name": "Field 2 name - FR",
+  "form_submit": "Form submit label - FR",
+  "homeCard_title": "Home Page card title - FR",
+  "homeCard_body": "Home Page card body - FR",
+  "homeCard_header": "Home Page card header - FR",
+  "homeCard_footer": "Home Page card footer - FR"
+}
