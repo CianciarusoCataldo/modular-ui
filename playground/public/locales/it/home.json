@@ -1,12 +1,3 @@
 {
-  "infoCard_title": "Info Page Card title - IT",
-  "infoCard_header": "Info Page Card header - IT",
-  "infoCard_body": "Info Page Card body - IT",
-  "infoCard_footer": "Info Page Card footer - IT",
-  "modalButton_label": "Open modal - IT",
-  "toastButton_label": "Show toasts - IT",
-  "toasts_info": "Info Toast - IT",
-  "toasts_error": "Error Toast - IT",
-  "toasts_warning": "Warning Toast - IT",
-  "toasts_success": "Success Toast - IT"
+  "title": "Home page"
 }

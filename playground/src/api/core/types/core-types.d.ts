@@ -19,7 +19,6 @@ declare interface Config {
 declare interface RootState {
   router: RouterState;
   ui: UIState;
-  modal: ModalState;
   config: ConfigState;
 }
 

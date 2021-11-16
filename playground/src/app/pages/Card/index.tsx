@@ -1,9 +1,18 @@
 import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import {
+  useCardPageTranslation,
+  useCommonTranslation,
+} from "app/hooks/localization";
 import { Card, Page } from "modular-ui-preview";
 
-const HomePage = () => {
+const CardPage = () => {
+  const t = useCardPageTranslation();
+  const tCommon = useCommonTranslation();
   return (
     <Page>
+      <p className="text-4xl mt-8 mb-5 ml-3 text-white">{`${tCommon(
+        "molecules"
+      )} - ${t("title")}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <CardWrapper />
       </div>
@@ -35,4 +44,4 @@ export const CardWrapper = () => (
   </Demo>
 );
 
-export default HomePage;
+export default CardPage;

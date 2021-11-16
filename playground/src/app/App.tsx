@@ -1,31 +1,71 @@
 import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { AppProps } from "./types";
+import { History } from "history";
 
 import { getRoutesPaths } from "api/state-slices/config/selectors";
 
 import { getRoutingLogic } from "api/helpers/route-helper";
 
-import { Button, Drawer, Header } from "modular-ui-preview";
-import { BurgerIcon, HOME_ICON, LogoIcon } from "assets/images";
-import { usePageTitlesTranlslations } from "app/hooks/localization";
+import { Button, Drawer, Dropdown, Header } from "modular-ui-preview";
+import {
+  BurgerIcon,
+  HOME_ICON,
+  LANGUAGES_ICONS,
+  LogoIcon,
+} from "assets/images";
 import { requestRoute } from "api/state-slices/router/actions";
-import { closeDrawer, openDrawer } from "api/state-slices/ui/actions";
-import { isDrawerOpen, isHomePage } from "api/state-slices/ui/selectors";
+import {
+  changeLanguage,
+  closeDrawer,
+  openDrawer,
+} from "api/state-slices/ui/actions";
+import {
+  getLanguage,
+  isDrawerOpen,
+  isHomePage,
+} from "api/state-slices/ui/selectors";
 import classNames from "classnames";
+
+interface AppProps {
+  history: History;
+}
 
 const App = ({ history }: AppProps) => {
   const PATHS = useSelector(getRoutesPaths);
-  const t = usePageTitlesTranlslations();
   const dispatch = useDispatch();
   const hideBackButton = useSelector(isHomePage);
   const isDrawerShowing = useSelector(isDrawerOpen);
 
   const ROUTES_PROPS = getRoutingLogic(PATHS);
 
+  const LanguageSelector = () => {
+    const dispatch = useDispatch();
+    const language = useSelector(getLanguage);
+
+    return (
+      <div style={{ zIndex: 999 }} className="fixed right-2 top-0 bg-gray-700">
+        <Dropdown
+          className="text-sm"
+          defaultValue={
+            <div className="flex flex-row text-lg">
+              {LANGUAGES_ICONS[language]}
+              <div className="ml-1">{language}</div>
+            </div>
+          }
+          content={Object.keys(LANGUAGES_ICONS).map((lang) => ({
+            name: lang,
+            action: () => dispatch(changeLanguage(lang as SupportedLanguage)),
+            icon: LANGUAGES_ICONS[lang as SupportedLanguage],
+          }))}
+        />
+      </div>
+    );
+  };
+
   const HeaderContent = (
     <div className=" flex flex-row items-center mt-14 mb-5 ml-1">
+      <LanguageSelector />
       <Button
         aria-label="drawer button"
         onClick={() => {
@@ -68,7 +108,7 @@ const App = ({ history }: AppProps) => {
         isOpen={isDrawerShowing}
         elements={Object.keys(PATHS).map((route) => {
           return {
-            text: t(route),
+            text: route,
             actionCallback: () => {
               dispatch(requestRoute(PATHS[route as RouteKey]));
               dispatch(closeDrawer());

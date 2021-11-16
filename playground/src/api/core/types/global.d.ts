@@ -6,7 +6,7 @@ declare type UnionOf<T> = T[keyof T];
 
 //app.config.json types
 const SupportedLanguages = ["en", "it", "es", "fr", "de"] as const;
-const Namespaces = ["common", "home", "info", "modals", "page-titles"] as const;
+const Namespaces = ["common", "page-titles"] as const;
 
 declare type RouteKey =
   | "HOME"
@@ -19,4 +19,3 @@ declare type RouteKey =
   | "Modal";
 declare type AllowedNamespace = typeof Namespaces[number];
 declare type SupportedLanguage = typeof SupportedLanguages[number];
-declare type ModalType = "EMPTY";
