@@ -1,8 +1,5 @@
 {
-  "header_title": "React Ready to go - FR",
-  "header_subTitle": "Build your app from here ! - FR",
-  "infoCard_title": "Info Page Card title - FR",
-  "infoCard_header": "Info Page Card header - FR",
-  "infoCard_body": "Info Page Card body - FR",
-  "infoCard_footer": "Info Page Card footer - FR"
+  "atoms": "Atoms",
+  "molecules": "Molecules",
+  "organisms": "Organisms"
 }
