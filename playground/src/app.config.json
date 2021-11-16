@@ -4,7 +4,7 @@
   "ROUTER": {
     "BASENAME": "/modular-ui",
     "ROUTES_PATHS": {
-      "HOME": "/home",
+      "HOME": "",
       "Dropdown": "/components/molecules/dropdown",
       "Card": "/components/molecules/card",
       "Form": "/components/molecules/form",

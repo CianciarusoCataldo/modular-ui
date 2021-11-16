@@ -132,7 +132,7 @@ const App = ({ history }: AppProps) => {
             {ROUTES_PROPS.map((route) => (
               <Route {...route} />
             ))}
-            <Redirect to={PATHS.HOME} />
+            <Redirect to={"/"} />
           </Switch>
         </Router>
       </div>
