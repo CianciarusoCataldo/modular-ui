@@ -28,7 +28,7 @@
       "Divider",
       "common"
     ],
-    "DEFAULT_NAMESPACE": "home",
+    "DEFAULT_NAMESPACE": "common",
     "LOAD_PATH": "/locales/{{lng}}/{{ns}}.json"
   }
 }

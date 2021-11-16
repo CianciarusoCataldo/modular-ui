@@ -8,8 +8,6 @@ import { updatePageTitle } from "api/helpers/ui-helper";
 import { computeRoutePaths, computeRoutesMap } from "api/helpers/route-helper";
 
 export const initi18n = (CONFIG: Config) => {
-  console.log(CONFIG.I18N);
-
   i18n
     .use(initReactI18next) // bind react-i18next to the instance
     .use(ChainedBackend)
@@ -38,7 +36,7 @@ export const initi18n = (CONFIG: Config) => {
       interpolation: {
         escapeValue: false,
       },
-      react: { useSuspense: false },
+      react: { useSuspense: true },
     })
     .then(() => {
       updatePageTitle(
