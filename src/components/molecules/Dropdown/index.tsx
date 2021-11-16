@@ -31,6 +31,7 @@ const Dropdown = ({
           onClick={() => setVisible(!isVisible)}
           className="button"
           id="options-menu"
+          data-id="options-menu"
           aria-haspopup="true"
           aria-expanded="true"
         >
@@ -50,6 +51,7 @@ const Dropdown = ({
           {content.map((item, index) => (
             <div key={`dropdown_option_${index}`} className="option">
               <button
+                data-id={`dropdown_option_${index}`}
                 onClick={() => {
                   setVisible(false);
                   item.action();

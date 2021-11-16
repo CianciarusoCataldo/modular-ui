@@ -17,26 +17,7 @@ import Divider from "../../atoms/Divider";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Drawer = ({
-  elements,
-  className,
-  isOpen,
-  onClose = () => {},
-}: DrawerProps) => {
-  React.useEffect(() => {
-    if (isOpen) {
-      let element = document.getElementById("modular-drawer");
-
-      document.getElementById("app-container")!.onclick = function (e: Event) {
-        if (element && !element.contains(e.target as Node)) {
-          onClose();
-        }
-      };
-    } else {
-      document.getElementById("app-container")!.onclick = null;
-    }
-  }, [isOpen, onClose]);
-
+const Drawer = ({ elements, className, isOpen, onClose }: DrawerProps) => {
   return (
     <div id="modular-drawer">
       <div
@@ -75,18 +56,19 @@ const Drawer = ({
             <div>
               {elements &&
                 elements.map((element, index) => {
-                  const onClick = element.actionCallback
-                    ? element.actionCallback
-                    : () => {};
                   const isActive =
                     element.isActiveCallback && element.isActiveCallback();
 
                   return (
-                    <div key={`drawer_element_${index}`} className="element">
+                    <div
+                      key={`drawer_element_${index}`}
+                      data-id={`drawer_element_${index}`}
+                      className="element"
+                    >
                       <Button
                         noStyles
                         id={`drawer_button_${index}`}
-                        onClick={onClick}
+                        onClick={element.actionCallback}
                       >
                         <div className="button">
                           <div className="icon">{element.icon}</div>

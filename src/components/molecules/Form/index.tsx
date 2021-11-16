@@ -41,6 +41,7 @@ const Form = ({
               <input
                 value={values[name] || ""}
                 type="text"
+                data-id={`form-field-${index}`}
                 placeholder={field.placeholder}
                 onChange={(e) => {
                   let tmpValues = { ...values };
@@ -69,16 +70,9 @@ const Form = ({
         })}
       <button
         disabled={!canSubmit}
+        data-id="form-submit-button"
         onClick={() => {
           let results = { ...values };
-          let keys = Object.keys(results);
-          fields &&
-            fields.forEach((field) => {
-              if (!keys.includes(field.name)) {
-                let name = field.name;
-                results[name] = "";
-              }
-            });
           onSubmit && onSubmit(results);
         }}
         className={classNames("submit", {

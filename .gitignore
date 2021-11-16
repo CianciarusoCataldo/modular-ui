@@ -2,3 +2,4 @@ node_modules
 dist
 playground/src/modular-ui-preview
 build
+coverage

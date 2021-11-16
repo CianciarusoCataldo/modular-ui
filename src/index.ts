@@ -1,9 +1,9 @@
-// Atoms
+/** Atoms */
 export { default as Button } from "./components/atoms/Button";
 export { default as Divider } from "./components/atoms/Divider";
 export { default as Link } from "./components/atoms/Link";
 
-// Molecules
+/** Molecules */
 export { default as Card } from "./components/molecules/Card";
 export { default as Drawer } from "./components/molecules/Drawer";
 export { default as Dropdown } from "./components/molecules/Dropdown";

@@ -42,7 +42,7 @@ const Button = ({
       <button
         data-id={id}
         disabled={disabled}
-        onClick={!disabled ? onClick : () => {}}
+        onClick={onClick}
         className={classNames(parentClassName, {
           unstyled: noStyles,
           [buttonClassName]: !noStyles,

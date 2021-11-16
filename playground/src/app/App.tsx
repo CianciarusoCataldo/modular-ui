@@ -1,3 +1,4 @@
+import React from "react";
 import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -36,7 +37,19 @@ const App = ({ history }: AppProps) => {
   const dispatch = useDispatch();
   const hideBackButton = useSelector(isHomePage);
   const isDrawerShowing = useSelector(isDrawerOpen);
+  React.useEffect(() => {
+    if (isDrawerShowing) {
+      let element = document.getElementById("modular-drawer");
 
+      document.getElementById("app-container")!.onclick = function (e: Event) {
+        if (element && !element.contains(e.target as Node)) {
+          dispatch(closeDrawer());
+        }
+      };
+    } else {
+      document.getElementById("app-container")!.onclick = null;
+    }
+  }, [dispatch]);
   const ROUTES_PROPS = getRoutingLogic(PATHS);
 
   const LanguageSelector = () => {
