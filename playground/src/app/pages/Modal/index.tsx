@@ -10,6 +10,8 @@ export const ModalWrapper = () => {
   const [isModalisible, setModalVisible] = React.useState(false);
   return (
     <Demo
+      startColor="#999"
+      label="Modal"
       props={{
         title: StringProp("Modal title"),
         Content: StringProp("Modal content"),
@@ -25,7 +27,7 @@ export const ModalWrapper = () => {
         <div>
           <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
             <button
-              className="px-5 text-lg mx-5 mt-3 lg:my-auto xl:my-auto 2xl:my-auto 3xl:my-auto 4xl:my-auto py-3 rounded-md focus:outline-none hover:text-blue-400 bg-gradient-to-r from-white to-gray-200"
+              className="px-5 m-auto text-lg py-3 rounded-md focus:outline-none hover:text-blue-400 bg-gradient-to-r from-white to-gray-200"
               onClick={() => setModalVisible(true)}
             >
               {"Open modal"}
@@ -47,7 +49,7 @@ const ModalPage = () => {
   const tCommon = useCommonTranslation();
   return (
     <Page>
-      <p className="text-4xl mt-8 mb-5 ml-3 text-white">{`${tCommon(
+      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${tCommon(
         "molecules"
       )} - ${t("title")}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">

@@ -18,7 +18,7 @@ export const DownArrowIcon = (
 );
 export const BurgerIcon = <img alt="" src={Burger} width={60} />;
 
-export const HOME_ICON = <img alt="" src={Home} width={40} />;
+export const HOME_ICON = <img alt="" src={Home} width={30} />;
 export const INFO_ICON = <img alt="" src={Info} width={40} />;
 
 export const LANGUAGES_ICONS: Record<SupportedLanguage, JSX.Element> = {
