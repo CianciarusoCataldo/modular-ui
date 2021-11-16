@@ -7,16 +7,13 @@ import { getRoutesPaths } from "api/state-slices/config/selectors";
 
 import { getRoutingLogic } from "api/helpers/route-helper";
 
-import { Button, Drawer, Header, Modal } from "modular-ui-preview";
-import { BurgerIcon, HOME_ICON } from "assets/images";
+import { Button, Drawer, Header } from "modular-ui-preview";
+import { BurgerIcon, HOME_ICON, LogoIcon } from "assets/images";
 import { usePageTitlesTranlslations } from "app/hooks/localization";
 import { requestRoute } from "api/state-slices/router/actions";
 import { closeDrawer, openDrawer } from "api/state-slices/ui/actions";
 import { isDrawerOpen, isHomePage } from "api/state-slices/ui/selectors";
 import classNames from "classnames";
-import { getModalView } from "api/state-slices/modal/selectors";
-import FORMS from "app/forms";
-import { closeModal } from "api/state-slices/modal/actions";
 
 const App = ({ history }: AppProps) => {
   const PATHS = useSelector(getRoutesPaths);
@@ -24,12 +21,8 @@ const App = ({ history }: AppProps) => {
   const dispatch = useDispatch();
   const hideBackButton = useSelector(isHomePage);
   const isDrawerShowing = useSelector(isDrawerOpen);
-  const { type, isVisible } = useSelector(getModalView);
-
-  const ModalContent = FORMS[type];
 
   const ROUTES_PROPS = getRoutingLogic(PATHS);
-  const logo = <div></div>;
 
   const HeaderContent = (
     <div className=" flex flex-row items-center mt-14 mb-5 ml-1">
@@ -57,50 +50,38 @@ const App = ({ history }: AppProps) => {
       </Button>
       <div className="m-auto flex flex-row text-white">
         <div className="m-auto mr-1 md:mr-2 lg:mr-2 xl:mr-2 2xl:mr-2 3xl:mr-2">
-          {logo}
+          {LogoIcon}
         </div>
         <div className="flex flex-col m-auto mb-3">
           <div className="m-auto">
-            <p className="text-xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl">
-              modular-ui
-            </p>
+            <p className="text-4xl">Modular-ui</p>
           </div>
         </div>
       </div>
     </div>
   );
 
-  const drawerElements: any[] = Object.keys(PATHS).map((route) => {
-    return {
-      text: t(route),
-      actionCallback: () => {
-        dispatch(requestRoute(PATHS[route as RouteKey]));
-        dispatch(closeDrawer());
-      },
-      isActiveCallback: () =>
-        window.location.pathname === PATHS[route as RouteKey] ||
-        window.location.pathname.substring(
-          0,
-          window.location.pathname.length - 1
-        ) === PATHS[route as RouteKey] ||
-        `${window.location.pathname}/` === PATHS[route as RouteKey],
-    };
-  });
-
   return (
     <div id="app-container">
-      <Modal
-        isVisible={isVisible}
-        Content={<ModalContent />}
-        title="Modal"
-        onClose={() => {
-          dispatch(closeModal());
-        }}
-      />
       <Header content={HeaderContent} />
       <Drawer
         isOpen={isDrawerShowing}
-        elements={drawerElements}
+        elements={Object.keys(PATHS).map((route) => {
+          return {
+            text: t(route),
+            actionCallback: () => {
+              dispatch(requestRoute(PATHS[route as RouteKey]));
+              dispatch(closeDrawer());
+            },
+            isActiveCallback: () =>
+              window.location.pathname === PATHS[route as RouteKey] ||
+              window.location.pathname.substring(
+                0,
+                window.location.pathname.length - 1
+              ) === PATHS[route as RouteKey] ||
+              `${window.location.pathname}/` === PATHS[route as RouteKey],
+          };
+        })}
         onClose={() => {
           dispatch(closeDrawer());
         }}

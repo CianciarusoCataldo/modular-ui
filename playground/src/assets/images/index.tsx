@@ -2,12 +2,15 @@ import LeftArrow from "./icons/commons/left-arrow.svg";
 import Burger from "./icons/commons/burger.svg";
 import Home from "./icons/pages/home.svg";
 import Info from "./icons/pages/info.svg";
+import Logo from "./icons/commons/logo.png";
 
 import IT_FLAG from "./icons/langs/it.svg";
 import FR_FLAG from "./icons/langs/fr.svg";
 import EN_FLAG from "./icons/langs/en.svg";
 import DE_FLAG from "./icons/langs/de.svg";
 import ES_FLAG from "./icons/langs/es.svg";
+
+export const LogoIcon = <img alt="" src={Logo} width={100} height={100} />;
 
 export const LeftArrowIcon = <img alt="" src={LeftArrow} />;
 export const DownArrowIcon = (
