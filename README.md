@@ -7,3 +7,5 @@
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@cianciarusocataldo/modular-ui/peer/react?color=orange&label=Supported%20React%20version)
 
 React components for every app, easy to use and customize. Build faster your web app with this UI library !
+
+A real-time playground for that library is available to https://cianciarusocataldo.github.io/modular-ui/

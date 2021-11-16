@@ -36,7 +36,7 @@ export const initi18n = (CONFIG: Config) => {
       interpolation: {
         escapeValue: false,
       },
-      react: { useSuspense: true },
+      react: { useSuspense: false },
     })
     .then(() => {
       updatePageTitle(
