@@ -8,7 +8,7 @@
     "static/js/3.f42345c5.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/3.f42345c5.chunk.js",
     "main.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/main.cd783f06.chunk.css",
     "main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/main.ee17d405.chunk.js",
-    "runtime-main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/runtime-main.3119832b.js",
+    "runtime-main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/runtime-main.21965bf6.js",
     "static/js/6.d6a98e49.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/6.d6a98e49.chunk.js",
     "static/css/7.9590fca3.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/7.9590fca3.chunk.css",
     "static/js/7.438174ae.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/7.438174ae.chunk.js",
@@ -29,7 +29,7 @@
     "static/js/16.79890c00.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/16.79890c00.chunk.js",
     "static/css/17.1af1b9e6.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/17.1af1b9e6.chunk.css",
     "static/js/17.2209722e.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/17.2209722e.chunk.js",
-    "static/js/18.bdce895e.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/18.bdce895e.chunk.js",
+    "static/js/18.4859faf7.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/18.4859faf7.chunk.js",
     "index.html": "https://cianciarusocataldo.github.io/modular-ui/index.html",
     "static/js/0.47e13550.chunk.js.LICENSE.txt": "https://cianciarusocataldo.github.io/modular-ui/static/js/0.47e13550.chunk.js.LICENSE.txt",
     "static/js/1.dd2cc60c.chunk.js.LICENSE.txt": "https://cianciarusocataldo.github.io/modular-ui/static/js/1.dd2cc60c.chunk.js.LICENSE.txt",
@@ -49,7 +49,7 @@
     "static/media/logo.f75eb982.png": "https://cianciarusocataldo.github.io/modular-ui/static/media/logo.f75eb982.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.3119832b.js",
+    "static/js/runtime-main.21965bf6.js",
     "static/css/main.cd783f06.chunk.css",
     "static/js/main.ee17d405.chunk.js"
   ]
