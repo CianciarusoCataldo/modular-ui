@@ -7,7 +7,11 @@ import { FormProps } from "./types";
 
 /**
  *
- * @param param0
+ * @param title Form title
+ * @param fields Form fields array
+ * @param onSubmit callback triggered on Form submit
+ * @param className custom classname applied on Form component
+ * @param submitLabel custom submit button label
  *
  * @copyright 2021 Cataldo Cianciaruso
  */

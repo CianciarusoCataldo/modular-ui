@@ -15,6 +15,7 @@ export interface FormProps {
   /** Custom classname applied on Form component */
   className?: string;
 
+  /** Custom submit button label */
   submitLabel?: string;
 
   /** Callback on Form submit */

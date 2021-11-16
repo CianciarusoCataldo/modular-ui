@@ -17,11 +17,15 @@ export interface CardProps {
   /** Card footer content */
   footer?: JSX.Element | string;
 
+  /** A custom classname applied on Card title element */
   titleClassName?: string;
 
+  /** A custom classname applied on Card body element */
   bodyClassName?: string;
 
+  /** A custom classname applied on Card header element */
   headerClassName?: string;
 
+  /** A custom classname applied on Card footer element */
   footerClassName?: string;
 }

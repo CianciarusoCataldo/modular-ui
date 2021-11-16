@@ -11,7 +11,9 @@ import classNames from "classnames";
  * Can be easily customized and every element style and behaviour (with a callback) can
  * be customized too.
  *
- * @param param0
+ * @param content Dropdown content elements
+ * @param defaultValue Dropdown default value
+ * @param className Custom classname applied on Dropdown component
  *
  * @copyright 2021 Cataldo Cianciaruso
  */

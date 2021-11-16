@@ -6,6 +6,8 @@ import { ModalProps } from "./types";
 import classNames from "classnames";
 
 /**
+ * A light Modal component. Can be totally customized (the overlay too, through `overlayClassName` parameter)
+ * and can be driven with redux-state or internal state parameters.
  *
  * @param isVisble Modal visibility
  * @param Content Modal Content
