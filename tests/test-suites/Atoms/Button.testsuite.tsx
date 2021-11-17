@@ -1,10 +1,10 @@
 import React from "react";
-import Sinon from "sinon";
+import { stub } from "sinon";
 import { mount, shallow } from "enzyme";
 import Button from "../../../src/components/atoms/Button";
 import { describeTest } from "../../core/utils/helpers";
 
-const clickStub = Sinon.stub();
+const clickStub = stub();
 
 test("rendered without errors", () => {
   const wrapper = shallow(<Button>Testing button</Button>);

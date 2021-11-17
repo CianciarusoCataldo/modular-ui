@@ -1,9 +1,9 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import Sinon from "sinon";
+import { stub } from "sinon";
 import Dropdown from "../../../src/components/molecules/Dropdown";
 
-const elementStub = Sinon.stub();
+const elementStub = stub();
 test("rendered without errors", () => {
   let wrapper = shallow(
     <Dropdown

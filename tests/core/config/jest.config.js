@@ -1,6 +1,6 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  rootDir: "../",
+  rootDir: "../../../",
   preset: "ts-jest",
   moduleFileExtensions: ["js", "jsx", "json", "ts", "tsx"],
   moduleNameMapper: {
@@ -13,10 +13,10 @@ module.exports = {
     "^.+\\.(js|jsx)?$": "babel-jest",
     "^.+\\.(ts|tsx|js|jsx)$": "ts-jest",
   },
-  setupFilesAfterEnv: ["./scripts/testSetup.ts"],
+  setupFilesAfterEnv: ["./tests/core/utils/testSetup.ts"],
   moduleNameMapper: {
     "^@/(.*)$": "src/$1",
-    "\\.(css|less)$": "<rootDir>/tests/__mocks__/fileMock.js",
+    "\\.(css|less)$": "<rootDir>/tests/core/utils/__mocks__/fileMock.js",
   },
   modulePathIgnorePatterns: [
     "src/tests/test-suites/(*.*.*|*.*)",
@@ -28,4 +28,6 @@ module.exports = {
   testMatch: ["**/tests/core/main.test.tsx"],
   modulePathIgnorePatterns: ["/tests/test-suites/", "/tests/core/utils/"],
   coveragePathIgnorePatterns: ["/tests/test-suites/", "/tests/core/utils/"],
+  collectCoverage: true,
+  verbose: true,
 };
