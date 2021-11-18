@@ -1,17 +1,4 @@
 {
-  "ROOT_DIR": "../../",
   "APP_NAME": "Modular-ui",
-  "TEST_SUITES_PATH": "tests/test-suites/",
-  "CATEGORIES": {
-    "Atoms": ["Button", "Divider", "Link"],
-    "Molecules": [
-      "Card",
-      "Drawer",
-      "Dropdown",
-      "Form",
-      "Header",
-      "Modal",
-      "Page"
-    ]
-  }
+  "TESTS_PATH": "../../test-suites/"
 }

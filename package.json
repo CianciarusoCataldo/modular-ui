@@ -65,6 +65,6 @@
     "build-playground": "cd playground && npm run build",
     "predeploy": "npm run build-playground",
     "deploy": "gh-pages -d playground/build",
-    "test": "sh ./tests/core/start-tests.sh"
+    "test": "sh ./tests/start-tests.sh"
   }
 }
