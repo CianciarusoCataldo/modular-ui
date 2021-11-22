@@ -1,3 +1,8 @@
+# 0.9.0
+
+- New Table component
+- styles clean up
+
 # 0.8.0
 
 - New unit testing system

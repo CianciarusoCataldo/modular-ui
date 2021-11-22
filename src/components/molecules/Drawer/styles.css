@@ -67,20 +67,18 @@
 }
 
 #modular-drawer .element .button .active {
-  --tw-text-opacity: 1;
-  color: rgba(217, 119, 6, var(--tw-text-opacity));
+  color: rgba(217, 119, 6, 1);
   cursor: default;
 }
 
 #modular-drawer .element .button .inactive {
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
 
 #modular-drawer .element .button .inactive:hover {
-  --tw-text-opacity: 1;
-  color: rgba(96, 165, 250, var(--tw-text-opacity));
+  color: rgba(96, 165, 250, 1);
 }
 
 #modular-drawer .container-internal {

@@ -11,3 +11,4 @@ export { default as Form } from "./components/molecules/Form";
 export { default as Header } from "./components/molecules/Header";
 export { default as Modal } from "./components/molecules/Modal";
 export { default as Page } from "./components/molecules/Page";
+export { default as Table } from "./components/molecules/Table";

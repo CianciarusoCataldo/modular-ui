@@ -29,7 +29,7 @@
 }
 
 #modular-button .enabled:hover {
-  --tw-translate-y: -0.25rem /* -4px */;
+  --tw-translate-y: -0.25rem;
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   --tw-bg-opacity: 1;

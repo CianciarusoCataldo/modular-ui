@@ -1,12 +1,11 @@
-.modular-header{
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    z-index: 10;
-    margin-bottom: 1.25rem/* 20px */;
-    text-align: center;
-    --tw-bg-opacity: 1;
-    background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
-    border-bottom-width: 2px;
+.modular-header {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 10;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  background-color: rgba(55, 65, 81, 1);
+  border-bottom-width: 2px;
 }

@@ -1,0 +1,40 @@
+#modular-table {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border: rgba(75, 85, 99, 1) solid 4px;
+}
+
+#modular-table .headers {
+  display: flex;
+  flex-direction: row;
+  border-color: rgba(75, 85, 99, 1);
+  border-bottom-width: 3px;
+}
+
+#modular-table .rows {
+  border-color: rgba(75, 85, 99, 1);
+  display: grid;
+}
+
+#modular-table .rows .element {
+  padding: 0.75rem;
+  border-color: rgba(75, 85, 99, 1);
+  display: flex;
+  flex-direction: column;
+  border-bottom-width: 1px;
+  border-right-width: 3px;
+  border-left-width: 3px;
+  align-items: center;
+}
+
+#modular-table .rows .header {
+  color: rgba(96, 165, 250, 1);
+  border-color: rgba(75, 85, 99, 1);
+  font-weight: 700;
+  padding: 0.75rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: rgba(75, 85, 99, 1) solid 4px;
+}

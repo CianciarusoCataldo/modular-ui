@@ -40,7 +40,12 @@ export const useDividerPageTranslation = () => {
   return t;
 };
 
-export const useCommonTranslation = () => {
+export const useTableTranslation = () => {
   const { t } = useTranslation(I18N.NAMESPACES[8]);
+  return t;
+};
+
+export const useCommonTranslation = () => {
+  const { t } = useTranslation(I18N.NAMESPACES[9]);
   return t;
 };

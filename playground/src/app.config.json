@@ -11,7 +11,8 @@
       "Button": "/components/atoms/button",
       "Link": "/components/atoms/link",
       "Modal": "/components/atoms/modal",
-      "Divider": "/components/atoms/divider"
+      "Divider": "/components/atoms/divider",
+      "Table": "/components/molecules/table"
     }
   },
   "I18N": {
@@ -26,6 +27,7 @@
       "Link",
       "Modal",
       "Divider",
+      "Table",
       "common"
     ],
     "DEFAULT_NAMESPACE": "common",

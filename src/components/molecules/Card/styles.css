@@ -23,18 +23,15 @@
 }
 
 #modular-card .header-default {
-  --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgba(0, 0, 0, 1);
 }
 
 #modular-card .body-default {
-  --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgba(0, 0, 0, 1);
 }
 
 #modular-card .footer-default {
-  --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgba(0, 0, 0, 1);
 }
 
 #modular-card .container-full {

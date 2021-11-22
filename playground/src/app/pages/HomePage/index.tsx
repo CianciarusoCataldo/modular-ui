@@ -1,7 +1,10 @@
-import { useHomePageTranslation } from "app/hooks/localization";
 import { Page } from "modular-ui-preview";
+
+import { useHomePageTranslation } from "app/hooks/localization";
+
 import { ButtonWrapper } from "../Button";
 import { CardWrapper } from "../Card";
+import { TableWrapper } from "../Table";
 import { DividerWrapper } from "../Divider";
 import { DropdownWrapper } from "../Dropdown";
 import { FormWrapper } from "../Form";
@@ -19,10 +22,11 @@ const HomePage = () => {
         <LinkWrapper />
       </div>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
+        <TableWrapper />
         <CardWrapper />
-        <FormWrapper />
       </div>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
+        <FormWrapper />
         <ModalWrapper />
         <DropdownWrapper />
       </div>

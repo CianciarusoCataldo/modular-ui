@@ -28,8 +28,7 @@
 }
 
 #modular-dropdown .container .button {
-  --tw-text-opacity: 1;
-  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  color: rgba(55, 65, 81, 1);
   display: flex;
   flex-direction: row;
   padding-left: 0.5rem;
@@ -38,8 +37,7 @@
 }
 
 #modular-dropdown .container .button:hover {
-  --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
+  color: rgba(156, 163, 175, 1);
 }
 
 #modular-dropdown .container .button:focus {
@@ -122,8 +120,7 @@
 }
 
 #modular-dropdown .container .option .regular:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
+  background-color: rgba(191, 219, 254, 1);
   outline: 2px solid transparent;
   outline-offset: 2px;
 }

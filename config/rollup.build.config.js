@@ -39,7 +39,10 @@ export default [
         minimize: true,
         extract: "styles.css",
       }),
-      typescript(),
+      typescript({
+        rollupCommonJSResolveHack: false,
+        clean: true,
+      }),
     ],
     external: Object.keys(pkg.peerDependencies || {}),
   },

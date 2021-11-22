@@ -1,7 +1,8 @@
 import React from "react";
+
 import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
+import classNames from "classnames";
 import { History } from "history";
 
 import { getRoutesPaths } from "api/state-slices/config/selectors";
@@ -26,7 +27,6 @@ import {
   isDrawerOpen,
   isHomePage,
 } from "api/state-slices/ui/selectors";
-import classNames from "classnames";
 
 interface AppProps {
   history: History;
@@ -49,7 +49,7 @@ const App = ({ history }: AppProps) => {
     } else {
       document.getElementById("app-container")!.onclick = null;
     }
-  }, [dispatch]);
+  }, [dispatch, isDrawerShowing]);
   const ROUTES_PROPS = getRoutingLogic(PATHS);
 
   const LanguageSelector = () => {
@@ -157,7 +157,7 @@ const App = ({ history }: AppProps) => {
           dispatch(closeDrawer());
         }}
       />
-      <div style={{ marginTop: "10rem" }}>
+      <div style={{ marginTop: "10rem", position: "absolute", left: "0" }}>
         <Router history={history}>
           <Switch>
             {ROUTES_PROPS.map((route) => (
