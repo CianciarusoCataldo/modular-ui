@@ -1,35 +1,64 @@
-import { Page } from "modular-ui-preview";
+import { useSelector } from "react-redux";
+
+import { Card, Link, Page } from "modular-ui-preview";
 
 import { useHomePageTranslation } from "app/hooks/localization";
 
-import { ButtonWrapper } from "../Button";
-import { CardWrapper } from "../Card";
-import { TableWrapper } from "../Table";
-import { DividerWrapper } from "../Divider";
-import { DropdownWrapper } from "../Dropdown";
-import { FormWrapper } from "../Form";
-import { LinkWrapper } from "../Link";
-import { ModalWrapper } from "../Modal";
+import { getRoutesPaths } from "api/state-slices/config/selectors";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
   const t = useHomePageTranslation();
+  const PATHS = useSelector(getRoutesPaths);
+
+  const parseLocalizedString = (localizedString: string) => {
+    const splittedString = localizedString.split("#LINK");
+    return (
+      <div>
+        {splittedString.map((part, index) => {
+          if (index % 2 !== 0) {
+            const splittedPart = part.split("#");
+            return (
+              <Link
+                to={splittedPart[0]}
+                target="_blank"
+                key={`parsed_link_${index}`}
+              >
+                {splittedPart[1]}
+              </Link>
+            );
+          } else {
+            return part;
+          }
+        })}
+      </div>
+    );
+  };
+
   return (
     <Page>
       <p className="text-4xl mt-12 mb-5 ml-3 text-white">{t("title")}</p>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <ButtonWrapper />
-        <DividerWrapper />
-        <LinkWrapper />
-      </div>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <TableWrapper />
-        <CardWrapper />
-      </div>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <FormWrapper />
-        <ModalWrapper />
-        <DropdownWrapper />
-      </div>
+      <Card body={parseLocalizedString(t("description"))} />
+      <Card
+        header={t("componentsList_header")}
+        body={
+          <div className="flex flex-col">
+            {Object.keys(PATHS)
+              .slice(1)
+              .map((routeKey, index) => {
+                return (
+                  <NavLink
+                    className="text-blue-400 hover:text-blue-700"
+                    key={`link_${index}`}
+                    to={PATHS[routeKey as RouteKey]}
+                  >
+                    {routeKey}
+                  </NavLink>
+                );
+              })}
+          </div>
+        }
+      />
     </Page>
   );
 };

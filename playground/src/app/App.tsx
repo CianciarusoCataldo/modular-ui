@@ -9,7 +9,7 @@ import { getRoutesPaths } from "api/state-slices/config/selectors";
 
 import { getRoutingLogic } from "api/helpers/route-helper";
 
-import { Button, Drawer, Dropdown, Header } from "modular-ui-preview";
+import { Button, Drawer, Dropdown, Header, Link } from "modular-ui-preview";
 import {
   BurgerIcon,
   HOME_ICON,
@@ -136,28 +136,41 @@ const App = ({ history }: AppProps) => {
     <div id="app-container">
       <Header content={HeaderContent} />
       <Drawer
+        logo={
+          <div className="flex flex-row">
+            {LogoIcon}
+            <Link
+              to="https://github.com/CianciarusoCataldo/modular-ui"
+              className="ml-1 text-white text-lg"
+            >
+              Modular-ui
+            </Link>
+          </div>
+        }
         isOpen={isDrawerShowing}
-        elements={Object.keys(PATHS).map((route) => {
-          return {
-            text: route,
-            actionCallback: () => {
-              dispatch(requestRoute(PATHS[route as RouteKey]));
-              dispatch(closeDrawer());
-            },
-            isActiveCallback: () =>
-              window.location.pathname === PATHS[route as RouteKey] ||
-              window.location.pathname.substring(
-                0,
-                window.location.pathname.length - 1
-              ) === PATHS[route as RouteKey] ||
-              `${window.location.pathname}/` === PATHS[route as RouteKey],
-          };
-        })}
+        elements={Object.keys(PATHS)
+          .slice(1)
+          .map((route) => {
+            return {
+              text: route,
+              actionCallback: () => {
+                dispatch(requestRoute(PATHS[route as RouteKey]));
+                dispatch(closeDrawer());
+              },
+              isActiveCallback: () =>
+                window.location.pathname === PATHS[route as RouteKey] ||
+                window.location.pathname.substring(
+                  0,
+                  window.location.pathname.length - 1
+                ) === PATHS[route as RouteKey] ||
+                `${window.location.pathname}/` === PATHS[route as RouteKey],
+            };
+          })}
         onClose={() => {
           dispatch(closeDrawer());
         }}
       />
-      <div style={{ marginTop: "10rem", position: "absolute", left: "0" }}>
+      <div style={{ marginTop: "10rem" }}>
         <Router history={history}>
           <Switch>
             {ROUTES_PROPS.map((route) => (

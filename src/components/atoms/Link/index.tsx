@@ -1,22 +1,26 @@
 import "./styles.css";
 
 import React from "react";
-import { RouterLinkProps } from "./types";
+import { LinkProps } from "./types";
 
 /**
- * A re-defined label, designed to be used with links
+ * A re-defined <a> component, designed to be better used with links
  *
  * @param label link label
  *
  * @param className A custom className applied on main container
  *
+ * @param children Children component, displayed under the Link label
+ *
+ * @param to Link url
+ *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Link = ({ label, className }: RouterLinkProps) => {
+const Link = ({ className, children, to, ...args }: LinkProps) => {
   return (
-    <p id="modular-link" className={className}>
-      {label}
-    </p>
+    <a id="modular-link" className={className} href={to} {...args}>
+      {children}
+    </a>
   );
 };
 

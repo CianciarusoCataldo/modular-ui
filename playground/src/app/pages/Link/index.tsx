@@ -9,11 +9,16 @@ export const LinkWrapper = () => (
   <Demo
     label="Link"
     props={{
-      label: StringProp("Link label"),
+      to: StringProp("https://github.com/CianciarusoCataldo/modular-ui"),
       className: StringProp(""),
+      children: StringProp("Link label"),
     }}
   >
-    {(props: any) => <Link {...props} />}
+    {(props: any) => (
+      <div className="m-auto flex flex-col items-center text-xl">
+        <Link {...props} />
+      </div>
+    )}
   </Demo>
 );
 

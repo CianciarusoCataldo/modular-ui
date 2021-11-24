@@ -28,6 +28,8 @@ export interface DrawerProps {
   /** Callback triggered on Drawer close */
   onClose?: () => void;
 
+  logo?: JSX.Element;
+
   /** Drawer elements array */
   elements?: DrawerElement[];
 }

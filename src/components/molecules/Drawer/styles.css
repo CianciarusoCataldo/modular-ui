@@ -33,7 +33,7 @@
 
 #modular-drawer .buttons-panel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
   margin-left: 0.25rem;
   margin-right: 0.25rem;

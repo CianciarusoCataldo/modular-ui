@@ -17,7 +17,13 @@ import Divider from "../../atoms/Divider";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Drawer = ({ elements, className, isOpen, onClose }: DrawerProps) => {
+const Drawer = ({
+  elements,
+  className,
+  isOpen,
+  onClose,
+  logo,
+}: DrawerProps) => {
   return (
     <div id="modular-drawer">
       <div
@@ -32,6 +38,7 @@ const Drawer = ({ elements, className, isOpen, onClose }: DrawerProps) => {
       >
         <div className="container-internal">
           <div className="buttons-panel">
+            {logo}
             <button onClick={onClose} className="close-button">
               {
                 <svg

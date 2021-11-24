@@ -40,16 +40,26 @@ const Card = ({
       <div className={classnames("container-full", parentClassName)}>
         <p className={classNames("title", titleClassName)}>{title}</p>
         <div className="container-main">
-          <div className="container-header">
-            {icon}
-            <div className={classnames("header", headerClassName)}>
-              {header}
+          {header && (
+            <div>
+              <div className="container-header">
+                {icon}
+                <div className={classnames("header", headerClassName)}>
+                  {header}
+                </div>
+              </div>
+              <Divider />
             </div>
-          </div>
-          <Divider />
+          )}
           <div className={classnames("body", bodyClassName)}>{body}</div>
-          <Divider />
-          <div className={classnames("footer", footerClassName)}>{footer}</div>
+          {footer && (
+            <div>
+              <Divider />
+              <div className={classnames("footer", footerClassName)}>
+                {footer}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
