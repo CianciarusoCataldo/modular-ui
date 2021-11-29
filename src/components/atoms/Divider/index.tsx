@@ -3,7 +3,7 @@ import "./styles.css";
 import React from "react";
 
 import { DividerProps } from "./types";
-import Wrapper, { wrapComponent } from "../../molecules/Wrapper";
+import { wrapComponent } from "../../molecules/Wrapper";
 
 /**
  * A simple divider, useful to separate sections and paragraphs
