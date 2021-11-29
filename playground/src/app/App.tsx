@@ -35,7 +35,7 @@ interface AppProps {
 const App = ({ history }: AppProps) => {
   const PATHS = useSelector(getRoutesPaths);
   const dispatch = useDispatch();
-  const hideBackButton = useSelector(isHomePage);
+  const hideHomeButton = useSelector(isHomePage);
   const isDrawerShowing = useSelector(isDrawerOpen);
   React.useEffect(() => {
     if (isDrawerShowing) {
@@ -88,7 +88,7 @@ const App = ({ history }: AppProps) => {
         className={classNames(
           "fixed top-2 overflow-auto py-0 ml-1 mr-3 outline-none",
           {
-            hidden: hideBackButton,
+            hidden: hideHomeButton,
           }
         )}
       >
@@ -134,7 +134,7 @@ const App = ({ history }: AppProps) => {
 
   return (
     <div id="app-container">
-      <Header content={HeaderContent} />
+      <Header>{HeaderContent}</Header>
       <Drawer
         logo={
           <div className="flex flex-row">

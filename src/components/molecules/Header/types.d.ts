@@ -1,7 +1,3 @@
-export interface HeaderProps {
-  /** Header content */
-  content?: JSX.Element;
+import { CommonProps, ComponentWithChildren } from "../../../global";
 
-  /** A custom className applied on the component container */
-  className?: string;
-}
+export type HeaderProps = CommonProps & ComponentWithChildren;

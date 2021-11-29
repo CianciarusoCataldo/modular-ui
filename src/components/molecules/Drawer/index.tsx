@@ -18,10 +18,12 @@ import Divider from "../../atoms/Divider";
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Drawer = ({
-  elements,
+  children,
   className,
+  elements,
   isOpen,
   onClose,
+
   logo,
 }: DrawerProps) => {
   return (
@@ -93,6 +95,7 @@ const Drawer = ({
                     </div>
                   );
                 })}
+              {children}
             </div>
           </div>
         </div>

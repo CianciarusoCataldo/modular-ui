@@ -1,15 +1,12 @@
-export type LinkProps = React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
-> & {
-  /**
-   Link URL
-   */
-  to?: string;
+import {
+  CommonProps,
+  ComponentWithChildren,
+  BoxComponent,
+} from "../../../global";
 
-  /** A custom className applied on Link component */
-  className?: string;
-
-  /** Children component, displayed under the Link label */
-  children?: JSX.Element | string;
-};
+export type LinkProps = CommonProps &
+  ComponentWithChildren & {
+    /** Link URL */
+    to: string;
+    label: string;
+  };

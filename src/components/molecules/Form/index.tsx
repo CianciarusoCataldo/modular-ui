@@ -4,6 +4,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { FormProps } from "./types";
+import { wrapComponent } from "../Wrapper";
 
 /**
  *
@@ -21,6 +22,7 @@ const Form = ({
   onSubmit,
   className,
   submitLabel,
+  hide,
 }: FormProps) => {
   const [values, setValues] = React.useState<Record<string, string>>({});
   const [errors, setErrors] = React.useState<Record<string, boolean>>({});
@@ -29,7 +31,7 @@ const Form = ({
       ? !Object.values(errors).find((element) => element === true) || false
       : false;
 
-  return (
+  return wrapComponent(
     <div id="modular-form" className={className}>
       <p className="title">{title}</p>
       {fields &&
@@ -82,7 +84,8 @@ const Form = ({
       >
         {submitLabel}
       </button>
-    </div>
+    </div>,
+    hide
   );
 };
 

@@ -1,4 +1,4 @@
-import { Previewer } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo } from "@cianciarusocataldo/demo-ui";
 import {
   useCommonTranslation,
   useDropdownPageTranslation,
@@ -23,13 +23,16 @@ export const DropdownWrapper = () => {
     },
   ];
   return (
-    <Previewer label="Dropdown">
-      <Dropdown
-        className="mx-6 my-8"
-        defaultValue={elements[selectedItem].name}
-        content={elements}
-      />
-    </Previewer>
+    <Demo label="Dropdown" props={{ hide: BooleanProp(false) }}>
+      {(props: any) => (
+        <Dropdown
+          className="mx-6 my-8"
+          defaultValue={elements[selectedItem].name}
+          content={elements}
+          hide={props.hide}
+        />
+      )}
+    </Demo>
   );
 };
 

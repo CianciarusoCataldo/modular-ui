@@ -1,7 +1,11 @@
-export interface ButtonProps {
-  /** If true, no other styles will be applied on main container (useful for image only buttons) */
-  noStyles?: boolean;
+import { CommonProps, ComponentWithChildren } from "../../../global";
 
-  /** A custom className applied on the component container */
-  className?: string;
-}
+export type ButtonProps = CommonProps &
+  ComponentWithChildren &
+  DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > & {
+    /** If true, no other styles will be applied on main container (useful for image only buttons) */
+    noStyles?: boolean;
+  };

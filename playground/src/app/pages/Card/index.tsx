@@ -1,4 +1,4 @@
-import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import {
   useCardPageTranslation,
   useCommonTranslation,
@@ -28,14 +28,14 @@ export const CardWrapper = () => (
       header: StringProp("Card header"),
       body: StringProp("Card body"),
       footer: StringProp("Card footer"),
-
       titleClassName: StringProp("text-black"),
       headerClassName: StringProp(""),
       bodyClassName: StringProp(""),
       footerClassName: StringProp(""),
+      hide: BooleanProp(false),
     }}
     rows={[
-      ["title", "header", "body", "footer"],
+      ["title", "header", "body", "footer", "hide"],
       ["titleClassName", "headerClassName", "bodyClassName", "footerClassName"],
     ]}
     startColor="#999"

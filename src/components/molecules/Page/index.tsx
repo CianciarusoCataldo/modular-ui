@@ -1,9 +1,10 @@
 import "./styles.css";
+import { PageProps } from "./types";
 
 import React from "react";
 
 import classNames from "classnames";
-import { PageProps } from "./types";
+import { wrapComponent } from "../Wrapper";
 
 /**
  * A standard Page component. It is showed with a standard fade-in effect, along with its content.
@@ -16,11 +17,17 @@ import { PageProps } from "./types";
  * @copyright 2021 Cataldo Cianciaruso
  */
 
-const Page = ({ children, orientation = "vertical", className }: PageProps) => {
-  return (
+const Page = ({
+  children,
+  orientation = "vertical",
+  className,
+  hide,
+}: PageProps) => {
+  return wrapComponent(
     <div className={classNames(orientation, "modular-page", className)}>
       {children}
-    </div>
+    </div>,
+    hide
   );
 };
 

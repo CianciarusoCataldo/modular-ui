@@ -1,5 +1,5 @@
 import { Page, Button } from "modular-ui-preview";
-import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import {
   useButtonPageTranslation,
   useCommonTranslation,
@@ -26,6 +26,7 @@ export const ButtonWrapper = () => (
     props={{
       children: StringProp("Button content"),
       className: StringProp(""),
+      hide: BooleanProp(false),
     }}
   >
     {(props: any) => (

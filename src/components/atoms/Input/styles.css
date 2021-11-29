@@ -1,0 +1,32 @@
+#modular-input .label {
+  margin-top: 1rem;
+}
+
+#modular-input .dark {
+  background-color: #423c5e;
+  color: #ff976b;
+}
+
+#modular-input .box {
+  background-color: white;
+  border-width: 1px;
+  border-color: #423c5e;
+  color: #423c5e;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: auto;
+  overflow: auto;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#modular-input {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}

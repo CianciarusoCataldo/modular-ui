@@ -1,18 +1,18 @@
-import React from "react";
-
 import "./styles.css";
-
-import classNames from "classnames";
-
 import { TableProps } from "./types";
 
-const Table = ({ headers, rows }: TableProps) => {
+import React from "react";
+
+import classNames from "classnames";
+import { wrapComponent } from "../Wrapper";
+
+const Table = ({ className, headers, hide, rows = [] }: TableProps) => {
   let gridTemplateRows = "";
   let gridTemplateColumns = "";
 
   let elements: (JSX.Element | string)[][] = [];
 
-  if (rows) {
+  if (rows && rows.length > 0) {
     elements = rows.map((row, rowIndex) =>
       row.map((element, index) => (
         <div
@@ -30,13 +30,14 @@ const Table = ({ headers, rows }: TableProps) => {
     for (let i = 0; i < rows.length; i++) {
       gridTemplateRows += " auto";
     }
+
     for (let i = 0; i < rows[0].length; i++) {
       gridTemplateColumns += " auto";
     }
   }
 
-  return (
-    <div id="modular-table">
+  return wrapComponent(
+    <div id="modular-table" className={className}>
       <div
         className="rows"
         style={{
@@ -46,7 +47,8 @@ const Table = ({ headers, rows }: TableProps) => {
       >
         {elements}
       </div>
-    </div>
+    </div>,
+    hide
   );
 };
 

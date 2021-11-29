@@ -12,7 +12,9 @@
       "Link": "/components/atoms/link",
       "Modal": "/components/atoms/modal",
       "Divider": "/components/atoms/divider",
-      "Table": "/components/molecules/table"
+      "Table": "/components/molecules/table",
+      "Input": "/components/atoms/Input",
+      "Checkbox": "/components/atoms/Checkbox"
     }
   },
   "I18N": {
@@ -28,6 +30,8 @@
       "Modal",
       "Divider",
       "Table",
+      "Input",
+      "Checkbox",
       "common"
     ],
     "DEFAULT_NAMESPACE": "common",

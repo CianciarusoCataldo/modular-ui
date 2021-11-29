@@ -1,5 +1,5 @@
 import React from "react";
-import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import { Modal, Page } from "modular-ui-preview";
 import {
   useCommonTranslation,
@@ -14,16 +14,17 @@ export const ModalWrapper = () => {
       label="Modal"
       props={{
         title: StringProp("Modal title"),
-        Content: StringProp("Modal content"),
+        children: StringProp("Modal content"),
         className: StringProp(""),
         overlayClassName: StringProp(""),
+        hide: BooleanProp(false),
       }}
       rows={[
-        ["title", "Content"],
+        ["title", "children", "hide"],
         ["className", "overlayClassName"],
       ]}
     >
-      {(args: any) => (
+      {(props: any) => (
         <div>
           <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
             <button
@@ -34,7 +35,8 @@ export const ModalWrapper = () => {
             </button>
           </div>
           <Modal
-            {...args}
+            {...props}
+            children={<div>{props.children}</div>}
             isVisible={isModalisible}
             onClose={() => setModalVisible(false)}
           />

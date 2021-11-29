@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import Header from "../../../src/components/molecules/Header";
 
 test("rendered without errors", () => {
-  let wrapper = shallow(<Header content={<div>Testing Header</div>} />);
+  let wrapper = shallow(<Header children={<div>Testing Header</div>} />);
   expect(wrapper);
 });
 

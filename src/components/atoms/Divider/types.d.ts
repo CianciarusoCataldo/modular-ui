@@ -1,4 +1,3 @@
-export interface DividerProps {
-  /** A custom className applied on the component container */
-  className?: string;
-}
+import { CommonProps } from "../../../global";
+
+export type DividerProps = CommonProps;

@@ -1,19 +1,16 @@
-export interface ModalProps {
-  /** A custom className applied on the Modal container */
-  overlayClassName?: string;
+import { CommonProps, ComponentWithChildren } from "../../../global";
 
-  /** A custom className applied on the Modal overlay container */
-  className?: string;
+export type ModalProps = CommonProps &
+  ComponentWithChildren & {
+    /** A custom className applied on the Modal container */
+    overlayClassName?: string;
 
-  /** Modal title */
-  title?: string;
+    /** Modal title */
+    title?: string;
 
-  /** Modal content */
-  Content?: JSX.Element;
+    /** Modal visibility */
+    isVisible?: boolean;
 
-  /** Modal visibility */
-  isVisible?: boolean;
-
-  /** Callback triggered when modal is closed */
-  onClose?: () => void;
-}
+    /** Callback triggered when modal is closed */
+    onClose?: () => void;
+  };

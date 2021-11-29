@@ -1,4 +1,9 @@
-import { BooleanProp, Demo, NumberProp } from "@cianciarusocataldo/demo-ui";
+import {
+  BooleanProp,
+  Demo,
+  NumberProp,
+  StringProp,
+} from "@cianciarusocataldo/demo-ui";
 import { Page, Table } from "modular-ui-preview";
 import {
   useCommonTranslation,
@@ -9,17 +14,32 @@ export const TableWrapper = () => {
   return (
     <Demo
       label="Table"
-      props={{ Rows: NumberProp(1), Headers: BooleanProp(true) }}
+      props={{
+        className: StringProp(""),
+        Rows: NumberProp(1),
+        headers: BooleanProp(true),
+        hide: BooleanProp(false),
+      }}
     >
       {(props: any) => {
         let rows = [];
-        if (props.Headers) {
-          rows.push(["Table header 1", "Table header 2", "Table header 3"]);
+        if (props.Rows) {
+          if (props.Headers) {
+            rows.push(["Table header 1", "Table header 2", "Table header 3"]);
+          }
+          for (let i = 0; i < props.Rows; i++) {
+            rows.push(["Table cell", "Table cell", "Table cell"]);
+          }
         }
-        for (let i = 0; i < props.Rows; i++) {
-          rows.push(["Table cell", "Table cell", "Table cell"]);
-        }
-        return <Table rows={rows} headers={props.Headers} />;
+
+        return (
+          <Table
+            rows={rows}
+            headers={props.headers}
+            className={props.className}
+            hide={props.hide}
+          />
+        );
       }}
     </Demo>
   );

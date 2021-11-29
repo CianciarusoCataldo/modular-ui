@@ -7,6 +7,7 @@ import { CardProps } from "./types";
 
 import Divider from "../../atoms/Divider";
 import classNames from "classnames";
+import { wrapComponent } from "../Wrapper";
 
 /**
  *
@@ -25,44 +26,46 @@ import classNames from "classnames";
  */
 const Card = ({
   title,
-  className: parentClassName,
+  className,
   icon,
   header,
   body,
   footer,
+  children,
+  hide,
   titleClassName = "title-default",
   headerClassName = "header-default",
   bodyClassName = "body-default",
   footerClassName = "footer-default",
 }: CardProps) => {
-  return (
-    <div id="modular-card">
-      <div className={classnames("container-full", parentClassName)}>
-        <p className={classNames("title", titleClassName)}>{title}</p>
-        <div className="container-main">
-          {header && (
-            <div>
-              <div className="container-header">
-                {icon}
-                <div className={classnames("header", headerClassName)}>
-                  {header}
-                </div>
-              </div>
-              <Divider />
-            </div>
-          )}
-          <div className={classnames("body", bodyClassName)}>{body}</div>
-          {footer && (
-            <div>
-              <Divider />
-              <div className={classnames("footer", footerClassName)}>
-                {footer}
+  return wrapComponent(
+    <div id="modular-card" className={className}>
+      <p className={classNames("title", titleClassName)}>{title}</p>
+      <div className="container-main">
+        {header && (
+          <div>
+            <div className="container-header">
+              {icon}
+              <div className={classnames("header", headerClassName)}>
+                {header}
               </div>
             </div>
-          )}
-        </div>
+            <Divider />
+          </div>
+        )}
+        <div className={classnames("body", bodyClassName)}>{body}</div>
+        {children}
+        {footer && (
+          <div>
+            <Divider />
+            <div className={classnames("footer", footerClassName)}>
+              {footer}
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </div>,
+    hide
   );
 };
 

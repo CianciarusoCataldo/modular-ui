@@ -4,6 +4,7 @@ import React from "react";
 
 import { HeaderProps } from "./types";
 import classNames from "classnames";
+import { wrapComponent } from "../Wrapper";
 /**
  * A static header. Useful when a content mush be always showed on top
  * when user navigate through the app
@@ -13,11 +14,12 @@ import classNames from "classnames";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Header = ({ content = <div />, className }: HeaderProps) => {
-  return (
+const Header = ({ hide, children = <div />, className }: HeaderProps) => {
+  return wrapComponent(
     <header className={classNames("modular-header", className)}>
-      {content}
-    </header>
+      {children}
+    </header>,
+    hide
   );
 };
 

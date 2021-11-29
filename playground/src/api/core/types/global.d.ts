@@ -16,6 +16,8 @@ declare type RouteKey =
   | "Link"
   | "Card"
   | "Form"
+  | "Checkbox"
+  | "Input"
   | "Modal"
   | "Table";
 declare type AllowedNamespace = typeof Namespaces[number];

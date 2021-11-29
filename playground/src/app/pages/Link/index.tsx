@@ -1,5 +1,5 @@
 import { Page, Link } from "modular-ui-preview";
-import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import {
   useCommonTranslation,
   useLinkPageTranslation,
@@ -12,6 +12,7 @@ export const LinkWrapper = () => (
       to: StringProp("https://github.com/CianciarusoCataldo/modular-ui"),
       className: StringProp(""),
       children: StringProp("Link label"),
+      hide: BooleanProp(false),
     }}
   >
     {(props: any) => (

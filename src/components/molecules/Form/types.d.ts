@@ -1,4 +1,6 @@
-export interface FormProps {
+import { CommonProps } from "../../../global";
+
+export type FormProps = CommonProps & {
   /** Form title */
   title?: string;
 
@@ -12,12 +14,9 @@ export interface FormProps {
     validate?: (value: string) => boolean;
   }[];
 
-  /** Custom classname applied on Form component */
-  className?: string;
-
   /** Custom submit button label */
   submitLabel?: string;
 
   /** Callback on Form submit */
   onSubmit?: (values: Record<string, string>) => void;
-}
+};

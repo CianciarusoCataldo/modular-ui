@@ -45,7 +45,17 @@ export const useTableTranslation = () => {
   return t;
 };
 
-export const useCommonTranslation = () => {
+export const useInputPageTranslation = () => {
   const { t } = useTranslation(I18N.NAMESPACES[9]);
+  return t;
+};
+
+export const useCheckboxPageTranslation = () => {
+  const { t } = useTranslation(I18N.NAMESPACES[10]);
+  return t;
+};
+
+export const useCommonTranslation = () => {
+  const { t } = useTranslation(I18N.NAMESPACES[11]);
   return t;
 };

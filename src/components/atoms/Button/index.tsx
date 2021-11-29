@@ -2,9 +2,9 @@ import "./styles.css";
 
 import React from "react";
 import classNames from "classnames";
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 import { ButtonProps } from "./types";
+import { wrapComponent } from "../../molecules/Wrapper";
 
 /**
  * A flexible button, easy to customize, designed for a lot of scenarios
@@ -12,7 +12,6 @@ import { ButtonProps } from "./types";
  * @param disabled enable or disable the button functionalities (UI will reflect it too)
  * @param children button content
  * @param onClick callback triggered when the button is clicked
- * @param className classname applied on the main container
  * @param noStyles If true, no other styles will be applied on main container (useful for image only buttons)
  * @param id button data-id, applied on the internal button component (useful for testing and integrations)
  *
@@ -26,20 +25,18 @@ const Button = ({
   className: parentClassName,
   noStyles,
   id,
+  hide,
   ...props
-}: ButtonProps &
-  DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >) => {
+}: ButtonProps) => {
   const buttonClassName = classNames("styled ", {
     disabled: disabled,
     enabled: !disabled,
   });
 
-  return (
+  return wrapComponent(
     <div id="modular-button">
       <button
+        {...props}
         data-id={id}
         disabled={disabled}
         onClick={onClick}
@@ -47,11 +44,11 @@ const Button = ({
           unstyled: noStyles,
           [buttonClassName]: !noStyles,
         })}
-        {...props}
       >
         {children}
       </button>
-    </div>
+    </div>,
+    hide
   );
 };
 

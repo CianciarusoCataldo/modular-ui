@@ -1,3 +1,5 @@
+import { CommonProps, ComponentWithChildren } from "../../../global";
+
 /**
  * Drawer element
  */
@@ -18,18 +20,16 @@ export interface DrawerElement {
   isActiveCallback?: () => boolean;
 }
 
-export interface DrawerProps {
-  /** Drawer visibility */
-  isOpen?: boolean;
+export type DrawerProps = CommonProps &
+  ComponentWithChildren & {
+    /** Drawer visibility */
+    isOpen?: boolean;
 
-  /** custom className applied on component main container */
-  className?: string;
+    /** Callback triggered on Drawer close */
+    onClose?: () => void;
 
-  /** Callback triggered on Drawer close */
-  onClose?: () => void;
+    logo?: JSX.Element;
 
-  logo?: JSX.Element;
-
-  /** Drawer elements array */
-  elements?: DrawerElement[];
-}
+    /** Drawer elements array */
+    elements?: DrawerElement[];
+  };

@@ -1,4 +1,4 @@
-import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import {
   useCommonTranslation,
   useDividerPageTranslation,
@@ -6,7 +6,10 @@ import {
 import { Page, Divider } from "modular-ui-preview";
 
 export const DividerWrapper = () => (
-  <Demo label="Divider" props={{ className: StringProp("") }}>
+  <Demo
+    label="Divider"
+    props={{ className: StringProp(""), hide: BooleanProp(false) }}
+  >
     {(props: any) => <Divider {...props} />}
   </Demo>
 );

@@ -5,6 +5,7 @@ import classnames from "classnames";
 import { DropdownProps } from "./types";
 
 import classNames from "classnames";
+import { wrapComponent } from "../Wrapper";
 
 /**
  * Show a list of elements in a dropdown menu (by default, with fade-in and out effects).
@@ -21,9 +22,10 @@ const Dropdown = ({
   className: parentClassName,
   content = [],
   defaultValue = "",
+  hide,
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
-  return (
+  return wrapComponent(
     <div id="modular-dropdown" className={parentClassName}>
       <div className="container">
         <button
@@ -70,7 +72,8 @@ const Dropdown = ({
           ))}
         </div>
       </div>
-    </div>
+    </div>,
+    hide
   );
 };
 

@@ -2,6 +2,7 @@ import "./styles.css";
 
 import React from "react";
 import { LinkProps } from "./types";
+import { wrapComponent } from "../../molecules/Wrapper";
 
 /**
  * A re-defined <a> component, designed to be better used with links
@@ -16,11 +17,12 @@ import { LinkProps } from "./types";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Link = ({ className, children, to, ...args }: LinkProps) => {
-  return (
-    <a id="modular-link" className={className} href={to} {...args}>
-      {children}
-    </a>
+const Link = ({ className, to, hide, id, label }: LinkProps) => {
+  return wrapComponent(
+    <a id="modular-link" className={className} href={to} data-id={id}>
+      {label}
+    </a>,
+    hide
   );
 };
 
