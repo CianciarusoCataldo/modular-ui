@@ -7,7 +7,7 @@
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=npm%20package%20size)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@cianciarusocataldo/modular-ui/peer/react?color=orange&label=Supported%20React%20version)
 
-Do you need to build a react web-app without maintaining a codebase for every component, and without a lot of additional dependencies? Modular-ui is what you are looking for ! 
+Do you need to build a react web-app without maintaining a codebase for every component, and without a lot of additional dependencies? Modular-ui is what you are looking for ! More details on [Modular-ui official page](https://cianciarusocataldo.github.io/modular-ui/)
 
 ## Summary
 - [Main Concepts](#main-concepts)
