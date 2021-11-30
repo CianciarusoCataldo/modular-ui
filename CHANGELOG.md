@@ -1,3 +1,10 @@
+# 0.9.4
+
+- Bugfixes
+- Input component
+- Checkbox component
+- CodeBox component
+
 # 0.9.0
 
 - New Table component
