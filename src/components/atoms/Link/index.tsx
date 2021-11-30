@@ -17,9 +17,15 @@ import { wrapComponent } from "../../molecules/Wrapper";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Link = ({ className, to, hide, id, label }: LinkProps) => {
+const Link = ({ className, to, hide, id, label, newTab }: LinkProps) => {
   return wrapComponent(
-    <a id="modular-link" className={className} href={to} data-id={id}>
+    <a
+      id="modular-link"
+      className={className}
+      href={to}
+      data-id={id}
+      target={newTab && "_blank"}
+    >
       {label}
     </a>,
     hide

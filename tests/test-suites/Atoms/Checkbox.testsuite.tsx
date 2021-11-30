@@ -1,9 +1,9 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { stub } from "sinon";
+import Sinon from "sinon";
 import Checkbox from "../../../src/components/atoms/Checkbox";
 
-const onChangeStub = stub();
+const onChangeStub = Sinon.stub();
 
 test("rendered without errors - no params", () => {
   const wrapper = shallow(<Checkbox />);

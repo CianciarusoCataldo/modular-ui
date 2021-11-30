@@ -10,9 +10,9 @@
 }
 
 #modular-form .title {
-  margin-bottom: 0.5rem /* 4px */;
-  font-size: 1.25rem /* 20px */;
-  line-height: 1.75rem /* 28px */;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }

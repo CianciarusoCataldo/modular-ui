@@ -13,7 +13,7 @@ module.exports = {
     "^.+\\.(js|jsx)?$": "babel-jest",
     "^.+\\.(ts|tsx|js|jsx)$": "ts-jest",
   },
-  setupFilesAfterEnv: ["./tests/core/utils/testSetup.ts"],
+  setupFilesAfterEnv: ["./tests/core/utils/testSetup.js"],
   moduleNameMapper: {
     "^@/(.*)$": "src/$1",
     "\\.(css|less)$": "<rootDir>/tests/core/utils/__mocks__/fileMock.js",

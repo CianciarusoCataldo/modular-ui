@@ -55,7 +55,12 @@ export const useCheckboxPageTranslation = () => {
   return t;
 };
 
-export const useCommonTranslation = () => {
+export const useCodeBoxTranslation = () => {
   const { t } = useTranslation(I18N.NAMESPACES[11]);
+  return t;
+};
+
+export const useCommonTranslation = () => {
+  const { t } = useTranslation(I18N.NAMESPACES[12]);
   return t;
 };

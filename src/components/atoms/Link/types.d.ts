@@ -8,5 +8,6 @@ export type LinkProps = CommonProps &
   ComponentWithChildren & {
     /** Link URL */
     to: string;
+    newTab?: boolean;
     label: string;
   };

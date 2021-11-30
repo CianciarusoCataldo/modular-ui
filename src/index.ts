@@ -1,6 +1,7 @@
 /** Atoms */
 export { default as Button } from "./components/atoms/Button";
 export { default as Checkbox } from "./components/atoms/Checkbox";
+export { default as CodeBox } from "./components/atoms/CodeBox";
 export { default as Divider } from "./components/atoms/Divider";
 export { default as Input } from "./components/atoms/Input";
 export { default as Link } from "./components/atoms/Link";

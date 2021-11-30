@@ -17,6 +17,7 @@ declare type RouteKey =
   | "Card"
   | "Form"
   | "Checkbox"
+  | "CodeBox"
   | "Input"
   | "Modal"
   | "Table";
