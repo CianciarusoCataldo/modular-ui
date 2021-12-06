@@ -11,9 +11,15 @@ export const LinkWrapper = () => (
     props={{
       to: StringProp("https://github.com/CianciarusoCataldo/modular-ui"),
       className: StringProp(""),
-      children: StringProp("Link label"),
+      label: StringProp("Link label"),
+      newTab: BooleanProp(false),
       hide: BooleanProp(false),
+      dark: BooleanProp(false),
     }}
+    rows={[
+      ["to", "className", "label"],
+      ["newTab", "hide", "dark"],
+    ]}
   >
     {(props: any) => (
       <div className="m-auto flex flex-col items-center text-xl">

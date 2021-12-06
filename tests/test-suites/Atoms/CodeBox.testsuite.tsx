@@ -8,7 +8,7 @@ test("rendered without errors - no params", () => {
 });
 
 test("rendered without errors", () => {
-  const wrapper = mount(<CodeBox code="npm i" enhanced />, {
+  const wrapper = mount(<CodeBox environment="python" code="pip i" enhanced />, {
     context: { navigator: { writeText: () => {} } },
   });
   wrapper.find("button").simulate("click");

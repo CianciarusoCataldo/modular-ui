@@ -12,10 +12,11 @@ import { wrapComponent } from "../../molecules/Wrapper";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Divider = ({ className, id, hide }: DividerProps) => {
+const Divider = ({ className, dark, id, hide }: DividerProps) => {
   return wrapComponent(
     <div id="modular-divider" className={className} data-id={id} />,
-    hide
+    hide,
+    dark
   );
 };
 

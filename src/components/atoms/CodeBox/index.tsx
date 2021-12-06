@@ -2,10 +2,41 @@ import "./styles.css";
 import { CodeBoxProps } from "./types";
 import React from "react";
 import { wrapComponent } from "../../molecules/Wrapper";
+import classNames from "classnames";
+import { parseCode } from "./parser";
 
-const CodeBox = ({ code, enhanced, hide }: CodeBoxProps) => {
+/**
+ * A smart code box. Display code text as a compiler, with properly UI.
+ * Optionally, can highlight code text, with a selectable environment
+ *
+ * @param code Code to display
+ * @param dark enable/disable dark mode
+ * @param advanced enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight
+ * @param hide hide/show component
+ * @param environment environment for text highlight feature, default to "terminal" (only enabled into enhanced mode)
+ * @param className custom class-name applied on CodeBox main container
+ *
+ *@example <caption>Example CodeBox usage</caption>
+ *import { render } from "react-dom";
+ *import { CodeBox } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<CodeBox
+ *         code="node version" />,
+ * document.getElementById("root"));
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
+const CodeBox = ({
+  code,
+  dark,
+  enhanced,
+  hide,
+  environment,
+  className,
+}: CodeBoxProps) => {
+  const selectedLanguage = environment || "terminal";
   return wrapComponent(
-    <div id="modular-codebox">
+    <div id="modular-codebox" className={className}>
       {enhanced && (
         <div key="key_icon" className="copy-icon">
           <button onClick={() => navigator.clipboard.writeText(code)}>
@@ -54,10 +85,20 @@ const CodeBox = ({ code, enhanced, hide }: CodeBoxProps) => {
         </div>
       )}
       <code key="code" className="code">
-        {code}
+        {enhanced
+          ? parseCode(code, selectedLanguage).map((part, index) => (
+              <span
+                key={`code-block_${selectedLanguage}_${index}`}
+                style={{
+                  color: part.color,
+                }}
+              >{`${part.code}`}</span>
+            ))
+          : code}
       </code>
     </div>,
-    hide
+    hide,
+    dark
   );
 };
 

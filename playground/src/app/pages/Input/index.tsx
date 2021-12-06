@@ -13,11 +13,10 @@ export const InputWrapper = () => {
         className: StringProp(""),
         numeric: BooleanProp(false),
         hide: BooleanProp(false),
+        dark: BooleanProp(false),
       }}
     >
-      {(props: any) => {
-        return <Input {...props} />;
-      }}
+      {(props: any) => <Input {...props} />}
     </Demo>
   );
 };

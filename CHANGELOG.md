@@ -1,3 +1,12 @@
+# 1.0.0
+
+- Bugfixes
+- CodeBox component highlight feature with Js, Python and Terminal highlight basic support
+- Playground updates
+- Dark mode and Hide features available for every component
+- Better styled components
+- Test-suites system improved
+
 # 0.9.4
 
 - Bugfixes

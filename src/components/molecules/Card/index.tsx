@@ -33,39 +33,37 @@ const Card = ({
   footer,
   children,
   hide,
-  titleClassName = "title-default",
-  headerClassName = "header-default",
-  bodyClassName = "body-default",
-  footerClassName = "footer-default",
+  titleClassName,
+  headerClassName,
+  bodyClassName,
+  footerClassName,
+  dark,
 }: CardProps) => {
   return wrapComponent(
     <div id="modular-card" className={className}>
-      <p className={classNames("title", titleClassName)}>{title}</p>
+      <p className={titleClassName || "title"}>{title}</p>
       <div className="container-main">
         {header && (
           <div>
             <div className="container-header">
               {icon}
-              <div className={classnames("header", headerClassName)}>
-                {header}
-              </div>
+              <div className={headerClassName || "header"}>{header}</div>
             </div>
             <Divider />
           </div>
         )}
-        <div className={classnames("body", bodyClassName)}>{body}</div>
+        <div className={bodyClassName || "body"}>{body}</div>
         {children}
         {footer && (
           <div>
             <Divider />
-            <div className={classnames("footer", footerClassName)}>
-              {footer}
-            </div>
+            <div className={footerClassName || "footer"}>{footer}</div>
           </div>
         )}
       </div>
     </div>,
-    hide
+    hide,
+    dark
   );
 };
 

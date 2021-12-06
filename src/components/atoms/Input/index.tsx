@@ -19,6 +19,7 @@ const Input = ({
   onChange = () => {},
   numeric,
   value,
+  dark,
 }: InputProps) => {
   /* istanbul ignore next */
   const defaultNumberValue =
@@ -49,7 +50,8 @@ const Input = ({
         }}
       />
     </div>,
-    hide
+    hide,
+    dark
   );
 };
 

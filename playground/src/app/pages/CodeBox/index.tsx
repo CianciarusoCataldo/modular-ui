@@ -1,4 +1,10 @@
-import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import {
+  BooleanProp,
+  Demo,
+  SelectProp,
+  StringProp,
+} from "@cianciarusocataldo/demo-ui";
+
 import { CodeBox, Page } from "modular-ui-preview";
 import {
   useCommonTranslation,
@@ -10,11 +16,20 @@ export const CodeBoxWrapper = () => {
     <Demo
       label="CodeBox"
       props={{
-        code: StringProp("Code box content"),
+        code: StringProp("npm i @cianciarusocataldo/modular-ui"),
         enhanced: BooleanProp(true),
+        dark: BooleanProp(false),
+        hide: BooleanProp(false),
+        environment: SelectProp({
+          "Terminal (default)": "terminal",
+          Javascript: "javascript",
+          Python: "python",
+        }),
       }}
     >
-      {(props: any) => <CodeBox {...props} />}
+      {(props: any) => {
+        return <CodeBox {...props} />;
+      }}
     </Demo>
   );
 };

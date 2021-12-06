@@ -21,59 +21,70 @@ import { wrapComponent } from "../Wrapper";
 const Dropdown = ({
   className: parentClassName,
   content = [],
+  dark,
   defaultValue = "",
   hide,
+  id,
+  onChange,
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
+  const [firstClicked, setFirstClick] = React.useState(false);
+
   return wrapComponent(
-    <div id="modular-dropdown" className={parentClassName}>
-      <div className="container">
-        <button
-          type="button"
-          onClick={() => setVisible(!isVisible)}
-          className="button"
-          id="options-menu"
-          data-id="options-menu"
-          aria-haspopup="true"
-          aria-expanded="true"
-        >
-          <div className="label">{defaultValue}</div>
-          <div className={classNames("icon", { "icon-visible": isVisible })}>
-            <p>
-              <i className="icon-img down"></i>
-            </p>
-          </div>
-        </button>
+    <div id="modular-dropdown" className={parentClassName} data-id={id}>
+      <button
+        type="button"
+        onClick={() => {
+          console.log(firstClicked);
+          setFirstClick(true);
+          setVisible(!isVisible);
+        }}
+        className="button"
+        id="options-menu"
+        data-id="options-menu"
+        aria-haspopup="true"
+        aria-expanded="true"
+      >
+        <div className="label">{defaultValue}</div>
         <div
-          className={classnames({
-            "options-hidden": !isVisible,
-            options: isVisible,
+          className={classNames("icon", {
+            rotate: isVisible,
+            "rotate-back": !isVisible && firstClicked,
           })}
         >
-          {content.map((item, index) => (
-            <div key={`dropdown_option_${index}`} className="option">
-              <button
-                data-id={`dropdown_option_${index}`}
-                onClick={() => {
-                  setVisible(false);
-                  item.action();
-                }}
-                key={`item_${index}`}
-                className={classnames("regular", {
-                  last: index === content.length - 1,
-                })}
-              >
-                <div className="box">
-                  {item.icon}
-                  <div className="label">{item.name}</div>
-                </div>
-              </button>
-            </div>
-          ))}
+          <p>
+            <i className="arrow-icon"></i>
+          </p>
         </div>
+      </button>
+      <div
+        className={classnames("options", {
+          hidden: !isVisible,
+        })}
+      >
+        {content.map((item, index) => (
+          <div key={`dropdown_option_${index}`} className="option">
+            <button
+              data-id={`dropdown_option_${index}`}
+              onClick={() => {
+                onChange(item.name, index);
+                setVisible(false);
+              }}
+              key={`item_${index}`}
+              className={classnames("regular", {
+                first: index === 0,
+                last: index === content.length - 1,
+              })}
+            >
+              {item.icon}
+              <div className="label">{item.name}</div>
+            </button>
+          </div>
+        ))}
       </div>
     </div>,
-    hide
+    hide,
+    dark
   );
 };
 

@@ -1,3 +1,5 @@
+import React from "react";
+
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import {
   useCardPageTranslation,
@@ -20,28 +22,37 @@ const CardPage = () => {
   );
 };
 
-export const CardWrapper = () => (
-  <Demo
-    label="Card"
-    props={{
-      title: StringProp("Card title"),
-      header: StringProp("Card header"),
-      body: StringProp("Card body"),
-      footer: StringProp("Card footer"),
-      titleClassName: StringProp("text-black"),
-      headerClassName: StringProp(""),
-      bodyClassName: StringProp(""),
-      footerClassName: StringProp(""),
-      hide: BooleanProp(false),
-    }}
-    rows={[
-      ["title", "header", "body", "footer", "hide"],
-      ["titleClassName", "headerClassName", "bodyClassName", "footerClassName"],
-    ]}
-    startColor="#999"
-  >
-    {(props: any) => <Card {...props} />}
-  </Demo>
-);
+export const CardWrapper = () => {
+  return (
+    <Demo
+      label="Card"
+      props={{
+        title: StringProp("Card title"),
+        header: StringProp("Card header"),
+        body: StringProp("Card body"),
+        footer: StringProp("Card footer"),
+        titleClassName: StringProp(""),
+        headerClassName: StringProp(""),
+        bodyClassName: StringProp(""),
+        footerClassName: StringProp(""),
+        hide: BooleanProp(false),
+        dark: BooleanProp(false),
+      }}
+      rows={[
+        ["title", "header", "dark", "hide"],
+        ["body", "footer"],
+        [
+          "titleClassName",
+          "headerClassName",
+          "bodyClassName",
+          "footerClassName",
+        ],
+      ]}
+      startColor="#999"
+    >
+      {(props: any) => <Card {...props} />}
+    </Demo>
+  );
+};
 
 export default CardPage;

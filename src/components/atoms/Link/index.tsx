@@ -1,8 +1,7 @@
 import "./styles.css";
 
-import React from "react";
 import { LinkProps } from "./types";
-import { wrapComponent } from "../../molecules/Wrapper";
+import { applyWrapperMiddleware, Wrappers } from "../../molecules/Wrapper";
 
 /**
  * A re-defined <a> component, designed to be better used with links
@@ -17,18 +16,17 @@ import { wrapComponent } from "../../molecules/Wrapper";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Link = ({ className, to, hide, id, label, newTab }: LinkProps) => {
-  return wrapComponent(
-    <a
-      id="modular-link"
-      className={className}
-      href={to}
-      data-id={id}
-      target={newTab && "_blank"}
-    >
-      {label}
-    </a>,
-    hide
+const Link = ({ to, label, newTab, ...commonProps }: LinkProps) => {
+  console.log(commonProps.hide);
+  return applyWrapperMiddleware(
+    label,
+    "modular-link",
+    commonProps,
+    {
+      href: to,
+      target: newTab ? "_blank" : undefined,
+    },
+    Wrappers.A
   );
 };
 
