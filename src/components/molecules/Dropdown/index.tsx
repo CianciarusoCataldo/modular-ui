@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { DropdownProps } from "./types";
 
 import classNames from "classnames";
-import { wrapComponent } from "../Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  * Show a list of elements in a dropdown menu (by default, with fade-in and out effects).
@@ -19,62 +19,88 @@ import { wrapComponent } from "../Wrapper";
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Dropdown = ({
-  className: parentClassName,
   content = [],
   defaultValue = "",
-  hide,
+  onChange,
+  ...commonProps
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
-  return wrapComponent(
-    <div id="modular-dropdown" className={parentClassName}>
-      <div className="container">
-        <button
-          type="button"
-          onClick={() => setVisible(!isVisible)}
-          className="button"
-          id="options-menu"
-          data-id="options-menu"
-          aria-haspopup="true"
-          aria-expanded="true"
-        >
-          <div className="label">{defaultValue}</div>
-          <div className={classNames("icon", { "icon-visible": isVisible })}>
-            <p>
-              <i className="icon-img down"></i>
-            </p>
-          </div>
-        </button>
+  const [firstClicked, setFirstClick] = React.useState(false);
+  /* istanbul ignore next */
+  React.useEffect(() => {
+    window.document.addEventListener("scroll", () => {
+      if (isVisible) {
+        setVisible(false);
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", () => {
+        if (isVisible) {
+          setVisible(false);
+        }
+      });
+    };
+  });
+  return buildComponent({
+    name: "modular-dropdown",
+    Component: [
+      <button
+        type="button"
+        onClick={() => {
+          setFirstClick(true);
+          setVisible(!isVisible);
+        }}
+        className="button"
+        id="options-menu"
+        key="options-menu"
+        data-id="options-menu"
+        aria-haspopup="true"
+        aria-expanded="true"
+      >
+        <div key="label" className="label">
+          {defaultValue}
+        </div>
         <div
-          className={classnames({
-            "options-hidden": !isVisible,
-            options: isVisible,
+          key="icon"
+          className={classNames("icon", {
+            rotate: isVisible,
+            "rotate-back": !isVisible && firstClicked,
           })}
         >
-          {content.map((item, index) => (
-            <div key={`dropdown_option_${index}`} className="option">
-              <button
-                data-id={`dropdown_option_${index}`}
-                onClick={() => {
-                  setVisible(false);
-                  item.action();
-                }}
-                key={`item_${index}`}
-                className={classnames("regular", {
-                  last: index === content.length - 1,
-                })}
-              >
-                <div className="box">
-                  {item.icon}
-                  <div className="label">{item.name}</div>
-                </div>
-              </button>
-            </div>
-          ))}
+          <p>
+            <i className="arrow-icon"></i>
+          </p>
         </div>
-      </div>
-    </div>,
-    hide
-  );
+      </button>,
+      <div
+        key="options"
+        className={classnames("options", {
+          hidden: !isVisible,
+        })}
+      >
+        {content.map((item, index) => (
+          <div key={`dropdown_option_${index}`} className="option">
+            <button
+              data-id={`dropdown_option_${index}`}
+              onClick={() => {
+                onChange(item.name, index);
+                setVisible(false);
+              }}
+              key={`item_${index}`}
+              className={classnames("regular", {
+                first: index === 0,
+                last: index === content.length - 1,
+              })}
+            >
+              {item.icon}
+              <div className="label">{item.name}</div>
+            </button>
+          </div>
+        ))}
+      </div>,
+    ],
+    commonProps,
+  });
 };
 
 export default Dropdown;

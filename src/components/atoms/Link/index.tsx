@@ -1,15 +1,12 @@
 import "./styles.css";
 
-import React from "react";
 import { LinkProps } from "./types";
-import { wrapComponent } from "../../molecules/Wrapper";
+import { buildComponent, Wrappers } from "../../../utils";
 
 /**
  * A re-defined <a> component, designed to be better used with links
  *
  * @param label link label
- *
- * @param className A custom className applied on main container
  *
  * @param children Children component, displayed under the Link label
  *
@@ -17,19 +14,17 @@ import { wrapComponent } from "../../molecules/Wrapper";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Link = ({ className, to, hide, id, label, newTab }: LinkProps) => {
-  return wrapComponent(
-    <a
-      id="modular-link"
-      className={className}
-      href={to}
-      data-id={id}
-      target={newTab && "_blank"}
-    >
-      {label}
-    </a>,
-    hide
-  );
+const Link = ({ to, children, newTab, ...commonProps }: LinkProps) => {
+  return buildComponent({
+    name: "modular-link",
+    Component: children,
+    commonProps,
+    additionalProps: {
+      href: to,
+      target: newTab ? "_blank" : undefined,
+    },
+    wrapper: Wrappers.A,
+  });
 };
 
 export default Link;

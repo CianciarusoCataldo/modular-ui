@@ -27,6 +27,7 @@ export const ButtonWrapper = () => (
       children: StringProp("Button content"),
       className: StringProp(""),
       hide: BooleanProp(false),
+      dark: BooleanProp(false),
     }}
   >
     {(props: any) => (

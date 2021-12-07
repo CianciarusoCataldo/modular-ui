@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { ButtonProps } from "./types";
-import { wrapComponent } from "../../molecules/Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  * A flexible button, easy to customize, designed for a lot of scenarios
@@ -13,7 +13,6 @@ import { wrapComponent } from "../../molecules/Wrapper";
  * @param children button content
  * @param onClick callback triggered when the button is clicked
  * @param noStyles If true, no other styles will be applied on main container (useful for image only buttons)
- * @param id button data-id, applied on the internal button component (useful for testing and integrations)
  *
  * @copyright 2021 Cataldo Cianciaruso
  *
@@ -26,6 +25,7 @@ const Button = ({
   noStyles,
   id,
   hide,
+  dark,
   ...props
 }: ButtonProps) => {
   const buttonClassName = classNames("styled ", {
@@ -33,23 +33,27 @@ const Button = ({
     enabled: !disabled,
   });
 
-  return wrapComponent(
-    <div id="modular-button">
+  return buildComponent({
+    name: "modular-button",
+    Component: (
       <button
         {...props}
         data-id={id}
         disabled={disabled}
         onClick={onClick}
-        className={classNames(parentClassName, {
-          unstyled: noStyles,
-          [buttonClassName]: !noStyles,
-        })}
+        className={
+          parentClassName ||
+          classNames({
+            unstyled: noStyles,
+            [buttonClassName]: !noStyles,
+          })
+        }
       >
         {children}
       </button>
-    </div>,
-    hide
-  );
+    ),
+    commonProps: { hide, dark },
+  });
 };
 
 export default Button;

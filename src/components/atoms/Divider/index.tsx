@@ -3,7 +3,8 @@ import "./styles.css";
 import React from "react";
 
 import { DividerProps } from "./types";
-import { wrapComponent } from "../../molecules/Wrapper";
+import { buildComponent } from "../../../utils";
+import classNames from "classnames";
 
 /**
  * A simple divider, useful to separate sections and paragraphs
@@ -12,11 +13,11 @@ import { wrapComponent } from "../../molecules/Wrapper";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Divider = ({ className, id, hide }: DividerProps) => {
-  return wrapComponent(
-    <div id="modular-divider" className={className} data-id={id} />,
-    hide
-  );
+const Divider = ({ className, ...props }: DividerProps) => {
+  return buildComponent({
+    name: "modular-divider",
+    commonProps: { ...props, className: classNames(className, "container") },
+  });
 };
 
 export default Divider;

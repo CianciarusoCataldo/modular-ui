@@ -1,4 +1,4 @@
-import { BooleanProp, Demo } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import {
   useCommonTranslation,
   useDropdownPageTranslation,
@@ -8,30 +8,60 @@ import React from "react";
 
 export const DropdownWrapper = () => {
   const [selectedItem, selectItem] = React.useState(0);
-  const elements = [
-    {
-      name: "Dropdown Element 1",
-      action: () => {
-        selectItem(0);
-      },
-    },
-    {
-      name: "Dropdown Element 2",
-      action: () => {
-        selectItem(1);
-      },
-    },
-  ];
+
   return (
-    <Demo label="Dropdown" props={{ hide: BooleanProp(false) }}>
-      {(props: any) => (
-        <Dropdown
-          className="mx-6 my-8"
-          defaultValue={elements[selectedItem].name}
-          content={elements}
-          hide={props.hide}
-        />
-      )}
+    <Demo
+      label="Dropdown"
+      props={{
+        className: StringProp(""),
+        "With icons": BooleanProp(false),
+        hide: BooleanProp(false),
+        dark: BooleanProp(false),
+      }}
+    >
+      {(props: any) => {
+        const icon = props["With icons"] ? (
+          <div
+            style={{
+              marginTop: "auto",
+              marginBottom: "auto",
+              marginLeft: "0.25rem",
+              marginRight: "0.25rem",
+            }}
+          >
+            <i
+              style={{
+                border: "solid",
+                borderWidth: "0 3px 3px 0",
+                display: "block",
+                padding: "3px",
+              }}
+            ></i>
+          </div>
+        ) : undefined;
+
+        const elements = [
+          {
+            name: "Dropdown Element 1",
+            icon: icon,
+          },
+          {
+            name: "Dropdown Element 2",
+            icon: icon,
+          },
+        ];
+
+        return (
+          <Dropdown
+            className={props.className}
+            hide={props.hide}
+            dark={props.dark}
+            onChange={(_: any, index: number) => selectItem(index)}
+            defaultValue={elements[selectedItem].name}
+            content={elements}
+          />
+        );
+      }}
     </Demo>
   );
 };

@@ -19,12 +19,13 @@ export const TableWrapper = () => {
         Rows: NumberProp(1),
         headers: BooleanProp(true),
         hide: BooleanProp(false),
+        dark: BooleanProp(false),
       }}
     >
       {(props: any) => {
         let rows = [];
         if (props.Rows) {
-          if (props.Headers) {
+          if (props.headers) {
             rows.push(["Table header 1", "Table header 2", "Table header 3"]);
           }
           for (let i = 0; i < props.Rows; i++) {
@@ -38,6 +39,7 @@ export const TableWrapper = () => {
             headers={props.headers}
             className={props.className}
             hide={props.hide}
+            dark={props.dark}
           />
         );
       }}

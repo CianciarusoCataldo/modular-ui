@@ -1,4 +1,4 @@
-#modular-drawer .container {
+#modular-drawer {
   position: fixed;
   z-index: 10;
   --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -86,7 +86,7 @@
   flex-direction: column;
 }
 
-#modular-drawer .ease-in {
+#modular-drawer.ease-in {
   transition-timing-function: ease-in;
 
   /* Quick on the way out */
@@ -96,7 +96,7 @@
   transform: translateX(0%);
 }
 
-#modular-drawer .ease-out {
+#modular-drawer.ease-out {
   transition-timing-function: ease-out;
 
   /* Quick on the way out */

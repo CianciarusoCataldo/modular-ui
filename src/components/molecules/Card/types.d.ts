@@ -28,4 +28,7 @@ export type CardProps = CommonProps &
 
     /** A custom classname applied on Card footer element */
     footerClassName?: string;
+
+    /** Styled/Unstyled component, useful to customize it easily */
+    unstyled?: boolean;
   };

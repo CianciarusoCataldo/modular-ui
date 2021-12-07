@@ -9,9 +9,17 @@ export const CheckboxWrapper = () => {
   return (
     <Demo
       label="Checkbox"
-      props={{ className: StringProp(""), hide: BooleanProp(false) }}
+      props={{
+        className: StringProp(""),
+        hide: BooleanProp(false),
+        dark: BooleanProp(false),
+      }}
     >
-      {(props: any) => <Checkbox {...props} />}
+      {(props: any) => (
+        <div className="flex flex-col items-center">
+          <Checkbox {...props} />
+        </div>
+      )}
     </Demo>
   );
 };

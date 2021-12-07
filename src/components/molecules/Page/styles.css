@@ -1,4 +1,4 @@
-.modular-page {
+#modular-page {
   display: flex;
   margin: 0.5rem /* 8px */;
   margin-left: 0.75rem /* 12px */;
@@ -9,11 +9,21 @@
   animation: fadein 1s;
 }
 
-.horizontal{
+#modular-page .input-box {
+  background-color: white;
+  color: #423c5e;
+}
+
+#modular-page.dark {
+  background-color: #423c5e;
+  color: #ebe5e2;
+}
+
+#modular-page.horizontal {
   flex-direction: row;
 }
 
-.vertical{
+#modular-page.vertical {
   flex-direction: column;
 }
 

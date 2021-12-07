@@ -1,12 +1,23 @@
 #modular-link {
-  display: inline-block;
+  display: inline;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: rgba(96, 165, 250, 1);
 }
 
 #modular-link:hover {
+  color: rgb(33, 89, 211);
+}
+
+#modular-link.dark:hover {
+  color: rgb(219, 221, 224);
+}
+
+#modular-link {
   color: rgba(37, 99, 235, 1);
+}
+
+#modular-link.dark {
+  color: rgb(255, 255, 255);
 }
 
 #modular-link:active {

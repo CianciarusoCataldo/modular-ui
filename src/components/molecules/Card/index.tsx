@@ -1,13 +1,12 @@
 import "./styles.css";
 
 import React from "react";
-import classnames from "classnames";
 
 import { CardProps } from "./types";
 
 import Divider from "../../atoms/Divider";
+import { buildComponent } from "../../../utils";
 import classNames from "classnames";
-import { wrapComponent } from "../Wrapper";
 
 /**
  *
@@ -16,7 +15,6 @@ import { wrapComponent } from "../Wrapper";
  *  @param header Card header content
  *  @param body Card body content
  *  @param footer Card footer content
- *  @param className A custom classname applied on Card main container
  *  @param titleClassName A custom classname applied on Card title element
  *  @param headerClassName A custom classname applied on Card header element
  *  @param bodyClassName A custom classname applied on Card body element
@@ -26,47 +24,57 @@ import { wrapComponent } from "../Wrapper";
  */
 const Card = ({
   title,
-  className,
   icon,
   header,
   body,
   footer,
   children,
-  hide,
-  titleClassName = "title-default",
-  headerClassName = "header-default",
-  bodyClassName = "body-default",
-  footerClassName = "footer-default",
+  titleClassName,
+  headerClassName,
+  bodyClassName,
+  footerClassName,
+  unstyled,
+  ...commonProps
 }: CardProps) => {
-  return wrapComponent(
-    <div id="modular-card" className={className}>
-      <p className={classNames("title", titleClassName)}>{title}</p>
-      <div className="container-main">
+  return buildComponent({
+    name: "modular-card",
+    Component: [
+      <p
+        key="card_title"
+        className={classNames(titleClassName, { title: !unstyled })}
+      >
+        {title}
+      </p>,
+      <div key="card-container" className="container-main">
         {header && (
           <div>
             <div className="container-header">
               {icon}
-              <div className={classnames("header", headerClassName)}>
+              <div
+                className={classNames(headerClassName, { header: !unstyled })}
+              >
                 {header}
               </div>
             </div>
             <Divider />
           </div>
         )}
-        <div className={classnames("body", bodyClassName)}>{body}</div>
+        <div className={classNames(bodyClassName, { body: !unstyled })}>
+          {body}
+        </div>
         {children}
         {footer && (
           <div>
             <Divider />
-            <div className={classnames("footer", footerClassName)}>
+            <div className={classNames(footerClassName, { footer: !unstyled })}>
               {footer}
             </div>
           </div>
         )}
-      </div>
-    </div>,
-    hide
-  );
+      </div>,
+    ],
+    commonProps,
+  });
 };
 
 export default Card;

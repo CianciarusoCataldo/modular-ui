@@ -1,13 +1,12 @@
 import React from "react";
 
-export type CommonProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
-> & {
+export interface CommonProps {
   className?: string;
   id?: string;
   hide?: boolean;
-};
+  /** enable/disable dark mode */
+  dark?: boolean;
+}
 
 export interface BoxComponent<T = any> {
   value?: T;
@@ -15,6 +14,6 @@ export interface BoxComponent<T = any> {
   onClick?: (value: T) => void;
 }
 
-export interface ComponentWithChildren {
-  children?: JSX.Element;
+export interface ComponentWithChildren<T = JSX.Element> {
+  children?: T;
 }

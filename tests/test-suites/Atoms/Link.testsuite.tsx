@@ -3,8 +3,8 @@ import { shallow } from "enzyme";
 import Link from "../../../src/components/atoms/Link";
 
 test("rendered without errors", () => {
-  let wrapper = shallow(<Link to="" label="Testing Link" />);
+  let wrapper = shallow(<Link to="" children="Testing Link" />);
   expect(wrapper);
-  wrapper = shallow(<Link to="" label="Testing Link" newTab />);
+  wrapper = shallow(<Link to="" children="Testing Link" newTab />);
   expect(wrapper);
 });

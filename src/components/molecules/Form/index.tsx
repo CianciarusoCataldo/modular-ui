@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { FormProps } from "./types";
-import { wrapComponent } from "../Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  *
@@ -20,10 +20,10 @@ const Form = ({
   title,
   fields,
   onSubmit,
-  className,
   submitLabel,
-  hide,
+  ...commonProps
 }: FormProps) => {
+  const dropdownFields = fields || [];
   const [values, setValues] = React.useState<Record<string, string>>({});
   const [errors, setErrors] = React.useState<Record<string, boolean>>({});
   let canSubmit =
@@ -31,47 +31,50 @@ const Form = ({
       ? !Object.values(errors).find((element) => element === true) || false
       : false;
 
-  return wrapComponent(
-    <div id="modular-form" className={className}>
-      <p className="title">{title}</p>
-      {fields &&
-        fields.map((field, index) => {
-          const name = field.name;
-          return (
-            <div className="field" key={`form_field_${index}`}>
-              <p className="header">{field.header}</p>
-              <input
-                value={values[name] || ""}
-                type="text"
-                data-id={`form-field-${index}`}
-                placeholder={field.placeholder}
-                onChange={(e) => {
-                  let tmpValues = { ...values };
-                  let tmpErrors = { ...errors };
-                  tmpValues[name] = e.target.value;
-                  if (e.target.value.length < 1 && field.required) {
-                    tmpErrors[name] = true;
-                  } else {
-                    tmpErrors[name] = field.validate
-                      ? !field.validate(e.target.value)
-                      : false;
-                  }
-                  setErrors(tmpErrors);
-                  setValues(tmpValues);
-                }}
-                className={classNames("input", {
-                  error: errors[name],
-                  "no-error": !errors[name],
-                })}
-              />
-              <div className="error-box">
-                {errors[name] && <p className="error-label">{field.error}</p>}
-              </div>
+  return buildComponent({
+    name: "modular-form",
+    Component: [
+      <p key="form_title" className="title">
+        {title}
+      </p>,
+      ...dropdownFields.map((field, index) => {
+        const name = field.name;
+        return (
+          <div className="field" key={`form_field_${index}`}>
+            <p className="header">{field.header}</p>
+            <input
+              value={values[name] || ""}
+              type="text"
+              data-id={`form-field-${index}`}
+              placeholder={field.placeholder}
+              onChange={(e) => {
+                let tmpValues = { ...values };
+                let tmpErrors = { ...errors };
+                tmpValues[name] = e.target.value;
+                if (e.target.value.length < 1 && field.required) {
+                  tmpErrors[name] = true;
+                } else {
+                  tmpErrors[name] = field.validate
+                    ? !field.validate(e.target.value)
+                    : false;
+                }
+                setErrors(tmpErrors);
+                setValues(tmpValues);
+              }}
+              className={classNames("input", {
+                error: errors[name],
+                "no-error": !errors[name],
+              })}
+            />
+            <div className="error-box">
+              {errors[name] && <p className="error-label">{field.error}</p>}
             </div>
-          );
-        })}
+          </div>
+        );
+      }),
       <button
         disabled={!canSubmit}
+        key="form_submit_button"
         data-id="form-submit-button"
         onClick={() => {
           let results = { ...values };
@@ -83,10 +86,10 @@ const Form = ({
         })}
       >
         {submitLabel}
-      </button>
-    </div>,
-    hide
-  );
+      </button>,
+    ],
+    commonProps,
+  });
 };
 
 export default Form;

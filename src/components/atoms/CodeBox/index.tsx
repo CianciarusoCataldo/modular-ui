@@ -1,12 +1,38 @@
 import "./styles.css";
 import { CodeBoxProps } from "./types";
 import React from "react";
-import { wrapComponent } from "../../molecules/Wrapper";
+import { buildComponent } from "../../../utils";
+import { parseCode } from "./parser";
 
-const CodeBox = ({ code, enhanced, hide }: CodeBoxProps) => {
-  return wrapComponent(
-    <div id="modular-codebox">
-      {enhanced && (
+/**
+ * A smart code box. Display code text as a compiler, with properly UI.
+ * Optionally, can highlight code text, with a selectable environment
+ *
+ * @param code Code to display
+ * @param advanced enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight
+ * @param environment environment for text highlight feature, default to "terminal" (only enabled into enhanced mode)
+ *
+ *@example <caption>Example CodeBox usage</caption>
+ *import { render } from "react-dom";
+ *import { CodeBox } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<CodeBox
+ *         code="node version" />,
+ * document.getElementById("root"));
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
+const CodeBox = ({
+  code,
+  enhanced,
+  environment,
+  ...commonProps
+}: CodeBoxProps) => {
+  const selectedLanguage = environment || "terminal";
+  return buildComponent({
+    name: "modular-codebox",
+    Component: [
+      enhanced && (
         <div key="key_icon" className="copy-icon">
           <button onClick={() => navigator.clipboard.writeText(code)}>
             <svg
@@ -52,13 +78,22 @@ const CodeBox = ({ code, enhanced, hide }: CodeBoxProps) => {
             </svg>
           </button>
         </div>
-      )}
+      ),
       <code key="code" className="code">
-        {code}
-      </code>
-    </div>,
-    hide
-  );
+        {enhanced
+          ? parseCode(code, selectedLanguage).map((part, index) => (
+              <span
+                key={`code-block_${selectedLanguage}_${index}`}
+                style={{
+                  color: part.color,
+                }}
+              >{`${part.code}`}</span>
+            ))
+          : code}
+      </code>,
+    ],
+    commonProps,
+  });
 };
 
 export default CodeBox;

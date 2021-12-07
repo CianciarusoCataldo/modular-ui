@@ -2,16 +2,9 @@
   margin-top: 1rem;
 }
 
-#modular-input .dark {
-  background-color: #423c5e;
-  color: #ff976b;
-}
-
-#modular-input .box {
-  background-color: white;
+#modular-input .input-box {
   border-width: 1px;
   border-color: #423c5e;
-  color: #423c5e;
   border-radius: 5px;
   padding: 0.5rem;
   margin: auto;
@@ -29,4 +22,14 @@
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+
+#modular-input .input-box {
+  background-color: white;
+  color: #423c5e;
+}
+
+#modular-input.dark .input-box {
+  background-color: #423c5e;
+  color: #ebe5e2;
 }

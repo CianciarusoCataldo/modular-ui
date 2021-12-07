@@ -8,7 +8,11 @@ import { Page, Divider } from "modular-ui-preview";
 export const DividerWrapper = () => (
   <Demo
     label="Divider"
-    props={{ className: StringProp(""), hide: BooleanProp(false) }}
+    props={{
+      className: StringProp(""),
+      hide: BooleanProp(false),
+      dark: BooleanProp(false),
+    }}
   >
     {(props: any) => <Divider {...props} />}
   </Demo>
