@@ -50,7 +50,7 @@ import { render } from "react-dom";
 render(<Page>
           <Card
              body={<p>This page is entirely made with modular-ui components !</p>}
-             footer={<Link to="https://cianciarusocataldo.github.io/modular-ui" label="Modular-ui page" />}
+             footer={<Link to="https://cianciarusocataldo.github.io/modular-ui">Modular-ui page</Link>}
           />
        </Page>,     
        document.getElementById("root"));
