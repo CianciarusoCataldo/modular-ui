@@ -1,13 +1,12 @@
 import "./styles.css";
 
 import React from "react";
-import classnames from "classnames";
 
 import { CardProps } from "./types";
 
 import Divider from "../../atoms/Divider";
+import { buildComponent } from "../../../utils";
 import classNames from "classnames";
-import { wrapComponent } from "../Wrapper";
 
 /**
  *
@@ -26,45 +25,57 @@ import { wrapComponent } from "../Wrapper";
  */
 const Card = ({
   title,
-  className,
   icon,
   header,
   body,
   footer,
   children,
-  hide,
   titleClassName,
   headerClassName,
   bodyClassName,
   footerClassName,
-  dark,
+  unstyled,
+  ...commonProps
 }: CardProps) => {
-  return wrapComponent(
-    <div id="modular-card" className={className}>
-      <p className={titleClassName || "title"}>{title}</p>
-      <div className="container-main">
+  return buildComponent({
+    name: "modular-card",
+    Component: [
+      <p
+        key="card_title"
+        className={classNames(titleClassName, { title: !unstyled })}
+      >
+        {title}
+      </p>,
+      <div key="card-container" className="container-main">
         {header && (
           <div>
             <div className="container-header">
               {icon}
-              <div className={headerClassName || "header"}>{header}</div>
+              <div
+                className={classNames(headerClassName, { header: !unstyled })}
+              >
+                {header}
+              </div>
             </div>
             <Divider />
           </div>
         )}
-        <div className={bodyClassName || "body"}>{body}</div>
+        <div className={classNames(bodyClassName, { body: !unstyled })}>
+          {body}
+        </div>
         {children}
         {footer && (
           <div>
             <Divider />
-            <div className={footerClassName || "footer"}>{footer}</div>
+            <div className={classNames(footerClassName, { footer: !unstyled })}>
+              {footer}
+            </div>
           </div>
         )}
-      </div>
-    </div>,
-    hide,
-    dark
-  );
+      </div>,
+    ],
+    commonProps,
+  });
 };
 
 export default Card;

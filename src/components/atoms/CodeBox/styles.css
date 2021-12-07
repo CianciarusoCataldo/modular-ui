@@ -1,4 +1,4 @@
-.standard #modular-codebox {
+#modular-codebox {
   color: rgb(50, 56, 65);
   background-color: rgba(209, 213, 219, 1);
   overflow: hidden;
@@ -6,12 +6,9 @@
   padding: 0.5rem;
 }
 
-.dark #modular-codebox {
+#modular-codebox.dark {
   color: rgb(255, 255, 255);
   background-color: rgb(44, 42, 53);
-  overflow: hidden;
-  margin: 0.25rem;
-  padding: 0.5rem;
 }
 
 #modular-codebox .copy-icon {

@@ -1,4 +1,4 @@
-#modular-divider {
+#modular-divider.container {
   height: 1px;
   width: 100%;
   --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -7,10 +7,10 @@
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.standard #modular-divider {
+#modular-divider.container {
   background-color: gray;
 }
 
-.dark #modular-divider {
+#modular-divider.container.dark {
   background-color: white;
 }

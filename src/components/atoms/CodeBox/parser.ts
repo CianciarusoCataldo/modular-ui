@@ -20,6 +20,7 @@ const BASIC_PARSER = (
             color: CODE_LANGUAGES.common.STRING,
           });
         } else {
+          /* istanbul ignore next */
           if (handleOtherElements) {
             handleOtherElements(codeMicroPart).forEach((element) =>
               parsedCode.push(element)
@@ -52,6 +53,7 @@ const getHighlightedCode = (
   code: SplittedCode[],
   environment: SupportedEnvironment
 ) => {
+  let actualEnv = environment;
   let splittedCode: SplittedCode<string>[] = [];
   code
     .filter((part) => part.code.length > 0)
@@ -60,7 +62,7 @@ const getHighlightedCode = (
         codeBlock.code.split(" ").forEach((subCodeBlock) => {
           splittedCode.push({
             color:
-              CODE_LANGUAGES[environment || "terminal"][subCodeBlock] ||
+              CODE_LANGUAGES[actualEnv][subCodeBlock] ||
               CODE_LANGUAGES.common[subCodeBlock] ||
               CODE_LANGUAGES.common.DEFAULT_VALUE,
             code: `${subCodeBlock} `,

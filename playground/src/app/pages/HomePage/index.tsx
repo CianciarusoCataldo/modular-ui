@@ -22,15 +22,12 @@ const HomePage = () => {
               const splittedPart = part.split("#");
 
               return (
-                <Link
-                  to={splittedPart[0]}
-                  key={`parsed_link_${index}`}
-                  label={splittedPart[1]}
-                  newTab
-                />
+                <Link to={splittedPart[0]} key={`parsed_link_${index}`} newTab>
+                  {splittedPart[1]}
+                </Link>
               );
             } else {
-              return <span>{part}</span>;
+              return <span key={`parsed_link_${index}`}>{part}</span>;
             }
           })}
         </div>
@@ -77,9 +74,11 @@ const HomePage = () => {
   );
 
   return (
-    <Page className="">
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{t("title")}</p>
-      <div className={FLEX_STYLES.ROWS_COLS}>
+    <Page>
+      <p key="homepage_header" className="text-4xl mt-12 mb-5 ml-3 text-white">
+        {t("title")}
+      </p>
+      <div key="homepage_container" className={FLEX_STYLES.ROWS_COLS}>
         <div>
           <Card body={description} />
           <Card

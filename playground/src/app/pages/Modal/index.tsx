@@ -1,6 +1,6 @@
 import React from "react";
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
-import { Modal, Page } from "modular-ui-preview";
+import { Button, Modal, Page } from "modular-ui-preview";
 import {
   useCommonTranslation,
   useModalPageTranslation,
@@ -17,27 +17,20 @@ export const ModalWrapper = () => {
         children: StringProp("Modal content"),
         className: StringProp(""),
         overlayClassName: StringProp(""),
-        hide: BooleanProp(false),
+        dark: BooleanProp(false),
       }}
       rows={[
-        ["title", "children", "hide"],
+        ["title", "children","dark"],
         ["className", "overlayClassName"],
       ]}
     >
       {(props: any) => (
-        <div>
-          <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-            <button
-              className="px-5 m-auto text-lg py-3 rounded-md focus:outline-none hover:text-blue-400 bg-gradient-to-r from-white to-gray-200"
-              onClick={() => setModalVisible(true)}
-            >
-              {"Open modal"}
-            </button>
-          </div>
+        <div className="flex flex-col items-center">
+          <Button onClick={() => setModalVisible(true)}>{"Open modal"}</Button>
           <Modal
             {...props}
             children={<div>{props.children}</div>}
-            isVisible={isModalisible}
+            hide={!isModalisible}
             onClose={() => setModalVisible(false)}
           />
         </div>

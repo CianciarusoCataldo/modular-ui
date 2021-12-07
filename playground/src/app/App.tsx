@@ -59,7 +59,7 @@ const App = ({ history }: AppProps) => {
     return (
       <div style={{ zIndex: 999 }} className="fixed right-2 top-0 bg-gray-700">
         <Dropdown
-          className="text-sm"
+          dark={false}
           defaultValue={
             <div className="flex flex-row text-lg">
               {LANGUAGES_ICONS[language]}
@@ -134,7 +134,7 @@ const App = ({ history }: AppProps) => {
 
   return (
     <div id="app-container">
-      <Header>{HeaderContent}</Header>
+      <Header dark>{HeaderContent}</Header>
       <Drawer
         logo={
           <div className="flex flex-row">
@@ -147,7 +147,7 @@ const App = ({ history }: AppProps) => {
             </Link>
           </div>
         }
-        isOpen={isDrawerShowing}
+        hide={!isDrawerShowing}
         elements={Object.keys(PATHS)
           .slice(1)
           .map((route) => {

@@ -3,7 +3,7 @@ import "./styles.css";
 import React from "react";
 
 import { InputProps } from "./types";
-import { wrapComponent } from "../../molecules/Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  * A flexible input element, can handle both text and numeric inputs
@@ -13,13 +13,11 @@ import { wrapComponent } from "../../molecules/Wrapper";
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Input = ({
-  className,
-  hide,
-  id,
   onChange = () => {},
   numeric,
   value,
-  dark,
+  onClick,
+  ...commonProps
 }: InputProps) => {
   /* istanbul ignore next */
   const defaultNumberValue =
@@ -33,12 +31,13 @@ const Input = ({
   const [numberValue, setNumberValue] =
     React.useState<number>(defaultNumberValue);
 
-  return wrapComponent(
-    <div className={className} id="modular-input" data-id={id}>
+  return buildComponent({
+    name: "modular-input",
+    Component: (
       <input
         type={numeric ? "number" : "text"}
         value={numeric ? numberValue : textValue}
-        className="box"
+        className="input-box"
         onChange={(e) => {
           if (numeric) {
             onChange(Number.parseInt(e.target.value));
@@ -49,10 +48,9 @@ const Input = ({
           }
         }}
       />
-    </div>,
-    hide,
-    dark
-  );
+    ),
+    commonProps,
+  });
 };
 
 export default Input;

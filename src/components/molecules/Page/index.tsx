@@ -1,10 +1,8 @@
 import "./styles.css";
 import { PageProps } from "./types";
 
-import React from "react";
-
 import classNames from "classnames";
-import { wrapComponent } from "../Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  * A standard Page component. It is showed with a standard fade-in effect, along with its content.
@@ -12,7 +10,6 @@ import { wrapComponent } from "../Wrapper";
  *
  * @param children content element(s)
  * @param orientation Page children elements orientation (vertical or `horizontal)
- * @param className A custom className applied on the component container
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
@@ -20,15 +17,16 @@ import { wrapComponent } from "../Wrapper";
 const Page = ({
   children,
   orientation = "vertical",
-  className,
-  hide,
+  ...commonProps
 }: PageProps) => {
-  return wrapComponent(
-    <div className={classNames(orientation, "modular-page", className)}>
-      {children}
-    </div>,
-    hide
-  );
+  return buildComponent({
+    name: "modular-page",
+    Component: children,
+    commonProps: {
+      ...commonProps,
+      className: classNames(commonProps.className, orientation),
+    },
+  });
 };
 
 export default Page;

@@ -2,7 +2,7 @@
   margin-top: 1rem;
 }
 
-#modular-input .box {
+#modular-input .input-box {
   border-width: 1px;
   border-color: #423c5e;
   border-radius: 5px;
@@ -24,12 +24,12 @@
   margin-top: 1rem;
 }
 
-.standard #modular-input .box {
+#modular-input .input-box {
   background-color: white;
   color: #423c5e;
 }
 
-.dark #modular-input .box {
+#modular-input.dark .input-box {
   background-color: #423c5e;
   color: #ebe5e2;
 }

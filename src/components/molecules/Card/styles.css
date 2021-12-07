@@ -6,10 +6,10 @@
   color: rgba(0, 0, 0, 1);
 }
 
-.dark #modular-card .title,
-.dark #modular-card .header,
-.dark #modular-card .body,
-.dark #modular-card .footer {
+#modular-card.dark .title,
+#modular-card.dark .header,
+#modular-card.dark .body,
+#modular-card.dark .footer {
   color: rgb(255, 255, 255, 1);
 }
 
@@ -60,7 +60,7 @@
   text-align: center;
 }
 
-.standard #modular-card .container-main {
+#modular-card .container-main {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #fff;
   --tw-gradient-stops: var(--tw-gradient-from),
@@ -69,7 +69,7 @@
   color: rgba(0, 0, 0, 1);
 }
 
-.dark #modular-card .container-main {
+#modular-card.dark .container-main {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #2d3748;
   --tw-gradient-stops: var(--tw-gradient-from),

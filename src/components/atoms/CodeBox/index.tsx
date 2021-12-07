@@ -1,8 +1,7 @@
 import "./styles.css";
 import { CodeBoxProps } from "./types";
 import React from "react";
-import { wrapComponent } from "../../molecules/Wrapper";
-import classNames from "classnames";
+import { buildComponent } from "../../../utils";
 import { parseCode } from "./parser";
 
 /**
@@ -10,11 +9,8 @@ import { parseCode } from "./parser";
  * Optionally, can highlight code text, with a selectable environment
  *
  * @param code Code to display
- * @param dark enable/disable dark mode
  * @param advanced enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight
- * @param hide hide/show component
  * @param environment environment for text highlight feature, default to "terminal" (only enabled into enhanced mode)
- * @param className custom class-name applied on CodeBox main container
  *
  *@example <caption>Example CodeBox usage</caption>
  *import { render } from "react-dom";
@@ -28,16 +24,15 @@ import { parseCode } from "./parser";
  */
 const CodeBox = ({
   code,
-  dark,
   enhanced,
-  hide,
   environment,
-  className,
+  ...commonProps
 }: CodeBoxProps) => {
   const selectedLanguage = environment || "terminal";
-  return wrapComponent(
-    <div id="modular-codebox" className={className}>
-      {enhanced && (
+  return buildComponent({
+    name: "modular-codebox",
+    Component: [
+      enhanced && (
         <div key="key_icon" className="copy-icon">
           <button onClick={() => navigator.clipboard.writeText(code)}>
             <svg
@@ -83,7 +78,7 @@ const CodeBox = ({
             </svg>
           </button>
         </div>
-      )}
+      ),
       <code key="code" className="code">
         {enhanced
           ? parseCode(code, selectedLanguage).map((part, index) => (
@@ -95,11 +90,10 @@ const CodeBox = ({
               >{`${part.code}`}</span>
             ))
           : code}
-      </code>
-    </div>,
-    hide,
-    dark
-  );
+      </code>,
+    ],
+    commonProps,
+  });
 };
 
 export default CodeBox;

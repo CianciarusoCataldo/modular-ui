@@ -3,12 +3,12 @@ import { mount, shallow } from "enzyme";
 import { stub } from "sinon";
 import Dropdown from "../../../src/components/molecules/Dropdown";
 
-const elementStub = stub();
+const onChangeStub = stub();
 test("rendered without errors", () => {
   let wrapper = shallow(
     <Dropdown
       defaultValue="Testing Dropdown"
-      content={[{ name: "element 1", action: elementStub }]}
+      content={[{ name: "element 1" }]}
     />
   );
   expect(wrapper);
@@ -19,14 +19,15 @@ test("rendered without errors - no parameters", () => {
   expect(wrapper);
 });
 
-test("Clicking on  Dropdown element will trigger its action callback", () => {
+test("Clicking on  Dropdown element will trigger its onChange callback", () => {
   let wrapper = mount(
     <Dropdown
       defaultValue="Testing Dropdown"
-      content={[{ name: "element 1", action: elementStub }]}
+      content={[{ name: "element 1" }]}
+      onChange={onChangeStub}
     />
   );
   wrapper.find('button[data-id="options-menu"]').simulate("click");
   wrapper.find('button[data-id="dropdown_option_0"]').simulate("click");
-  expect(elementStub).toBeCalled;
+  expect(onChangeStub).toBeCalled;
 });

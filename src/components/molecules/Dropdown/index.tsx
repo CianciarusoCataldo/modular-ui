@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { DropdownProps } from "./types";
 
 import classNames from "classnames";
-import { wrapComponent } from "../Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  * Show a list of elements in a dropdown menu (by default, with fade-in and out effects).
@@ -19,34 +19,49 @@ import { wrapComponent } from "../Wrapper";
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Dropdown = ({
-  className: parentClassName,
   content = [],
-  dark,
   defaultValue = "",
-  hide,
-  id,
   onChange,
+  ...commonProps
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
   const [firstClicked, setFirstClick] = React.useState(false);
-
-  return wrapComponent(
-    <div id="modular-dropdown" className={parentClassName} data-id={id}>
+  /* istanbul ignore next */
+  React.useEffect(() => {
+    window.document.addEventListener("scroll", () => {
+      if (isVisible) {
+        setVisible(false);
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", () => {
+        if (isVisible) {
+          setVisible(false);
+        }
+      });
+    };
+  });
+  return buildComponent({
+    name: "modular-dropdown",
+    Component: [
       <button
         type="button"
         onClick={() => {
-          console.log(firstClicked);
           setFirstClick(true);
           setVisible(!isVisible);
         }}
         className="button"
         id="options-menu"
+        key="options-menu"
         data-id="options-menu"
         aria-haspopup="true"
         aria-expanded="true"
       >
-        <div className="label">{defaultValue}</div>
+        <div key="label" className="label">
+          {defaultValue}
+        </div>
         <div
+          key="icon"
           className={classNames("icon", {
             rotate: isVisible,
             "rotate-back": !isVisible && firstClicked,
@@ -56,8 +71,9 @@ const Dropdown = ({
             <i className="arrow-icon"></i>
           </p>
         </div>
-      </button>
+      </button>,
       <div
+        key="options"
         className={classnames("options", {
           hidden: !isVisible,
         })}
@@ -81,11 +97,10 @@ const Dropdown = ({
             </button>
           </div>
         ))}
-      </div>
-    </div>,
-    hide,
-    dark
-  );
+      </div>,
+    ],
+    commonProps,
+  });
 };
 
 export default Dropdown;

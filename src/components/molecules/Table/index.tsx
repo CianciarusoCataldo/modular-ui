@@ -4,9 +4,9 @@ import { TableProps } from "./types";
 import React from "react";
 
 import classNames from "classnames";
-import { wrapComponent } from "../Wrapper";
+import { buildComponent } from "../../../utils";
 
-const Table = ({ className, headers, hide, rows = [] }: TableProps) => {
+const Table = ({ headers, rows = [], ...commonProps }: TableProps) => {
   let gridTemplateRows = "";
   let gridTemplateColumns = "";
 
@@ -36,8 +36,9 @@ const Table = ({ className, headers, hide, rows = [] }: TableProps) => {
     }
   }
 
-  return wrapComponent(
-    <div id="modular-table" className={className}>
+  return buildComponent({
+    name: "modular-table",
+    Component: (
       <div
         className="rows"
         style={{
@@ -47,9 +48,9 @@ const Table = ({ className, headers, hide, rows = [] }: TableProps) => {
       >
         {elements}
       </div>
-    </div>,
-    hide
-  );
+    ),
+    commonProps,
+  });
 };
 
 export default Table;

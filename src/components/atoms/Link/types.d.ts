@@ -5,9 +5,8 @@ import {
 } from "../../../global";
 
 export type LinkProps = CommonProps &
-  ComponentWithChildren & {
+  ComponentWithChildren<string> & {
     /** Link URL */
     to: string;
     newTab?: boolean;
-    label: string;
   };

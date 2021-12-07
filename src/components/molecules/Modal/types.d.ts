@@ -8,9 +8,6 @@ export type ModalProps = CommonProps &
     /** Modal title */
     title?: string;
 
-    /** Modal visibility */
-    isVisible?: boolean;
-
     /** Callback triggered when modal is closed */
     onClose?: () => void;
   };

@@ -2,16 +2,12 @@ import "./styles.css";
 
 import React from "react";
 import { CheckboxProps } from "./types";
-import { applyWrapperMiddleware } from "../../molecules/Wrapper";
+import { buildComponent } from "../../../utils";
 import classNames from "classnames";
 
 /**
  * A flexible checkbox element
  *
- * @param className A custom className applied on main container
- * @param hide hide/show component
- * @param dark enable/disable dark mode
- * @param id data-id applied on main container
  * @param value Checkbox initial value (checked / unchecked)
  * @param onChange onChange callback called when Checkbox is clicked
  *
@@ -19,13 +15,13 @@ import classNames from "classnames";
  */
 const Checkbox = ({
   value,
-  onChange = () => {},
+  onChange,
   onClick,
   ...commonProps
 }: CheckboxProps) => {
   const [isChecked, setChecked] = React.useState<boolean>(value || false);
   const onChangeCheck = () => {
-    onChange(!isChecked);
+    onChange && onChange(!isChecked);
     setChecked(!isChecked);
   };
 
@@ -33,8 +29,9 @@ const Checkbox = ({
     onClick: onChangeCheck,
   };
 
-  return applyWrapperMiddleware(
-    isChecked && (
+  return buildComponent({
+    name: "modular-checkbox",
+    Component: isChecked && (
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
@@ -56,12 +53,14 @@ const Checkbox = ({
         </g>
       </svg>
     ),
-    "modular-checkbox",
-    { ...commonProps, className: classNames(commonProps.className, "check") },
-    {
+    commonProps: {
+      ...commonProps,
+      className: classNames(commonProps.className, "check"),
+    },
+    additionalProps: {
       onClick: onChangeCheck,
-    }
-  );
+    },
+  });
 };
 
 export default Checkbox;

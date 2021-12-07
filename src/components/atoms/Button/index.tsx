@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { ButtonProps } from "./types";
-import { applyWrapperMiddleware, wrapComponent } from "../../molecules/Wrapper";
+import { buildComponent } from "../../../utils";
 
 /**
  * A flexible button, easy to customize, designed for a lot of scenarios
@@ -33,25 +33,27 @@ const Button = ({
     enabled: !disabled,
   });
 
-  return applyWrapperMiddleware(
-    <button
-      {...props}
-      data-id={id}
-      disabled={disabled}
-      onClick={onClick}
-      className={
-        parentClassName ||
-        classNames({
-          unstyled: noStyles,
-          [buttonClassName]: !noStyles,
-        })
-      }
-    >
-      {children}
-    </button>,
-    "modular-button",
-    { hide, dark }
-  );
+  return buildComponent({
+    name: "modular-button",
+    Component: (
+      <button
+        {...props}
+        data-id={id}
+        disabled={disabled}
+        onClick={onClick}
+        className={
+          parentClassName ||
+          classNames({
+            unstyled: noStyles,
+            [buttonClassName]: !noStyles,
+          })
+        }
+      >
+        {children}
+      </button>
+    ),
+    commonProps: { hide, dark },
+  });
 };
 
 export default Button;
