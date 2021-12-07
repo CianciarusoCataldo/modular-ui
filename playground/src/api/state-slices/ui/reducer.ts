@@ -2,10 +2,18 @@ import {
   openDrawer,
   closeDrawer,
   changeLanguage,
+  switchDarkMode,
 } from "api/state-slices/ui/actions";
 import { checkRoute } from "api/state-slices/router/actions";
 
 const REDUCER_ACTIONS: ReducerAction<UIState>[] = [
+  {
+    action: switchDarkMode.type,
+    callback: (state) => ({
+      ...state,
+      darkMode: !state.darkMode,
+    }),
+  },
   {
     action: openDrawer.type,
     callback: (state) => ({

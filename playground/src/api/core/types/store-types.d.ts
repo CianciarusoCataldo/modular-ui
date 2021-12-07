@@ -17,6 +17,7 @@ declare interface RouterState {
 
 //UI
 declare interface UIState {
+  darkMode: boolean;
   isDrawerOpen: boolean;
   language: SupportedLanguage;
   isHomePage: boolean;

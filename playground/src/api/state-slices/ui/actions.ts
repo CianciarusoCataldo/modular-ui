@@ -10,3 +10,12 @@ export const changeLanguage = createAction(
     },
   })
 );
+
+export const switchDarkMode = createAction(
+  "@@ui/SWITCH_DARK_MODE",
+  (language: SupportedLanguage) => ({
+    payload: {
+      language,
+    },
+  })
+);

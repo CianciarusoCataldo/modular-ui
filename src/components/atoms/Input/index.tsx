@@ -6,7 +6,7 @@ import { InputProps } from "./types";
 import { buildComponent } from "../../../utils";
 
 /**
- * A flexible input element, can handle both text and numeric inputs
+ * A flexible input element, can handle both text and numeric input (its UI changes based on input type)
  *
  * @param numeric if set to true, will accept only numeric values
  *
