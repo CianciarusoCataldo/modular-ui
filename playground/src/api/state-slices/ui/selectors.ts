@@ -19,3 +19,8 @@ export const getLanguage = createSelector(
   getUIView,
   ({ language }) => language
 );
+
+export const isInDarkMode = createSelector(
+  getUIView,
+  ({ darkMode }) => darkMode
+);

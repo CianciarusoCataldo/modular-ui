@@ -9,13 +9,13 @@
   animation: fadein 1s;
 }
 
-#modular-page .input-box {
+#modular-page {
   background-color: white;
   color: #423c5e;
 }
 
 #modular-page.dark {
-  background-color: #423c5e;
+  background-image: linear-gradient(to right, #2d3748, #1d232e);
   color: #ebe5e2;
 }
 

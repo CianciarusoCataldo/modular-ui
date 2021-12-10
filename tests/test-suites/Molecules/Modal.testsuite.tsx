@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Modal from "../../../src/components/molecules/Modal";
+import { Modal } from "../../../src";
 
 test("rendered without errors", () => {
   let wrapper = shallow(<Modal />);

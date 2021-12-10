@@ -12,42 +12,37 @@ import { buildComponent } from "../../../utils";
  * Can be easily customized and every element style and behaviour (with a callback) can
  * be customized too.
  *
+ * @param actualValue actual selected element (as index). If not set, the placeholder will be showed at the start.
  * @param content Dropdown content elements
- * @param defaultValue Dropdown default value
+ * @param placeholder Dropdown default value (showed at the start if `actualValue` is not set)
  * @param className Custom classname applied on Dropdown component
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Dropdown = ({
+  actualValue,
   content = [],
-  defaultValue = "",
+  placeholder = "",
   onChange,
   ...commonProps
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
-  const [firstClicked, setFirstClick] = React.useState(false);
-  /* istanbul ignore next */
-  React.useEffect(() => {
-    window.document.addEventListener("scroll", () => {
-      if (isVisible) {
-        setVisible(false);
-      }
-    });
-    return () => {
-      window.removeEventListener("scroll", () => {
-        if (isVisible) {
-          setVisible(false);
-        }
-      });
-    };
-  });
+  const [selectedValue, setValue] = React.useState<{
+    name: string | JSX.Element;
+    icon?: JSX.Element | Element;
+  }>(
+    content[actualValue] || {
+      name: placeholder || "",
+      icon: <div />,
+    }
+  );
+
   return buildComponent({
     name: "modular-dropdown",
     Component: [
       <button
         type="button"
         onClick={() => {
-          setFirstClick(true);
           setVisible(!isVisible);
         }}
         className="button"
@@ -58,13 +53,14 @@ const Dropdown = ({
         aria-expanded="true"
       >
         <div key="label" className="label">
-          {defaultValue}
+          <div className="label">{selectedValue.icon}</div>
+          <div className="label">{selectedValue.name}</div>
         </div>
         <div
           key="icon"
           className={classNames("icon", {
             rotate: isVisible,
-            "rotate-back": !isVisible && firstClicked,
+            "rotate-back": !isVisible,
           })}
         >
           <p>
@@ -75,7 +71,7 @@ const Dropdown = ({
       <div
         key="options"
         className={classnames("options", {
-          hidden: !isVisible,
+          "component-hidden": !isVisible,
         })}
       >
         {content.map((item, index) => (
@@ -83,7 +79,8 @@ const Dropdown = ({
             <button
               data-id={`dropdown_option_${index}`}
               onClick={() => {
-                onChange(item.name, index);
+                onChange && onChange(item.name, index);
+                setValue({ ...item });
                 setVisible(false);
               }}
               key={`item_${index}`}

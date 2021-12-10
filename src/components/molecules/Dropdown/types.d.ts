@@ -5,7 +5,10 @@ export type DropdownProps = CommonProps & {
   content?: { name: string; icon?: JSX.Element }[];
 
   /** Dropdown default value */
-  defaultValue?: string | JSX.Element;
+  placeholder?: string | JSX.Element;
+
+  /** Dropdown actual selected value */
+  actualValue?: number;
 
   onChange?: (value: string, index: number) => void;
 };

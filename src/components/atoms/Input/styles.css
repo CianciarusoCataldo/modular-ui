@@ -3,14 +3,12 @@
 }
 
 #modular-input .input-box {
-  border-width: 1px;
-  border-color: #423c5e;
   border-radius: 5px;
   padding: 0.5rem;
-  margin: auto;
-  overflow: auto;
   outline: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  color: #423c5e;
+  width: 100%;
 }
 
 #modular-input {
@@ -18,15 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-#modular-input .input-box {
-  background-color: white;
-  color: #423c5e;
+  overflow: hidden;
 }
 
 #modular-input.dark .input-box {

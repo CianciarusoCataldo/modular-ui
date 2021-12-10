@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Card from "../../../src/components/molecules/Card";
+import { Card } from "../../../src";
 
 test("rendered without errors", () => {
   let wrapper = shallow(<Card title="Testing Card" />);

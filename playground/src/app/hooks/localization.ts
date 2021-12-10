@@ -60,7 +60,12 @@ export const useCodeBoxTranslation = () => {
   return t;
 };
 
-export const useCommonTranslation = () => {
+export const useToggleTranslation = () => {
   const { t } = useTranslation(I18N.NAMESPACES[12]);
+  return t;
+};
+
+export const useCommonTranslation = () => {
+  const { t } = useTranslation(I18N.NAMESPACES[13]);
   return t;
 };

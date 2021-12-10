@@ -5,20 +5,22 @@ import {
   useCardPageTranslation,
   useCommonTranslation,
 } from "app/hooks/localization";
-import { Card, Page } from "modular-ui-preview";
+import { Card } from "modular-ui-preview";
+import AppPage from "app/components/molecules/AppPage";
 
 const CardPage = () => {
   const t = useCardPageTranslation();
   const tCommon = useCommonTranslation();
+  
   return (
-    <Page>
+    <AppPage>
       <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${tCommon(
         "molecules"
       )} - ${t("title")}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <CardWrapper />
       </div>
-    </Page>
+    </AppPage>
   );
 };
 
@@ -37,10 +39,11 @@ export const CardWrapper = () => {
         footerClassName: StringProp(""),
         hide: BooleanProp(false),
         dark: BooleanProp(false),
+        shadow: BooleanProp(true),
       }}
       rows={[
-        ["title", "header", "dark", "hide"],
-        ["body", "footer"],
+        ["shadow", "dark", "hide"],
+        ["title", "header", "body", "footer"],
         [
           "titleClassName",
           "headerClassName",
@@ -50,7 +53,11 @@ export const CardWrapper = () => {
       ]}
       startColor="#999"
     >
-      {(props: any) => <Card {...props} />}
+      {(props: any) => (
+        <div className="flex flex-col items-center">
+          <Card {...props} />
+        </div>
+      )}
     </Demo>
   );
 };

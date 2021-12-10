@@ -16,7 +16,11 @@ import classNames from "classnames";
 const Divider = ({ className, ...props }: DividerProps) => {
   return buildComponent({
     name: "modular-divider",
-    commonProps: { ...props, className: classNames(className, "container") },
+    commonProps: {
+      ...props,
+      className: classNames(className, "container"),
+      shadow: false,
+    },
   });
 };
 

@@ -45,7 +45,12 @@ const Card = ({
       >
         {title}
       </p>,
-      <div key="card-container" className="container-main">
+      <div
+        key="card-container"
+        className={classNames("container-main", {
+          shadowed: commonProps.shadow,
+        })}
+      >
         {header && (
           <div>
             <div className="container-header">
@@ -73,7 +78,7 @@ const Card = ({
         )}
       </div>,
     ],
-    commonProps,
+    commonProps: { ...commonProps, shadow: false },
   });
 };
 

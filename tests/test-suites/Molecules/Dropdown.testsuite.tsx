@@ -1,13 +1,13 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 import { stub } from "sinon";
-import Dropdown from "../../../src/components/molecules/Dropdown";
+import { Dropdown } from "../../../src";
 
 const onChangeStub = stub();
 test("rendered without errors", () => {
   let wrapper = shallow(
     <Dropdown
-      defaultValue="Testing Dropdown"
+      placeholder="Testing Dropdown"
       content={[{ name: "element 1" }]}
     />
   );
@@ -22,7 +22,7 @@ test("rendered without errors - no parameters", () => {
 test("Clicking on  Dropdown element will trigger its onChange callback", () => {
   let wrapper = mount(
     <Dropdown
-      defaultValue="Testing Dropdown"
+      placeholder="Testing Dropdown"
       content={[{ name: "element 1" }]}
       onChange={onChangeStub}
     />

@@ -1,7 +1,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 import { stub } from "sinon";
-import Drawer from "../../../src/components/molecules/Drawer";
+import { Drawer } from "../../../src";
 
 const elementStub = stub();
 test("rendered without errors", () => {

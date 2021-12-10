@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Divider from "../../../src/components/atoms/Divider";
+import { Divider } from "../../../src";
 
 test("rendered without errors", () => {
   const wrapper = shallow(<Divider />);

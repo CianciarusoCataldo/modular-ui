@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import Sinon from "sinon";
-import Checkbox from "../../../src/components/atoms/Checkbox";
+import { Checkbox } from "../../../src";
 
 const onChangeStub = Sinon.stub();
 

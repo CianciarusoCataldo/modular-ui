@@ -3,25 +3,35 @@
   flex-direction: column;
   padding: 0.25rem;
   margin: 0.5rem;
-  color: rgba(0, 0, 0, 1);
+  --card-text-color: rgba(0, 0, 0, 1);
+  color: var(--card-text-color);
+  background-color: transparent;
+  --card-background: linear-gradient(to right, #fff, #eaebec);
 }
 
-#modular-card.dark .title,
-#modular-card.dark .header,
-#modular-card.dark .body,
-#modular-card.dark .footer {
-  color: rgb(255, 255, 255, 1);
+#modular-card {
+  --card-text-color: rgba(0, 0, 0, 1);
+  --card-background: linear-gradient(to right, #fff, #eaebec);
 }
 
-/* Card title styles */
+#modular-card.dark {
+  --card-text-color: rgb(255, 255, 255, 1);
+}
+
+#modular-card .container-main {
+  --card-background: linear-gradient(to right, #fff, #eaebec);
+  background-image: var(--card-background);
+}
+
+#modular-card.dark .container-main {
+  --card-background: linear-gradient(to right, #2d3748, #1d232e);
+}
 
 #modular-card .title {
   margin: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-
-/* Card header styles */
 
 #modular-card .header {
   margin: auto;
@@ -35,10 +45,6 @@
 #modular-card .container-main {
   margin-top: 0.75rem;
   border-radius: 0.125rem;
-  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 #modular-card .container-header {
@@ -58,21 +64,4 @@
   padding: 0.25rem;
   margin: 0.5rem;
   text-align: center;
-}
-
-#modular-card .container-main {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #fff;
-  --tw-gradient-stops: var(--tw-gradient-from),
-    var(--tw-gradient-to, rgba(255, 255, 255, 0));
-  --tw-gradient-to: #e5e7eb;
-  color: rgba(0, 0, 0, 1);
-}
-
-#modular-card.dark .container-main {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #2d3748;
-  --tw-gradient-stops: var(--tw-gradient-from),
-    var(--tw-gradient-to, rgba(255, 255, 255, 0));
-  --tw-gradient-to: #1d232e;
 }

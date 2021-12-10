@@ -1,7 +1,7 @@
 import React from "react";
 import { stub } from "sinon";
 import { mount, shallow } from "enzyme";
-import Button from "../../../src/components/atoms/Button";
+import { Button } from "../../../src";
 import { describeTest } from "../../core/utils/helpers";
 
 const clickStub = stub();

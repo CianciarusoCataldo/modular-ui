@@ -5,14 +5,16 @@ export type FormProps = CommonProps & {
   title?: string;
 
   /** Form fields array */
-  fields?: {
-    name: string;
-    header?: string;
-    required?: boolean;
-    placeholder?: string;
-    error?: string;
-    validate?: (value: string) => boolean;
-  }[];
+  fields?: Record<
+    string,
+    {
+      header?: string;
+      required?: boolean;
+      placeholder?: string;
+      error?: string;
+      validate?: (value: string) => boolean;
+    }
+  >;
 
   /** Custom submit button label */
   submitLabel?: string;

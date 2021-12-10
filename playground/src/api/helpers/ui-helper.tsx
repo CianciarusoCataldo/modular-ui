@@ -1,4 +1,6 @@
 import i18n from "api/core/i18n/instance";
+import { isInDarkMode } from "api/state-slices/ui/selectors";
+import { useSelector } from "react-redux";
 
 export const updatePageTitle = (
   ROUTES_MAP: Record<string, RouteKey>,
@@ -28,3 +30,10 @@ export const isActualRouteHomepage = (homePath: string) => {
     window.location.pathname === homePath
   );
 };
+
+export const driveWithDarkMode =
+  (Component: (props: any) => JSX.Element) => (props: any) => {
+    const darkMode = useSelector(isInDarkMode);
+
+    return <Component {...props} dark={darkMode} />;
+  };

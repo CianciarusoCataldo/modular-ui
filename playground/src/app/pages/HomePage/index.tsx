@@ -1,17 +1,17 @@
 import { useSelector } from "react-redux";
 
-import { Card, CodeBox, Link, Page } from "modular-ui-preview";
+import { Card, CodeBox, Link } from "modular-ui-preview";
 
 import { useHomePageTranslation } from "app/hooks/localization";
 
 import { getRoutesPaths } from "api/state-slices/config/selectors";
 import { NavLink } from "react-router-dom";
 import { FLEX_STYLES } from "assets/styles";
+import AppPage from "app/components/molecules/AppPage";
 
 const HomePage = () => {
   const t = useHomePageTranslation();
   const PATHS = useSelector(getRoutesPaths);
-
   const PARSERS = {
     description: (localizedString: string) => {
       const splittedString = localizedString.split("#LINK");
@@ -74,7 +74,7 @@ const HomePage = () => {
   );
 
   return (
-    <Page>
+    <AppPage>
       <p key="homepage_header" className="text-4xl mt-12 mb-5 ml-3 text-white">
         {t("title")}
       </p>
@@ -91,7 +91,7 @@ const HomePage = () => {
         <Card
           header={t("componentsList_header")}
           body={
-            <div className="flex flex-col">
+            <ul>
               {Object.keys(PATHS)
                 .slice(1)
                 .map((routeKey, index) => {
@@ -101,16 +101,16 @@ const HomePage = () => {
                         className="text-blue-400 hover:text-blue-700 py-1 text-lg"
                         to={PATHS[routeKey as RouteKey]}
                       >
-                        {routeKey}
+                        {` - ${routeKey}`}
                       </NavLink>
                     </li>
                   );
                 })}
-            </div>
+            </ul>
           }
         />
       </div>
-    </Page>
+    </AppPage>
   );
 };
 

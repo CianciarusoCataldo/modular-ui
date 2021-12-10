@@ -1,0 +1,64 @@
+#modular-toggle {
+  border-radius: 14px;
+  border-width: 0px;
+
+  --toggle-background: linear-gradient(
+    to right,
+    rgb(173, 171, 171),
+    #e5e6e7,
+    #a4a4a5
+  );
+  background-image: var(--toggle-background);
+  width: 65px;
+  height: 30px;
+}
+
+#modular-toggle.dark {
+  --toggle-background: linear-gradient(to right, #2d3748, #1d232e);
+}
+
+#modular-toggle .toggle-icon {
+  overflow: hidden;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+}
+
+#modular-toggle .toggle-icon.flip-back {
+  transform: translate(0%);
+  --svginternalcolor: white;
+  --svgexternalcolor: #7a7878;
+}
+
+#modular-toggle .toggle-icon.flip {
+  transform: translate(35px);
+  --svginternalcolor: #a5a5a5;
+  --svgexternalcolor: #7a7878;
+}
+
+#modular-toggle.dark .toggle-icon.flip-back {
+  --svginternalcolor: white;
+  --svgexternalcolor: #a7a3a3;
+}
+
+#modular-toggle.dark .toggle-icon.flip {
+  --svginternalcolor: #636363;
+  --svgexternalcolor: #a7a3a3;
+}
+
+#modular-toggle .toggle-icon .wrapper {
+  opacity: 0.2;
+}
+#modular-toggle .toggle-icon .external {
+  background-color: var(--svgexternalcolor);
+  fill: var(--svgexternalcolor);
+}
+#modular-toggle .toggle-icon .internal {
+  fill: var(--svgexternalcolor);
+  stroke: var(--svginternalcolor);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}

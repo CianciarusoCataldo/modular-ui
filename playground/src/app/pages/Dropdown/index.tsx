@@ -1,14 +1,12 @@
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import AppPage from "app/components/molecules/AppPage";
 import {
   useCommonTranslation,
   useDropdownPageTranslation,
 } from "app/hooks/localization";
-import { Page, Dropdown } from "modular-ui-preview";
-import React from "react";
+import { Dropdown } from "modular-ui-preview";
 
 export const DropdownWrapper = () => {
-  const [selectedItem, selectItem] = React.useState(0);
-
   return (
     <Demo
       label="Dropdown"
@@ -17,7 +15,9 @@ export const DropdownWrapper = () => {
         "With icons": BooleanProp(false),
         hide: BooleanProp(false),
         dark: BooleanProp(false),
+        shadow: BooleanProp(true),
       }}
+      startColor="#ebe5e2"
     >
       {(props: any) => {
         const icon = props["With icons"] ? (
@@ -52,14 +52,15 @@ export const DropdownWrapper = () => {
         ];
 
         return (
-          <Dropdown
-            className={props.className}
-            hide={props.hide}
-            dark={props.dark}
-            onChange={(_: any, index: number) => selectItem(index)}
-            defaultValue={elements[selectedItem].name}
-            content={elements}
-          />
+          <div className="flex flex-col items-center">
+            <Dropdown
+              className={props.className}
+              hide={props.hide}
+              dark={props.dark}
+              placeholder="Select a value"
+              content={elements}
+            />
+          </div>
         );
       }}
     </Demo>
@@ -70,14 +71,14 @@ const DropdownPage = () => {
   const t = useDropdownPageTranslation();
   const tCommon = useCommonTranslation();
   return (
-    <Page>
+    <AppPage>
       <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${tCommon(
         "molecules"
       )} - ${t("title")}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <DropdownWrapper />
       </div>
-    </Page>
+    </AppPage>
   );
 };
 

@@ -6,6 +6,7 @@ export interface CommonProps {
   hide?: boolean;
   /** enable/disable dark mode */
   dark?: boolean;
+  shadow?: boolean;
 }
 
 export interface BoxComponent<T = any> {
@@ -16,4 +17,10 @@ export interface BoxComponent<T = any> {
 
 export interface ComponentWithChildren<T = JSX.Element> {
   children?: T;
+}
+
+export interface ClickableComponent<T = () => void> {
+  onClick?: T;
+  onChange?: T;
+  disabled?: boolean;
 }

@@ -5,13 +5,14 @@ import classNames from "classnames";
 
 import { FormProps } from "./types";
 import { buildComponent } from "../../../utils";
+import { Button } from "../../../";
+import Input from "../../atoms/Input";
 
 /**
  *
  * @param title Form title
  * @param fields Form fields array
  * @param onSubmit callback triggered on Form submit
- * @param className custom classname applied on Form component
  * @param submitLabel custom submit button label
  *
  * @copyright 2021 Cataldo Cianciaruso
@@ -23,13 +24,32 @@ const Form = ({
   submitLabel,
   ...commonProps
 }: FormProps) => {
-  const dropdownFields = fields || [];
-  const [values, setValues] = React.useState<Record<string, string>>({});
-  const [errors, setErrors] = React.useState<Record<string, boolean>>({});
+  const dropdownFields: Record<string, string> = fields
+    ? Object.keys(fields).reduce((o, key) => ({ ...o, [key]: "" }), {})
+    : {};
+
+  const fieldErrors: Record<string, boolean> = Object.keys(
+    dropdownFields
+  ).reduce(
+    (o, element) => ({
+      ...o,
+      [element]:
+        fields[element].required ||
+        (fields[element].validate && !fields[element].validate("")) ||
+        false,
+    }),
+    {}
+  );
+
+  const [values, setValues] =
+    React.useState<Record<string, string>>(dropdownFields);
+
+  const [errors, setErrors] =
+    React.useState<Record<string, boolean>>(fieldErrors);
   let canSubmit =
     Object.keys(errors).length > 1
-      ? !Object.values(errors).find((element) => element === true) || false
-      : false;
+      ? !Object.values(errors).find((element) => element === true)
+      : true;
 
   return buildComponent({
     name: "modular-form",
@@ -37,56 +57,53 @@ const Form = ({
       <p key="form_title" className="title">
         {title}
       </p>,
-      ...dropdownFields.map((field, index) => {
-        const name = field.name;
+      ...Object.keys(dropdownFields).map((field, index) => {
+        const name = field;
         return (
           <div className="field" key={`form_field_${index}`}>
-            <p className="header">{field.header}</p>
-            <input
+            <p className="header">{fields[field].header}</p>
+            <Input
               value={values[name] || ""}
-              type="text"
-              data-id={`form-field-${index}`}
-              placeholder={field.placeholder}
-              onChange={(e) => {
+              id={`form-field-${index}`}
+              placeholder={fields[field].placeholder}
+              onChange={(value: string) => {
                 let tmpValues = { ...values };
                 let tmpErrors = { ...errors };
-                tmpValues[name] = e.target.value;
-                if (e.target.value.length < 1 && field.required) {
+                tmpValues[name] = value;
+                if (value.length < 1 && fields[field].required) {
                   tmpErrors[name] = true;
                 } else {
-                  tmpErrors[name] = field.validate
-                    ? !field.validate(e.target.value)
+                  tmpErrors[name] = fields[field].validate
+                    ? !fields[field].validate(value)
                     : false;
                 }
                 setErrors(tmpErrors);
                 setValues(tmpValues);
               }}
-              className={classNames("input", {
-                error: errors[name],
-                "no-error": !errors[name],
+              className={classNames({
+                "field-error": errors[name],
+                "form-input": !errors[name],
               })}
             />
             <div className="error-box">
-              {errors[name] && <p className="error-label">{field.error}</p>}
+              {errors[name] && (
+                <p className="error-label">{fields[field].error}</p>
+              )}
             </div>
           </div>
         );
       }),
-      <button
+      <Button
         disabled={!canSubmit}
+        className="submit-button"
         key="form_submit_button"
-        data-id="form-submit-button"
+        id="form-submit-button"
         onClick={() => {
-          let results = { ...values };
-          onSubmit && onSubmit(results);
+          onSubmit && onSubmit(values);
         }}
-        className={classNames("submit", {
-          allowed: canSubmit,
-          "not-allowed": !canSubmit,
-        })}
       >
         {submitLabel}
-      </button>,
+      </Button>,
     ],
     commonProps,
   });

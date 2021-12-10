@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Header from "../../../src/components/molecules/Header";
+import { Header } from "../../../src";
 
 test("rendered without errors", () => {
   let wrapper = shallow(<Header children={<div>Testing Header</div>} />);

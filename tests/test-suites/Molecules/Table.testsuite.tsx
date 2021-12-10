@@ -1,6 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import Table from "../../../src/components/molecules/Table";
+import { Table } from "../../../src";
 
 test("rendered without errors - no params", () => {
   let wrapper = shallow(<Table />);

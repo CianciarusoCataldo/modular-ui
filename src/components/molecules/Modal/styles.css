@@ -21,14 +21,11 @@
   margin: auto;
   border-radius: 0.375rem;
   background-image: linear-gradient(to right, #fff, #e5e7eb);
+  color: #2d3748;
 }
 
 #modular-modal.dark .container {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #2d3748;
-  --tw-gradient-stops: var(--tw-gradient-from),
-    var(--tw-gradient-to, rgba(255, 255, 255, 0));
-  --tw-gradient-to: #1d232e;
+  background-image: linear-gradient(to right, #2d3748, #262d3b);
 }
 
 #modular-modal .container .header {

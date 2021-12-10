@@ -92,7 +92,7 @@ const CodeBox = ({
           : code}
       </code>,
     ],
-    commonProps,
+    commonProps
   });
 };
 

@@ -17,6 +17,8 @@ const Input = ({
   numeric,
   value,
   onClick,
+  placeholder,
+  readOnly,
   ...commonProps
 }: InputProps) => {
   /* istanbul ignore next */
@@ -37,7 +39,9 @@ const Input = ({
       <input
         type={numeric ? "number" : "text"}
         value={numeric ? numberValue : textValue}
+        placeholder={placeholder}
         className="input-box"
+        readOnly={readOnly}
         onChange={(e) => {
           if (numeric) {
             onChange(Number.parseInt(e.target.value));

@@ -56,6 +56,7 @@ const Checkbox = ({
     commonProps: {
       ...commonProps,
       className: classNames(commonProps.className, "check"),
+      shadow: true,
     },
     additionalProps: {
       onClick: onChangeCheck,

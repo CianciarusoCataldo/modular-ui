@@ -8,4 +8,6 @@ import {
 export type InputProps<T = any> = CommonProps &
   BoxComponent<number | string> & {
     numeric?: boolean;
+    readOnly?: boolean;
+    placeholder?: string;
   };

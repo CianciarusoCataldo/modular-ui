@@ -1,3 +1,10 @@
+# 1.1.0
+- Bugfixes
+- Toggle component
+- Shadow feature for all components
+- Clen up
+- Refactoring
+
 # 1.0.0
 
 - Bugfixes

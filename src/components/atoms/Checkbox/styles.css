@@ -7,32 +7,31 @@
   height: 30px;
   width: 30px;
   padding: 0.2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --checkbox-background: #ffffff;
+  background-color: var(--checkbox-background);
 }
 
 #modular-checkbox.check {
-  background-color: #ffffff;
+  --checkbox-background: #ffffff;
 }
 
 #modular-checkbox.check.dark {
-  background-color: #423c5e;
+  --checkbox-background: #423c5e;
 }
 
 #modular-checkbox.check:hover {
-  background-color: #f5f5f5;
+  --checkbox-background: #f5f5f5;
 }
 
 #modular-checkbox.check.dark:hover {
-  background-color: #3a3552;
+  --checkbox-background: #3a3552;
 }
 
 #modular-checkbox.check.dark svg {
-  fill: white;
   --svgcolor: white;
 }
 
 #modular-checkbox.check svg {
-  fill: blue;
   --svgcolor: blue;
 }
 

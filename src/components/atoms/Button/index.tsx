@@ -24,9 +24,7 @@ const Button = ({
   className: parentClassName,
   noStyles,
   id,
-  hide,
-  dark,
-  ...props
+  ...commonProps
 }: ButtonProps) => {
   const buttonClassName = classNames("styled ", {
     disabled: disabled,
@@ -37,22 +35,18 @@ const Button = ({
     name: "modular-button",
     Component: (
       <button
-        {...props}
         data-id={id}
         disabled={disabled}
         onClick={onClick}
-        className={
-          parentClassName ||
-          classNames({
-            unstyled: noStyles,
-            [buttonClassName]: !noStyles,
-          })
-        }
+        className={classNames(parentClassName, {
+          unstyled: noStyles,
+          [buttonClassName]: !noStyles,
+        })}
       >
         {children}
       </button>
     ),
-    commonProps: { hide, dark },
+    commonProps,
   });
 };
 

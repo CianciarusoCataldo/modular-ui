@@ -7,6 +7,7 @@ export enum Wrappers {
   DIV = "div",
   A = "a",
   HEADER = "header",
+  BUTTON = "button",
 }
 
 export const buildComponent = ({
@@ -18,8 +19,8 @@ export const buildComponent = ({
 }: {
   name: string;
   Component?:
-    | (Element | JSX.Element | JSX.Element | string)
-    | (Element | JSX.Element | JSX.Element | string)[];
+    | (Element | JSX.Element | string)
+    | (Element | JSX.Element | string)[];
   commonProps?: CommonProps;
   additionalProps?: any;
   wrapper?: Wrappers;
@@ -32,6 +33,7 @@ export const buildComponent = ({
       className={classNames(commonProps.className, {
         dark: commonProps.dark,
         "component-hidden": commonProps.hide,
+        shadowed: commonProps.shadow,
       })}
       {...additionalProps}
     >

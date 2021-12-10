@@ -2,7 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import Sinon from "sinon";
 
-import CodeBox from "../../../src/components/atoms/CodeBox";
+import { CodeBox } from "../../../src";
 import { describeTest } from "../../core/utils/helpers";
 
 test("rendered without errors - no params", () => {
