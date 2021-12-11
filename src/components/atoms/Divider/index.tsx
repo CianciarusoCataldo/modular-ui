@@ -1,7 +1,5 @@
 import "./styles.css";
 
-import React from "react";
-
 import { DividerProps } from "./types";
 import { buildComponent } from "../../../utils";
 import classNames from "classnames";

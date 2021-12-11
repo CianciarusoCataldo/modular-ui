@@ -57,6 +57,7 @@ export const DropdownWrapper = () => {
               className={props.className}
               hide={props.hide}
               dark={props.dark}
+              shadow={props.shadow}
               placeholder="Select a value"
               content={elements}
             />

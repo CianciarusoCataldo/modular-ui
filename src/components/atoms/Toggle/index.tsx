@@ -10,6 +10,15 @@ const STATUSES_MAP = {
   off: "on",
 } as const;
 
+/**
+ * A compact Toggle switcher, customized to reflect its actual status
+ *
+ * @param value toggle status ("on"/"off")
+ * @param onClick calllback triggered when changing Toggle status
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ *
+ */
 const Toggle = ({ value, onClick, ...commonProps }: ToggleProps) => {
   const [status, setStatus] = React.useState<"on" | "off">(value || "on");
 
@@ -51,7 +60,10 @@ const Toggle = ({ value, onClick, ...commonProps }: ToggleProps) => {
         </svg>
       </div>
     ),
-    commonProps,
+    commonProps: {
+      ...commonProps,
+      className: classNames(commonProps.className, { off: status === "off" }),
+    },
     additionalProps: {
       onClick: () => {
         onClick && onClick(STATUSES_MAP[status]);

@@ -6,13 +6,12 @@
   z-index: 10;
   margin-bottom: 1.25rem;
   text-align: center;
-  background-color: rgb(214, 216, 218);
-  color:rgb(62, 62, 63);
+  background-image: var(--modular-background);
+  color: var(--modular-text-color);
   border-bottom-width: 2px;
 }
 
 #modular-header.dark {
-  color: rgb(214, 216, 218);
-  background-color: rgba(55, 65, 81, 1);
+  background-image: linear-gradient(to right, #212935, #364157, #212935);
   border-bottom-width: 2px;
 }

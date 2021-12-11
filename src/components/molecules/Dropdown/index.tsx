@@ -24,6 +24,7 @@ const Dropdown = ({
   content = [],
   placeholder = "",
   onChange,
+  shadow,
   ...commonProps
 }: DropdownProps) => {
   const [isVisible, setVisible] = React.useState(false);
@@ -45,7 +46,7 @@ const Dropdown = ({
         onClick={() => {
           setVisible(!isVisible);
         }}
-        className="button"
+        className={classNames("button", { shadowed: shadow })}
         id="options-menu"
         key="options-menu"
         data-id="options-menu"
@@ -72,6 +73,7 @@ const Dropdown = ({
         key="options"
         className={classnames("options", {
           "component-hidden": !isVisible,
+          shadowed: shadow,
         })}
       >
         {content.map((item, index) => (

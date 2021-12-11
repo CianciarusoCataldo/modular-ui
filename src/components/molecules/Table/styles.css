@@ -3,18 +3,13 @@
   flex-direction: column;
   margin: auto;
   border: rgba(75, 85, 99, 1) solid 4px;
-  --table-text-color: #1e242b;
-  color: var(--table-text-color);
-}
-
-#modular-table.dark {
-  --table-text-color: white;
+  color: var(--modular-text-color);
+  background: var(--modular-background);
 }
 
 #modular-table.dark .rows .element,
 #modular-table.dark .rows .header {
-  border: rgb(224, 222, 222) solid 4px;
-  background: rgba(75, 85, 99, 1);
+  border-color: rgb(224, 222, 222);
 }
 
 #modular-table .headers {

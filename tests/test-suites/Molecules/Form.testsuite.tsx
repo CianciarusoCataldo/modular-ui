@@ -41,7 +41,7 @@ test("rendered without errors", () => {
     .find('div[data-id="form-field-1"] input')
     .simulate("change", { target: { value: "aaaaa" } });
 
-  wrapper.find('button[data-id="form-submit-button"]').simulate("click");
+  wrapper.find('div[data-id="form-submit-button"] button').simulate("click");
 
   expect(wrapper);
 
@@ -72,6 +72,6 @@ test("rendered without errors", () => {
   wrapper
     .find('div[data-id="form-field-1"] input')
     .simulate("change", { target: { value: "Hello" } });
-  wrapper.find('button[data-id="form-submit-button"]').simulate("click");
+  wrapper.find('div[data-id="form-submit-button"] button').simulate("click");
   expect(submitStub).toBeCalled;
 });

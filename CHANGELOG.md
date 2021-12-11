@@ -1,8 +1,17 @@
+# 1.2.0
+
+- Bugfixes
+- Dark mode driven by wrapper with CSS variables
+- Clean up
+- Styles better optimized
+- Refactoring
+
 # 1.1.0
+
 - Bugfixes
 - Toggle component
 - Shadow feature for all components
-- Clen up
+- Clean up
 - Refactoring
 
 # 1.0.0

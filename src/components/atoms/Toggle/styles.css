@@ -1,20 +1,17 @@
 #modular-toggle {
   border-radius: 14px;
   border-width: 0px;
-
-  --toggle-background: linear-gradient(
-    to right,
-    rgb(173, 171, 171),
-    #e5e6e7,
-    #a4a4a5
-  );
-  background-image: var(--toggle-background);
+  background-image: var(--modular-background);
   width: 65px;
   height: 30px;
 }
 
-#modular-toggle.dark {
-  --toggle-background: linear-gradient(to right, #2d3748, #1d232e);
+#modular-toggle.off {
+  background-image: linear-gradient(to right, rgb(219, 217, 217), #b9b9b9);
+}
+
+#modular-toggle.dark.off {
+  background-image: linear-gradient(to right, #1e2531, #1d232e);
 }
 
 #modular-toggle .toggle-icon {

@@ -16,7 +16,7 @@ test("rendered without errors", () => {
     />
   );
 
-  wrapper.find('button[data-id="drawer_button_0"]').simulate("click");
+  wrapper.find('div[data-id="drawer_button_0"] button').simulate("click");
   expect(elementStub).toBeCalled;
 });
 

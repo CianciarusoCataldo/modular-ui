@@ -1,4 +1,4 @@
-#modular-checkbox.check {
+#modular-checkbox {
   border-width: 1px;
   border-color: #423c5e;
   text-align: center;
@@ -7,37 +7,13 @@
   height: 30px;
   width: 30px;
   padding: 0.2rem;
-  --checkbox-background: #ffffff;
-  background-color: var(--checkbox-background);
+  background-color: var(--modular-background-color);
 }
 
-#modular-checkbox.check {
-  --checkbox-background: #ffffff;
+#modular-checkbox:hover {
+  background-color: #f5f5f5;
 }
 
-#modular-checkbox.check.dark {
-  --checkbox-background: #423c5e;
-}
-
-#modular-checkbox.check:hover {
-  --checkbox-background: #f5f5f5;
-}
-
-#modular-checkbox.check.dark:hover {
-  --checkbox-background: #3a3552;
-}
-
-#modular-checkbox.check.dark svg {
-  --svgcolor: white;
-}
-
-#modular-checkbox.check svg {
-  --svgcolor: blue;
-}
-
-#modular-checkbox,
-#modular-checkbox:hover,
-#modular-checkbox:active {
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+#modular-checkbox.dark:hover {
+  background-color: #3a3552;
 }

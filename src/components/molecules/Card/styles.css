@@ -3,28 +3,12 @@
   flex-direction: column;
   padding: 0.25rem;
   margin: 0.5rem;
-  --card-text-color: rgba(0, 0, 0, 1);
-  color: var(--card-text-color);
+  color: var(--modular-text-color);
   background-color: transparent;
-  --card-background: linear-gradient(to right, #fff, #eaebec);
-}
-
-#modular-card {
-  --card-text-color: rgba(0, 0, 0, 1);
-  --card-background: linear-gradient(to right, #fff, #eaebec);
-}
-
-#modular-card.dark {
-  --card-text-color: rgb(255, 255, 255, 1);
 }
 
 #modular-card .container-main {
-  --card-background: linear-gradient(to right, #fff, #eaebec);
-  background-image: var(--card-background);
-}
-
-#modular-card.dark .container-main {
-  --card-background: linear-gradient(to right, #2d3748, #1d232e);
+  background-image: var(--modular-background);
 }
 
 #modular-card .title {

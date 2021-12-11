@@ -1,12 +1,5 @@
 #modular-divider.container {
   height: 1px;
   width: 100%;
-}
-
-#modular-divider.container {
-  background-color: gray;
-}
-
-#modular-divider.container.dark {
-  background-color: white;
+  background-color: var(--modular-text-color);
 }

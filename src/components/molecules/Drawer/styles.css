@@ -6,8 +6,9 @@
   left: 0px;
   width: auto;
   padding: 0.5rem;
-  background-image: linear-gradient(to right, #2d3748, #1d232e);
+  background-image: var(--modular-background);
   overflow: auto;
+  color: var(--modular-text-color);
 }
 
 #modular-drawer .elements {
@@ -35,9 +36,9 @@
 
 #modular-drawer .element {
   margin-top: 0.75rem;
-  margin-bottom: 0.75rem /* 12px */;
-  margin-left: 0.5rem /* 8px */;
-  margin-right: 0.5rem /* 8px */;
+  margin-bottom: 0.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 #modular-drawer .element .button {
@@ -65,7 +66,6 @@
 }
 
 #modular-drawer .element .button .inactive {
-  color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
 

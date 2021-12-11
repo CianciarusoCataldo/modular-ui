@@ -18,12 +18,11 @@ import { buildComponent } from "../../../utils";
  *
  */
 const Button = ({
-  disabled = false,
+  disabled,
   children,
   onClick,
   className: parentClassName,
   noStyles,
-  id,
   ...commonProps
 }: ButtonProps) => {
   const buttonClassName = classNames("styled ", {
@@ -35,7 +34,6 @@ const Button = ({
     name: "modular-button",
     Component: (
       <button
-        data-id={id}
         disabled={disabled}
         onClick={onClick}
         className={classNames(parentClassName, {

@@ -6,13 +6,8 @@
   padding: 0.75rem;
   border-radius: 0.7rem;
   padding: 2rem;
-  background-image: linear-gradient(to right, #fff, #e5e6e7, #c8cacc);
-  color: #2d3748;
-}
-
-#modular-form.dark {
-  color: white;
-  background-image: linear-gradient(to right, #2d3748, #1d232e);
+  background-image: var(--modular-background);
+  color: var(--modular-text-color);
 }
 
 #modular-form .title {

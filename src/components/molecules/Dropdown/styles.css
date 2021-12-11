@@ -19,23 +19,8 @@
 #modular-dropdown .button,
 #modular-dropdown .options,
 #modular-dropdown .options .option {
-  background-image: linear-gradient(to right, #fff, #e5e6e7, #c8cacc);
-  color: rgba(55, 65, 81, 1);
-}
-
-#modular-dropdown.dark .button,
-#modular-dropdown.dark .options,
-#modular-dropdown.dark .options .option {
-  background-image: linear-gradient(to right, #2d3748, #1d232e);
-  color: white;
-}
-
-#modular-dropdown .button {
-  color: rgba(55, 65, 81, 1);
-}
-
-#modular-dropdown.dark .button {
-  color: white;
+  background-image: var(--modular-background);
+  color: var(--modular-text-color);
 }
 
 #modular-dropdown .button:hover {
@@ -59,10 +44,6 @@
   width: fit-content;
   font-weight: 500;
   margin-bottom: 1rem;
-  -webkit-box-shadow: 0px 5px 13px -1px #464545;
-  -moz-box-shadow: 0px 5px 13px -1px #464545;
-  -o-box-shadow: 0px 5px 13px -1px #464545;
-  box-shadow: 0px 5px 13px -1px #464545;
 }
 
 #modular-dropdown .button:focus {
@@ -92,14 +73,7 @@
   transition-property: transform;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-}
-
-#modular-dropdown .arrow-icon {
-  border-color: black;
-}
-
-#modular-dropdown.dark .arrow-icon {
-  border-color: white;
+  border-color: var(--modular-text-color);
 }
 
 #modular-dropdown .icon:hover {
@@ -138,13 +112,12 @@
 
 #modular-dropdown .option .regular:hover {
   background-color: rgba(191, 219, 254, 0.7);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 #modular-dropdown #modular-dropdown .options,
 #modular-dropdown .options .option,
-#modular-dropdown .option .regular:focus {
+#modular-dropdown .option .regular:focus,
+#modular-dropdown .option .regular:hover {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }

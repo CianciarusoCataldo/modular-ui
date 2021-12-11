@@ -3,7 +3,6 @@ import "./styles.css";
 import React from "react";
 import { CheckboxProps } from "./types";
 import { buildComponent } from "../../../utils";
-import classNames from "classnames";
 
 /**
  * A flexible checkbox element
@@ -22,11 +21,8 @@ const Checkbox = ({
   const [isChecked, setChecked] = React.useState<boolean>(value || false);
   const onChangeCheck = () => {
     onChange && onChange(!isChecked);
+    onClick && onClick(!isChecked);
     setChecked(!isChecked);
-  };
-
-  const args = {
-    onClick: onChangeCheck,
   };
 
   return buildComponent({
@@ -37,7 +33,7 @@ const Checkbox = ({
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1171.000000 1280.000000"
         preserveAspectRatio="xMidYMid meet"
-        fill="var(--svgcolor)"
+        fill="var(--modular-link-color)"
       >
         <g
           transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
@@ -53,11 +49,7 @@ const Checkbox = ({
         </g>
       </svg>
     ),
-    commonProps: {
-      ...commonProps,
-      className: classNames(commonProps.className, "check"),
-      shadow: true,
-    },
+    commonProps,
     additionalProps: {
       onClick: onChangeCheck,
     },
