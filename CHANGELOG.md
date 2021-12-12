@@ -1,3 +1,9 @@
+# 1.3.0
+
+- RateBox component
+- Clean up
+- Refactoring
+
 # 1.2.0
 
 - Bugfixes
@@ -27,7 +33,7 @@
 
 - Bugfixes
 - Input component
-- Checkbox component
+- CheckBox component
 - CodeBox component
 
 # 0.9.0

@@ -22,5 +22,7 @@ export interface ComponentWithChildren<T = JSX.Element> {
 export interface ClickableComponent<T = () => void> {
   onClick?: T;
   onChange?: T;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
   disabled?: boolean;
 }

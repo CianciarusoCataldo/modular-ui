@@ -2,11 +2,14 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
-#modular-button .unstyled:focus,
+#modular-button,
+#modular-button:focus,
+#modular-button:hover,
+#modular-button .unstiled:hover,
+#modular-button .unstyled,
+#modular-button .unstyled:active,
 #modular-button .unstyled:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -48,9 +51,4 @@
   align-items: center;
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-#modular-button .styled:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }

@@ -1,6 +1,6 @@
 /** Atoms */
 export { default as Button } from "./components/atoms/Button";
-export { default as Checkbox } from "./components/atoms/Checkbox";
+export { default as CheckBox } from "./components/atoms/CheckBox";
 export { default as CodeBox } from "./components/atoms/CodeBox";
 export { default as Divider } from "./components/atoms/Divider";
 export { default as Input } from "./components/atoms/Input";
@@ -15,4 +15,5 @@ export { default as Form } from "./components/molecules/Form";
 export { default as Header } from "./components/molecules/Header";
 export { default as Modal } from "./components/molecules/Modal";
 export { default as Page } from "./components/molecules/Page";
+export { default as RateBox } from "./components/molecules/RateBox";
 export { default as Table } from "./components/molecules/Table";

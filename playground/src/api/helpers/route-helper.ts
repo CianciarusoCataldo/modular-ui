@@ -11,9 +11,10 @@ const PAGES: Record<RouteKey, LazyExoticComponent<() => JSX.Element>> = {
   Modal: lazy(() => import("../../app/pages/Modal")),
   Input: lazy(() => import("../../app/pages/Input")),
   Table: lazy(() => import("../../app/pages/Table")),
-  Checkbox: lazy(() => import("../../app/pages/Checkbox")),
+  CheckBox: lazy(() => import("../../app/pages/CheckBox")),
   CodeBox: lazy(() => import("../../app/pages/CodeBox")),
   Toggle: lazy(() => import("../../app/pages/Toggle")),
+  RateBox: lazy(() => import("../../app/pages/RateBox")),
 };
 
 export const getRoutingLogic = (PATHS: Record<RouteKey, string>) =>

@@ -14,9 +14,10 @@
       "Divider": "/components/atoms/divider",
       "Table": "/components/molecules/table",
       "Input": "/components/atoms/Input",
-      "Checkbox": "/components/atoms/Checkbox",
+      "CheckBox": "/components/atoms/CheckBox",
       "CodeBox": "/components/atoms/CodeBox",
-      "Toggle": "/components/atoms/Toggle"
+      "Toggle": "/components/atoms/Toggle",
+      "RateBox": "/components/molecules/RateBox"
     }
   },
   "I18N": {
@@ -33,9 +34,10 @@
       "Divider",
       "Table",
       "Input",
-      "Checkbox",
+      "CheckBox",
       "CodeBox",
       "Toggle",
+      "RateBox",
       "common"
     ],
     "DEFAULT_NAMESPACE": "common",

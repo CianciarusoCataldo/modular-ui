@@ -50,7 +50,7 @@ export const useInputPageTranslation = () => {
   return t;
 };
 
-export const useCheckboxPageTranslation = () => {
+export const useCheckBoxPageTranslation = () => {
   const { t } = useTranslation(I18N.NAMESPACES[10]);
   return t;
 };
@@ -65,7 +65,12 @@ export const useToggleTranslation = () => {
   return t;
 };
 
-export const useCommonTranslation = () => {
+export const useRateBoxPageTranslation = () => {
   const { t } = useTranslation(I18N.NAMESPACES[13]);
+  return t;
+};
+
+export const useCommonTranslation = () => {
+  const { t } = useTranslation(I18N.NAMESPACES[14]);
   return t;
 };

@@ -7,8 +7,6 @@ import classNames from "classnames";
 /**
  * A simple divider, useful to separate sections and paragraphs
  *
- * @param className A custom className applied on main container
- *
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Divider = ({ className, ...props }: DividerProps) => {

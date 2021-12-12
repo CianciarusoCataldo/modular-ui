@@ -23,6 +23,9 @@ const Button = ({
   onClick,
   className: parentClassName,
   noStyles,
+  onChange,
+  onMouseEnter,
+  onMouseLeave,
   ...commonProps
 }: ButtonProps) => {
   const buttonClassName = classNames("styled ", {
@@ -36,6 +39,8 @@ const Button = ({
       <button
         disabled={disabled}
         onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
         className={classNames(parentClassName, {
           unstyled: noStyles,
           [buttonClassName]: !noStyles,

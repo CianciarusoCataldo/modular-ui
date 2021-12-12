@@ -16,11 +16,12 @@ declare type RouteKey =
   | "Link"
   | "Card"
   | "Form"
-  | "Checkbox"
+  | "CheckBox"
   | "CodeBox"
   | "Input"
   | "Modal"
   | "Toggle"
-  | "Table";
+  | "Table"
+  | "RateBox";
 declare type AllowedNamespace = typeof Namespaces[number];
 declare type SupportedLanguage = typeof SupportedLanguages[number];

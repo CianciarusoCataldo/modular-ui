@@ -1,15 +1,15 @@
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
-import { Checkbox } from "modular-ui-preview";
+import { CheckBox } from "modular-ui-preview";
 import {
   useCommonTranslation,
-  useCheckboxPageTranslation,
+  useCheckBoxPageTranslation,
 } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
 
-export const CheckboxWrapper = () => {
+export const CheckBoxWrapper = () => {
   return (
     <Demo
-      label="Checkbox"
+      label="CheckBox"
       props={{
         className: StringProp(""),
         hide: BooleanProp(false),
@@ -19,15 +19,15 @@ export const CheckboxWrapper = () => {
     >
       {(props: any) => (
         <div className="flex flex-col items-center">
-          <Checkbox {...props} />
+          <CheckBox {...props} />
         </div>
       )}
     </Demo>
   );
 };
 
-const CheckboxPage = () => {
-  const t = useCheckboxPageTranslation();
+const CheckBoxPage = () => {
+  const t = useCheckBoxPageTranslation();
   const tCommon = useCommonTranslation();
   return (
     <AppPage>
@@ -35,10 +35,10 @@ const CheckboxPage = () => {
         "atoms"
       )} - ${t("title")}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <CheckboxWrapper />
+        <CheckBoxWrapper />
       </div>
     </AppPage>
   );
 };
 
-export default CheckboxPage;
+export default CheckBoxPage;

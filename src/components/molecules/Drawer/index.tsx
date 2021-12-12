@@ -92,7 +92,7 @@ const Drawer = ({
                         </div>
                       </div>
                     </Button>
-                    <Divider />
+                    <Divider dark={commonProps.dark} />
                   </div>
                 );
               })}

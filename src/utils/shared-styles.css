@@ -29,7 +29,8 @@
   --modular-link-color: white;
 }
 
-[id^="modular-"] .component-hidden {
+[id^="modular-"] .component-hidden,
+[id^="modular-"].component-hidden {
   display: none !important;
 }
 
