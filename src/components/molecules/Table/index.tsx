@@ -16,8 +16,8 @@ const Table = ({ headers, rows = [], ...commonProps }: TableProps) => {
     elements = rows.map((row, rowIndex) =>
       row.map((element, index) => (
         <div
-          key={`element_${index}`}
-          className={classNames("element", {
+          key={`element_${rowIndex}_${index}`}
+          className={classNames({
             header: headers && rowIndex === 0,
             element: !headers || rowIndex > 0,
           })}

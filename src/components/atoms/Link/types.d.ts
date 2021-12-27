@@ -1,8 +1,4 @@
-import {
-  CommonProps,
-  ComponentWithChildren,
-  BoxComponent,
-} from "../../../global";
+import { CommonProps, ComponentWithChildren } from "../../../utils/global";
 
 export type LinkProps = CommonProps &
   ComponentWithChildren<string> & {

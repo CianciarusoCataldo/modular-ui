@@ -1,10 +1,7 @@
 import React from "react";
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 import { Button, Modal } from "modular-ui-preview";
-import {
-  useCommonTranslation,
-  useModalPageTranslation,
-} from "app/hooks/localization";
+import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
 
 export const ModalWrapper = () => {
@@ -41,13 +38,12 @@ export const ModalWrapper = () => {
 };
 
 const ModalPage = () => {
-  const t = useModalPageTranslation();
-  const tCommon = useCommonTranslation();
+  const t = useCommonTranslation();
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${tCommon(
+      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t(
         "molecules"
-      )} - ${t("title")}`}</p>
+      )} - ${t("component", { componentName: "Modal" })}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <ModalWrapper />
       </div>

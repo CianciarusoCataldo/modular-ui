@@ -1,12 +1,14 @@
-import { CommonProps, ComponentWithChildren } from "../../../global";
+import {
+  BoxComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
 export type CardProps = CommonProps &
-  ComponentWithChildren & {
+  ComponentWithChildren &
+  BoxComponent & {
     /** A custom icon showed before the Card title */
     icon?: JSX.Element;
-
-    /** Card title */
-    title?: JSX.Element | string;
 
     /** Card header content */
     header?: JSX.Element | string;
@@ -16,19 +18,4 @@ export type CardProps = CommonProps &
 
     /** Card footer content */
     footer?: JSX.Element | string;
-
-    /** A custom classname applied on Card title element */
-    titleClassName?: string;
-
-    /** A custom classname applied on Card body element */
-    bodyClassName?: string;
-
-    /** A custom classname applied on Card header element */
-    headerClassName?: string;
-
-    /** A custom classname applied on Card footer element */
-    footerClassName?: string;
-
-    /** Styled/Unstyled component, useful to customize it easily */
-    unstyled?: boolean;
   };

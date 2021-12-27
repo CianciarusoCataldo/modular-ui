@@ -33,7 +33,7 @@ describeTest("click", () => {
   });
   test("when Button is disabled", () => {
     const wrapper = mount(
-      <Button onClick={() => {}} disabled noStyles>
+      <Button onClick={() => {}} disabled unstyled>
         <p>Testing button</p>
       </Button>
     );

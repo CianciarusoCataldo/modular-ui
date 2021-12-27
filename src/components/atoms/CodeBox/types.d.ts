@@ -1,4 +1,4 @@
-import { CommonProps } from "../../../global";
+import { BoxComponent, CommonProps } from "../../../utils/global";
 
 export type SupportedEnvironment =
   | "javascript"
@@ -11,13 +11,11 @@ export type SplittedCode<T = string | null> = {
   code: string;
 };
 
-export type CodeBoxProps = CommonProps & {
-  /** Code to display */
-  code?: string;
+export type CodeBoxProps = CommonProps &
+  BoxComponent<string> & {
+    /** Enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight */
+    enhanced?: boolean;
 
-  /** Enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight */
-  enhanced?: boolean;
-
-  /** Environment for text highlight feature, default to "terminal" (only enabled into enhanced mode) */
-  environment?: SupportedEnvironment | undefined;
-};
+    /** Environment for text highlight feature, default to "terminal" (only enabled into enhanced mode) */
+    environment?: SupportedEnvironment | undefined;
+  };

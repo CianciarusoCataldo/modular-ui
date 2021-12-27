@@ -12,7 +12,7 @@ import { buildComponent } from "../../../utils";
  * @param disabled enable or disable the button functionalities (UI will reflect it too)
  * @param children button content
  * @param onClick callback triggered when the button is clicked
- * @param noStyles If true, no other styles will be applied on main container (useful for image only buttons)
+ * @param unstyled If true, no other styles will be applied on main container (useful for image only buttons)
  *
  * @copyright 2021 Cataldo Cianciaruso
  *
@@ -22,28 +22,23 @@ const Button = ({
   children,
   onClick,
   className: parentClassName,
-  noStyles,
   onChange,
   onMouseEnter,
   onMouseLeave,
   ...commonProps
-}: ButtonProps) => {
-  const buttonClassName = classNames("styled ", {
-    disabled: disabled,
-    enabled: !disabled,
-  });
-
-  return buildComponent({
+}: ButtonProps) =>
+  buildComponent({
     name: "modular-button",
     Component: (
       <button
+        data-id={commonProps.id}
         disabled={disabled}
         onClick={onClick}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         className={classNames(parentClassName, {
-          unstyled: noStyles,
-          [buttonClassName]: !noStyles,
+          disabled: disabled,
+          enabled: !disabled,
         })}
       >
         {children}
@@ -51,6 +46,5 @@ const Button = ({
     ),
     commonProps,
   });
-};
 
 export default Button;

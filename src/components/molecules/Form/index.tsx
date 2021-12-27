@@ -5,8 +5,7 @@ import classNames from "classnames";
 
 import { FormProps } from "./types";
 import { buildComponent } from "../../../utils";
-import { Button } from "../../../";
-import Input from "../../atoms/Input";
+import { Button, Input } from "../../../";
 
 /**
  *
@@ -61,8 +60,8 @@ const Form = ({
         const name = field;
         return (
           <div className="field" key={`form_field_${index}`}>
-            <p className="header">{fields[field].header}</p>
             <Input
+              label={<span className="header">{fields[field].header}</span>}
               value={values[name] || ""}
               id={`form-field-${index}`}
               placeholder={fields[field].placeholder}

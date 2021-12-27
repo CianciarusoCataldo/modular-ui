@@ -3,15 +3,18 @@
   flex-direction: column;
   padding: 0.25rem;
   margin: 0.5rem;
-  color: var(--modular-text-color);
   background-color: transparent;
 }
 
-#modular-card .container-main {
+#modular-card.styled {
+  color: var(--modular-text-color);
+}
+
+#modular-card.styled .container {
   background-image: var(--modular-background);
 }
 
-#modular-card .title {
+#modular-card.styled .box-label {
   margin: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -26,7 +29,7 @@
   padding: 0.75rem;
 }
 
-#modular-card .container-main {
+#modular-card .container {
   margin-top: 0.75rem;
   border-radius: 0.125rem;
 }

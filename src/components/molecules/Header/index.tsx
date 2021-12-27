@@ -1,7 +1,9 @@
 import "./styles.css";
 
 import { HeaderProps } from "./types";
-import { buildComponent, Wrappers } from "../../../utils";
+import { buildComponent } from "../../../utils";
+import { Wrappers } from "../../../utils/global";
+
 /**
  * A static header. Useful when a content mush be always showed on top
  * when user navigate through the app

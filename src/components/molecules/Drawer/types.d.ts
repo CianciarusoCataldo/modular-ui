@@ -1,4 +1,4 @@
-import { CommonProps, ComponentWithChildren } from "../../../global";
+import { CommonProps, ComponentWithChildren } from "../../../utils/global";
 
 /**
  * Drawer element

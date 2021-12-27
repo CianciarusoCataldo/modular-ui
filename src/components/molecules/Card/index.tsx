@@ -5,80 +5,60 @@ import React from "react";
 import { CardProps } from "./types";
 
 import Divider from "../../atoms/Divider";
-import { buildComponent } from "../../../utils";
-import classNames from "classnames";
+import { buildBoxComponent } from "../../../utils";
 
 /**
+ *  A Card component. ts UI depends on given parameters (header, body and footer)
  *
- *  @param title Card title
- *  @param icon A custom icon showed before the Card title
+ *  @param icon A custom icon showed before the Card header
  *  @param header Card header content
  *  @param body Card body content
  *  @param footer Card footer content
- *  @param titleClassName A custom classname applied on Card title element
- *  @param headerClassName A custom classname applied on Card header element
- *  @param bodyClassName A custom classname applied on Card body element
- *  @param footerClassName A custom classname applied on Card footer element
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Card = ({
-  title,
   icon,
   header,
   body,
   footer,
   children,
-  titleClassName,
-  headerClassName,
-  bodyClassName,
-  footerClassName,
-  unstyled,
+  className,
+  label,
+  value,
   ...commonProps
 }: CardProps) => {
-  return buildComponent({
-    name: "modular-card",
-    Component: [
-      <p
-        key="card_title"
-        className={classNames(titleClassName, { title: !unstyled })}
-      >
-        {title}
-      </p>,
-      <div
-        key="card-container"
-        className={classNames("container-main", {
-          shadowed: commonProps.shadow,
-        })}
-      >
-        {header && (
-          <div>
+  return buildBoxComponent({
+    callBack: () => ({
+      name: "modular-card",
+      Component: [
+        header && (
+          <div key="modular_card_header">
             <div className="container-header">
               {icon}
-              <div
-                className={classNames(headerClassName, { header: !unstyled })}
-              >
-                {header}
-              </div>
+              <div className="header">{header}</div>
             </div>
             <Divider />
           </div>
-        )}
-        <div className={classNames(bodyClassName, { body: !unstyled })}>
+        ),
+        <div className="body" key="modular_card_body">
           {body}
-        </div>
-        {children}
-        {footer && (
-          <div>
+        </div>,
+        children,
+        footer && (
+          <div key="modular_card_footer">
             <Divider />
-            <div className={classNames(footerClassName, { footer: !unstyled })}>
-              {footer}
-            </div>
+            <div className="footer">{footer}</div>
           </div>
-        )}
-      </div>,
-    ],
-    commonProps: { ...commonProps, shadow: false },
+        ),
+      ],
+      commonProps: {
+        ...commonProps,
+        shadow: false,
+      },
+    }),
+    defaultValue: "",
+    label,
   });
 };
 

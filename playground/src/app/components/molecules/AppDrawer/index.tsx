@@ -7,11 +7,11 @@ import { LogoIcon } from "assets/images";
 import { requestRoute } from "api/state-slices/router/actions";
 import { closeDrawer } from "api/state-slices/ui/actions";
 import { isDrawerOpen, isInDarkMode } from "api/state-slices/ui/selectors";
-import { getRoutesPaths } from "api/state-slices/config/selectors";
+import { getPages } from "api/state-slices/config/selectors";
 
 const AppDrawer = () => {
   const dispatch = useDispatch();
-  const PATHS = useSelector(getRoutesPaths);
+  const PATHS = useSelector(getPages);
   const isDrawerShowing = useSelector(isDrawerOpen);
   const darkMode = useSelector(isInDarkMode);
 
@@ -46,20 +46,21 @@ const AppDrawer = () => {
       hide={!isDrawerShowing}
       elements={Object.keys(PATHS)
         .slice(1)
+        .sort()
         .map((route) => {
           return {
             text: route,
             actionCallback: () => {
-              dispatch(requestRoute(PATHS[route as RouteKey]));
+              dispatch(requestRoute(PATHS[route].path));
               dispatch(closeDrawer());
             },
             isActiveCallback: () =>
-              window.location.pathname === PATHS[route as RouteKey] ||
+              window.location.pathname === PATHS[route].path ||
               window.location.pathname.substring(
                 0,
                 window.location.pathname.length - 1
-              ) === PATHS[route as RouteKey] ||
-              `${window.location.pathname}/` === PATHS[route as RouteKey],
+              ) === PATHS[route].path ||
+              `${window.location.pathname}/` === PATHS[route].path,
           };
         })}
       onClose={() => {

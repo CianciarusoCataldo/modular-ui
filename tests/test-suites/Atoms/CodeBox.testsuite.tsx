@@ -12,7 +12,7 @@ test("rendered without errors - no params", () => {
 
 test("rendered without errors", () => {
   const wrapper = mount(
-    <CodeBox environment="python" code="pip i panda 'string'" enhanced />,
+    <CodeBox environment="python" value="pip i panda 'string'" enhanced />,
     {
       context: { navigator: { writeText: () => {} } },
     }
@@ -28,7 +28,7 @@ describeTest("Advanced features", () => {
     const wrapper = mount(
       <CodeBox
         environment="javascript"
-        code='import { Card, Dropdown } from "@cianciarusocataldo/modular-ui"'
+        value='import { Card, Dropdown } from "@cianciarusocataldo/modular-ui"'
         enhanced
       />,
       {

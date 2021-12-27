@@ -1,20 +1,28 @@
 #modular-toggle {
-  border-radius: 14px;
-  border-width: 0px;
-  background-image: var(--modular-background);
+  display: flex;
+  flex-direction: column;
+}
+
+#modular-toggle .container {
   width: 65px;
   height: 30px;
 }
 
-#modular-toggle.off {
+#modular-toggle.styled .container {
+  background-image: var(--modular-background);
+  border-radius: 14px;
+  border-width: 0px;
+}
+
+#modular-toggle.styled .container.off {
   background-image: linear-gradient(to right, rgb(219, 217, 217), #b9b9b9);
 }
 
-#modular-toggle.dark.off {
+#modular-toggle.styled.dark .container.off {
   background-image: linear-gradient(to right, #1e2531, #1d232e);
 }
 
-#modular-toggle .toggle-icon {
+#modular-toggle .container .toggle-icon {
   overflow: hidden;
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -23,7 +31,7 @@
   -ms-transition: all 0.2s;
 }
 
-#modular-toggle .toggle-icon.flip-back {
+#modular-toggle .container .toggle-icon.flip-back {
   transform: translate(0%);
   --svginternalcolor: white;
   --svgexternalcolor: #7a7878;
@@ -35,24 +43,24 @@
   --svgexternalcolor: #7a7878;
 }
 
-#modular-toggle.dark .toggle-icon.flip-back {
+#modular-toggle.dark .container .toggle-icon.flip-back {
   --svginternalcolor: white;
   --svgexternalcolor: #a7a3a3;
 }
 
-#modular-toggle.dark .toggle-icon.flip {
+#modular-toggle.dark .container .toggle-icon.flip {
   --svginternalcolor: #636363;
   --svgexternalcolor: #a7a3a3;
 }
 
-#modular-toggle .toggle-icon .wrapper {
+#modular-toggle .container .toggle-icon .wrapper {
   opacity: 0.2;
 }
-#modular-toggle .toggle-icon .external {
+#modular-toggle .container .toggle-icon .external {
   background-color: var(--svgexternalcolor);
   fill: var(--svgexternalcolor);
 }
-#modular-toggle .toggle-icon .internal {
+#modular-toggle .container .toggle-icon .internal {
   fill: var(--svgexternalcolor);
   stroke: var(--svginternalcolor);
   stroke-width: 4;

@@ -2,22 +2,16 @@ import "./styles.css";
 
 import { DividerProps } from "./types";
 import { buildComponent } from "../../../utils";
-import classNames from "classnames";
 
 /**
  * A simple divider, useful to separate sections and paragraphs
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Divider = ({ className, ...props }: DividerProps) => {
-  return buildComponent({
+const Divider = (props: DividerProps) =>
+  buildComponent({
     name: "modular-divider",
-    commonProps: {
-      ...props,
-      className: classNames(className, "container"),
-      shadow: false,
-    },
+    commonProps: props,
   });
-};
 
 export default Divider;

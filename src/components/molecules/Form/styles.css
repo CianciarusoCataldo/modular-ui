@@ -12,7 +12,7 @@
 
 #modular-form .title {
   text-align: center;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
   font-size: 1.35rem;
   line-height: 1.75rem;
 }
@@ -25,8 +25,13 @@
 }
 
 #modular-form .field .header {
-  margin-bottom: 0.25rem;
+  color: var(--modular-text-color-light);
 }
+
+#modular-form.dark .field .header {
+  color: var(--modular-text-color-dark);
+}
+
 #modular-form .field .form-input {
   border-radius: 0.375rem;
   margin-bottom: 1.25rem;

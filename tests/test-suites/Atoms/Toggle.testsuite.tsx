@@ -14,6 +14,6 @@ test("rendered without errors", () => {
   const wrapper = mount(
     <Toggle value="on" onChange={onChangeStub} onClick={onChangeStub} />
   );
-  wrapper.find('div[id="modular-toggle"]').simulate("click");
+  wrapper.find('.container').simulate("click");
   expect(onChangeStub).toBeCalled;
 });

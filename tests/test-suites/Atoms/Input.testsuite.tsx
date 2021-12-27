@@ -17,10 +17,8 @@ test("rendered without errors", () => {
   expect(onChangeStub).toBeCalled;
 
   wrapper = mount(<Input value="" onChange={onChangeStub} />);
-  wrapper.find("input").simulate("change", { target: { value: "" } });
-  expect(onChangeStub).toBeCalled;
-
-  wrapper = mount(<Input numeric value={0} onChange={onChangeStub} />);
-  wrapper.find("input").simulate("change", { target: { value: 0 } });
+  wrapper
+    .find("input")
+    .simulate("change", { target: { value: "new input value" } });
   expect(onChangeStub).toBeCalled;
 });

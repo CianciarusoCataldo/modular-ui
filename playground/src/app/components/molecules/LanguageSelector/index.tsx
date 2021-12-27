@@ -13,7 +13,7 @@ const LanguageSelector = () => {
     <div style={{ zIndex: 999 }} className="fixed right-1 top-0 bg-gray-700">
       <Dropdown
         dark={false}
-        actualValue={LANGUAGES.findIndex((lang) => lang === language)}
+        value={LANGUAGES.findIndex((lang) => lang === language)}
         onChange={(lang: SupportedLanguage, index: number) => {
           dispatch(changeLanguage(lang as SupportedLanguage));
         }}

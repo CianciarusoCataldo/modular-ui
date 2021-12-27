@@ -5,7 +5,6 @@ import HttpBackend from "i18next-http-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
 
 import { updatePageTitle } from "api/helpers/ui-helper";
-import { computeRoutePaths, computeRoutesMap } from "api/helpers/route-helper";
 
 export const initi18n = (CONFIG: Config) => {
   i18n
@@ -39,9 +38,6 @@ export const initi18n = (CONFIG: Config) => {
       react: { useSuspense: false },
     })
     .then(() => {
-      updatePageTitle(
-        computeRoutesMap(computeRoutePaths(CONFIG)),
-        CONFIG.APP_NAME
-      );
+      updatePageTitle(CONFIG);
     });
 };

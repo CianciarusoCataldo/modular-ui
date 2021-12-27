@@ -3,25 +3,17 @@ import { shallow } from "enzyme";
 import { Card } from "../../../src";
 
 test("rendered without errors", () => {
-  let wrapper = shallow(<Card title="Testing Card" />);
-  expect(wrapper);
-  wrapper = shallow(<Card />);
+  let wrapper = shallow(<Card />);
   expect(wrapper);
 });
 
 test("rendered without errors - no parameters", () => {
-  let wrapper = shallow(<Card title="Testing Card" />);
-  expect(wrapper);
-  wrapper = shallow(
+  let wrapper = shallow(
     <Card
-      title="Testing Card"
-      titleClassName="testing-class"
+      label="Testing Card"
       header="Testing header"
-      headerClassName="testing-class"
       body="Testing body"
-      bodyClassName="testing-class"
       footer="Testing footer"
-      footerClassName="testing-class"
     />
   );
   expect(wrapper);

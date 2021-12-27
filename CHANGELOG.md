@@ -1,8 +1,11 @@
-# 1.3.0
+# 2.0.0
 
-- RateBox component
+- Rater component
+- Counter component
+- Carousel component
 - Clean up
 - Refactoring
+- Shared component building process, with new common props
 
 # 1.2.0
 

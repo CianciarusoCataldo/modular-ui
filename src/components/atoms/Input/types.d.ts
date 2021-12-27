@@ -2,12 +2,10 @@ import {
   CommonProps,
   ComponentWithChildren,
   BoxComponent,
-} from "../../../global";
+} from "../../../utils/global";
 
-/** Input component props */
 export type InputProps<T = any> = CommonProps &
-  BoxComponent<number | string> & {
-    numeric?: boolean;
+  BoxComponent<string> & {
     readOnly?: boolean;
     placeholder?: string;
   };

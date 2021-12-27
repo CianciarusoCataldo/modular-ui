@@ -1,0 +1,7 @@
+#modular-counterbox.styled .input-box {
+  border-radius: 5px;
+  padding: 0.5rem;
+  outline: none;
+  background-color: var(--modular-background-color);
+  color: var(--modular-text-color);
+}

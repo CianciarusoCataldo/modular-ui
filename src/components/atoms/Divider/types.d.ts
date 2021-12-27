@@ -1,3 +1,3 @@
-import { CommonProps } from "../../../global";
+import { CommonProps } from "../../../utils/global";
 
 export type DividerProps = CommonProps;

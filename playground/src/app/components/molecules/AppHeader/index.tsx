@@ -4,7 +4,7 @@ import { HOME_ICON, BurgerIcon, LogoIcon } from "assets/images";
 import { Button, Header } from "modular-ui-preview";
 import classNames from "classnames";
 
-import { getAppName, getRoutesPaths } from "api/state-slices/config/selectors";
+import { getAppName, getPages } from "api/state-slices/config/selectors";
 import { requestRoute } from "api/state-slices/router/actions";
 import { openDrawer } from "api/state-slices/ui/actions";
 import { isHomePage } from "api/state-slices/ui/selectors";
@@ -16,7 +16,7 @@ const AppHeader = () => {
   const dispatch = useDispatch();
   const APP_NAME = useSelector(getAppName);
   const hideHomeButton = useSelector(isHomePage);
-  const PATHS = useSelector(getRoutesPaths);
+  const PATHS = useSelector(getPages);
   const CustomHeader = driveWithDarkMode(Header)
 
   return (
@@ -26,9 +26,9 @@ const AppHeader = () => {
         <Button
           aria-label="back button"
           onClick={() => {
-            dispatch(requestRoute(PATHS.HOME));
+            dispatch(requestRoute(PATHS.Home.path));
           }}
-          noStyles
+          unstyled
           className={classNames(
             "fixed top-2 overflow-auto py-0 ml-1 mr-3 outline-none",
             {
@@ -43,7 +43,7 @@ const AppHeader = () => {
           onClick={() => {
             dispatch(openDrawer());
           }}
-          noStyles
+          unstyled
           className="inline-flex py-0 outline-none"
         >
           <div className="p-1 sm:p-2 md:p-2 lg:p-2 xl:p-2">{BurgerIcon}</div>

@@ -8,7 +8,7 @@ test("rendered without errors", () => {
   let wrapper = mount(
     <Drawer
       onClose={() => {}}
-      isOpen={true}
+      hide={false}
       elements={[
         { text: "Testing element 1", actionCallback: elementStub },
         { text: "Testing element 2", isActiveCallback: () => true },
@@ -17,6 +17,7 @@ test("rendered without errors", () => {
   );
 
   wrapper.find('div[data-id="drawer_button_0"] button').simulate("click");
+  wrapper.find('button[data-id="drawer_close_button"]').simulate("click");
   expect(elementStub).toBeCalled;
 });
 

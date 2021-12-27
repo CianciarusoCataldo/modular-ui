@@ -1,14 +1,12 @@
 import {
+  BuilderComponent,
   ClickableComponent,
   CommonProps,
   ComponentWithChildren,
-} from "../../../global";
+} from "../../../utils/global";
 
 export type ButtonProps = ComponentWithChildren<
-  string | Element | JSX.Element
+  BuilderComponent | BuilderComponent[]
 > &
   CommonProps &
-  ClickableComponent & {
-    /** If true, no other styles will be applied on main container (useful for image only buttons) */
-    noStyles?: boolean;
-  };
+  ClickableComponent;
