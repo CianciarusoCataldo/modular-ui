@@ -11,9 +11,7 @@ test("rendered without errors - no params", () => {
 });
 
 test("rendered without errors", () => {
-  let wrapper = mount(
-    <Rater value={3} max={6} onClick={clickStub} onChange={clickStub} />
-  );
+  let wrapper = mount(<Rater value={3} max={6} onChange={clickStub} />);
   wrapper.find('div[data-id="vote_1"] button').simulate("click");
   wrapper.find('div[data-id="vote_4"] button').simulate("mouseenter");
   wrapper.find('div[data-id="vote_4"] button').simulate("mouseleave");

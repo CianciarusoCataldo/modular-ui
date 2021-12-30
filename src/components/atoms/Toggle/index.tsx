@@ -22,7 +22,7 @@ const STATUSES_MAP = {
 const Toggle = ({
   value,
   icon,
-  onClick,
+  onChange,
   className,
   shadow,
   label,
@@ -73,7 +73,7 @@ const Toggle = ({
       commonProps,
       additionalProps: {
         onClick: () => {
-          onClick && onClick(STATUSES_MAP[status]);
+          onChange && onChange(STATUSES_MAP[status]);
           setStatus(STATUSES_MAP[status]);
         },
         className: classNames("container", className, {

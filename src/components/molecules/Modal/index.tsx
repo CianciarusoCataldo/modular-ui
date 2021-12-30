@@ -3,9 +3,8 @@ import { ModalProps } from "./types";
 
 import React from "react";
 
-import classNames from "classnames";
 import { buildBoxComponent } from "../../../utils";
-import { Button } from "../../..";
+import Button from "../../atoms/Button";
 
 /**
  * A light Modal component. Can be totally customized (the overlay too, through `overlayClassName` parameter)

@@ -28,8 +28,6 @@ const CodeBox = ({
   enhanced,
   environment,
   label,
-  onChange,
-  onClick,
   ...commonProps
 }: CodeBoxProps) =>
   buildBoxComponent<string>({

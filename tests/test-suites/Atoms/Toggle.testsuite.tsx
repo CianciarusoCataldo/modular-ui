@@ -11,9 +11,7 @@ test("rendered without errors - no params", () => {
 });
 
 test("rendered without errors", () => {
-  const wrapper = mount(
-    <Toggle value="on" onChange={onChangeStub} onClick={onChangeStub} />
-  );
-  wrapper.find('.container').simulate("click");
+  const wrapper = mount(<Toggle value="on" onChange={onChangeStub} />);
+  wrapper.find(".container").simulate("click");
   expect(onChangeStub).toBeCalled;
 });

@@ -1,36 +1,45 @@
-import React from "react";
-
 export interface CommonProps {
+  /** custom className (to better customize it)*/
   className?: string;
+
+  /** data-id parameter (for testing purpose, to easily find the component)*/
   id?: string;
+
+  /** Hide/show component */
   hide?: boolean;
+
   /** enable/disable dark mode */
   dark?: boolean;
+
+  /** Enable/disable shadow behind component (to better customize it) */
   shadow?: boolean;
+
+  /** Style/unstyle component (to better customize it) */
   unstyled?: boolean;
 }
 
-export type BoxComponent<
-  T = any,
-  K = JSX.Element | Element
-> = ClickableComponent<(value: T) => void> & {
+export interface BoxComponent<T = any, K = JSX.Element | Element> {
   /** Actual box value */
   value?: T;
+
+  /** Custom box icon */
   icon?: K;
+
+  /** Box top label */
   label?: string | Element | JSX.Element;
+}
+
+export interface GenericInputComponent<T = string> {
   readOnly?: boolean;
-};
+  placeholder?: T;
+}
+
+export interface ComponentWithCallback<T = string> {
+  onChange?: (newValue: T) => void;
+}
 
 export interface ComponentWithChildren<T = JSX.Element> {
   children?: T;
-}
-
-export interface ClickableComponent<T = () => void> {
-  onClick?: T;
-  onChange?: T;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-  disabled?: boolean;
 }
 
 export type BuilderComponent = Element | JSX.Element | string;

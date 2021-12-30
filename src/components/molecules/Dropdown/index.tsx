@@ -6,7 +6,7 @@ import { DropdownProps } from "./types";
 
 import classNames from "classnames";
 import { buildBoxComponent } from "../../../utils";
-import { Button } from "../../..";
+import Button from "../../atoms/Button";
 
 /**
  * Show a list of elements in a dropdown menu (by default, with fade-in and out effects).
@@ -23,11 +23,7 @@ const Dropdown = ({
   onChange,
   shadow,
   value,
-  onClick,
-  onMouseEnter,
-  onMouseLeave,
   label,
-  readOnly,
   icon,
   ...commonProps
 }: DropdownProps) => {
@@ -85,7 +81,7 @@ const Dropdown = ({
                   unstyled
                   id={`dropdown_option_${index}`}
                   onClick={() => {
-                    onClick && onClick(index);
+                    onChange && onChange(index);
                     setValue(index);
                     setVisible(false);
                   }}

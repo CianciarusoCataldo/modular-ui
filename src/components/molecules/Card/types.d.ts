@@ -7,9 +7,6 @@ import {
 export type CardProps = CommonProps &
   ComponentWithChildren &
   BoxComponent & {
-    /** A custom icon showed before the Card title */
-    icon?: JSX.Element;
-
     /** Card header content */
     header?: JSX.Element | string;
 

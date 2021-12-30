@@ -22,7 +22,6 @@ const Button = ({
   children,
   onClick,
   className: parentClassName,
-  onChange,
   onMouseEnter,
   onMouseLeave,
   ...commonProps

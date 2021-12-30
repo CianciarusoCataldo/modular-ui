@@ -12,9 +12,7 @@ test("rendered without errors - no params", () => {
 });
 
 test("rendered without errors", () => {
-  const wrapper = mount(
-    <CheckBox value={true} onChange={onChangeStub} onClick={onChangeStub} />
-  );
+  const wrapper = mount(<CheckBox value={true} onChange={onChangeStub} />);
   wrapper.find("#modular-checkbox .container").simulate("click");
   expect(onChangeStub).toBeCalled;
 });

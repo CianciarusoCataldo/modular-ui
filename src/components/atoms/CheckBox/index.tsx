@@ -16,12 +16,7 @@ import { buildBoxComponent } from "../../../utils";
 const Checkbox = ({
   value,
   onChange,
-  onClick,
   label,
-  readOnly,
-  onMouseEnter,
-  onMouseLeave,
-  disabled,
   icon,
   ...commonProps
 }: CheckboxProps) =>
@@ -54,7 +49,6 @@ const Checkbox = ({
       additionalProps: {
         onClick: () => {
           onChange && onChange(!actualValue);
-          onClick && onClick(!actualValue);
           setValue(!actualValue);
         },
       },

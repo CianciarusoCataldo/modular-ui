@@ -5,7 +5,7 @@ import { CarouselProps } from "./types";
 
 import classNames from "classnames";
 import { buildBoxComponent } from "../../../utils";
-import { Button } from "../../..";
+import Button from "../../atoms/Button";
 import { ICONS } from "../Rater/icons";
 
 /**
@@ -20,11 +20,6 @@ const Carousel = ({
   elements: actualElements,
   label,
   onChange,
-  onClick,
-  onMouseEnter,
-  onMouseLeave,
-  disabled,
-  readOnly,
   value,
   ...commonProps
 }: CarouselProps) => {

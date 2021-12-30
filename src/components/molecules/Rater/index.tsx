@@ -23,11 +23,10 @@ const Rater = ({
   value,
   max,
   type,
-  onClick,
   onChange,
   className,
   vertical,
-  customIcon,
+  icon,
   label,
   ...commonProps
 }: RaterProps) => {
@@ -63,7 +62,6 @@ const Rater = ({
               let newVote: number = i + 1;
               setValue(newVote);
               onChange && onChange(i + 1);
-              onClick && onClick(i + 1);
             }}
             onMouseEnter={() => setHover(i)}
             onMouseLeave={() => setHover(null)}

@@ -1,11 +1,18 @@
-import { BoxComponent, CommonProps } from "../../../utils/global";
+import {
+  BoxComponent,
+  CommonProps,
+  ComponentWithCallback,
+} from "../../../utils/global";
 
 export type SupportedVoteType = "star" | "circle";
 
 export type RaterProps = CommonProps &
-  BoxComponent<number> & {
+  BoxComponent<
+    number,
+    { FULL: JSX.Element | Element; EMPTY: JSX.Element | Element }
+  > &
+  ComponentWithCallback<number> & {
     vertical?: boolean;
     max?: number;
     type?: SupportedVoteType;
-    customIcon?: { FULL: JSX.Element | Element; EMPTY: JSX.Element | Element };
   };

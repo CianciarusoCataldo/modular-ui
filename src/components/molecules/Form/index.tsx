@@ -5,7 +5,8 @@ import classNames from "classnames";
 
 import { FormProps } from "./types";
 import { buildComponent } from "../../../utils";
-import { Button, Input } from "../../../";
+import Button from "../../atoms/Button";
+import Input from "../../atoms/Input";
 
 /**
  *

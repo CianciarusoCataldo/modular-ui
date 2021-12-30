@@ -13,7 +13,6 @@ import { buildBoxComponent } from "../../../utils";
 const Input = ({
   onChange = () => {},
   value,
-  onClick,
   placeholder,
   readOnly,
   label,

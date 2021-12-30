@@ -1,6 +1,5 @@
 import {
   BuilderComponent,
-  ClickableComponent,
   CommonProps,
   ComponentWithChildren,
 } from "../../../utils/global";
@@ -8,5 +7,9 @@ import {
 export type ButtonProps = ComponentWithChildren<
   BuilderComponent | BuilderComponent[]
 > &
-  CommonProps &
-  ClickableComponent;
+  CommonProps & {
+    onClick?: () => void;
+    onMouseEnter?: () => void;
+    onMouseLeave?: () => void;
+    disabled?: boolean;
+  };

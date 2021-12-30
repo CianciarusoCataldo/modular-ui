@@ -13,13 +13,9 @@ import { buildBoxComponent } from "../../../utils";
 const Counter = ({
   onChange,
   value,
-  onClick,
   placeholder,
   readOnly,
   label,
-  onMouseEnter,
-  onMouseLeave,
-  disabled,
   icon,
   ...commonProps
 }: CounterProps) =>

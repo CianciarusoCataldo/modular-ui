@@ -2,11 +2,11 @@ import {
   CommonProps,
   ComponentWithChildren,
   BoxComponent,
+  GenericInputComponent,
 } from "../../../utils/global";
 
 /** Input component props */
 export type CounterProps<T = any> = CommonProps &
-  BoxComponent<number> & {
-    readOnly?: boolean;
-    placeholder?: string;
-  };
+  GenericInputComponent &
+  BoxComponent<number> &
+  ComponentWithCallback<number>;
