@@ -13,6 +13,7 @@ import { BoxComponent, BuilderProps } from "./global";
  * @param wrapper
  *
  * @returns built component, ready to be rendered
+ * 
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
@@ -51,7 +52,7 @@ export const buildComponent = ({
  * @param {string} label component top label
  * @param callback a function that returns an Object containing Component Builder props, properly formatted
  *
- * @returns built component, enhanced with some functionalities (like the top label)
+ * @returns built component, ready to be rendered, enhanced with some functionalities (like the top label)
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *

@@ -13,7 +13,7 @@ describeTest("icon visibility", () => {
     expect(wrapper.find("svg").length).toBe(0);
   });
 
-  test("if value === true, icon showed", () => {
+  test("if value === true, icon is showed", () => {
     const wrapper = mount(<CheckBox value={true} onChange={() => {}} />);
     expect(wrapper.find("svg").length).toBe(1);
   });

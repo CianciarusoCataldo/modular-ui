@@ -21,13 +21,13 @@ describeTest("click test", () => {
 });
 
 describeTest("hover test", () => {
-  test("onMouseEnter test", () => {
+  test("onMouseEnter", () => {
     let wrapper = mount(<Rater value={3} max={6} onChange={() => {}} />);
     wrapper.find('div[data-id="vote_4"] button').simulate("mouseenter");
     expect(wrapper);
   });
 
-  test("onMouseLeave test", () => {
+  test("onMouseLeave", () => {
     let wrapper = mount(<Rater value={3} max={6} onChange={() => {}} />);
     wrapper.find('div[data-id="vote_4"] button').simulate("mouseleave");
     expect(wrapper);
