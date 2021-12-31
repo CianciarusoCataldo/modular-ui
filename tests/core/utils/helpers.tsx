@@ -28,7 +28,17 @@ export const renderingTest = (
     });
     params &&
       test("with parameters", () => {
-        const wrapper = shallow(<TestComponent {...params} />);
+        const wrapper = shallow(
+          <TestComponent
+            {...params}
+            hide
+            dark
+            unstyled
+            shadow={false}
+            id="test-id"
+            className="test-className"
+          />
+        );
         expect(wrapper);
       });
   });

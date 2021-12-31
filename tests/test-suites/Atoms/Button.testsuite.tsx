@@ -8,9 +8,9 @@ import { Button } from "../../../src";
 renderingTest(Button, { onClick: () => {} });
 
 describeTest("click test", () => {
-  const clickStub = jest.fn();
-
   test("when Button is enabled, clicking on the Button will trigger onClick callback", () => {
+    const clickStub = jest.fn();
+
     const wrapper = mount(
       <Button onClick={clickStub}>
         <p>Testing button</p>
