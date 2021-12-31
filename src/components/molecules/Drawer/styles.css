@@ -9,6 +9,18 @@
   background-image: var(--modular-background);
   overflow: auto;
   color: var(--modular-text-color);
+  animation: var(--modular-drawer-animation);
+  -moz-animation: var(--modular-drawer-animation);
+  -ms-animation: var(--modular-drawer-animation);
+  -o-animation: var(--modular-drawer-animation);
+}
+
+#modular-drawer.ease-in {
+  --modular-drawer-animation: slideLeft 0.3s forwards;
+}
+
+#modular-drawer.ease-out {
+  --modular-drawer-animation: slideOutLeft 0.3s forwards;
 }
 
 #modular-drawer .elements {
@@ -78,14 +90,16 @@
   flex-direction: column;
 }
 
-#modular-drawer.ease-in {
-  transition-timing-function: ease-in !important;
-  transition: 0.2s;
-  transform: translateX(0%);
+#modular-drawer .close-button svg {
+  fill: var(--modular-text-color);
 }
 
-#modular-drawer.ease-out {
-  transition-timing-function: ease-out !important;
-  transition: 0.2s;
-  transform: translateX(-100%);
+#modular-drawer .close-button svg:hover {
+  fill: rgba(217, 119, 6, 1);
+}
+
+@media (hover: none) {
+  #modular-drawer .close-button:hover svg {
+    fill: var(--modular-text-color);
+  }
 }

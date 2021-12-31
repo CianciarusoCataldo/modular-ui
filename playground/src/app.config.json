@@ -3,41 +3,31 @@
   "FALLBACK_LANGUAGE": "en",
   "ROUTER": {
     "BASENAME": "/modular-ui",
-    "ROUTES_PATHS": {
-      "HOME": "",
-      "Dropdown": "/components/molecules/dropdown",
-      "Card": "/components/molecules/card",
-      "Form": "/components/molecules/form",
-      "Button": "/components/atoms/button",
-      "Link": "/components/atoms/link",
-      "Modal": "/components/atoms/modal",
-      "Divider": "/components/atoms/divider",
-      "Table": "/components/molecules/table",
-      "Input": "/components/atoms/Input",
-      "Checkbox": "/components/atoms/Checkbox",
-      "CodeBox": "/components/atoms/CodeBox",
-      "Toggle": "/components/atoms/Toggle"
+    "PAGES": {
+      "Home": {
+        "path": "/"
+      },
+      "Button": { "path": "/components/atoms/Button" },
+      "Card": { "path": "/components/molecules/Card" },
+      "Carousel": { "path": "/components/molecules/Carousel" },
+      "CheckBox": { "path": "/components/atoms/CheckBox" },
+      "CodeBox": { "path": "/components/atoms/CodeBox" },
+      "Counter": { "path": "/components/molecules/Counter" },
+      "Divider": { "path": "/components/atoms/Divider" },
+      "Dropdown": { "path": "/components/molecules/Dropdown" },
+      "Form": { "path": "/components/molecules/Form" },
+      "Input": { "path": "/components/atoms/Input" },
+      "Link": { "path": "/components/atoms/Link" },
+      "Modal": { "path": "/components/atoms/Modal" },
+      "Rater": { "path": "/components/molecules/Rater" },
+      "Table": { "path": "/components/molecules/Table" },
+      "Toggle": { "path": "/components/atoms/Toggle" }
     }
   },
   "I18N": {
     "FALLBACK_LANGUAGE": "en",
     "SUPPORTED_LANGUAGES": ["en", "it", "es", "fr", "de"],
-    "NAMESPACES": [
-      "home",
-      "Dropdown",
-      "Card",
-      "Form",
-      "Button",
-      "Link",
-      "Modal",
-      "Divider",
-      "Table",
-      "Input",
-      "Checkbox",
-      "CodeBox",
-      "Toggle",
-      "common"
-    ],
+    "NAMESPACES": ["common", "home"],
     "DEFAULT_NAMESPACE": "common",
     "LOAD_PATH": "/locales/{{lng}}/{{ns}}.json"
   }

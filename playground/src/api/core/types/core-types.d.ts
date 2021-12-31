@@ -1,9 +1,13 @@
 //Pre-loaded config
+
+declare interface PageComponent {
+  path: string;
+}
 declare interface Config {
   APP_NAME: string;
   ROUTER: {
     BASENAME: string;
-    ROUTES_PATHS: Record<RouteKey, string>;
+    PAGES: Record<string, PageComponent>;
   };
   I18N: {
     FALLBACK_LANGUAGE: string;
@@ -19,7 +23,7 @@ declare interface Config {
 declare interface RootState {
   router: RouterState;
   ui: UIState;
-  config: ConfigState;
+  config: Config;
 }
 
 declare type StateSlice = keyof RootState;

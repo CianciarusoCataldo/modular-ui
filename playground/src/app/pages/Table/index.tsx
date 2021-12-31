@@ -5,10 +5,7 @@ import {
   StringProp,
 } from "@cianciarusocataldo/demo-ui";
 import { Table } from "modular-ui-preview";
-import {
-  useCommonTranslation,
-  useTableTranslation,
-} from "app/hooks/localization";
+import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
 
 export const TableWrapper = () => {
@@ -17,45 +14,36 @@ export const TableWrapper = () => {
       label="Table"
       props={{
         className: StringProp(""),
-        Rows: NumberProp(1),
+        label: StringProp("Table label"),
+        Rows: NumberProp(2),
         headers: BooleanProp(true),
         hide: BooleanProp(false),
         dark: BooleanProp(false),
+        shadow: BooleanProp(true),
+        unstyled: BooleanProp(false),
       }}
     >
-      {(props: any) => {
+      {({ Rows: numberOfRows, ...props }: any) => {
         let rows = [];
-        if (props.Rows) {
-          if (props.headers) {
-            rows.push(["Table header 1", "Table header 2", "Table header 3"]);
-          }
-          for (let i = 0; i < props.Rows; i++) {
+        if (numberOfRows) {
+          for (let i = 0; i < numberOfRows; i++) {
             rows.push(["Table cell", "Table cell", "Table cell"]);
           }
         }
 
-        return (
-          <Table
-            rows={rows}
-            headers={props.headers}
-            className={props.className}
-            hide={props.hide}
-            dark={props.dark}
-          />
-        );
+        return <Table {...props} headers={props.headers} rows={rows} />;
       }}
     </Demo>
   );
 };
 
 const TablePage = () => {
-  const t = useTableTranslation();
-  const tCommon = useCommonTranslation();
+  const t = useCommonTranslation();
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${tCommon(
+      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t(
         "molecules"
-      )} - ${t("title")}`}</p>
+      )} - ${t("component", { componentName: "Table" })}`}</p>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <TableWrapper />
       </div>

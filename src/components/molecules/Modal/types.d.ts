@@ -1,5 +1,6 @@
-import { CommonProps, ComponentWithChildren } from "../../../global";
+import { CommonProps, ComponentWithChildren } from "../../../utils/global";
 
+/** Modal component props */
 export type ModalProps = CommonProps &
   ComponentWithChildren & {
     /** A custom className applied on the Modal container */

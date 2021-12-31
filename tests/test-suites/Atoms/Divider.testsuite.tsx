@@ -1,8 +1,4 @@
-import React from "react";
-import { shallow } from "enzyme";
 import { Divider } from "../../../src";
+import { renderingTest } from "../../core/utils/helpers";
 
-test("rendered without errors", () => {
-  const wrapper = shallow(<Divider />);
-  expect(wrapper);
-});
+renderingTest(Divider, { className: "divider-className", dark: true });

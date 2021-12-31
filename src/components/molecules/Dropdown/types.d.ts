@@ -1,14 +1,13 @@
-import { CommonProps } from "../../../global";
+import {
+  BoxComponent,
+  CommonProps,
+  ComponentWithCallback,
+} from "../../../utils/global";
 
-export type DropdownProps = CommonProps & {
-  /** Dropdown content elements */
-  content?: { name: string; icon?: JSX.Element }[];
-
-  /** Dropdown default value */
-  placeholder?: string | JSX.Element;
-
-  /** Dropdown actual selected value */
-  actualValue?: number;
-
-  onChange?: (value: string, index: number) => void;
-};
+/** Dropdown component props */
+export type DropdownProps = CommonProps &
+  BoxComponent<number> &
+  ComponentWithCallback<number> & {
+    /** Dropdown content elements */
+    content?: { name: string; icon?: JSX.Element }[];
+  };

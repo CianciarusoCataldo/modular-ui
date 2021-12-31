@@ -1,28 +1,10 @@
-import React from "react";
-import { shallow } from "enzyme";
+import { renderingTest } from "../../core/utils/helpers";
+
 import { Card } from "../../../src";
 
-test("rendered without errors", () => {
-  let wrapper = shallow(<Card title="Testing Card" />);
-  expect(wrapper);
-  wrapper = shallow(<Card />);
-  expect(wrapper);
-});
-
-test("rendered without errors - no parameters", () => {
-  let wrapper = shallow(<Card title="Testing Card" />);
-  expect(wrapper);
-  wrapper = shallow(
-    <Card
-      title="Testing Card"
-      titleClassName="testing-class"
-      header="Testing header"
-      headerClassName="testing-class"
-      body="Testing body"
-      bodyClassName="testing-class"
-      footer="Testing footer"
-      footerClassName="testing-class"
-    />
-  );
-  expect(wrapper);
+renderingTest(Card, {
+  label: "Testing Card",
+  header: "Testing header",
+  body: "Testing body",
+  footer: "Testing footer",
 });

@@ -1,3 +1,10 @@
-import { BoxComponent, CommonProps } from "../../../global";
+import {
+  BoxComponent,
+  CommonProps,
+  ComponentWithCallback,
+} from "../../../utils/global";
 
-export type ToggleProps = CommonProps & BoxComponent<"on" | "off">;
+/** Toggle component props */
+export type ToggleProps = CommonProps &
+  BoxComponent<"on" | "off"> &
+  ComponentWithCallback<"on" | "off">;

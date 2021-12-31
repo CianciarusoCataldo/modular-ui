@@ -2,55 +2,46 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
+}
+
+#modular-button,
+#modular-button button:focus,
+#modular-button button:hover {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-#modular-button .unstyled:focus,
-#modular-button .unstyled:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-#modular-button .enabled {
+#modular-button button.enabled {
   transition-duration: 0.1s;
   transition-property: transform;
 }
 
-#modular-button .disabled {
+#modular-button button.disabled {
   opacity: 0.5;
 }
 
-#modular-button .enabled:hover {
+#modular-button.styled button.enabled:hover {
   position: relative;
   transform: scaleX(1.15) scaleY(1.1);
 }
 
-#modular-button .styled.enabled:hover {
+#modular-button.styled button.enabled:hover {
   background: linear-gradient(to right, #c9cacc, #e1e1e4, #c8c9ca);
 }
 
-#modular-button.dark .styled.enabled:hover {
+#modular-button.dark.styled button.enabled:hover {
   background: rgb(61, 61, 75);
 }
 
-#modular-button .styled {
+#modular-button.styled button {
   background: var(--modular-background);
   color: var(--modular-text-color);
   text-align: center;
   font-weight: 800;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 0.25rem;
   display: inline-flex;
   align-items: center;
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-#modular-button .styled:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }

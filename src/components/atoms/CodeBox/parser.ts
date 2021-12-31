@@ -1,9 +1,9 @@
 import { CODE_LANGUAGES } from "./languages";
-import { SplittedCode, SupportedEnvironment } from "./types";
+import { CodeBlock, SupportedEnvironment } from "./types";
 
 const BASIC_PARSER = (
   code: string,
-  handleOtherElements: ((code: string) => SplittedCode[]) | null
+  handleOtherElements: ((code: string) => CodeBlock[]) | null
 ) => {
   const parsedCode: { code: string; color: string | null }[] = [];
   code.split(/(\'.+?\')/g).forEach((codeBlock, codeIndex) => {
@@ -41,7 +41,7 @@ const BASIC_PARSER = (
 
 const PARSERS: Record<
   SupportedEnvironment,
-  ((code: string) => SplittedCode[]) | null
+  ((code: string) => CodeBlock[]) | null
 > = {
   javascript: null,
   common: null,
@@ -50,11 +50,11 @@ const PARSERS: Record<
 };
 
 const getHighlightedCode = (
-  code: SplittedCode[],
+  code: CodeBlock[],
   environment: SupportedEnvironment
 ) => {
   let actualEnv = environment;
-  let splittedCode: SplittedCode<string>[] = [];
+  let splittedCode: CodeBlock<string>[] = [];
   code
     .filter((part) => part.code.length > 0)
     .forEach((codeBlock) => {
@@ -75,6 +75,15 @@ const getHighlightedCode = (
   return splittedCode;
 };
 
+/** Parse the given code, and return it splitted into multiple code blocks, with specific highlight color for each block
+ *
+ * @param code code to parse
+ * @param environment selected environment, the highlight colors are based on it (default to `terminal`)
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 export const parseCode = (code: string, environment: SupportedEnvironment) => {
   return getHighlightedCode(
     BASIC_PARSER(code, PARSERS[environment]),

@@ -1,5 +1,8 @@
-#modular-divider.container {
+#modular-divider {
   height: 1px;
   width: 100%;
+}
+
+#modular-divider.styled {
   background-color: var(--modular-text-color);
 }

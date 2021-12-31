@@ -6,7 +6,7 @@ import { filter, ignoreElements, tap, withLatestFrom } from "rxjs/operators";
 
 import { changeLanguage } from "./actions";
 import { updatePageTitle } from "api/helpers/ui-helper";
-import { getAppName, getRoutesMap } from "../config/selectors";
+import { getConfig } from "../config/selectors";
 
 export const languageChangeEpic: Epic<RootAction, RootAction, RootState> = (
   action$,
@@ -17,7 +17,7 @@ export const languageChangeEpic: Epic<RootAction, RootAction, RootState> = (
     withLatestFrom(state$),
     tap(([action, state]) => {
       setI18nLanguage(action.payload.language).then(() => {
-        updatePageTitle(getRoutesMap(state), getAppName(state));
+        updatePageTitle(getConfig(state));
       });
     }),
     ignoreElements()

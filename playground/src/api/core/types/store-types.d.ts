@@ -22,8 +22,3 @@ declare interface UIState {
   language: SupportedLanguage;
   isHomePage: boolean;
 }
-
-//Config
-declare type ConfigState = Config & {
-  ROUTER: { ROUTES_MAP: Record<string, RouteKey> };
-};

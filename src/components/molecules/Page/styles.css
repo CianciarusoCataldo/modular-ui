@@ -8,7 +8,7 @@
   -o-animation: fadein 1s;
   animation: fadein 1s;
   color: var(--modular-text-color);
-  background-image: var(--modular-background);
+  background: transparent;
 }
 
 #modular-page.horizontal {

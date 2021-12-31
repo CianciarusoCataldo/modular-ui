@@ -2,7 +2,7 @@ import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { History } from "history";
 
-import { getRoutesPaths } from "api/state-slices/config/selectors";
+import { getPages } from "api/state-slices/config/selectors";
 
 import { getRoutingLogic } from "api/helpers/route-helper";
 
@@ -14,10 +14,9 @@ interface AppProps {
 }
 
 const App = ({ history }: AppProps) => {
-  const PATHS = useSelector(getRoutesPaths);
+  const PATHS = useSelector(getPages);
 
   const ROUTES_PROPS = getRoutingLogic(PATHS);
-
   return (
     <div id="app-container">
       <AppHeader />

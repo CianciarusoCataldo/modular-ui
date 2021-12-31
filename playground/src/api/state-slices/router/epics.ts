@@ -1,10 +1,8 @@
 import { Epic } from "redux-observable";
 import { filter, map, withLatestFrom } from "rxjs/operators";
 
-import i18n from "api/core/i18n/instance";
-
 import { isActualRouteHomepage, updatePageTitle } from "api/helpers/ui-helper";
-import { getAppName, getRoutesMap, getRoutesPaths } from "../config/selectors";
+import { getConfig, getPages } from "../config/selectors";
 import { checkRoute, locationChange } from "./actions";
 
 export const locationChangeEpic: Epic<RootAction, RootAction, RootState> = (
@@ -15,10 +13,8 @@ export const locationChangeEpic: Epic<RootAction, RootAction, RootState> = (
     filter(locationChange.match),
     withLatestFrom(state$),
     map(([_, state]) => {
-      if (i18n.isInitialized)
-        updatePageTitle(getRoutesMap(state), getAppName(state));
-
-      return checkRoute(isActualRouteHomepage(getRoutesPaths(state).HOME));
+      updatePageTitle(getConfig(state));
+      return checkRoute(isActualRouteHomepage(getPages(state).Home.path));
     })
   );
 };

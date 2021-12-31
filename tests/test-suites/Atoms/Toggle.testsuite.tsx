@@ -1,19 +1,18 @@
 import React from "react";
 import { mount } from "enzyme";
-import Sinon from "sinon";
+
+import { describeTest, renderingTest } from "../../core/utils/helpers";
+
 import { Toggle } from "../../../src";
 
-const onChangeStub = Sinon.stub();
+renderingTest(Toggle, { value: "on", onChange: () => {} });
 
-test("rendered without errors - no params", () => {
-  const wrapper = mount(<Toggle />);
-  expect(wrapper);
-});
+describeTest("click test", () => {
+  const onChangeStub = jest.fn();
 
-test("rendered without errors", () => {
-  const wrapper = mount(
-    <Toggle value="on" onChange={onChangeStub} onClick={onChangeStub} />
-  );
-  wrapper.find('div[id="modular-toggle"]').simulate("click");
-  expect(onChangeStub).toBeCalled;
+  test("onChange callback is triggered", () => {
+    const wrapper = mount(<Toggle value="on" onChange={onChangeStub} />);
+    wrapper.find(".container").simulate("click");
+    expect(onChangeStub).toBeCalledWith("off");
+  });
 });

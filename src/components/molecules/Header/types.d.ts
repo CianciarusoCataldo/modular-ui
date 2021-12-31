@@ -1,3 +1,9 @@
-import { CommonProps, ComponentWithChildren } from "../../../global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
-export type HeaderProps = CommonProps & ComponentWithChildren;
+/** Header component props */
+export type HeaderProps = CommonProps &
+  ComponentWithChildren<BuilderComponent | BuilderComponent[]>;

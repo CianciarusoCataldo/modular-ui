@@ -1,8 +1,23 @@
-import { CommonProps, ComponentWithChildren } from "../../../global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
-export type ButtonProps = ComponentWithChildren &
-  CommonProps &
-  ClickableComponent & {
-    /** If true, no other styles will be applied on main container (useful for image only buttons) */
-    noStyles?: boolean;
+/** Button component props */
+export type ButtonProps = ComponentWithChildren<
+  BuilderComponent | BuilderComponent[]
+> &
+  CommonProps & {
+    /** callback triggered when the button is clicked */
+    onClick?: () => void;
+
+    /**callback triggered when the cursor enter the component */
+    onMouseEnter?: () => void;
+
+    /** callback triggered when the cursor exit the component */
+    onMouseLeave?: () => void;
+
+    /**enable or disable the button functionalities (UI will reflect it too) */
+    disabled?: boolean;
   };

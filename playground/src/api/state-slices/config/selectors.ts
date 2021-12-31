@@ -24,12 +24,4 @@ export const getLanguages = createSelector(
   ({ SUPPORTED_LANGUAGES }) => SUPPORTED_LANGUAGES
 );
 
-export const getRoutesPaths = createSelector(
-  getRouterConfig,
-  ({ ROUTES_PATHS }) => ROUTES_PATHS
-);
-
-export const getRoutesMap = createSelector(
-  getRouterConfig,
-  ({ ROUTES_MAP }) => ROUTES_MAP
-);
+export const getPages = createSelector(getRouterConfig, ({ PAGES }) => PAGES);

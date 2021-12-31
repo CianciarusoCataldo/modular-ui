@@ -1,23 +1,19 @@
-import i18n from "api/core/i18n/instance";
 import { isInDarkMode } from "api/state-slices/ui/selectors";
 import { useSelector } from "react-redux";
 
-export const updatePageTitle = (
-  ROUTES_MAP: Record<string, RouteKey>,
-  fallback: string
-) => {
-  const route =
-    ROUTES_MAP[window.location.pathname] ||
-    ROUTES_MAP[
-      window.location.pathname.substring(0, window.location.pathname.length - 1)
-    ] ||
-    ROUTES_MAP[`${window.location.pathname}/`];
+export const updatePageTitle = (CONFIG: Config) => {
+  const actualPath = window.location.pathname;
 
   const title =
-    route && i18n.isInitialized && route !== "HOME"
-      ? `Modular-ui - ${route}`
-      : fallback;
-  window.document.title = title;
+    Object.keys(CONFIG.ROUTER.PAGES).find(
+      (page) =>
+        CONFIG.ROUTER.PAGES[page].path === actualPath ||
+        CONFIG.ROUTER.PAGES[page].path ===
+          actualPath.substring(0, actualPath.length - 1) ||
+        CONFIG.ROUTER.PAGES[page].path === `${actualPath}/`
+    ) || CONFIG.APP_NAME;
+
+  window.document.title = `${CONFIG.APP_NAME} - ${title}`;
 };
 
 export const isActualRouteHomepage = (homePath: string) => {

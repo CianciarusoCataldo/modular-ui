@@ -11,7 +11,6 @@ import { combineEpics, createEpicMiddleware } from "redux-observable";
 
 import { createReduxHistoryContext } from "redux-first-history";
 import { createBrowserHistory } from "history";
-import { computeRoutePaths, computeRoutesMap } from "api/helpers/route-helper";
 
 const { createReduxHistory, routerMiddleware, routerReducer } =
   createReduxHistoryContext({
@@ -20,13 +19,10 @@ const { createReduxHistory, routerMiddleware, routerReducer } =
 
 export const initStore = (CONFIG: Config) => {
   let initialState = { ...INITIAL_STATE };
-  const PATHS = computeRoutePaths(CONFIG);
   initialState.config = {
     ...CONFIG,
     ROUTER: {
       ...CONFIG.ROUTER,
-      ROUTES_PATHS: PATHS,
-      ROUTES_MAP: computeRoutesMap(PATHS),
     },
   };
   const rootReducer = combineReducers({

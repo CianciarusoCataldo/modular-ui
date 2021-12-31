@@ -1,3 +1,13 @@
+# 2.0.0
+
+- Rater component
+- Counter component
+- Carousel component
+- Clean up
+- Refactoring
+- Shared component building process, with new common props
+- Fully documented components, with working examples
+
 # 1.2.0
 
 - Bugfixes
@@ -27,7 +37,7 @@
 
 - Bugfixes
 - Input component
-- Checkbox component
+- CheckBox component
 - CodeBox component
 
 # 0.9.0

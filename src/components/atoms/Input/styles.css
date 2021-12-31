@@ -1,16 +1,4 @@
-#modular-input {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-#modular-input .label {
-  margin-top: 1rem;
-}
-
-#modular-input .input-box {
+#modular-inputbox.styled .input-box {
   border-radius: 5px;
   padding: 0.5rem;
   outline: none;

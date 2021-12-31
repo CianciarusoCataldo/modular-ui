@@ -12,20 +12,36 @@ import { buildComponent } from "../../../utils";
  * A modern drawer, easy to integrate and to customize.
  *
  * @param elements Drawer elements array
- * @param onClose Callback triggered on Drawer close
+ * @param {JSX.Element | Element} logo Drawer logo, displayed on top (when Drawer is open)
+ * @param {()=>void} onClose Callback triggered on Drawer close
+ * @param {string} className `common modular-ui prop` - custom className (to better customize it)
+ * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
+ * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
+ * @param {boolean} dark `common modular-ui prop` - Enable/disable dark mode
+ * @param {boolean} hide `common modular-ui prop` - Hide/show component
+ * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
+ *
+ *@example <caption>Example Drawer usage</caption>
+ *import { render } from "react-dom";
+ *import { Drawer } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<Drawer elements={[{ text:"Element 0" }]} />, document.getElementById("root"));
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
 const Drawer = ({
   children,
   elements,
-  isOpen,
   onClose,
   logo,
   hide,
   className,
   ...commonProps
 }: DrawerProps) => {
+  const [firstClicked, setFirstClick] = React.useState<boolean>(false);
+
   return buildComponent({
     name: "modular-drawer",
     commonProps: {
@@ -33,7 +49,8 @@ const Drawer = ({
       className: classNames(
         {
           "ease-in": !hide,
-          "ease-out": hide,
+          "ease-out": firstClicked && hide,
+          "component-hidden": !firstClicked && hide,
         },
         className
       ),
@@ -42,7 +59,16 @@ const Drawer = ({
       <div className="container-internal">
         <div className="buttons-panel">
           {logo}
-          <button onClick={onClose} className="close-button">
+          <Button
+            dark={commonProps.dark}
+            unstyled
+            id="drawer_close_button"
+            onClick={() => {
+              setFirstClick(true);
+              onClose();
+            }}
+            className="close-button"
+          >
             {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,17 +76,11 @@ const Drawer = ({
                 height="37"
                 viewBox="0 0 11 18"
               >
-                <path
-                  fill="#999"
-                  d="M8.6812.1963l2.1208928 2.120293-8.484 8.4864L.1972 8.6827z"
-                />
-                <path
-                  fill="#999"
-                  d="M10.8032656 15.0470656l-2.1213 2.1213-8.4852-8.4852 2.1213-2.1213z"
-                />
+                <path d="M8.6812.1963l2.1208928 2.120293-8.484 8.4864L.1972 8.6827z" />
+                <path d="M10.8032656 15.0470656l-2.1213 2.1213-8.4852-8.4852 2.1213-2.1213z" />
               </svg>
             }
-          </button>
+          </Button>
         </div>
         <div className="elements">
           <div>
@@ -76,7 +96,7 @@ const Drawer = ({
                     className="element"
                   >
                     <Button
-                      noStyles
+                      unstyled
                       id={`drawer_button_${index}`}
                       onClick={element.actionCallback}
                     >
@@ -92,7 +112,7 @@ const Drawer = ({
                         </div>
                       </div>
                     </Button>
-                    <Divider />
+                    <Divider dark={commonProps.dark} />
                   </div>
                 );
               })}
