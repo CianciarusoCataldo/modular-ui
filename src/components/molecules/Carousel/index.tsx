@@ -46,6 +46,7 @@ const Carousel = ({
   );
 
   const [activeClassName, setActiveClassname] = React.useState("");
+  const [hoveredDot, setHoveredDot] = React.useState<number | null>(null);
 
   return buildBoxComponent<number>({
     callBack: (item, setItem) => {
@@ -77,12 +78,16 @@ const Carousel = ({
               unstyled
               id={`dot_${index}`}
               key={`dot_${index}`}
+              onMouseEnter={() => setHoveredDot(index)}
+              onMouseLeave={() => setHoveredDot(null)}
               onClick={() => {
                 setActiveClassname(index > item ? "from-right" : "from-left");
                 updateItem(index);
               }}
             >
-              {index === item ? ICONS.circle.FULL : ICONS.circle.EMPTY}
+              {index === item || (hoveredDot != null && index === hoveredDot)
+                ? ICONS.circle.FULL
+                : ICONS.circle.EMPTY}
             </Button>
           );
         });

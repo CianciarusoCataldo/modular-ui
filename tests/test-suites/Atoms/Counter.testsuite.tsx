@@ -1,24 +1,44 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
-import { stub } from "sinon";
-import { Counter, Input } from "../../../src";
+import { mount } from "enzyme";
 
-const onChangeStub = stub();
+import { describeTest, renderingTest } from "../../core/utils/helpers";
 
-test("rendered without errors - no params", () => {
-  const wrapper = shallow(<Counter />);
-  wrapper.find("input").simulate("change", { target: { value: "0" } });
-  expect(onChangeStub).not.toBeCalled;
+import { Counter } from "../../../src";
+
+renderingTest(Counter, {
+  value: 12,
+  onChange: () => {},
 });
 
-test("rendered without errors", () => {
-  let wrapper = mount(<Counter onChange={onChangeStub} />);
-  wrapper.find("input").simulate("change", { target: { value: null } });
-  expect(onChangeStub).toBeCalled;
+describeTest("changing value test", () => {
+  const onChangeStub = jest.fn();
 
-  wrapper = mount(<Counter value={0} onChange={onChangeStub} />);
-  wrapper
-    .find("input")
-    .simulate("change", { target: { value: "12" } });
-  expect(onChangeStub).toBeCalled;
+  test("onChange callback is triggered", () => {
+    const wrapper = mount(<Counter value={0} onChange={onChangeStub} />);
+    wrapper.find("input").simulate("change", { target: { value: "12" } });
+    expect(onChangeStub).toBeCalledWith(12);
+  });
+
+  test("with undefined value", () => {
+    const wrapper = mount(<Counter value={0} />);
+    wrapper.find("input").simulate("change", { target: { value: undefined } });
+    expect(wrapper.find("input").at(0).props().value).toBe(0);
+  });
+});
+
+describeTest("input common parameters", () => {
+  test("if no value is set, the given placeholder is showed instead", () => {
+    const wrapper = mount(<Counter placeholder="no value" />);
+    expect(wrapper.html()).toContain("no value");
+  });
+
+  test("readonly mode", () => {
+    const onChangeStub = jest.fn();
+    const wrapper = mount(
+      <Counter value={0} readOnly onChange={onChangeStub} />
+    );
+    wrapper.find("input").simulate("change", { target: { value: "12" } });
+    expect(wrapper.find("input").at(0).props().value).toBe(0);
+    expect(onChangeStub).not.toBeCalled;
+  });
 });

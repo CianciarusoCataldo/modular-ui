@@ -48,12 +48,14 @@ const Counter = ({
           className="input-box"
           readOnly={readOnly}
           onChange={(e) => {
-            const changedValue = e.target.value
-              ? Number.parseInt(e.target.value)
-              : 0;
+            if (!readOnly) {
+              const changedValue = e.target.value
+                ? Number.parseInt(e.target.value)
+                : 0;
 
-            onChange && onChange(changedValue);
-            setValue(changedValue);
+              onChange && onChange(changedValue);
+              setValue(changedValue);
+            }
           }}
         />
       ),

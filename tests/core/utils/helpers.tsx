@@ -1,3 +1,7 @@
+import React from "react";
+import { shallow } from "enzyme";
+import PKG from "../../../package.json";
+
 var fs = require("fs");
 var path = require("path");
 
@@ -11,6 +15,23 @@ export const describeComponent = (component: string, test?: () => void) => {
 
 export const describeTest = (component: string, testSuite: () => void) => {
   describe(`\n        - ${component}\n`, testSuite ? testSuite : () => {});
+};
+
+export const renderingTest = (
+  TestComponent: (props: any) => JSX.Element,
+  params?: Record<string, any>
+) => {
+  describeTest("rendering test", () => {
+    test("no parameters", () => {
+      const wrapper = shallow(<TestComponent />);
+      expect(wrapper);
+    });
+    params &&
+      test("with parameters", () => {
+        const wrapper = shallow(<TestComponent {...params} />);
+        expect(wrapper);
+      });
+  });
 };
 
 export const getFilesList = (dir: string, showOnlyDirs?: boolean) => {
@@ -49,13 +70,15 @@ export const getFilesList = (dir: string, showOnlyDirs?: boolean) => {
   return result;
 };
 
-export const executeTests = (APP_NAME: string, TESTS_PATH: string) => {
+export const executeTests = () => {
   const path = require("path");
 
-  const TEST_SUITES_PATH = path.resolve(__dirname, TESTS_PATH);
+  const TEST_SUITES_PATH = path.resolve(__dirname, "../../test-suites/");
   const dirs = getFilesList(TEST_SUITES_PATH, true);
 
-  describe(`\n                       ## ${APP_NAME} - Unit tests - v.0.5 ##`, () => {
+  describe(`\n                       ## ${PKG.name
+    .replace("@cianciarusocataldo/", "")
+    .toLowerCase()} - v.${PKG.version} - Unit tests ##`, () => {
     dirs.forEach(({ name: category }) =>
       describeSection(
         category.charAt(0).toUpperCase() + category.slice(1),

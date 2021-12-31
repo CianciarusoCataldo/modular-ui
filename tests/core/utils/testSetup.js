@@ -1,15 +1,15 @@
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Sinon from "sinon";
+
 /* eslint-disable */
 global.navigator.clipboard = {
-  writeText: Sinon.stub(),
-  readText: Sinon.stub(),
+  writeText: jest.fn(),
+  readText: jest.fn(),
   read: undefined,
   write: undefined,
-  addEventListener: Sinon.stub(),
-  dispatchEvent: Sinon.stub(),
-  removeEventListener: Sinon.stub(),
+  addEventListener: jest.fn(),
+  dispatchEvent: jest.fn(),
+  removeEventListener: jest.fn(),
 };
 
 /* eslint-disable */

@@ -14,6 +14,7 @@ export const FormWrapper = () => (
       title: StringProp("Form title"),
       submitLabel: StringProp("Form submit button"),
       className: StringProp("mx-auto"),
+      label: StringProp("Form label"),
     }}
   >
     {(props: any) => (

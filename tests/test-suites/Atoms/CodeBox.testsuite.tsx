@@ -1,26 +1,20 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
-import Sinon from "sinon";
+import { mount } from "enzyme";
+
+import { describeTest, renderingTest } from "../../core/utils/helpers";
 
 import { CodeBox } from "../../../src";
-import { describeTest } from "../../core/utils/helpers";
 
-test("rendered without errors - no params", () => {
-  const wrapper = shallow(<CodeBox />);
-  expect(wrapper);
+renderingTest(CodeBox, {
+  environment: "python",
+  value: "pip i 'panda'",
+  enhanced: true,
 });
 
-test("rendered without errors", () => {
-  const wrapper = mount(
-    <CodeBox environment="python" value="pip i panda 'string'" enhanced />
-  );
-  expect(wrapper);
-});
+describeTest("advanced features", () => {
+  const copyStub = jest.fn();
 
-describeTest("Advanced features", () => {
-  const copyStub = Sinon.stub();
-
-  test("Clicking on copy button will copy the actual code to the clipboard", () => {
+  test("clicking on copy button will copy the actual code to the clipboard", () => {
     const wrapper = mount(
       <CodeBox
         environment="javascript"

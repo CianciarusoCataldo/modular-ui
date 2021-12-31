@@ -1,4 +1,4 @@
-#modular-form {
+#modular-form > .box-component > .container {
   border-color: transparent;
   display: flex;
   flex-direction: column;

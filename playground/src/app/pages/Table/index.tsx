@@ -14,6 +14,7 @@ export const TableWrapper = () => {
       label="Table"
       props={{
         className: StringProp(""),
+        label: StringProp("Table label"),
         Rows: NumberProp(2),
         headers: BooleanProp(true),
         hide: BooleanProp(false),

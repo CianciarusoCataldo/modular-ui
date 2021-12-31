@@ -1,13 +1,5 @@
-import React from "react";
-import { shallow } from "enzyme";
+import { renderingTest } from "../../core/utils/helpers";
+
 import { Header } from "../../../src";
 
-test("rendered without errors", () => {
-  let wrapper = shallow(<Header children={<div>Testing Header</div>} />);
-  expect(wrapper);
-});
-
-test("rendered without errors - no parameters", () => {
-  let wrapper = shallow(<Header />);
-  expect(wrapper);
-});
+renderingTest(Header, { children: "Testing Header" });

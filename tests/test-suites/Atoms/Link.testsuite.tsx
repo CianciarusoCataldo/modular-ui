@@ -1,10 +1,4 @@
-import React from "react";
-import { shallow } from "enzyme";
 import { Link } from "../../../src";
+import { renderingTest } from "../../core/utils/helpers";
 
-test("rendered without errors", () => {
-  let wrapper = shallow(<Link to="" children="Testing Link" />);
-  expect(wrapper);
-  wrapper = shallow(<Link to="" children="Testing Link" newTab />);
-  expect(wrapper);
-});
+renderingTest(Link, { to: "link", children: "Testing Link", newTab: true });

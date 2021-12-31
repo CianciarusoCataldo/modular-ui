@@ -4,7 +4,7 @@ import { TableProps } from "./types";
 import React from "react";
 
 import classNames from "classnames";
-import { buildComponent } from "../../../utils";
+import { buildBoxComponent } from "../../../utils";
 
 /**
  * A standard Table component. It follows a CSV-like format for its content.
@@ -28,7 +28,7 @@ import { buildComponent } from "../../../utils";
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
-const Table = ({ headers, rows = [], ...commonProps }: TableProps) => {
+const Table = ({ label, headers, rows = [], ...commonProps }: TableProps) => {
   let gridTemplateRows = "";
   let gridTemplateColumns = "";
 
@@ -58,20 +58,23 @@ const Table = ({ headers, rows = [], ...commonProps }: TableProps) => {
     }
   }
 
-  return buildComponent({
-    name: "modular-table",
-    Component: (
-      <div
-        className="rows"
-        style={{
-          gridTemplateRows,
-          gridTemplateColumns,
-        }}
-      >
-        {elements}
-      </div>
-    ),
-    commonProps,
+  return buildBoxComponent({
+    callBack: () => ({
+      name: "modular-table",
+      Component: (
+        <div
+          className="rows"
+          style={{
+            gridTemplateRows,
+            gridTemplateColumns,
+          }}
+        >
+          {elements}
+        </div>
+      ),
+      commonProps,
+    }),
+    label,
   });
 };
 

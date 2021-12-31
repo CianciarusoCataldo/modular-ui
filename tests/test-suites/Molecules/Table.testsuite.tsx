@@ -1,21 +1,29 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
+
+import { describeTest, renderingTest } from "../../core/utils/helpers";
+
 import { Table } from "../../../src";
 
-test("rendered without errors - no params", () => {
-  let wrapper = shallow(<Table />);
-  expect(wrapper);
+renderingTest(Table, {
+  rows: [
+    ["header 1", "header 2"],
+    ["element 1", "element 2"],
+  ],
+  headers: true,
 });
 
-test("rendered without errors", () => {
-  let wrapper = mount(
-    <Table
-      rows={[
-        ["header 1", "header 2"],
-        ["element 1", "element 2"],
-      ]}
-      headers
-    />
-  );
-  expect(wrapper);
+describeTest("UI test", () => {
+  test("if headers === true, first row elements will be showed as headers", () => {
+    const wrapper = mount(
+      <Table
+        rows={[
+          ["header 1", "header 2"],
+          ["element 1", "element 2"],
+        ]}
+        headers
+      />
+    );
+    expect(wrapper.find(".header").length).toBe(2);
+  });
 });

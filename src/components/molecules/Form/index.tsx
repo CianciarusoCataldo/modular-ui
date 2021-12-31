@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { FormProps } from "./types";
-import { buildComponent } from "../../../utils";
+import { buildBoxComponent } from "../../../utils";
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 
@@ -36,6 +36,7 @@ const Form = ({
   fields,
   onSubmit,
   submitLabel,
+  label,
   ...commonProps
 }: FormProps) => {
   const dropdownFields: Record<string, string> = fields
@@ -65,61 +66,64 @@ const Form = ({
       ? !Object.values(errors).find((element) => element === true)
       : true;
 
-  return buildComponent({
-    name: "modular-form",
-    Component: [
-      <p key="form_title" className="title">
-        {title}
-      </p>,
-      ...Object.keys(dropdownFields).map((field, index) => {
-        const name = field;
-        return (
-          <div className="field" key={`form_field_${index}`}>
-            <Input
-              label={<span className="header">{fields[field].header}</span>}
-              value={values[name] || ""}
-              id={`form-field-${index}`}
-              placeholder={fields[field].placeholder}
-              onChange={(value: string) => {
-                let tmpValues = { ...values };
-                let tmpErrors = { ...errors };
-                tmpValues[name] = value;
-                if (value.length < 1 && fields[field].required) {
-                  tmpErrors[name] = true;
-                } else {
-                  tmpErrors[name] = fields[field].validate
-                    ? !fields[field].validate(value)
-                    : false;
-                }
-                setErrors(tmpErrors);
-                setValues(tmpValues);
-              }}
-              className={classNames({
-                "field-error": errors[name],
-                "form-input": !errors[name],
-              })}
-            />
-            <div className="error-box">
-              {errors[name] && (
-                <p className="error-label">{fields[field].error}</p>
-              )}
+  return buildBoxComponent({
+    callBack: () => ({
+      name: "modular-form",
+      Component: [
+        <p key="form_title" className="title">
+          {title}
+        </p>,
+        ...Object.keys(dropdownFields).map((field, index) => {
+          const name = field;
+          return (
+            <div className="field" key={`form_field_${index}`}>
+              <Input
+                label={<span className="header">{fields[field].header}</span>}
+                value={values[name] || ""}
+                id={`form-field-${index}`}
+                placeholder={fields[field].placeholder}
+                onChange={(value: string) => {
+                  let tmpValues = { ...values };
+                  let tmpErrors = { ...errors };
+                  tmpValues[name] = value;
+                  if (value.length < 1 && fields[field].required) {
+                    tmpErrors[name] = true;
+                  } else {
+                    tmpErrors[name] = fields[field].validate
+                      ? !fields[field].validate(value)
+                      : false;
+                  }
+                  setErrors(tmpErrors);
+                  setValues(tmpValues);
+                }}
+                className={classNames({
+                  "field-error": errors[name],
+                  "form-input": !errors[name],
+                })}
+              />
+              <div className="error-box">
+                {errors[name] && (
+                  <p className="error-label">{fields[field].error}</p>
+                )}
+              </div>
             </div>
-          </div>
-        );
-      }),
-      <Button
-        disabled={!canSubmit}
-        className="submit-button"
-        key="form_submit_button"
-        id="form-submit-button"
-        onClick={() => {
-          onSubmit && onSubmit(values);
-        }}
-      >
-        {submitLabel}
-      </Button>,
-    ],
-    commonProps,
+          );
+        }),
+        <Button
+          disabled={!canSubmit}
+          className="submit-button"
+          key="form_submit_button"
+          id="form-submit-button"
+          onClick={() => {
+            onSubmit && onSubmit(values);
+          }}
+        >
+          {submitLabel}
+        </Button>,
+      ],
+      commonProps,
+    }),
+    label,
   });
 };
 

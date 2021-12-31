@@ -1,21 +1,15 @@
 import React from "react";
-import { stub } from "sinon";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
+
+import { describeTest, renderingTest } from "../../core/utils/helpers";
+
 import { Button } from "../../../src";
-import { describeTest } from "../../core/utils/helpers";
 
-const clickStub = stub();
+renderingTest(Button, { onClick: () => {} });
 
-test("rendered without errors - no parameters", () => {
-  let wrapper = shallow(
-    <Button>
-      <p>Testing button</p>
-    </Button>
-  );
-  expect(wrapper);
-});
+describeTest("click test", () => {
+  const clickStub = jest.fn();
 
-describeTest("click", () => {
   test("when Button is enabled, clicking on the Button will trigger onClick callback", () => {
     const wrapper = mount(
       <Button onClick={clickStub}>
@@ -34,5 +28,31 @@ describeTest("click", () => {
     );
     wrapper.find("button").simulate("click");
     expect(wrapper);
+  });
+});
+
+describeTest("hover test", () => {
+  test("onMouseEnter callback", () => {
+    const onMouseEnterStub = jest.fn();
+
+    const wrapper = mount(
+      <Button onMouseEnter={onMouseEnterStub}>
+        <p>Testing button</p>
+      </Button>
+    );
+    wrapper.find("button").simulate("mouseenter");
+    expect(onMouseEnterStub).toBeCalled;
+  });
+
+  test("onMouseLeave callback", () => {
+    const onMouseLeaveStub = jest.fn();
+
+    const wrapper = mount(
+      <Button onMouseLeave={onMouseLeaveStub}>
+        <p>Testing button</p>
+      </Button>
+    );
+    wrapper.find("button").simulate("mouseleave");
+    expect(onMouseLeaveStub).toBeCalled;
   });
 });

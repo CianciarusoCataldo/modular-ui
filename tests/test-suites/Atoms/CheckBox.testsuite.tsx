@@ -1,18 +1,29 @@
 import React from "react";
 import { mount } from "enzyme";
-import Sinon from "sinon";
+
+import { describeTest, renderingTest } from "../../core/utils/helpers";
+
 import { CheckBox } from "../../../src";
 
-const onChangeStub = Sinon.stub();
+renderingTest(CheckBox, { value: true, onChange: () => {} });
 
-test("rendered without errors - no params", () => {
-  const wrapper = mount(<CheckBox />);
-  wrapper.find("#modular-checkbox .container").simulate("click");
-  expect(onChangeStub).not.toBeCalled;
+describeTest("icon visibility", () => {
+  test("if value === false, icon is not showed", () => {
+    const wrapper = mount(<CheckBox value={false} onChange={() => {}} />);
+    expect(wrapper.find("svg").length).toBe(0);
+  });
+
+  test("if value === true, icon showed", () => {
+    const wrapper = mount(<CheckBox value={true} onChange={() => {}} />);
+    expect(wrapper.find("svg").length).toBe(1);
+  });
 });
 
-test("rendered without errors", () => {
-  const wrapper = mount(<CheckBox value={true} onChange={onChangeStub} />);
-  wrapper.find("#modular-checkbox .container").simulate("click");
-  expect(onChangeStub).toBeCalled;
+describeTest("click test", () => {
+  test("onChange callBack is triggered", () => {
+    const onChangeStub = jest.fn();
+    const wrapper = mount(<CheckBox onChange={onChangeStub} />);
+    wrapper.find("#modular-checkbox .container").simulate("click");
+    expect(onChangeStub).toBeCalledWith(true);
+  });
 });

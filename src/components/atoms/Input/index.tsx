@@ -48,9 +48,11 @@ const Input = ({
           className="input-box"
           readOnly={readOnly}
           onChange={(e) => {
-            const newValue = e.target.value ? e.target.value : "";
-            onChange(newValue);
-            setValue(newValue);
+            if (!readOnly) {
+              const newValue = e.target.value ? e.target.value : "";
+              onChange(newValue);
+              setValue(newValue);
+            }
           }}
         />
       ),
