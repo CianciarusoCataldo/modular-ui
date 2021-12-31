@@ -1,7 +1,12 @@
-import { CommonProps, ComponentWithChildren } from "../../../utils/global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
+/** Page component props */
 export type PageProps = CommonProps &
-  ComponentWithChildren<JSX.Element | JSX.Element[]> & {
+  ComponentWithChildren<BuilderComponent | BuilderComponent[]> & {
     /** Page contents orientation */
     orientation?: "vertical" | "horizontal";
   };

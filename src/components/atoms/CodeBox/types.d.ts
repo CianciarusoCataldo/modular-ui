@@ -1,18 +1,24 @@
 import { BoxComponent, CommonProps } from "../../../utils/global";
 
+/** Supported environments */
 export type SupportedEnvironment =
   | "javascript"
   | "python"
   | "terminal"
   | "common";
 
-export type SplittedCode<T = string | null> = {
+/** Partial code block */
+export interface CodeBlock<T = string | null> {
+  /** Highlight color */
   color: T;
-  code: string;
-};
 
+  /** Code block */
+  code: string;
+}
+
+/** CodeBox component props */
 export type CodeBoxProps = CommonProps &
-  BoxComponent<string> & {
+  Omit<BoxComponent<string>, "icon"> & {
     /** Enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight */
     enhanced?: boolean;
 

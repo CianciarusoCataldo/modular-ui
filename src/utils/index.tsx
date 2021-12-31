@@ -3,6 +3,20 @@ import classNames from "classnames";
 import React from "react";
 import { BoxComponent, BuilderProps } from "./global";
 
+/**
+ * Build a standardized component, providing shared functionalities and props, to optimize the process.
+ *
+ * @param name
+ * @param Component
+ * @param commonProps
+ * @param additionalProps
+ * @param wrapper
+ *
+ * @returns built component, ready to be rendered
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 export const buildComponent = ({
   name,
   Component,
@@ -29,6 +43,20 @@ export const buildComponent = ({
   );
 };
 
+/**
+ * Build a standardized component, decorating it with some functionalitis (like top label or dynamic value update).
+ *
+ * @param value actual component value
+ * @param defaultValue default value (used when no value is set)
+ * @param {string} label component top label
+ * @param callback a function that returns an Object containing Component Builder props, properly formatted
+ *
+ * @returns built component, enhanced with some functionalities (like the top label)
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 export const buildBoxComponent = <T extends any>({
   value: actualValue,
   defaultValue,

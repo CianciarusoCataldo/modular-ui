@@ -1,11 +1,12 @@
 import {
-  CommonProps,
-  ComponentWithChildren,
   BoxComponent,
+  CommonProps,
+  ComponentWithCallback,
   GenericInputComponent,
 } from "../../../utils/global";
 
+/** Input component props */
 export type InputProps<T = any> = CommonProps &
   GenericInputComponent &
-  BoxComponent<string> &
+  Omit<BoxComponent<string>, "icon"> &
   ComponentWithCallback;

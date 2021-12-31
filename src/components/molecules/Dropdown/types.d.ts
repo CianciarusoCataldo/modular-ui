@@ -4,6 +4,7 @@ import {
   ComponentWithCallback,
 } from "../../../utils/global";
 
+/** Dropdown component props */
 export type DropdownProps = CommonProps &
   BoxComponent<number> &
   ComponentWithCallback<number> & {

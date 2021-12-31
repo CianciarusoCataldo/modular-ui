@@ -1,3 +1,10 @@
+/**
+ * Supported environment when parsing code string. Every environment contains its specific colors for some specific code word (like `import`)
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 export const CODE_LANGUAGES = {
   common: {
     DEFAULT_VALUE: "#FFFFF",

@@ -13,8 +13,23 @@ const STATUSES_MAP = {
 /**
  * A compact Toggle switcher, customized to reflect its actual status
  *
- * @param value toggle status ("on"/"off")
- * @param onClick calllback triggered when changing Toggle status
+ * @param {"on"|"off"} value toggle status ("on"/"off")
+ * @param {JSX.Element | Element } icon custom toggle icon
+ * @param {(newValue:"on"|"off")=>void} onChange calllback triggered when changing Toggle status
+ * @param {string} className `common modular-ui prop` - custom className (to better customize it)
+ * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
+ * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
+ * @param {boolean} dark `common modular-ui prop` - Enable/disable dark mode
+ * @param {boolean} hide `common modular-ui prop` - Hide/show component
+ * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
+ *
+ *@example <caption>Example Toggle usage</caption>
+ *import { render } from "react-dom";
+ *import { Toggle } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<Toggle value="on" />, document.getElementById("root"));
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
  *

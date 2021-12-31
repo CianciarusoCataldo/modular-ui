@@ -1,6 +1,6 @@
 import {
   CommonProps,
-  ComponentWithChildren,
+  ComponentWithCallback,
   BoxComponent,
 } from "../../../utils/global";
 

@@ -6,15 +6,9 @@ import { describeTest } from "../../core/utils/helpers";
 
 const clickStub = stub();
 
-test("rendered without errors", () => {
+test("rendered without errors - no parameters", () => {
   let wrapper = shallow(
     <Button>
-      <p>Testing button</p>
-    </Button>
-  );
-  expect(wrapper);
-  wrapper = mount(
-    <Button hide>
       <p>Testing button</p>
     </Button>
   );
@@ -22,7 +16,7 @@ test("rendered without errors", () => {
 });
 
 describeTest("click", () => {
-  test("when Button is enabled", () => {
+  test("when Button is enabled, clicking on the Button will trigger onClick callback", () => {
     const wrapper = mount(
       <Button onClick={clickStub}>
         <p>Testing button</p>
@@ -31,7 +25,8 @@ describeTest("click", () => {
     wrapper.find("button").simulate("click");
     expect(clickStub).toBeCalled;
   });
-  test("when Button is disabled", () => {
+
+  test("when Button is disabled, clicking on the Button won't trigger onClick callback", () => {
     const wrapper = mount(
       <Button onClick={() => {}} disabled unstyled>
         <p>Testing button</p>

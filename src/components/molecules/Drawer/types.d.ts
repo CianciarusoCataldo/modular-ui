@@ -1,8 +1,6 @@
 import { CommonProps, ComponentWithChildren } from "../../../utils/global";
 
-/**
- * Drawer element
- */
+/** Drawer element */
 export interface DrawerElement {
   /** Drawer element label */
   text: string;
@@ -20,15 +18,14 @@ export interface DrawerElement {
   isActiveCallback?: () => boolean;
 }
 
+/** Drawer component props */
 export type DrawerProps = CommonProps &
   ComponentWithChildren & {
-    /** Drawer visibility */
-    isOpen?: boolean;
-
     /** Callback triggered on Drawer close */
     onClose?: () => void;
 
-    logo?: JSX.Element;
+    /** Drawer logo, displayed on top (when Drawer is open) */
+    logo?: JSX.Element | Element;
 
     /** Drawer elements array */
     elements?: DrawerElement[];

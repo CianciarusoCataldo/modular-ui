@@ -10,10 +10,24 @@ import Button from "../../atoms/Button";
  * A light Modal component. Can be totally customized (the overlay too, through `overlayClassName` parameter)
  * and can be driven with redux-state or internal state parameters.
  *
- * @param children Modal Content
- * @param onClose Callback triggered when modal is closed
- * @param title Modal title
- * @param overlayClassName A custom className applied on the Modal container
+ * @param {JSX.Element | Element} children Modal Content
+ * @param {()=>void} onClose Callback triggered when modal is closed
+ * @param {string} title Modal title
+ * @param {string} overlayClassName A custom className applied on the Modal container
+ * @param {string} className `common modular-ui prop` - custom className (to better customize it)
+ * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
+ * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
+ * @param {boolean} dark `common modular-ui prop` - Enable/disable dark mode
+ * @param {boolean} hide `common modular-ui prop` - Hide/show component
+ * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
+ *
+ *@example <caption>Example Modal usage</caption>
+ *import { render } from "react-dom";
+ *import { Modal } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<Modal><div>Example modal content</div></Modal>, document.getElementById("root"));
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
  */

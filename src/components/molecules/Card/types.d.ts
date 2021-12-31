@@ -1,18 +1,20 @@
 import {
   BoxComponent,
+  BuilderComponent,
   CommonProps,
   ComponentWithChildren,
 } from "../../../utils/global";
 
+/** Card component props */
 export type CardProps = CommonProps &
   ComponentWithChildren &
   BoxComponent & {
     /** Card header content */
-    header?: JSX.Element | string;
+    header?: BuilderComponent;
 
     /** Card body content */
-    body?: JSX.Element | string;
+    body?: BuilderComponent;
 
     /** Card footer content */
-    footer?: JSX.Element | string;
+    footer?: BuilderComponent;
   };

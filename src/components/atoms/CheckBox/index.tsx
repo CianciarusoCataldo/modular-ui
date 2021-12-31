@@ -1,15 +1,32 @@
 import "./styles.css";
 
 import React from "react";
+
 import { CheckboxProps } from "./types";
+
 import { buildBoxComponent } from "../../../utils";
 
 /**
- * A flexible checkbox element
+ * A checkbox element, totally customizable. The tick icon can be a custom image or Element (using `icon` prop).
  *
- * @param value Checkbox initial value (checked / unchecked)
- * @param onChange onChange callback called when Checkbox is clicked
- * @param onClick onChange callback called when Checkbox is clicked
+ * @param {boolean} value Checkbox initial value (checked / unchecked)
+ * @param {(newValue: boolean) => void} onChange onChange callback called when Checkbox is clicked
+ * @param {JSX.Element | Element} icon custom tick icon (if not set, the default one will be used)
+ * @param {string} label `common modular-ui prop` - component top label
+ * @param {string} className `common modular-ui prop` - custom className (to better customize it)
+ * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
+ * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
+ * @param {boolean} dark `common modular-ui prop` - Enable/disable dark mode
+ * @param {boolean} hide `common modular-ui prop` - Hide/show component
+ * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
+ *
+ *@example <caption>Example CheckBox usage</caption>
+ *import { render } from "react-dom";
+ *import { CheckBox } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<CheckBox value={true} />, document.getElementById("root"));
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
  */

@@ -10,10 +10,24 @@ import Input from "../../atoms/Input";
 
 /**
  *
- * @param title Form title
- * @param fields Form fields array
- * @param onSubmit callback triggered on Form submit
- * @param submitLabel custom submit button label
+ * @param {string} title Form title
+ * @param {Record<string, { header?: string; required?: boolean; placeholder?: string; error?: string; validate?: (value: string) => boolean;}>} fields Form fields array
+ * @param {(values: Record<string, string>) => void} onSubmit callback triggered on Form submit
+ * @param {string} submitLabel custom submit button label
+ * @param {string} className `common modular-ui prop` - custom className (to better customize it)
+ * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
+ * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
+ * @param {boolean} dark `common modular-ui prop` - Enable/disable dark mode
+ * @param {boolean} hide `common modular-ui prop` - Hide/show component
+ * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
+ *
+ *@example <caption>Example Form usage</caption>
+ *import { render } from "react-dom";
+ *import { Field } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<Form fields={{ "Field 0": { header:"FIeld 0 header" } }} />, document.getElementById("root"));
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
  */

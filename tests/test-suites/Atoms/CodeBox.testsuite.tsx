@@ -12,12 +12,8 @@ test("rendered without errors - no params", () => {
 
 test("rendered without errors", () => {
   const wrapper = mount(
-    <CodeBox environment="python" value="pip i panda 'string'" enhanced />,
-    {
-      context: { navigator: { writeText: () => {} } },
-    }
+    <CodeBox environment="python" value="pip i panda 'string'" enhanced />
   );
-  wrapper.find("button").simulate("click");
   expect(wrapper);
 });
 
@@ -35,7 +31,7 @@ describeTest("Advanced features", () => {
         context: { navigator: { writeText: copyStub } },
       }
     );
-    wrapper.find(".copy-icon").simulate("click");
+    wrapper.find(".copy-icon button").simulate("click");
     expect(copyStub).toBeCalled;
   });
 });

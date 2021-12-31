@@ -1,5 +1,11 @@
 import React from "react";
 
+/** Icons dictionary
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2021 Cataldo Cianciaruso
+ */
 export const ICONS = {
   star: {
     FULL: (

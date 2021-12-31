@@ -1,6 +1,10 @@
-import { CommonProps } from "../../../utils/global";
+import { BuilderComponent, CommonProps } from "../../../utils/global";
 
+/** Table component props */
 export type TableProps = CommonProps & {
+  /** if true, the first row will be used as headers (and not generic data) */
   headers?: boolean;
-  rows?: (JSX.Element | string)[][];
+
+  /** Table rows */
+  rows?: BuilderComponent[][];
 };

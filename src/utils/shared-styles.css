@@ -69,6 +69,8 @@
   padding: 0.1rem;
 }
 
+/* Fade in  effect*/
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -78,7 +80,6 @@
   }
 }
 
-/* Firefox < 16 */
 @-moz-keyframes fadein {
   from {
     opacity: 0;
@@ -88,7 +89,6 @@
   }
 }
 
-/* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
@@ -98,7 +98,6 @@
   }
 }
 
-/* Internet Explorer */
 @-ms-keyframes fadein {
   from {
     opacity: 0;
@@ -108,7 +107,6 @@
   }
 }
 
-/* Opera < 12.1 */
 @-o-keyframes fadein {
   from {
     opacity: 0;
@@ -117,6 +115,8 @@
     opacity: 1;
   }
 }
+
+/* Fade out effect*/
 
 @keyframes fadeOut {
   from {
@@ -127,7 +127,6 @@
   }
 }
 
-/* Firefox < 16 */
 @-moz-keyframes fadeOut {
   from {
     opacity: 1;
@@ -137,7 +136,6 @@
   }
 }
 
-/* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
@@ -147,7 +145,6 @@
   }
 }
 
-/* Internet Explorer */
 @-ms-keyframes fadeOut {
   from {
     opacity: 1;
@@ -157,7 +154,6 @@
   }
 }
 
-/* Opera < 12.1 */
 @-o-keyframes fadeOut {
   from {
     opacity: 1;
@@ -166,6 +162,8 @@
     opacity: 0;
   }
 }
+
+/* Slide in to left effect*/
 
 @-webkit-keyframes slideLeft {
   0% {
@@ -192,7 +190,7 @@
   }
 }
 
-/**/
+/* Slide out to left effect*/
 
 @-webkit-keyframes slideOutLeft {
   0% {
@@ -219,7 +217,7 @@
   }
 }
 
-/**/
+/* Slide in to right effect*/
 
 @-webkit-keyframes slideRight {
   0% {

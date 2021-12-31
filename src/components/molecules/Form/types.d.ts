@@ -1,5 +1,6 @@
 import { CommonProps } from "../../../utils/global";
 
+/** Form component props */
 export type FormProps = CommonProps & {
   /** Form title */
   title?: string;

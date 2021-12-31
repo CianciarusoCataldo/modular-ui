@@ -6,6 +6,7 @@
 - Clean up
 - Refactoring
 - Shared component building process, with new common props
+- Fully documented components, with working examples
 
 # 1.2.0
 

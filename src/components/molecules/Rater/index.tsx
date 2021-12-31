@@ -1,21 +1,36 @@
 import "./styles.css";
-import { buildBoxComponent } from "../../../utils";
-import { RaterProps } from "./types";
-import { ICONS } from "./icons";
 
 import React from "react";
-import Button from "../../atoms/Button";
 import classNames from "classnames";
 
-const MAX = 5;
+import { RaterProps } from "./types";
+
+import { buildBoxComponent } from "../../../utils";
+import { ICONS } from "./icons";
+
+import Button from "../../atoms/Button";
 
 /**
+ * A vote manager component, really useful to let the user leave a review
  *
- * @param value actual value
- * @param max max value (number of icons showed)
- * @param type vote icons type
- * @param onClick callback triggered when user select a vote (as onChange)
- * @param onChange callback triggered when user select a vote (as onClick)
+ * @param {number} value actual vote
+ * @param {number} max max vote (max number of icons showed)
+ * @param {"star"|"circle"} type vote icons type
+ * @param {(newVote:number)=>void} onChange callback triggered when user select a vote
+ * @param {string} className `common modular-ui prop` - custom className (to better customize it)
+ * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
+ * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
+ * @param {boolean} dark `common modular-ui prop` - Enable/disable dark mode
+ * @param {boolean} hide `common modular-ui prop` - Hide/show component
+ * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
+ *
+ *@example <caption>Example Rater usage</caption>
+ *import { render } from "react-dom";
+ *import { Rater } from '@cianciarusocataldo/modular-ui';
+ *
+ * render(<Rater type="circle" value={3} />, document.getElementById("root"));
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2021 Cataldo Cianciaruso
  */
@@ -31,7 +46,7 @@ const Rater = ({
   ...commonProps
 }: RaterProps) => {
   const voteType = type || "star";
-  let startMax = max || MAX;
+  let startMax = max || 5;
 
   return buildBoxComponent<number>({
     callBack: (actualValue, setValue) => {
