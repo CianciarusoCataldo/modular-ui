@@ -57,6 +57,8 @@ render(<Page>
 
 ```
 
+[![Edit modular-ui playground](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/modular-ui-playground-gfpbb?fontsize=14&hidenavigation=1&theme=dark&view=preview)
+
 ## Authors
 
 - [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
