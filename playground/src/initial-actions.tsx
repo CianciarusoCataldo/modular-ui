@@ -1,12 +1,16 @@
 import "react-toastify/dist/ReactToastify.css";
 import "assets/styles/styles.output.css";
+
 import { render } from "react-dom";
-import { Store } from "@reduxjs/toolkit";
-import App from "app/App";
 import { Suspense } from "react";
 import { Provider } from "react-redux";
 import { History } from "history";
+import { Store } from "@reduxjs/toolkit";
 
+import { ToastContainer } from "react-toastify";
+import App from "app/App";
+
+/** Render Modular-app */
 export const startRender = (store: Store, history: History) => {
   render(
     <Suspense
@@ -17,6 +21,7 @@ export const startRender = (store: Store, history: History) => {
         </div>
       }
     >
+      <ToastContainer />
       <Provider store={store}>
         <App history={history} />
       </Provider>

@@ -29,7 +29,7 @@ import Button from "../../atoms/Button";
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2021 Cataldo Cianciaruso
+ * @copyright 2022 Cataldo Cianciaruso
  */
 const Modal = ({
   children,

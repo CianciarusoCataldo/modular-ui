@@ -25,7 +25,7 @@ import { Wrappers } from "../../../utils/global";
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2021 Cataldo Cianciaruso
+ * @copyright 2022 Cataldo Cianciaruso
  */
 const Link = ({ to, children, newTab, ...commonProps }: LinkProps) =>
   buildComponent({

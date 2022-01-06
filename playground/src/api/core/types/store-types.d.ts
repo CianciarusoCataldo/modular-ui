@@ -1,24 +1,32 @@
-//Modal
-declare interface ModalState {
-  isVisible: boolean;
-  type: ModalType;
+import { AdditionalState } from "api/state-slices/types";
+import { ModalState } from "api/core/store/internal-slices/modal/types";
+import { RouterState } from "api/core/store/internal-slices/router/types";
+import { UIState } from "api/core/store/internal-slices/ui/types";
+import { Config } from "api/core/store/internal-slices/config/types";
+
+//General
+export type RootState = {
+  router: RouterState;
+  ui: UIState;
+  config: Config;
+  modal: ModalState;
+} & AdditionalState;
+
+export type StateSlice = keyof RootState;
+
+export interface RootAction {
+  type: string;
+  payload?: any;
+  error?: boolean;
 }
 
-//Router
-declare interface RouterState {
-  location: {
-    pathname: string;
-    hash: string;
-    search: string;
-    state: string;
-  };
+export interface ReducerAction<T = any> {
   action: string;
-}
-
-//UI
-declare interface UIState {
-  darkMode: boolean;
-  isDrawerOpen: boolean;
-  language: SupportedLanguage;
-  isHomePage: boolean;
+  callback: (
+    state: T,
+    action: {
+      type: string;
+      payload?: any;
+    }
+  ) => T;
 }

@@ -82,7 +82,7 @@ const getHighlightedCode = (
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2021 Cataldo Cianciaruso
+ * @copyright 2022 Cataldo Cianciaruso
  */
 export const parseCode = (code: string, environment: SupportedEnvironment) => {
   return getHighlightedCode(

@@ -1,14 +1,16 @@
-import i18n from "./instance";
+import { Config } from "api/core/store/internal-slices/config/types";
+
 import { initReactI18next } from "react-i18next";
 import ChainedBackend from "i18next-chained-backend";
 import HttpBackend from "i18next-http-backend";
 import LocalStorageBackend from "i18next-localstorage-backend";
 
-import { updatePageTitle } from "api/helpers/ui-helper";
+import i18n from "./instance";
 
+/** Init i18next system, using app.config.json parameters (inside I18N field) */
 export const initi18n = (CONFIG: Config) => {
   i18n
-    .use(initReactI18next) // bind react-i18next to the instance
+    .use(initReactI18next)
     .use(ChainedBackend)
     .init({
       fallbackLng: CONFIG.I18N.FALLBACK_LANGUAGE,
@@ -26,18 +28,26 @@ export const initi18n = (CONFIG: Config) => {
                 : 0,
           },
           {
-            loadPath: `${CONFIG.ROUTER.BASENAME}${CONFIG.I18N.LOAD_PATH}`,
+            loadPath: CONFIG.I18N.LOAD_PATH,
           },
         ],
       },
-      ns: CONFIG.I18N.NAMESPACES,
+      ns: [
+        "common",
+        "page-titles",
+        "home",
+        "modal-titles",
+        ...CONFIG.I18N.NAMESPACES,
+      ],
       defaultNS: CONFIG.I18N.DEFAULT_NAMESPACE,
       interpolation: {
         escapeValue: false,
       },
       react: { useSuspense: false },
     })
-    .then(() => {
-      updatePageTitle(CONFIG);
+    .then((t) => {
+      window.document.title = `${CONFIG.APP_NAME} - ${t("HOME_PAGE", {
+        ns: "page-titles",
+      })}`;
     });
 };

@@ -1,9 +1,13 @@
-import { changeLanguage } from "api/state-slices/ui/actions";
-import { getLanguage } from "api/state-slices/ui/selectors";
-import { LANGUAGES_ICONS } from "assets/images";
-import { Dropdown } from "modular-ui-preview";
 import { useDispatch, useSelector } from "react-redux";
 
+import { LANGUAGES_ICONS } from "assets/images";
+
+import { changeLanguage } from "api/core/store/internal-slices/ui/actions";
+import { getLanguage } from "api/core/store/internal-slices/ui/selectors";
+
+import { Dropdown } from "modular-ui-preview";
+
+/** Custom Modular-app laguage selector */
 const LanguageSelector = () => {
   const dispatch = useDispatch();
   const language = useSelector(getLanguage);
@@ -14,12 +18,12 @@ const LanguageSelector = () => {
       <Dropdown
         dark={false}
         value={LANGUAGES.findIndex((lang) => lang === language)}
-        onChange={(lang: SupportedLanguage, index: number) => {
-          dispatch(changeLanguage(lang as SupportedLanguage));
+        onChange={(lang: number) => {
+          dispatch(changeLanguage(LANGUAGES[lang]));
         }}
         content={Object.keys(LANGUAGES_ICONS).map((lang) => ({
           name: lang,
-          icon: LANGUAGES_ICONS[lang as SupportedLanguage],
+          icon: LANGUAGES_ICONS[lang],
         }))}
       />
     </div>

@@ -29,7 +29,7 @@ import Input from "../../atoms/Input";
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2021 Cataldo Cianciaruso
+ * @copyright 2022 Cataldo Cianciaruso
  */
 const Form = ({
   title,

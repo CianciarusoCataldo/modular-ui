@@ -1,32 +1,38 @@
 import { useDispatch, useSelector } from "react-redux";
-import { HOME_ICON, BurgerIcon, LogoIcon } from "assets/images";
-
-import { Button, Header } from "modular-ui-preview";
 import classNames from "classnames";
 
-import { getAppName, getPages } from "api/state-slices/config/selectors";
-import { requestRoute } from "api/state-slices/router/actions";
-import { openDrawer } from "api/state-slices/ui/actions";
-import { isHomePage } from "api/state-slices/ui/selectors";
+import { HomeIcon, BurgerIcon, LogoIcon } from "assets/images";
 
-import LanguageSelector from "../LanguageSelector";
 import { driveWithDarkMode } from "api/helpers/ui-helper";
 
+import { requestRoute } from "api/core/store/internal-slices/router/actions";
+import { openDrawer } from "api/core/store/internal-slices/ui/actions";
+
+import {
+  getAppName,
+  getHomePage,
+} from "api/core/store/internal-slices/config/selectors";
+import { isHomePage } from "api/core/store/internal-slices/ui/selectors";
+
+import { Button, Header, Link } from "modular-ui-preview";
+import LanguageSelector from "../LanguageSelector";
+
+/** Custom Modular-app header */
 const AppHeader = () => {
   const dispatch = useDispatch();
   const APP_NAME = useSelector(getAppName);
   const hideHomeButton = useSelector(isHomePage);
-  const PATHS = useSelector(getPages);
-  const CustomHeader = driveWithDarkMode(Header)
+  const HOME = useSelector(getHomePage);
+  const CustomHeader = driveWithDarkMode(Header);
 
   return (
     <CustomHeader>
       <div className="flex flex-row items-center mt-14 mb-5 ml-1">
         <LanguageSelector />
         <Button
-          aria-label="back button"
+          aria-label="home button"
           onClick={() => {
-            dispatch(requestRoute(PATHS.Home.path));
+            dispatch(requestRoute(HOME));
           }}
           unstyled
           className={classNames(
@@ -36,7 +42,7 @@ const AppHeader = () => {
             }
           )}
         >
-          {HOME_ICON}
+          {HomeIcon}
         </Button>
         <Button
           aria-label="drawer button"
@@ -54,10 +60,16 @@ const AppHeader = () => {
             {LogoIcon}
           </div>
           <div className="flex flex-col m-auto mb-3">
-            <div className="m-auto hover:text-blue-400">
-              <a href="https://github.com/CianciarusoCataldo/modular-ui">
-                <p className="text-4xl">{APP_NAME}</p>
-              </a>
+            <div className="m-auto">
+              <Link
+                newTab
+                unstyled
+                to="https://github.com/CianciarusoCataldo/modular-ui"
+              >
+                <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-4xl 4xl:text-4xl">
+                  {APP_NAME}
+                </p>
+              </Link>
               <div className="mt-2">
                 <a
                   href="https://www.npmjs.com/package/@cianciarusocataldo/modular-ui"

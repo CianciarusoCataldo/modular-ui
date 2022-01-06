@@ -6,17 +6,17 @@ import { BoxComponent, BuilderProps } from "./global";
 /**
  * Build a standardized component, providing shared functionalities and props, to optimize the process.
  *
- * @param name
- * @param Component
- * @param commonProps
- * @param additionalProps
- * @param wrapper
+ * @param name component name (will be its id)
+ * @param Component component to render
+ * @param commonProps shared common props (like `className`, `hide` or `dark`)
+ * @param additionalProps additional props applied on rendered component
+ * @param wrapper component external wrapper (like `button`, `a` or `p`, if not set will be `div`)
  *
  * @returns built component, ready to be rendered
- * 
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2021 Cataldo Cianciaruso
+ * @copyright 2022 Cataldo Cianciaruso
  */
 export const buildComponent = ({
   name,
@@ -56,7 +56,7 @@ export const buildComponent = ({
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2021 Cataldo Cianciaruso
+ * @copyright 2022 Cataldo Cianciaruso
  */
 export const buildBoxComponent = <T extends any>({
   value: actualValue,

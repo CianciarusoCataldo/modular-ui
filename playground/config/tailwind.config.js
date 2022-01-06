@@ -1,12 +1,8 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: {
-    enabled: process.env.NODE_ENV === "production",
-    content: ["./public/**/*.html", "./src/**/*.tsx", "./src/**/*.ts"],
-  },
+  content: ["./public/**/*.html", "./src/**/*.tsx", "./src/**/*.ts"],
   presets: [],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
       xsm: "425",
@@ -23,7 +19,7 @@ module.exports = {
       current: "currentColor",
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,

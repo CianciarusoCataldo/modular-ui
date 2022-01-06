@@ -1,34 +1,35 @@
 {
   "APP_NAME": "Modular-ui",
-  "FALLBACK_LANGUAGE": "en",
+  "REDUX": {
+    "MODAL": false,
+    "UI": true
+  },
   "ROUTER": {
     "BASENAME": "/modular-ui",
+    "HOME_PAGE": "/",
     "PAGES": {
-      "Home": {
-        "path": "/"
-      },
-      "Button": { "path": "/components/atoms/Button" },
-      "Card": { "path": "/components/molecules/Card" },
-      "Carousel": { "path": "/components/molecules/Carousel" },
-      "CheckBox": { "path": "/components/atoms/CheckBox" },
-      "CodeBox": { "path": "/components/atoms/CodeBox" },
-      "Counter": { "path": "/components/molecules/Counter" },
-      "Divider": { "path": "/components/atoms/Divider" },
-      "Dropdown": { "path": "/components/molecules/Dropdown" },
-      "Form": { "path": "/components/molecules/Form" },
-      "Input": { "path": "/components/atoms/Input" },
-      "Link": { "path": "/components/atoms/Link" },
-      "Modal": { "path": "/components/atoms/Modal" },
-      "Rater": { "path": "/components/molecules/Rater" },
-      "Table": { "path": "/components/molecules/Table" },
-      "Toggle": { "path": "/components/atoms/Toggle" }
+      "Button": "/components/atoms/Button",
+      "Card": "/components/molecules/Card",
+      "Carousel": "/components/molecules/Carousel",
+      "CheckBox": "/components/atoms/CheckBox",
+      "CodeBox": "/components/atoms/CodeBox",
+      "Counter": "/components/molecules/Counter",
+      "Divider": "/components/atoms/Divider",
+      "Dropdown": "/components/molecules/Dropdown",
+      "Form": "/components/molecules/Form",
+      "Input": "/components/atoms/Input",
+      "Link": "/components/atoms/Link",
+      "Modal": "/components/atoms/Modal",
+      "Rater": "/components/molecules/Rater",
+      "Table": "/components/molecules/Table",
+      "Toggle": "/components/atoms/Toggle"
     }
   },
   "I18N": {
     "FALLBACK_LANGUAGE": "en",
     "SUPPORTED_LANGUAGES": ["en", "it", "es", "fr", "de"],
-    "NAMESPACES": ["common", "home"],
+    "NAMESPACES": ["home"],
     "DEFAULT_NAMESPACE": "common",
-    "LOAD_PATH": "/locales/{{lng}}/{{ns}}.json"
+    "LOAD_PATH": "/modular-ui/locales/{{lng}}/{{ns}}.json"
   }
 }

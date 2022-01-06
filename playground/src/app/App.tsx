@@ -1,33 +1,45 @@
+import { lazy } from "react";
 import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { History } from "history";
 
-import { getPages } from "api/state-slices/config/selectors";
-
-import { getRoutingLogic } from "api/helpers/route-helper";
+import {
+  getHomePage,
+  getPages,
+} from "api/core/store/internal-slices/config/selectors";
 
 import AppHeader from "./components/molecules/AppHeader";
 import AppDrawer from "./components/molecules/AppDrawer";
+import AppModal from "./components/molecules/AppModal";
 
-interface AppProps {
-  history: History;
-}
+/** Modular-app main component */
+const App = ({ history }: { history: History }) => {
+  const PAGES = useSelector(getPages);
+  const HOME = useSelector(getHomePage);
 
-const App = ({ history }: AppProps) => {
-  const PATHS = useSelector(getPages);
-
-  const ROUTES_PROPS = getRoutingLogic(PATHS);
   return (
     <div id="app-container">
+      <AppModal />
       <AppHeader />
       <AppDrawer />
       <div style={{ marginTop: "10rem" }}>
         <Router history={history}>
           <Switch>
-            {ROUTES_PROPS.map((route) => (
-              <Route {...route} />
+            <Route
+              component={lazy(() => import("./pages/HOME_PAGE"))}
+              key="HOME_PAGE"
+              exact
+              path={HOME}
+            />
+            {Object.keys(PAGES).map((route) => (
+              <Route
+                component={lazy(() => import(`./pages/${route}`))}
+                key={route}
+                exact
+                path={PAGES[route]}
+              />
             ))}
-            <Redirect to={"/"} />
+            <Redirect to={HOME} />
           </Switch>
         </Router>
       </div>

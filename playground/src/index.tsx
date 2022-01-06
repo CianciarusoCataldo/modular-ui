@@ -3,7 +3,7 @@ import CONFIG from "app.config.json";
 
 if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   navigator.serviceWorker
-    .register("./serviceWorker.js", { scope: "/modular-ui/" })
+    .register("./serviceWorker.js", { scope: "/modular-app/" })
     .then(
       function () {
         console.log("Service worker registration succeeded");

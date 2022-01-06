@@ -26,7 +26,7 @@ This library is built upon few (but important) concepts:
 - Let the user customize every part as desired, but with default values set otherwise, to make every component ready to be used without so many parameters
 - Every component should be integrable into every react app, so their behaviour must be customizable too (with callbacks, for example)
 
-With these goals in mind, I created this tiny UI library. The same concepts are also the base of another project I maintain, [react-ready-to-go](https://github.com/CianciarusoCataldo/react-ready-to-go), a ready to use react app template that use this library internally (check it out, it is also the base of [Modular-ui guide page](https://cianciarusocataldo.github.io/modular-ui/) !)
+With these goals in mind, I created this tiny UI library. The same concepts are also the base of another project I maintain, [modular-app](https://github.com/CianciarusoCataldo/modular-app), a ready to use react app template that use this library internally (check it out, it is also the base of [Modular-ui guide page](https://cianciarusocataldo.github.io/modular-ui/) !)
 
 ## Getting started
 

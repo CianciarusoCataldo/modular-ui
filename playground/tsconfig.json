@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "baseUrl": "src",
     "skipLibCheck": true,
@@ -23,10 +19,7 @@
   },
   "files": [
     "src/api/core/types/global.d.ts",
-    "src/api/core/types/store-types.d.ts",
-    "src/api/core/types/core-types.d.ts"
+    "src/api/core/types/store-types.d.ts"
   ],
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
