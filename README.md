@@ -1,4 +1,6 @@
-![modular-ui_logo](https://user-images.githubusercontent.com/47371276/142478359-80bee983-0834-40a3-a80f-8360d79a77be.png)
+<div align="center">
+<img width="600px" alt="" src="https://user-images.githubusercontent.com/47371276/148471124-9955a41b-693e-4c6c-b6da-bf3590f5eec5.png" />
+</div>
 
 # modular-ui
 ![NPM](https://img.shields.io/npm/l/@cianciarusocataldo/modular-ui?label=License)
