@@ -15,7 +15,7 @@ export interface Config {
     NAMESPACES: string[];
     DEFAULT_NAMESPACE: string;
     LOAD_PATH: string;
-    DEFAULT_NAMESPACE: string;
+    DEFAULT_NAMESPACE?: string;
     PAGES_NAMESPACE?: string;
     MODALS_NAMESPACE?: string;
   };
