@@ -33,7 +33,7 @@ export const updatePageTitle = (CONFIG: Config) => {
     title &&
     i18n.isInitialized &&
     i18n.t(title, {
-      ns: "page-titles",
+      ns: CONFIG.I18N.PAGES_NAMESPACE || "page-titles",
     })
   }`;
 };

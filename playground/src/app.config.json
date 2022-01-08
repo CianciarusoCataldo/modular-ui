@@ -28,8 +28,10 @@
   "I18N": {
     "FALLBACK_LANGUAGE": "en",
     "SUPPORTED_LANGUAGES": ["en", "it", "es", "fr", "de"],
-    "NAMESPACES": ["home"],
+    "NAMESPACES": ["overview", "common"],
     "DEFAULT_NAMESPACE": "common",
-    "LOAD_PATH": "/modular-ui/locales/{{lng}}/{{ns}}.json"
+    "LOAD_PATH": "/modular-ui/locales/{{lng}}/{{ns}}.json",
+    "PAGES_NAMESPACE": "titles",
+    "MODALS_NAMESPACE": "forms"
   }
 }

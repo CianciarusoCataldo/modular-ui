@@ -11,18 +11,24 @@ import {
 } from "api/core/store/internal-slices/ui/selectors";
 import {
   getAppName,
+  getHomePage,
+  geti18nConfig,
   getPages,
 } from "api/core/store/internal-slices/config/selectors";
 
 import { Drawer, Link } from "modular-ui-preview";
+import { useTranslation } from "react-i18next";
 
 /** Custom Modular-app laguage drawer */
 const AppDrawer = () => {
   const dispatch = useDispatch();
   const PATHS = useSelector(getPages);
+  const I18N = useSelector(geti18nConfig);
   const isDrawerShowing = useSelector(isDrawerOpen);
   const darkMode = useSelector(isInDarkMode);
+  const HOME = useSelector(getHomePage);
   const APP_NAME = useSelector(getAppName);
+  const { t } = useTranslation(I18N.PAGES_NAMESPACE || "page-titles");
 
   React.useEffect(() => {
     if (isDrawerShowing) {
@@ -54,24 +60,40 @@ const AppDrawer = () => {
         </div>
       }
       hide={!isDrawerShowing}
-      elements={Object.keys(PATHS)
-        .sort()
-        .map((route) => {
-          return {
-            text: route,
-            actionCallback: () => {
-              dispatch(requestRoute(PATHS[route]));
-              dispatch(closeDrawer());
-            },
-            isActiveCallback: () =>
-              window.location.pathname === PATHS[route] ||
-              window.location.pathname.substring(
-                0,
-                window.location.pathname.length - 1
-              ) === PATHS[route] ||
-              `${window.location.pathname}/` === PATHS[route],
-          };
-        })}
+      elements={[
+        {
+          text: t("HOME_PAGE"),
+          actionCallback: () => {
+            dispatch(requestRoute(HOME));
+            dispatch(closeDrawer());
+          },
+          isActiveCallback: () =>
+            window.location.pathname === HOME ||
+            window.location.pathname.substring(
+              0,
+              window.location.pathname.length - 1
+            ) === HOME ||
+            `${window.location.pathname}/` === HOME,
+        },
+        ...Object.keys(PATHS)
+          .sort()
+          .map((route) => {
+            return {
+              text: t(route),
+              actionCallback: () => {
+                dispatch(requestRoute(PATHS[route]));
+                dispatch(closeDrawer());
+              },
+              isActiveCallback: () =>
+                window.location.pathname === PATHS[route] ||
+                window.location.pathname.substring(
+                  0,
+                  window.location.pathname.length - 1
+                ) === PATHS[route] ||
+                `${window.location.pathname}/` === PATHS[route],
+            };
+          }),
+      ]}
       onClose={() => {
         dispatch(closeDrawer());
       }}

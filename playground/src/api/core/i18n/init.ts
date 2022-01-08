@@ -33,10 +33,8 @@ export const initi18n = (CONFIG: Config) => {
         ],
       },
       ns: [
-        "common",
-        "page-titles",
-        "home",
-        "modal-titles",
+        CONFIG.I18N.PAGES_NAMESPACE || "page-titles",
+        CONFIG.I18N.MODALS_NAMESPACE || "modal-titles",
         ...CONFIG.I18N.NAMESPACES,
       ],
       defaultNS: CONFIG.I18N.DEFAULT_NAMESPACE,
@@ -47,7 +45,7 @@ export const initi18n = (CONFIG: Config) => {
     })
     .then((t) => {
       window.document.title = `${CONFIG.APP_NAME} - ${t("HOME_PAGE", {
-        ns: "page-titles",
+        ns: CONFIG.I18N.PAGES_NAMESPACE || "page-titles",
       })}`;
     });
 };
