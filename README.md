@@ -7,6 +7,7 @@
 ![npm (scoped)](https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?color=blue&label=Latest%20version)
 [![Modular-UI CI](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml/badge.svg?branch=main)](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml)
 ![Codecov](https://img.shields.io/codecov/c/github/CianciarusoCataldo/modular-ui?label=Codecov%20coverage)
+![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@cianciarusocataldo/modular-ui?label=npms-io%20quality)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=npm%20package%20size)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@cianciarusocataldo/modular-ui/peer/react?color=orange&label=Supported%20React%20version)
 
