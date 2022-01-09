@@ -5,11 +5,12 @@
 # modular-ui
 ![NPM](https://img.shields.io/npm/l/@cianciarusocataldo/modular-ui?label=License)
 ![npm (scoped)](https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?color=blue&label=Latest%20version)
-[![Modular-UI CI](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml/badge.svg?branch=main)](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml)
-![Codecov](https://img.shields.io/codecov/c/github/CianciarusoCataldo/modular-ui?label=Codecov%20coverage)
-![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@cianciarusocataldo/modular-ui?label=npms-io%20quality)
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=npm%20package%20size)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@cianciarusocataldo/modular-ui/peer/react?color=orange&label=Supported%20React%20version)
+![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@cianciarusocataldo/modular-ui?label=npms-io%20quality)
+![Codecov](https://img.shields.io/codecov/c/github/CianciarusoCataldo/modular-ui?label=Codecov%20coverage)
+![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@cianciarusocataldo/modular-ui?label=Libraries.io%20dependency%20status)
+[![Modular-UI CI](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml/badge.svg?branch=main)](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml)
 
 Do you need to build a react web-app without maintaining a codebase for every component, and without a lot of additional dependencies? Modular-ui is what you are looking for ! More details on [Modular-ui official page](https://cianciarusocataldo.github.io/modular-ui/)
 
