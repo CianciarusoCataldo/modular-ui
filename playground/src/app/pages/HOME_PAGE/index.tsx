@@ -4,7 +4,7 @@ import { Card, CodeBox, Link } from "modular-ui-preview";
 
 import { useHomePageTranslation } from "app/hooks/localization";
 
-import { getPages } from "api/core/store/internal-slices/config/selectors";
+import { getPages } from "@cianciarusocataldo/modular-engine";
 import { NavLink } from "react-router-dom";
 import { FLEX_STYLES } from "assets/styles";
 import AppPage from "app/components/molecules/AppPage";

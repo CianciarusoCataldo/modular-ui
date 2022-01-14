@@ -17,9 +17,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "files": [
-    "src/api/core/types/global.d.ts",
-    "src/api/core/types/store-types.d.ts"
-  ],
+  "files": ["src/api/store/store-types.d.ts"],
   "include": ["src"]
 }

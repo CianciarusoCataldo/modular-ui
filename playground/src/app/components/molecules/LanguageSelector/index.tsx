@@ -2,8 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { LANGUAGES_ICONS } from "assets/images";
 
-import { changeLanguage } from "api/core/store/internal-slices/ui/actions";
-import { getLanguage } from "api/core/store/internal-slices/ui/selectors";
+import { changeLanguage, getLanguage } from "@cianciarusocataldo/modular-engine";
 
 import { Dropdown } from "modular-ui-preview";
 

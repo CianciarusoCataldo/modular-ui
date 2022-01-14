@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 import MODALS from "app/modals";
 
-import { driveWithDarkMode } from "api/helpers/ui-helper";
-
 import { Modal } from "modular-ui-preview";
-import { getModalView } from "api/core/store/internal-slices/modal/selectors";
-import { closeModal } from "api/core/store/internal-slices/modal/actions";
 import { useTranslation } from "react-i18next";
-import { geti18nConfig } from "api/core/store/internal-slices/config/selectors";
+import {
+  closeModal,
+  geti18nConfig,
+  getModalType,
+  isInDarkMode,
+  isModalVisible,
+} from "@cianciarusocataldo/modular-engine";
 
 /** Custom Modular-app modal */
 const AppModal = () => {
@@ -17,21 +19,23 @@ const AppModal = () => {
   const onClose = useCallback(() => {
     dispatch(closeModal());
   }, [dispatch]);
-  const { isVisible, type } = useSelector(getModalView);
+  const type = useSelector(getModalType);
+  const isVisible = useSelector(isModalVisible);
   const I18N = useSelector(geti18nConfig);
-  const ModalComponent = driveWithDarkMode(Modal);
-  const ModalContent = type ? MODALS[type] : <div />;
+  const ModalContent = type && MODALS[type] ? MODALS[type] : <div />;
+  const dark = useSelector(isInDarkMode);
 
   const { t } = useTranslation(I18N.MODALS_NAMESPACE || "modal-titles");
 
   return (
-    <ModalComponent
+    <Modal
+      dark={dark}
       onClose={onClose}
       title={type ? t(type) : ""}
       hide={!isVisible}
     >
       {ModalContent}
-    </ModalComponent>
+    </Modal>
   );
 };
 

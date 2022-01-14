@@ -6,9 +6,6 @@ import { Config } from "api/core/store/internal-slices/config/types";
 
 //General
 export type RootState = {
-  router: RouterState;
-  ui: UIState;
-  config: Config;
   modal: ModalState;
 } & AdditionalState;
 

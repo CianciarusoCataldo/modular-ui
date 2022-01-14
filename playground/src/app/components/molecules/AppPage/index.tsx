@@ -1,6 +1,6 @@
-import { driveWithDarkMode } from "api/helpers/ui-helper";
-
 import { Page } from "modular-ui-preview";
+import { useSelector } from "react-redux";
+import { isInDarkMode } from "@cianciarusocataldo/modular-engine";
 
 /** Custom Modular-app page */
 const AppPage = ({
@@ -8,8 +8,8 @@ const AppPage = ({
 }: {
   children: JSX.Element | Element | string | (JSX.Element | Element | string)[];
 }) => {
-  const CustomPage = driveWithDarkMode(Page);
-  return <CustomPage>{children}</CustomPage>;
+  const dark = useSelector(isInDarkMode);
+  return <Page dark={dark}>{children}</Page>;
 };
 
 export default AppPage;

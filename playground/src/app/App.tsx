@@ -3,10 +3,7 @@ import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { History } from "history";
 
-import {
-  getHomePage,
-  getPages,
-} from "api/core/store/internal-slices/config/selectors";
+import { getHomePage, getPages } from "@cianciarusocataldo/modular-engine";
 
 import AppHeader from "./components/molecules/AppHeader";
 import AppDrawer from "./components/molecules/AppDrawer";

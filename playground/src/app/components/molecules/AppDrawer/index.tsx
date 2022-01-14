@@ -3,22 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { LogoIcon } from "assets/images";
 
-import { requestRoute } from "api/core/store/internal-slices/router/actions";
-import { closeDrawer } from "api/core/store/internal-slices/ui/actions";
 import {
-  isDrawerOpen,
-  isInDarkMode,
-} from "api/core/store/internal-slices/ui/selectors";
-import {
+  closeDrawer,
   getAppName,
   getHomePage,
   geti18nConfig,
   getPages,
-} from "api/core/store/internal-slices/config/selectors";
+  isActualRoute,
+  isDrawerOpen,
+  isInDarkMode,
+  requestRoute,
+} from "@cianciarusocataldo/modular-engine";
 
 import { Drawer, Link } from "modular-ui-preview";
 import { useTranslation } from "react-i18next";
-import { isActualRoute } from "api/helpers/route-helper";
 
 /** Custom Modular-app laguage drawer */
 const AppDrawer = () => {

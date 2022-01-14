@@ -3,16 +3,14 @@ import classNames from "classnames";
 
 import { HomeIcon, BurgerIcon, LogoIcon } from "assets/images";
 
-import { driveWithDarkMode } from "api/helpers/ui-helper";
-
-import { requestRoute } from "api/core/store/internal-slices/router/actions";
-import { openDrawer } from "api/core/store/internal-slices/ui/actions";
-
 import {
   getAppName,
   getHomePage,
-} from "api/core/store/internal-slices/config/selectors";
-import { isHomePage } from "api/core/store/internal-slices/ui/selectors";
+  isHomePage,
+  isInDarkMode,
+  openDrawer,
+  requestRoute,
+} from "@cianciarusocataldo/modular-engine";
 
 import { Button, Header, Link } from "modular-ui-preview";
 import LanguageSelector from "../LanguageSelector";
@@ -23,14 +21,14 @@ const AppHeader = () => {
   const APP_NAME = useSelector(getAppName);
   const hideHomeButton = useSelector(isHomePage);
   const HOME = useSelector(getHomePage);
-  const CustomHeader = driveWithDarkMode(Header);
+  const dark = useSelector(isInDarkMode);
 
   return (
-    <CustomHeader>
+    <Header dark={dark}>
       <div className="flex flex-row items-center mt-14 mb-5 ml-1">
         <LanguageSelector />
         <Button
-          aria-label="home button"
+          aria-label="back button"
           onClick={() => {
             dispatch(requestRoute(HOME));
           }}
@@ -72,12 +70,12 @@ const AppHeader = () => {
               </Link>
               <div className="mt-2">
                 <a
-                  href="https://www.npmjs.com/package/@cianciarusocataldo/modular-ui"
+                  href="https://github.com/CianciarusoCataldo/modular-ui"
                   style={{ height: "25px" }}
                 >
                   <img
-                    alt="npm"
-                    src="https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?label=latest version"
+                    alt=""
+                    src="https://img.shields.io/github/package-json/v/cianciarusocataldo/modular-ui?label=latest%20version"
                     height="25"
                   />
                 </a>
@@ -86,7 +84,7 @@ const AppHeader = () => {
           </div>
         </div>
       </div>
-    </CustomHeader>
+    </Header>
   );
 };
 
