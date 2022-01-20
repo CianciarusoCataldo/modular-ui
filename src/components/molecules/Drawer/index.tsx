@@ -40,7 +40,6 @@ const Drawer = ({
   className,
   ...commonProps
 }: DrawerProps) => {
-  const [firstClicked, setFirstClick] = React.useState<boolean>(false);
 
   return buildComponent({
     name: "modular-drawer",
@@ -49,8 +48,7 @@ const Drawer = ({
       className: classNames(
         {
           "ease-in": !hide,
-          "ease-out": firstClicked && hide,
-          "component-hidden": !firstClicked && hide,
+          "ease-out": hide,
         },
         className
       ),
@@ -64,7 +62,6 @@ const Drawer = ({
             unstyled
             id="drawer_close_button"
             onClick={() => {
-              setFirstClick(true);
               onClose();
             }}
             className="close-button"
