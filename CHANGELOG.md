@@ -1,3 +1,8 @@
+# 3.1.0
+
+- `Drawer` ease-out transition fix
+- Clean up
+
 # 3.0.0
 
 - New `Container` component
