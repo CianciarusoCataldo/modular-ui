@@ -13,14 +13,7 @@ import App from "app/App";
 /** Render Modular-app */
 export const startRender = (store: Store, history: History) => {
   render(
-    <Suspense
-      fallback={
-        <div>
-          <div className="preloader-header"></div>
-          <div className="preloader"></div>
-        </div>
-      }
-    >
+    <Suspense fallback={<div className="preloader"></div>}>
       <ToastContainer />
       <Provider store={store}>
         <App history={history} />

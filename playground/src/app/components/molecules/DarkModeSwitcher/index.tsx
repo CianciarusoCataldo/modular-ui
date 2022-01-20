@@ -2,10 +2,7 @@ import { useCallback } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  isInDarkMode,
-  switchDarkMode,
-} from "@cianciarusocataldo/modular-engine";
+import { isInDarkMode, setDarkMode } from "@cianciarusocataldo/modular-engine";
 import { Toggle } from "modular-ui-preview";
 
 const DarkModeSwitcher = () => {
@@ -13,8 +10,8 @@ const DarkModeSwitcher = () => {
 
   const dark = useSelector(isInDarkMode);
   const darkModeSwitch = useCallback(() => {
-    dispatch(switchDarkMode());
-  }, [dispatch]);
+    dispatch(setDarkMode(!dark));
+  }, [dispatch, dark]);
 
   return (
     <Toggle shadow value={dark} onChange={darkModeSwitch} className="mx-1" />
