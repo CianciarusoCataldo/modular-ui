@@ -1,8 +1,16 @@
+# 3.0.0
+
+- New `Container` component
+- New `Label` component
+- `Header` component removed
+- `Page` component removed
+- Clean up
+
 # 2.0.0
 
-- Rater component
-- Counter component
-- Carousel component
+- `Rater` component
+- `Counter` component
+- `Carousel` component
 - Clean up
 - Refactoring
 - Shared component building process, with new common props
@@ -19,7 +27,7 @@
 # 1.1.0
 
 - Bugfixes
-- Toggle component
+- `Toggle` component
 - Shadow feature for all components
 - Clean up
 - Refactoring
@@ -27,8 +35,7 @@
 # 1.0.0
 
 - Bugfixes
-- CodeBox component highlight feature with Js, Python and Terminal highlight basic support
-- Playground updates
+- `CodeBox` component highlight feature with Js, Python and Terminal highlight basic support
 - Dark mode and Hide features available for every component
 - Better styled components
 - Test-suites system improved
@@ -36,13 +43,13 @@
 # 0.9.4
 
 - Bugfixes
-- Input component
-- CheckBox component
-- CodeBox component
+- New `Input` component
+- New `CheckBox` component
+- New `CodeBox` component
 
 # 0.9.0
 
-- New Table component
+- New `Table` component
 - styles clean up
 
 # 0.8.0

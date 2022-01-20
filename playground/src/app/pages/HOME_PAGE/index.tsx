@@ -1,13 +1,17 @@
 import { useSelector } from "react-redux";
 
-import { Card, CodeBox, Link } from "modular-ui-preview";
+import { Card, CodeBox, Label, Link } from "modular-ui-preview";
 
 import { useHomePageTranslation } from "app/hooks/localization";
 
-import { getPages } from "@cianciarusocataldo/modular-engine";
-import { NavLink } from "react-router-dom";
+import {
+  driveWithDarkMode,
+  getPages,
+} from "@cianciarusocataldo/modular-engine";
 import { FLEX_STYLES } from "assets/styles";
+
 import AppPage from "app/components/molecules/AppPage";
+import RouterLink from "app/components/atoms/RouterLink";
 
 const HomePage = () => {
   const t = useHomePageTranslation();
@@ -72,27 +76,27 @@ const HomePage = () => {
   const installationGuide = PARSERS.installation(
     t("installation", { context: "body" })
   );
+  const AppLabel = driveWithDarkMode(Label);
 
   return (
     <AppPage>
-      <p key="homepage_header" className="text-4xl mt-12 mb-5 ml-3 text-white">
+      <AppLabel key="homepage_header" className="text-4xl mt-12 mb-5 ml-3">
         {t("title")}
-      </p>
+      </AppLabel>
       <div key="homepage_container" className={FLEX_STYLES.ROWS_COLS}>
         <div>
-          <Card body={description} />
+          <Card shadow body={description} />
           <Card
+            shadow
             label={
-              <p className="text-white">
-                {t("installation", { context: "title" })}
-              </p>
+              <AppLabel>{t("installation", { context: "title" })}</AppLabel>
             }
-            titleClassName="text-2xl text-white"
             body={installationGuide}
             bodyClassName="p-2"
           />
         </div>
         <Card
+          shadow
           header={t("componentsList_header")}
           body={
             <ul>
@@ -102,12 +106,12 @@ const HomePage = () => {
                 .map((routeKey, index) => {
                   return (
                     <li key={`link_${index}`}>
-                      <NavLink
+                      <RouterLink
                         className="text-blue-400 hover:text-blue-700 py-1 text-lg"
                         to={PATHS[routeKey]}
                       >
                         {` - ${routeKey}`}
-                      </NavLink>
+                      </RouterLink>
                     </li>
                   );
                 })}

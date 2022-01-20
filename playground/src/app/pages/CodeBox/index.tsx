@@ -5,9 +5,10 @@ import {
   StringProp,
 } from "@cianciarusocataldo/demo-ui";
 
-import { CodeBox } from "modular-ui-preview";
+import { CodeBox, Label } from "modular-ui-preview";
 import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 
 export const CodeBoxWrapper = () => {
   return (
@@ -43,11 +44,13 @@ export const CodeBoxWrapper = () => {
 
 const CodeBoxPage = () => {
   const t = useCommonTranslation();
+  const AppLabel = driveWithDarkMode(Label);
+
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t(
+      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t(
         "molecules"
-      )} - ${t("component", { componentName: "CodeBox" })}`}</p>
+      )} - ${t("component", { componentName: "CodeBox" })}`}</AppLabel>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <CodeBoxWrapper />
       </div>

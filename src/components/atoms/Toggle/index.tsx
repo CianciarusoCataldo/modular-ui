@@ -5,17 +5,13 @@ import classNames from "classnames";
 
 import { buildBoxComponent } from "../../../utils";
 
-const STATUSES_MAP = {
-  on: "off",
-  off: "on",
-} as const;
 
 /**
  * A compact Toggle switcher, customized to reflect its actual status
  *
- * @param {"on"|"off"} value toggle status ("on"/"off")
+ * @param {boolean} value toggle status (true - on/false - off)
  * @param {JSX.Element | Element } icon custom toggle icon
- * @param {(newValue:"on"|"off")=>void} onChange calllback triggered when changing Toggle status
+ * @param {(newValue:boolean)=>void} onChange calllback triggered when changing Toggle status
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
  * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
  * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
@@ -27,7 +23,7 @@ const STATUSES_MAP = {
  *import { render } from "react-dom";
  *import { Toggle } from '@cianciarusocataldo/modular-ui';
  *
- * render(<Toggle value="on" />, document.getElementById("root"));
+ * render(<Toggle value={true} />, document.getElementById("root"));
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -72,14 +68,14 @@ const Toggle = ({
     </svg>
   );
 
-  return buildBoxComponent<"on" | "off">({
+  return buildBoxComponent<boolean>({
     callBack: (status, setStatus) => ({
       name: "modular-toggle",
       Component: (
         <div
           className={classNames("toggle-icon", {
-            flip: status === "off",
-            "flip-back": status === "on",
+            flip: !status,
+            "flip-back": status,
           })}
         >
           {toggleIcon}
@@ -88,16 +84,16 @@ const Toggle = ({
       commonProps,
       additionalProps: {
         onClick: () => {
-          onChange && onChange(STATUSES_MAP[status]);
-          setStatus(STATUSES_MAP[status]);
+          onChange && onChange(!status);
+          setStatus(status);
         },
         className: classNames("container", className, {
-          off: status === "off",
+          off: !status,
           shadowed: shadow,
         }),
       },
     }),
-    defaultValue: "on",
+    defaultValue: true,
     value,
     label,
   });

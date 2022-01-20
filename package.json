@@ -1,6 +1,6 @@
 {
   "name": "@cianciarusocataldo/modular-ui",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "React components for every app, easy to use and customize",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -61,7 +61,7 @@
     "analyze": "rollup -c ./config/rollup.analyze.config.js",
     "build-watch": "rollup -c ./config/rollup.dev.config.js -w",
     "check-types": "tsc",
-    "start": "npm-run-all --parallel build-watch start-playground",
+    "start": "npm run start-playground",
     "init": "npm i && cd playground && npm i",
     "start-playground": "cd playground && npm run start",
     "build-playground": "cd playground && npm run build",

@@ -37,6 +37,7 @@ export const buildComponent = ({
         shadowed: commonProps.shadow,
         styled: !commonProps.unstyled,
       })}
+      style={commonProps.style}
       {...additionalProps}
     >
       {Component}

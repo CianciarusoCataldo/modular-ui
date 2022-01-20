@@ -68,7 +68,6 @@ const Card = ({
       ],
       commonProps: {
         ...commonProps,
-        shadow: false,
       },
     }),
     defaultValue: "",

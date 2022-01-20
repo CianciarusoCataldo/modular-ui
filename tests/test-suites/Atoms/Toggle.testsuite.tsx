@@ -5,14 +5,14 @@ import { describeTest, renderingTest } from "../../core/utils/helpers";
 
 import { Toggle } from "../../../src";
 
-renderingTest(Toggle, { value: "on", onChange: () => {} });
+renderingTest(Toggle, { value: true, onChange: () => {} });
 
 describeTest("click test", () => {
   const onChangeStub = jest.fn();
 
   test("onChange callback is triggered", () => {
-    const wrapper = mount(<Toggle value="on" onChange={onChangeStub} />);
+    const wrapper = mount(<Toggle value={false} onChange={onChangeStub} />);
     wrapper.find(".container").simulate("click");
-    expect(onChangeStub).toBeCalledWith("off");
+    expect(onChangeStub).toBeCalledWith(true);
   });
 });

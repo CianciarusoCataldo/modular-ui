@@ -1,7 +1,8 @@
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 import AppPage from "app/components/molecules/AppPage";
 import { useCommonTranslation } from "app/hooks/localization";
-import { Divider } from "modular-ui-preview";
+import { Divider, Label } from "modular-ui-preview";
 
 export const DividerWrapper = () => (
   <Demo
@@ -19,12 +20,14 @@ export const DividerWrapper = () => (
 
 const DividerPage = () => {
   const t = useCommonTranslation();
+  const AppLabel = driveWithDarkMode(Label);
+
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t("atoms")} - ${t(
+      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t("atoms")} - ${t(
         "component",
         { componentName: "Divider" }
-      )}`}</p>
+      )}`}</AppLabel>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <DividerWrapper />
       </div>

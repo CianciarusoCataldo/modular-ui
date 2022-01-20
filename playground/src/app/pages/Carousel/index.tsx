@@ -1,11 +1,12 @@
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 
-import { Carousel } from "modular-ui-preview";
+import { Carousel, Label } from "modular-ui-preview";
 import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
-import Elem0 from "assets/images/icons/tmp/elem0.png";
-import Elem1 from "assets/images/icons/tmp/elem1.png";
-import Elem2 from "assets/images/icons/tmp/elem2.png";
+import Elem0 from "assets/images/misc/elem0.png";
+import Elem1 from "assets/images/misc/elem1.png";
+import Elem2 from "assets/images/misc/elem2.png";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 
 export const CarouselWrapper = () => {
   return (
@@ -38,11 +39,14 @@ export const CarouselWrapper = () => {
 
 const CarouselPage = () => {
   const t = useCommonTranslation();
+  const AppLabel = driveWithDarkMode(Label);
+
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t(
-        "molecules"
-      )} - ${t("component", { componentName: "Carousel" })}`}</p>
+      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t("molecules")} - ${t(
+        "component",
+        { componentName: "Carousel" }
+      )}`}</AppLabel>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <CarouselWrapper />
       </div>

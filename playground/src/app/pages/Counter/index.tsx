@@ -4,9 +4,10 @@ import {
   NumberProp,
   StringProp,
 } from "@cianciarusocataldo/demo-ui";
-import { Counter } from "modular-ui-preview";
+import { Counter, Label } from "modular-ui-preview";
 import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 
 export const CounterWrapper = () => {
   return (
@@ -41,13 +42,14 @@ export const CounterWrapper = () => {
 
 const CounterPage = () => {
   const t = useCommonTranslation();
+  const AppLabel = driveWithDarkMode(Label);
 
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t("atoms")} - ${t(
+      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t("atoms")} - ${t(
         "component",
         { componentName: "Counter" }
-      )}`}</p>
+      )}`}</AppLabel>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <CounterWrapper />
       </div>

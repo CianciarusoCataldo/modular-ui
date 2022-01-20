@@ -1,8 +1,9 @@
 import React from "react";
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
-import { Button, Modal } from "modular-ui-preview";
+import { Button, Label, Modal } from "modular-ui-preview";
 import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 
 export const ModalWrapper = () => {
   const [isModalisible, setModalVisible] = React.useState(false);
@@ -39,11 +40,14 @@ export const ModalWrapper = () => {
 
 const ModalPage = () => {
   const t = useCommonTranslation();
+  const AppLabel = driveWithDarkMode(Label);
+
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t(
-        "molecules"
-      )} - ${t("component", { componentName: "Modal" })}`}</p>
+      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t("molecules")} - ${t(
+        "component",
+        { componentName: "Modal" }
+      )}`}</AppLabel>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <ModalWrapper />
       </div>

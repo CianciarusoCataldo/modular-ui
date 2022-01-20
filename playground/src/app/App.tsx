@@ -3,32 +3,70 @@ import { Redirect, Route, Router, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { History } from "history";
 
-import { getHomePage, getPages } from "@cianciarusocataldo/modular-engine";
+import {
+  driveWithDarkMode,
+  getHomePage,
+  getPages,
+  isInDarkMode,
+} from "@cianciarusocataldo/modular-engine";
 
-import AppHeader from "./components/molecules/AppHeader";
+import AppHeaderContent from "./contents/header";
+import AppFooterContent from "./contents/footer";
+
 import AppDrawer from "./components/molecules/AppDrawer";
 import AppModal from "./components/molecules/AppModal";
+import { Container } from "modular-ui-preview";
+import LanguageSelector from "./components/molecules/LanguageSelector";
+import DarkModeSwitcher from "./components/molecules/DarkModeSwitcher";
 
 /** Modular-app main component */
 const App = ({ history }: { history: History }) => {
   const PAGES = useSelector(getPages);
   const HOME = useSelector(getHomePage);
+  const dark = useSelector(isInDarkMode);
+  const ALL_PAGES: Record<string, string> = {
+    ...PAGES,
+    HOME_PAGE: HOME,
+  };
+  const borderColor = dark === true ? "#eaebec" : "#1d232e";
+  const AppContainer = driveWithDarkMode(Container);
 
   return (
     <div id="app-container">
       <AppModal />
-      <AppHeader />
       <AppDrawer />
-      <div style={{ marginTop: "10rem" }}>
+      <div
+        className="fixed top-0 right-1 flex flex-row"
+        style={{ zIndex: "9" }}
+      >
+        <LanguageSelector />
+        <DarkModeSwitcher />
+      </div>
+      <AppContainer
+        wrapper="header"
+        className="fixed overflow-hidden h-44 top-0 w-full border-b-2"
+        style={{
+          borderColor,
+          zIndex: "8",
+        }}
+      >
+        <AppHeaderContent />
+      </AppContainer>
+      <AppContainer
+        wrapper="footer"
+        className="fixed overflow-hidden h-24 bottom-0 w-full border-t-2"
+        style={{
+          borderColor,
+          zIndex: "8",
+        }}
+      >
+        <AppFooterContent />
+      </AppContainer>
+      <div className="h-44" />
+      <AppContainer unstyled className="overflow-auto">
         <Router history={history}>
           <Switch>
-            <Route
-              component={lazy(() => import("./pages/HOME_PAGE"))}
-              key="HOME_PAGE"
-              exact
-              path={HOME}
-            />
-            {Object.keys(PAGES).map((route) => (
+            {Object.keys(ALL_PAGES).map((route) => (
               <Route
                 component={lazy(() => import(`./pages/${route}`))}
                 key={route}
@@ -39,7 +77,8 @@ const App = ({ history }: { history: History }) => {
             <Redirect to={HOME} />
           </Switch>
         </Router>
-      </div>
+      </AppContainer>
+      <div className="h-24" />
     </div>
   );
 };

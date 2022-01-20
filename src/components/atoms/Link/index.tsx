@@ -2,7 +2,6 @@ import "./styles.css";
 
 import { LinkProps } from "./types";
 import { buildComponent } from "../../../utils";
-import { Wrappers } from "../../../utils/global";
 
 /**
  * A re-defined `<a>` component, designed to be better used with links
@@ -36,7 +35,7 @@ const Link = ({ to, children, newTab, ...commonProps }: LinkProps) =>
       href: to,
       target: newTab ? "_blank" : undefined,
     },
-    wrapper: Wrappers.A,
+    wrapper: "a",
   });
 
 export default Link;

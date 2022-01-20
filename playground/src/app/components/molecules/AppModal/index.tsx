@@ -7,9 +7,9 @@ import { Modal } from "modular-ui-preview";
 import { useTranslation } from "react-i18next";
 import {
   closeModal,
+  driveWithDarkMode,
   geti18nConfig,
   getModalType,
-  isInDarkMode,
   isModalVisible,
 } from "@cianciarusocataldo/modular-engine";
 
@@ -23,19 +23,19 @@ const AppModal = () => {
   const isVisible = useSelector(isModalVisible);
   const I18N = useSelector(geti18nConfig);
   const ModalContent = type && MODALS[type] ? MODALS[type] : <div />;
-  const dark = useSelector(isInDarkMode);
 
   const { t } = useTranslation(I18N.MODALS_NAMESPACE || "modal-titles");
 
+  const ModalComponent = driveWithDarkMode(Modal);
+
   return (
-    <Modal
-      dark={dark}
+    <ModalComponent
       onClose={onClose}
       title={type ? t(type) : ""}
       hide={!isVisible}
     >
       {ModalContent}
-    </Modal>
+    </ModalComponent>
   );
 };
 

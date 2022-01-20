@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 /** Props shared between all components */
 export interface CommonProps {
   /** custom className (to better customize it)*/
@@ -17,6 +19,8 @@ export interface CommonProps {
 
   /** Style/unstyle component (to better customize it) */
   unstyled?: boolean;
+
+  style?: CSSProperties;
 }
 
 export interface BoxComponent<T = any, K = JSX.Element | Element> {
@@ -73,9 +77,4 @@ export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
 };
 
 /** Supported components wrappers */
-export enum Wrappers {
-  DIV = "div",
-  A = "a",
-  HEADER = "header",
-  BUTTON = "button",
-}
+export type Wrappers = "div" | "a" | "header" | "button" | "footer" | "p";

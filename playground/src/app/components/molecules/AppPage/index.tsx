@@ -1,6 +1,5 @@
-import { Page } from "modular-ui-preview";
-import { useSelector } from "react-redux";
-import { isInDarkMode } from "@cianciarusocataldo/modular-engine";
+import { Container } from "modular-ui-preview";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 
 /** Custom Modular-app page */
 const AppPage = ({
@@ -8,8 +7,12 @@ const AppPage = ({
 }: {
   children: JSX.Element | Element | string | (JSX.Element | Element | string)[];
 }) => {
-  const dark = useSelector(isInDarkMode);
-  return <Page dark={dark}>{children}</Page>;
+  const AppContainer = driveWithDarkMode(Container);
+  return (
+    <AppContainer animated unstyled className="m-2">
+      {children}
+    </AppContainer>
+  );
 };
 
 export default AppPage;

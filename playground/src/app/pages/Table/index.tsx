@@ -4,9 +4,10 @@ import {
   NumberProp,
   StringProp,
 } from "@cianciarusocataldo/demo-ui";
-import { Table } from "modular-ui-preview";
+import { Label, Table } from "modular-ui-preview";
 import { useCommonTranslation } from "app/hooks/localization";
 import AppPage from "app/components/molecules/AppPage";
+import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
 
 export const TableWrapper = () => {
   return (
@@ -39,11 +40,13 @@ export const TableWrapper = () => {
 
 const TablePage = () => {
   const t = useCommonTranslation();
+  const AppLabel = driveWithDarkMode(Label);
+
   return (
     <AppPage>
-      <p className="text-4xl mt-12 mb-5 ml-3 text-white">{`${t(
+      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t(
         "molecules"
-      )} - ${t("component", { componentName: "Table" })}`}</p>
+      )} - ${t("component", { componentName: "Table" })}`}</AppLabel>
       <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
         <TableWrapper />
       </div>
