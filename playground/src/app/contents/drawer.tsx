@@ -2,7 +2,7 @@ import {
   driveWithDarkMode,
   getAppName,
 } from "@cianciarusocataldo/modular-engine";
-import { Link } from "@cianciarusocataldo/modular-ui";
+import { Link } from "modular-ui-preview";
 import { LogoIcon } from "assets/images";
 import { useSelector } from "react-redux";
 
