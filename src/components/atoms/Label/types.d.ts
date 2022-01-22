@@ -1,5 +1,7 @@
-import { BuilderComponent, CommonProps } from "../../../utils/global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
-export type LabelProps = {
-  children?: string | string[];
-} & CommonProps;
+export type LabelProps = ComponentWithChildren<string | string[]> & CommonProps;

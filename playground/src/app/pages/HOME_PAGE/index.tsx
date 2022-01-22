@@ -1,21 +1,17 @@
 import { useSelector } from "react-redux";
 
-import { Card, CodeBox, Label, Link } from "modular-ui-preview";
-
 import { useHomePageTranslation } from "app/hooks/localization";
 
-import {
-  driveWithDarkMode,
-  getPages,
-} from "@cianciarusocataldo/modular-engine";
+import { getPages } from "@cianciarusocataldo/modular-engine";
 import { FLEX_STYLES } from "assets/styles";
 
-import AppPage from "app/components/molecules/AppPage";
-import RouterLink from "app/components/atoms/RouterLink";
+import { Card, CodeBox, Link } from "modular-ui-preview";
+import { AppLabel, AppPage, RouterLink } from "api/predefined/components";
 
 const HomePage = () => {
   const t = useHomePageTranslation();
   const PATHS = useSelector(getPages);
+
   const PARSERS = {
     description: (localizedString: string) => {
       const splittedString = localizedString.split("#LINK");
@@ -76,7 +72,6 @@ const HomePage = () => {
   const installationGuide = PARSERS.installation(
     t("installation", { context: "body" })
   );
-  const AppLabel = driveWithDarkMode(Label);
 
   return (
     <AppPage>
@@ -101,13 +96,12 @@ const HomePage = () => {
           body={
             <ul>
               {Object.keys(PATHS)
-                .slice(1)
                 .sort()
                 .map((routeKey, index) => {
                   return (
                     <li key={`link_${index}`}>
                       <RouterLink
-                        className="text-blue-400 hover:text-blue-700 py-1 text-lg"
+                        className="text-gray-700 hover:text-blue-700 py-1 text-lg"
                         to={PATHS[routeKey]}
                       >
                         {` - ${routeKey}`}

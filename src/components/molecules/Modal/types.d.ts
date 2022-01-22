@@ -1,8 +1,12 @@
-import { CommonProps, ComponentWithChildren } from "../../../utils/global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
 /** Modal component props */
 export type ModalProps = CommonProps &
-  ComponentWithChildren & {
+  ComponentWithChildren<BuilderComponent | BuilderComponent[]> & {
     /** A custom className applied on the Modal container */
     overlayClassName?: string;
 

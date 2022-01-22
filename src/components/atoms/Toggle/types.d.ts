@@ -1,5 +1,6 @@
 import {
   BoxComponent,
+  BuilderComponent,
   CommonProps,
   ComponentWithCallback,
 } from "../../../utils/global";
@@ -7,4 +8,7 @@ import {
 /** Toggle component props */
 export type ToggleProps = CommonProps &
   BoxComponent<boolean> &
-  ComponentWithCallback<boolean>;
+  ComponentWithCallback<boolean> & {
+    offIcon?: BuilderComponent;
+    onIcon?: BuilderComponent;
+  };

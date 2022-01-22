@@ -1,5 +1,14 @@
 import { CommonProps } from "../../../utils/global";
 
+/** Single Form component field */
+export interface FormField {
+  header?: string;
+  required?: boolean;
+  placeholder?: string;
+  error?: string;
+  validate?: (value: string) => boolean;
+}
+
 /** Form component props */
 export type FormProps = CommonProps &
   Omit<BoxComponent, "value" | "icon"> & {
@@ -7,16 +16,7 @@ export type FormProps = CommonProps &
     title?: string;
 
     /** Form fields array */
-    fields?: Record<
-      string,
-      {
-        header?: string;
-        required?: boolean;
-        placeholder?: string;
-        error?: string;
-        validate?: (value: string) => boolean;
-      }
-    >;
+    fields?: Record<string, FormField>;
 
     /** Custom submit button label */
     submitLabel?: string;

@@ -44,7 +44,7 @@ const HeaderContent = () => {
         {LeftArrowIcon}
       </Button>
       <div className="m-auto flex flex-row">
-        <div className="m-auto mr-1 md:mr-2 lg:mr-2 xl:mr-2 2xl:mr-2 3xl:mr-2">
+        <div className="m-auto mr-2">
           {LogoIcon}
         </div>
         <div className="flex flex-col">

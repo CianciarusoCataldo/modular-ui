@@ -2,6 +2,7 @@ import { useCallback } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { DarkModeIcon, LightModeIcon } from "assets/images";
 import { isInDarkMode, setDarkMode } from "@cianciarusocataldo/modular-engine";
 import { Toggle } from "modular-ui-preview";
 
@@ -14,7 +15,15 @@ const DarkModeSwitcher = () => {
   }, [dispatch, dark]);
 
   return (
-    <Toggle shadow value={dark} onChange={darkModeSwitch} className="mx-1" />
+    <Toggle
+      onIcon={LightModeIcon}
+      offIcon={DarkModeIcon}
+      shadow
+      dark={dark}
+      value={!dark}
+      onChange={darkModeSwitch}
+      className="mx-1"
+    />
   );
 };
 

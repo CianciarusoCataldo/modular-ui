@@ -5,29 +5,24 @@ import {
   StringProp,
 } from "@cianciarusocataldo/demo-ui";
 
-import { CodeBox, Label } from "modular-ui-preview";
-import { useCommonTranslation } from "app/hooks/localization";
-import AppPage from "app/components/molecules/AppPage";
-import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
+import { CodeBox } from "modular-ui-preview";
+import { ComponentPage } from "app/components/ComponentPage";
+import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
-export const CodeBoxWrapper = () => {
-  return (
+const CodeBoxPage = () => (
+  <ComponentPage name="CodeBox">
     <Demo
       label="CodeBox"
       props={{
         value: StringProp("npm i @cianciarusocataldo/modular-ui"),
         label: StringProp("Codebox label"),
-        className: StringProp(""),
         enhanced: BooleanProp(true),
-        hide: BooleanProp(false),
-        shadow: BooleanProp(true),
-        dark: BooleanProp(false),
-        unstyled: BooleanProp(false),
         environment: SelectProp({
           "Terminal (default)": "terminal",
           Javascript: "javascript",
           Python: "python",
         }),
+        ...DEMO_COMMON_PROPS,
       }}
       rows={[
         ["value", "enhanced", "environment"],
@@ -39,23 +34,7 @@ export const CodeBoxWrapper = () => {
         return <CodeBox {...props} />;
       }}
     </Demo>
-  );
-};
-
-const CodeBoxPage = () => {
-  const t = useCommonTranslation();
-  const AppLabel = driveWithDarkMode(Label);
-
-  return (
-    <AppPage>
-      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t(
-        "molecules"
-      )} - ${t("component", { componentName: "CodeBox" })}`}</AppLabel>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <CodeBoxWrapper />
-      </div>
-    </AppPage>
-  );
-};
+  </ComponentPage>
+);
 
 export default CodeBoxPage;

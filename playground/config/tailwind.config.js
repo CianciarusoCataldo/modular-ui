@@ -27,6 +27,7 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      orange: colors.orange,
       "smoke-darkest": "rgba(0, 0, 0, 0.9)",
       "smoke-darker": "rgba(0, 0, 0, 0.75)",
       "smoke-dark": "rgba(0, 0, 0, 0.6)",

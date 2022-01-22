@@ -8,7 +8,7 @@ import {
 /** Card component props */
 export type CardProps = CommonProps &
   ComponentWithChildren &
-  BoxComponent & {
+  Omit<BoxComponent, "value"> & {
     /** Card header content */
     header?: BuilderComponent;
 

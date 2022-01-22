@@ -1,9 +1,9 @@
 import React from "react";
-import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
-import { Button, Label, Modal } from "modular-ui-preview";
-import { useCommonTranslation } from "app/hooks/localization";
-import AppPage from "app/components/molecules/AppPage";
-import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
+import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+
+import { Button, Modal } from "modular-ui-preview";
+import { ComponentPage } from "app/components/ComponentPage";
+import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
 export const ModalWrapper = () => {
   const [isModalisible, setModalVisible] = React.useState(false);
@@ -14,9 +14,8 @@ export const ModalWrapper = () => {
       props={{
         title: StringProp("Modal title"),
         children: StringProp("Modal content"),
-        className: StringProp(""),
         overlayClassName: StringProp(""),
-        dark: BooleanProp(false),
+        ...DEMO_COMMON_PROPS,
       }}
       rows={[
         ["title", "children", "dark"],
@@ -38,21 +37,10 @@ export const ModalWrapper = () => {
   );
 };
 
-const ModalPage = () => {
-  const t = useCommonTranslation();
-  const AppLabel = driveWithDarkMode(Label);
-
-  return (
-    <AppPage>
-      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t("molecules")} - ${t(
-        "component",
-        { componentName: "Modal" }
-      )}`}</AppLabel>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <ModalWrapper />
-      </div>
-    </AppPage>
-  );
-};
+const ModalPage = () => (
+  <ComponentPage name="Modal">
+    <ModalWrapper />
+  </ComponentPage>
+);
 
 export default ModalPage;

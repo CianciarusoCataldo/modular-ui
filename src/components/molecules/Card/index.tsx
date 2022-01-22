@@ -39,7 +39,6 @@ const Card = ({
   children,
   className,
   label,
-  value,
   ...commonProps
 }: CardProps) => {
   return buildBoxComponent({

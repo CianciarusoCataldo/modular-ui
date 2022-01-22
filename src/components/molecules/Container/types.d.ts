@@ -4,7 +4,7 @@ import {
   ComponentWithChildren,
 } from "../../../utils/global";
 
-/** Button component props */
+/** Container component props */
 export type ContainerProps = ComponentWithChildren<
   BuilderComponent | BuilderComponent[]
 > &

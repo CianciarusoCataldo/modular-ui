@@ -1,29 +1,11 @@
-import React from "react";
+import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 
-import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
-import { useCommonTranslation } from "app/hooks/localization";
-import { Card, Label } from "modular-ui-preview";
-import AppPage from "app/components/molecules/AppPage";
-import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
+import { Card } from "modular-ui-preview";
+import { ComponentPage } from "app/components/ComponentPage";
+import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
-const CardPage = () => {
-  const t = useCommonTranslation();
-  const AppLabel = driveWithDarkMode(Label);
-
-  return (
-    <AppPage>
-      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t(
-        "molecules"
-      )} - ${t("component", { componentName: "Card" })}`}</AppLabel>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <CardWrapper />
-      </div>
-    </AppPage>
-  );
-};
-
-export const CardWrapper = () => {
-  return (
+const CardPage = () => (
+  <ComponentPage name="Card">
     <Demo
       label="Card"
       props={{
@@ -31,11 +13,7 @@ export const CardWrapper = () => {
         header: StringProp("Card header"),
         body: StringProp("Card body"),
         footer: StringProp("Card footer"),
-        className: StringProp(""),
-        hide: BooleanProp(false),
-        dark: BooleanProp(false),
-        shadow: BooleanProp(true),
-        unstyled: BooleanProp(false),
+        ...DEMO_COMMON_PROPS,
       }}
       rows={[
         ["label", "header"],
@@ -50,7 +28,7 @@ export const CardWrapper = () => {
         </div>
       )}
     </Demo>
-  );
-};
+  </ComponentPage>
+);
 
 export default CardPage;

@@ -1,20 +1,16 @@
-import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
-import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
-import AppPage from "app/components/molecules/AppPage";
-import { useCommonTranslation } from "app/hooks/localization";
-import { Dropdown, Label } from "modular-ui-preview";
+import { BooleanProp, Demo } from "@cianciarusocataldo/demo-ui";
 
-export const DropdownWrapper = () => {
-  return (
+import { Dropdown } from "modular-ui-preview";
+import { ComponentPage } from "app/components/ComponentPage";
+import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
+
+const DropdownPage = () => (
+  <ComponentPage name="Dropdown">
     <Demo
       label="Dropdown"
       props={{
-        className: StringProp(""),
         "With icons": BooleanProp(false),
-        hide: BooleanProp(false),
-        dark: BooleanProp(false),
-        shadow: BooleanProp(true),
-        unstyled: BooleanProp(false),
+        ...DEMO_COMMON_PROPS,
       }}
       startColor="#ebe5e2"
     >
@@ -65,24 +61,7 @@ export const DropdownWrapper = () => {
         );
       }}
     </Demo>
-  );
-};
-
-const DropdownPage = () => {
-  const t = useCommonTranslation();
-  const AppLabel = driveWithDarkMode(Label);
-
-  return (
-    <AppPage>
-      <AppLabel className="text-4xl mt-12 mb-5 ml-3">{`${t("molecules")} - ${t(
-        "component",
-        { componentName: "Dropdown" }
-      )}`}</AppLabel>
-      <div className="flex flex-col p-3 lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row ">
-        <DropdownWrapper />
-      </div>
-    </AppPage>
-  );
-};
+  </ComponentPage>
+);
 
 export default DropdownPage;

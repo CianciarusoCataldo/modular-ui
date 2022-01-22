@@ -3,6 +3,8 @@
   --modular-background-color-dark: #1d232e;
   --modular-text-color-light: rgb(27, 27, 27);
   --modular-text-color-dark: white;
+  --modular-background-dark: linear-gradient(to right, #2d3748, #1d232e);
+  --modular-background-light: linear-gradient(to right, #fff, #eaebec);
 }
 
 [id^="modular-"],
@@ -23,16 +25,34 @@
 }
 
 [id^="modular-"]:not(.dark) {
-  --modular-background-color: #f5f5f5;
-  --modular-background: linear-gradient(to right, #fff, #eaebec);
-  --modular-text-color: rgb(27, 27, 27);
+  --modular-background-color: var(
+    --modular-custom-background-color-light,
+    var(--modular-background-color-light)
+  );
+  --modular-background: var(
+    --modular-custom-background-light,
+    var(--modular-background-light)
+  );
+  --modular-text-color: var(
+    --modular-custom-text-color-light,
+    var(--modular-text-color-light)
+  );
   --modular-link-color: rgb(37, 99, 235);
 }
 
 [id^="modular-"].dark {
-  --modular-background-color: #1d232e;
-  --modular-background: linear-gradient(to right, #2d3748, #1d232e);
-  --modular-text-color: white;
+  --modular-background-color: var(
+    --modular-custom-background-color-dark,
+    var(--modular-background-color-dark)
+  );
+  --modular-background: var(
+    --modular-custom-background-dark,
+    var(--modular-background-dark)
+  );
+  --modular-text-color: var(
+    --modular-custom-text-color-dark,
+    var(--modular-text-color-dark)
+  );
   --modular-link-color: white;
 }
 

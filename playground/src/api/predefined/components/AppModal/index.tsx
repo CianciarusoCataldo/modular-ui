@@ -1,10 +1,9 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import MODALS from "app/modals";
 
-import { Modal } from "modular-ui-preview";
-import { useTranslation } from "react-i18next";
 import {
   closeModal,
   driveWithDarkMode,
@@ -12,6 +11,8 @@ import {
   getModalType,
   isModalVisible,
 } from "@cianciarusocataldo/modular-engine";
+
+import { Modal } from "modular-ui-preview";
 
 /** Custom Modular-app modal */
 const AppModal = () => {
@@ -24,7 +25,7 @@ const AppModal = () => {
   const I18N = useSelector(geti18nConfig);
   const ModalContent = type && MODALS[type] ? MODALS[type] : <div />;
 
-  const { t } = useTranslation(I18N.MODALS_NAMESPACE || "modal-titles");
+  const { t } = useTranslation(I18N.MODALS_NAMESPACE);
 
   const ModalComponent = driveWithDarkMode(Modal);
 

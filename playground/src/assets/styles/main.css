@@ -5,15 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, #2d3748, #1d232e);
+  background-image: linear-gradient(to right, #2d3748, #4d5f7d);
 }
 
 body.dark {
-  background-image: linear-gradient(to right, #2d3748, #1d232e);
+  background-image: linear-gradient(to right, #2d3748, #4d5f7d);
 }
 
 body.light {
-  background-image: linear-gradient(to right, #fff, #eaebec);
+  background-image: linear-gradient(to right, #eaebec, #cccdcf);
 }
 
 code {

@@ -46,7 +46,7 @@ export interface GenericInputComponent<T = string> {
 /** A component that provide a callback to handle its content changes */
 export interface ComponentWithCallback<T = string> {
   /** Callback triggered when input content changes */
-  onChange?: (newValue: T) => void;
+  onChange?: (newValue: T)=>void;
 }
 
 /** A component with children element */

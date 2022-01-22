@@ -1,4 +1,8 @@
-import { CommonProps, ComponentWithChildren } from "../../../utils/global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
 /** Drawer element */
 export interface DrawerElement {
@@ -20,7 +24,7 @@ export interface DrawerElement {
 
 /** Drawer component props */
 export type DrawerProps = CommonProps &
-  ComponentWithChildren & {
+  ComponentWithChildren<BuilderComponent | BuilderComponent[]> & {
     /** Callback triggered on Drawer close */
     onClose?: () => void;
 

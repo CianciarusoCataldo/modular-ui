@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { History } from "history";
 
 import {
-  driveWithDarkMode,
   getHomePage,
   getPages,
   isInDarkMode,
@@ -12,12 +11,13 @@ import {
 
 import AppHeaderContent from "./contents/header";
 import AppFooterContent from "./contents/footer";
-
-import AppDrawer from "./components/molecules/AppDrawer";
-import AppModal from "./components/molecules/AppModal";
-import { Container } from "modular-ui-preview";
-import LanguageSelector from "./components/molecules/LanguageSelector";
-import DarkModeSwitcher from "./components/molecules/DarkModeSwitcher";
+import {
+  AppContainer,
+  AppDrawer,
+  AppModal,
+  DarkModeSwitcher,
+  LanguageSelector,
+} from "api/predefined/components";
 
 /** Modular-app main component */
 const App = ({ history }: { history: History }) => {
@@ -28,8 +28,7 @@ const App = ({ history }: { history: History }) => {
     ...PAGES,
     HOME_PAGE: HOME,
   };
-  const borderColor = dark === true ? "#eaebec" : "#1d232e";
-  const AppContainer = driveWithDarkMode(Container);
+  const borderColor = dark === true ? "#eaebec" : "#2f3a4d";
 
   return (
     <div id="app-container">

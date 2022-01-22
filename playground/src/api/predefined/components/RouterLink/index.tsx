@@ -1,3 +1,4 @@
+import { Label } from "modular-ui-preview";
 import { NavLink } from "react-router-dom";
 
 import { RouterLinkProps } from "./types";
@@ -10,12 +11,12 @@ import { RouterLinkProps } from "./types";
  * @param className A custom className applied on main container
  *
  */
-const RouterLink = ({ to, children, className }: RouterLinkProps) => {
-  return (
-    <NavLink className={className} to={to}>
+const RouterLink = ({ children, className, to }: RouterLinkProps) => (
+  <NavLink to={to}>
+    <Label className={className} unstyled>
       {children}
-    </NavLink>
-  );
-};
+    </Label>
+  </NavLink>
+);
 
 export default RouterLink;
