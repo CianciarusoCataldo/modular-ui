@@ -25,7 +25,7 @@ export const DrawerLogo = () => {
       {LogoIcon}
       <LinkComponent
         to="https://github.com/CianciarusoCataldo/modular-ui"
-        className="ml-1 text-lg"
+        className="ml-1 text-lg break-all"
         newTab
       >
         {APP_NAME}

@@ -21,14 +21,14 @@ const HeaderContent = () => {
   const dark = useSelector(isInDarkMode);
 
   return (
-    <div className="flex flex-row items-center mt-14 mb-5 ml-1">
+    <div className="flex flex-row">
       <Button
         aria-label="drawer button"
         onClick={() => {
           dispatch(openDrawer());
         }}
         unstyled
-        className="inline-flex outline-none"
+        className="inline-flex outline-none my-auto"
       >
         <div className="p-1 sm:p-2 md:p-2 lg:p-2 xl:p-2">{BurgerIcon}</div>
       </Button>
@@ -38,15 +38,13 @@ const HeaderContent = () => {
           dispatch(requestRoute(HOME));
         }}
         unstyled
-        className="overflow-auto ml-1 outline-none"
+        className="overflow-auto ml-1 outline-none my-auto"
         hide={hideHomeButton}
       >
         {LeftArrowIcon}
       </Button>
-      <div className="m-auto flex flex-row">
-        <div className="m-auto mr-2">
-          {LogoIcon}
-        </div>
+      <div className="m-auto flex flex-row p-2">
+        <div className="mr-2">{LogoIcon}</div>
         <div className="flex flex-col">
           <Link
             newTab
@@ -54,7 +52,7 @@ const HeaderContent = () => {
             to="https://github.com/CianciarusoCataldo/modular-ui"
             className="m-auto"
           >
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-4xl 4xl:text-4xl">
+            <p className="break-all text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-4xl 4xl:text-4xl">
               {APP_NAME}
             </p>
           </Link>
