@@ -1,12 +1,12 @@
 {
   "name": "modular-app",
   "description": "An optimized and ready to use React app, a standard template for every projects. Build your app from here !",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "homepage": "https://cianciarusocataldo.github.io/modular-ui",
   "dependencies": {
     "@cianciarusocataldo/demo-ui": "^3.1.0",
-    "@cianciarusocataldo/modular-engine": "^1.4.0",
+    "@cianciarusocataldo/modular-engine": "^1.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
