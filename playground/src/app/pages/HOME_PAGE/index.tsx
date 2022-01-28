@@ -3,10 +3,12 @@ import { useSelector } from "react-redux";
 import { useHomePageTranslation } from "app/hooks/localization";
 
 import { getPages } from "@cianciarusocataldo/modular-engine";
-import { FLEX_STYLES } from "assets/styles";
 
 import { Card, CodeBox, Link } from "modular-ui-preview";
-import { AppLabel, AppPage, RouterLink } from "api/predefined/components";
+
+import AppLabel from "app/components/AppLabel";
+import AppPage from "app/components/AppPage";
+import RouterLink from "app/components/RouterLink";
 
 const HomePage = () => {
   const t = useHomePageTranslation();
@@ -78,7 +80,10 @@ const HomePage = () => {
       <AppLabel key="homepage_header" className="text-4xl mt-12 mb-5 ml-3">
         {t("title")}
       </AppLabel>
-      <div key="homepage_container" className={FLEX_STYLES.ROWS_COLS}>
+      <div
+        key="homepage_container"
+        className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row"
+      >
         <div>
           <Card shadow body={description} />
           <Card

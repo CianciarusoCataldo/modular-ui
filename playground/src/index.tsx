@@ -1,5 +1,6 @@
 import "assets/styles/main.css";
-import CONFIG from "app.config.json";
+
+import "assets/styles/styles.output.css";
 
 if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   navigator.serviceWorker
@@ -16,12 +17,12 @@ if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   console.log("Service workers are not supported.");
 }
 
-import("@cianciarusocataldo/modular-engine").then(({ initi18n }) => {
-  initi18n(CONFIG);
-});
-import("api/store/init").then(({ initStore }) => {
-  const { store, history } = initStore(CONFIG);
-  import("./initial-actions").then(({ startRender }) => {
-    startRender(store, history);
+import("@cianciarusocataldo/modular").then(({ initApplication }) => {
+  initApplication((App) => {
+    import("react-dom").then(({ render }) => {
+      render(App, document.getElementById("root"));
+      let Preloader = document.getElementById("preloader");
+      if (Preloader) Preloader.style.visibility = "hidden";
+    });
   });
 });

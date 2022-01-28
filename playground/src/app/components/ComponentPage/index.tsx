@@ -1,6 +1,8 @@
-import { AppLabel, AppPage } from "api/predefined/components";
 import { useCommonTranslation } from "app/hooks/localization";
+
 import { AllowedComponent, Table } from "modular-ui-preview";
+import AppLabel from "../AppLabel";
+import AppPage from "../AppPage";
 
 export const ComponentPage = ({
   children,

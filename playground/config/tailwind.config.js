@@ -5,7 +5,7 @@ module.exports = {
   presets: [],
   theme: {
     screens: {
-      xsm: "425",
+      xsm: "425px",
       sm: "640px",
       md: "768px",
       lg: "1024px",

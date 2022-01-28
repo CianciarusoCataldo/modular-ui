@@ -1,5 +1,6 @@
-import { AllowedComponent, Container } from "modular-ui-preview";
 import { driveWithDarkMode } from "@cianciarusocataldo/modular-engine";
+
+import { AllowedComponent, Container } from "modular-ui-preview";
 
 /** Custom Modular-app page */
 const AppPage = ({
@@ -8,6 +9,7 @@ const AppPage = ({
   children: AllowedComponent | AllowedComponent[];
 }) => {
   const AppContainer = driveWithDarkMode(Container);
+
   return (
     <AppContainer animated unstyled className="m-2">
       {children}

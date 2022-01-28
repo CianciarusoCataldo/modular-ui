@@ -14,7 +14,12 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { Button, Divider, DrawerElement, Link } from "modular-ui-preview";
+import {
+  Button,
+  Divider,
+  DrawerElement,
+  Link,
+} from "@cianciarusocataldo/modular-ui";
 
 export const DrawerLogo = () => {
   const APP_NAME = useSelector(getAppName);
@@ -24,7 +29,7 @@ export const DrawerLogo = () => {
     <div className="flex flex-row">
       {LogoIcon}
       <LinkComponent
-        to="https://github.com/CianciarusoCataldo/modular-ui"
+        to="https://github.com/CianciarusoCataldo/modular-app"
         className="ml-1 text-lg break-all"
         newTab
       >
@@ -37,10 +42,10 @@ export const DrawerLogo = () => {
 export const DrawerContent = () => {
   const dispatch = useDispatch();
   const PATHS = useSelector(getPages);
-  const I18N = useSelector(geti18nConfig);
+  const i18n = useSelector(geti18nConfig);
   const HOME = useSelector(getHomePage);
   const dark = useSelector(isInDarkMode);
-  const { t } = useTranslation(I18N.PAGES_NAMESPACE);
+  const { t } = useTranslation(i18n.pagesNamespace);
 
   const ALL_PATHS: Record<string, string> = { ...PATHS, HOME_PAGE: HOME };
 
