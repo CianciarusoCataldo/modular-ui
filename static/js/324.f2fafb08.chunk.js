@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmodular_app=self.webpackChunkmodular_app||[]).push([[324],{5324:function(e,p,a){e.exports=a.p+"static/media/elem2.f75eb98212c8f4007cea.png"}}]);
