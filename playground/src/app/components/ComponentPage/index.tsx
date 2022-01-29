@@ -1,4 +1,4 @@
-import { useCommonTranslation } from "app/hooks/localization";
+import { useCommonTranslation } from "hooks/localization";
 
 import { AllowedComponent, Table } from "modular-ui-preview";
 import AppLabel from "../AppLabel";

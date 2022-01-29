@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { useHomePageTranslation } from "app/hooks/localization";
+import { useHomePageTranslation } from "hooks/localization";
 
 import { getPages } from "@cianciarusocataldo/modular-engine";
 

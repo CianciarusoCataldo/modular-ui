@@ -1,10 +1,8 @@
-import "assets/styles/main.css";
-
 import "assets/styles/styles.output.css";
 
 if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   navigator.serviceWorker
-    .register("./serviceWorker.js", { scope: "/modular-app/" })
+    .register("./serviceWorker.js", { scope: "/modular-ui/" })
     .then(
       function () {
         console.log("Service worker registration succeeded");
