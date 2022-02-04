@@ -5,7 +5,13 @@ import { describeTest, renderingTest } from "../../core/utils/helpers";
 
 import { Toggle } from "../../../src";
 
-renderingTest(Toggle, { value: true, onChange: () => {} });
+renderingTest(Toggle, {
+  value: true,
+  onChange: () => {},
+  icon: <div />,
+  onIcon: <div />,
+  offIcon: <div />,
+});
 
 describeTest("click test", () => {
   const onChangeStub = jest.fn();

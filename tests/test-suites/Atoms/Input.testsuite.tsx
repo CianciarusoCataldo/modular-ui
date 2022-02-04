@@ -8,6 +8,7 @@ import { Input } from "../../../src";
 renderingTest(Input, {
   value: "input text",
   onChange: () => {},
+  readonly: true,
 });
 
 describeTest("changing value test", () => {
