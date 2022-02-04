@@ -1,7 +1,11 @@
-import { CommonProps, ComponentWithChildren } from "../../../utils/global";
+import {
+  BuilderComponent,
+  CommonProps,
+  ComponentWithChildren,
+} from "../../../utils/global";
 
 export type LinkProps = CommonProps &
-  ComponentWithChildren<string> & {
+  ComponentWithChildren<BuilderComponent> & {
     /** Link URL */
     to: string;
 

@@ -4,7 +4,7 @@ import { useHomePageTranslation } from "hooks/localization";
 
 import { getPages } from "@cianciarusocataldo/modular-engine";
 
-import { Card, CodeBox, Link } from "modular-ui-preview";
+import { Card, CodeBox, Link, SupportedEnvironment } from "modular-ui-preview";
 
 import AppLabel from "app/components/AppLabel";
 import AppPage from "app/components/AppPage";
@@ -46,7 +46,11 @@ const HomePage = () => {
               return (
                 <div className="my-2" key={`parsed_code_${index}`}>
                   <CodeBox
-                    environment={splittedPart.length > 1 && splittedPart[1]}
+                    environment={
+                      splittedPart.length > 1
+                        ? (splittedPart[1] as SupportedEnvironment)
+                        : undefined
+                    }
                     value={
                       splittedPart.length > 1
                         ? splittedPart[2]
@@ -92,7 +96,6 @@ const HomePage = () => {
               <AppLabel>{t("installation", { context: "title" })}</AppLabel>
             }
             body={installationGuide}
-            bodyClassName="p-2"
           />
         </div>
         <Card

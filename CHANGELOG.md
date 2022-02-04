@@ -6,13 +6,12 @@
 - Refactoring
 - All components type definitions exported, to make easier their integration into another project
 - Components UI completely customizable by defining custom CSS variables into app css:
-    - `--modular-custom-background-dark`
-    - `--modular-custom-background-color-dark`
-    - `--modular-custom-text-color-dark`
-    - `--modular-custom-background-light`
-    - `--modular-custom-background-color-light`
-    - `--modular-custom-text-color-light`
-
+  - `--modular-custom-background-dark`
+  - `--modular-custom-background-color-dark`
+  - `--modular-custom-text-color-dark`
+  - `--modular-custom-background-light`
+  - `--modular-custom-background-color-light`
+  - `--modular-custom-text-color-light`
 
 # 3.1.0
 

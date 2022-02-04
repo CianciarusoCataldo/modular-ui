@@ -1,4 +1,4 @@
-import { CommonProps } from "../../../utils/global";
+import { BoxComponent, CommonProps } from "../../../utils/global";
 
 /** Single Form component field */
 export interface FormField {

@@ -12,7 +12,7 @@ export default [
       {
         file: "playground/src/modular-ui-preview/index.cjs",
         format: "cjs",
-        banner: "import './styles.css'",
+        banner: "require('./styles.css')",
         plugins: [terser()],
       },
       {
@@ -24,7 +24,7 @@ export default [
         file: pkg.main,
         format: "cjs",
         plugins: [terser()],
-        banner: "import './styles.css'",
+        banner: "require('./styles.css')",
       },
       {
         file: pkg.module,

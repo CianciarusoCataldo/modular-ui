@@ -54,7 +54,6 @@ const DropdownPage = () => (
               dark={props.dark}
               shadow={props.shadow}
               unstyled={props.unstyled}
-              placeholder="Select a value"
               content={elements}
             />
           </div>
