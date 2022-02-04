@@ -20,6 +20,12 @@ describeTest("icon visibility", () => {
 });
 
 describeTest("click test", () => {
+  test("without onChange callback", () => {
+    const wrapper = mount(<CheckBox />);
+    wrapper.find("#modular-checkbox .container").simulate("click");
+    expect(wrapper);
+  });
+
   test("onChange callBack is triggered", () => {
     const onChangeStub = jest.fn();
     const wrapper = mount(<CheckBox onChange={onChangeStub} />);
