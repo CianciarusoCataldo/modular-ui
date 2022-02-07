@@ -48,5 +48,5 @@ jobs:
     - name: Upload Scrutinizer coverage
       uses: sudo-bot/action-scrutinizer@latest
       with:
-        cli-args: "coverage/clover.xml"
+        cli-args: "--format=js-clover coverage/clover.xml"
 
