@@ -5,13 +5,17 @@
 # modular-ui
 ![NPM](https://img.shields.io/npm/l/@cianciarusocataldo/modular-ui?label=License)
 ![npm (scoped)](https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?color=blue&label=Latest%20version)
-![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=npm%20package%20size)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=Package%20size)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@cianciarusocataldo/modular-ui/peer/react?color=orange&label=Supported%20React%20version)
-![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@cianciarusocataldo/modular-ui?label=npms-io%20quality)
-![Codecov](https://img.shields.io/codecov/c/github/CianciarusoCataldo/modular-ui?label=Codecov%20coverage)
 ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@cianciarusocataldo/modular-ui?label=Libraries.io%20dependency%20status)
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/cianciarusocataldo/modular-ui?label=Scrutinizer%20code%20quality)
+![Codecov](https://img.shields.io/codecov/c/github/CianciarusoCataldo/modular-ui?label=CodeCov%20coverage)
+![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/CianciarusoCataldo/modular-ui?label=Code%20Climate%20maintainability)
+![Code Climate coverage](https://img.shields.io/codeclimate/coverage-letter/CianciarusoCataldo/modular-ui?label=Code%20Climate%20coverage)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/cianciarusocataldo/modular-ui?label=CodeFactor%20code%20quality)
+![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@cianciarusocataldo/modular-ui?label=npms-io%20quality)
 [![Modular-UI CI](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml/badge.svg?branch=main)](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml)
+![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained)
 
 Do you need to build a react web-app without maintaining a codebase for every component, and without a lot of additional dependencies? Modular-ui is what you are looking for ! More details on [Modular-ui official page](https://cianciarusocataldo.github.io/modular-ui/)
 
