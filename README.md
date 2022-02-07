@@ -13,6 +13,7 @@
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/CianciarusoCataldo/modular-ui?label=Code%20Climate%20maintainability)
 ![Code Climate coverage](https://img.shields.io/codeclimate/coverage-letter/CianciarusoCataldo/modular-ui?label=Code%20Climate%20coverage)
 ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/cianciarusocataldo/modular-ui?label=CodeFactor%20code%20quality)
+![Coveralls](https://img.shields.io/coveralls/github/CianciarusoCataldo/modular-ui?label=Coveralls%20coverage)
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@cianciarusocataldo/modular-ui?label=npms-io%20quality)
 [![Modular-UI CI](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml/badge.svg?branch=main)](https://github.com/CianciarusoCataldo/modular-ui/actions/workflows/modular-ui.yml)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained)
@@ -81,6 +82,7 @@ This lib is analyzed and tested with different automated code analysis systems:
 - [CodeCov](https://app.codecov.io/gh/CianciarusoCataldo/modular-ui)
 - [CodeFactor](https://www.codefactor.io/repository/github/cianciarusocataldo/modular-ui)
 - [Scrutinizer](https://scrutinizer-ci.com/g/CianciarusoCataldo/modular-ui/)
+- [Coveralls](https://coveralls.io/github/CianciarusoCataldo/modular-ui)
 
 ---
 ## Authors
