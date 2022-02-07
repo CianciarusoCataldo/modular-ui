@@ -24,6 +24,7 @@ Do you need to build a react web-app without maintaining a codebase for every co
 - [Getting started](#getting-started)
 	- [Installation](#installation)
 	- [Usage](#usage)
+- [Tests](#tests)
 - [Authors](#authors)
 - [License](#license)
 
@@ -68,6 +69,20 @@ render(<Page>
 
 [![Edit modular-ui playground](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/modular-ui-playground-gfpbb?fontsize=14&hidenavigation=1&theme=dark&view=preview)
 
+
+## Tests
+Unit tests for every lib function are located inside `tests` folder. The test script is executed with pre-defined test command:
+```
+npm run test
+```
+
+This lib is analyzed and tested with different automated code analysis systems:
+- [Code Climate](https://codeclimate.com/github/CianciarusoCataldo/modular-ui)
+- [CodeCov](https://app.codecov.io/gh/CianciarusoCataldo/modular-ui)
+- [CodeFactor](https://www.codefactor.io/repository/github/cianciarusocataldo/modular-ui)
+- [Scrutinizer](https://scrutinizer-ci.com/g/CianciarusoCataldo/modular-ui/)
+
+---
 ## Authors
 
 - [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
