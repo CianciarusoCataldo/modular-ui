@@ -45,8 +45,9 @@ jobs:
     - run: npm test
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2      
-    - name: Upload Scrutinizer coverage
-      uses: sudo-bot/action-scrutinizer@latest
-      with:
-        cli-args: "--format=js-clover coverage/clover.xml"
+    - name: Upload coverage to Code Climate
+      uses: paambaati/codeclimate-action@v3.0.0
+      env:
+        CC_TEST_REPORTER_ID: 15f15f0b91d5081e720bbb98756a78c6bc3394aadfdc19e2432a49228baab25b
+
 
