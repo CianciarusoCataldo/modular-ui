@@ -47,5 +47,6 @@ jobs:
       uses: codecov/codecov-action@v2      
     - name: Upload Scrutinizer coverage
       uses: sudo-bot/action-scrutinizer@latest
-
+      with:
+        cli-args: "coverage/clover.xml"
 
