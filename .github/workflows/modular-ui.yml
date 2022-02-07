@@ -44,5 +44,8 @@ jobs:
     - run: npm run build
     - run: npm test
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v2      
+    - name: Upload Scrutinizer coverage
+      uses: sudo-bot/action-scrutinizer@latest
+
 
