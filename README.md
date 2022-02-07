@@ -8,6 +8,7 @@
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=Package%20size)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@cianciarusocataldo/modular-ui/peer/react?color=orange&label=Supported%20React%20version)
 ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@cianciarusocataldo/modular-ui?label=Libraries.io%20dependency%20status)
+![CircleCI](https://img.shields.io/circleci/build/github/CianciarusoCataldo/modular-ui?label=CircleCI%20buiild)
 ![Code Climate coverage](https://img.shields.io/codeclimate/coverage-letter/CianciarusoCataldo/modular-ui?label=Code%20Climate%20coverage)
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/CianciarusoCataldo/modular-ui?label=Code%20Climate%20maintainability)
 ![Codecov](https://img.shields.io/codecov/c/github/CianciarusoCataldo/modular-ui?label=CodeCov%20coverage)
@@ -79,6 +80,7 @@ npm run test
 ```
 
 This lib is analyzed and tested with different automated code analysis systems:
+- [CircleCI](https://app.circleci.com/pipelines/github/CianciarusoCataldo/modular-ui)
 - [Code Climate](https://codeclimate.com/github/CianciarusoCataldo/modular-ui)
 - [CodeCov](https://app.codecov.io/gh/CianciarusoCataldo/modular-ui)
 - [CodeFactor](https://www.codefactor.io/repository/github/cianciarusocataldo/modular-ui)
