@@ -56,10 +56,12 @@
 #modular-toggle .container .toggle-icon .wrapper {
   opacity: 0.2;
 }
+
 #modular-toggle .container .toggle-icon .external {
   background-color: var(--svgexternalcolor);
   fill: var(--svgexternalcolor);
 }
+
 #modular-toggle .container .toggle-icon .internal {
   fill: var(--svgexternalcolor);
   stroke: var(--svginternalcolor);

@@ -46,7 +46,7 @@ export interface GenericInputComponent<T = string> {
 /** A component that provide a callback to handle its content changes */
 export interface ComponentWithCallback<T = string> {
   /** Callback triggered when input content changes */
-  onChange?: (newValue: T)=>void;
+  onChange?: (newValue: T) => void;
 }
 
 /** A component with children element */
@@ -57,6 +57,9 @@ export interface ComponentWithChildren<T = JSX.Element> {
 
 /** Allowed component type for component builder */
 export type BuilderComponent = Element | JSX.Element | string;
+
+/** Supported components wrappers */
+export type Wrappers = "div" | "a" | "header" | "button" | "footer" | "p";
 
 /** Component builder props */
 export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
@@ -75,6 +78,3 @@ export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
   /** Component wrapper (like `div` or `button`, for example) */
   wrapper?: Wrappers;
 };
-
-/** Supported components wrappers */
-export type Wrappers = "div" | "a" | "header" | "button" | "footer" | "p";
