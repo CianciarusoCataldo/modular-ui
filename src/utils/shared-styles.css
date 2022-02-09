@@ -16,14 +16,6 @@
   -o-transition: all 0.2s ease-in;
 }
 
-[id^="modular-"]:not(.dark):hover {
-  --modular-link-color: rgb(33, 89, 211);
-}
-
-[id^="modular-"].dark:hover {
-  --modular-link-color: rgb(219, 221, 224);
-}
-
 [id^="modular-"]:not(.dark) {
   --modular-background-color: var(
     --modular-custom-background-color-light,
@@ -54,6 +46,14 @@
     var(--modular-text-color-dark)
   );
   --modular-link-color: white;
+}
+
+[id^="modular-"]:not(.dark):hover {
+  --modular-link-color: rgb(33, 89, 211);
+}
+
+[id^="modular-"].dark:hover {
+  --modular-link-color: rgb(219, 221, 224);
 }
 
 [id^="modular-"] .component-hidden,
@@ -220,6 +220,7 @@
     transform: translateX(-100%);
   }
 }
+
 @-moz-keyframes slideOutLeft {
   0% {
     transform: translateX(0);
