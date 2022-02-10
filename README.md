@@ -9,12 +9,12 @@
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=Package%20size&style=for-the-badge&logo=npm)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained&style=for-the-badge)
 
-
 * * *
 
 ## Status
 
 ### Security
+
 ![Code Climate issues](https://img.shields.io/codeclimate/issues/CianciarusoCataldo/modular-ui?label=Code%20Climate%20issues)
 ![Code Climate technical debt](https://img.shields.io/codeclimate/tech-debt/CianciarusoCataldo/modular-ui?label=Code%20Climate%20tech%20debt)
 ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@cianciarusocataldo/modular-ui?label=Libraries.io%20dependency%20status&logo=librariesdotio)
@@ -137,6 +137,10 @@ This lib is analyzed and tested with different automated code analysis systems:
 ## Authors
 
 -   [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
+
+<br>
+
+* * *
 
 ## License
 

@@ -32,23 +32,23 @@ const Table = ({ label, headers, rows = [], ...commonProps }: TableProps) => {
   let gridTemplateRows = "";
   let gridTemplateColumns = "";
 
-  let elements: (JSX.Element | string)[][] = [];
+  let tableRows = rows || [];
 
-  if (rows && rows.length > 0) {
-    elements = rows.map((row, rowIndex) =>
-      row.map((element, index) => (
-        <div
-          key={`element_${rowIndex}_${index}`}
-          className={classNames({
-            header: headers && rowIndex === 0,
-            element: !headers || rowIndex > 0,
-          })}
-        >
-          {element}
-        </div>
-      ))
-    );
+  let elements: (JSX.Element | string)[][] = tableRows.map((row, rowIndex) =>
+    row.map((element, index) => (
+      <div
+        key={`element_${rowIndex}_${index}`}
+        className={classNames({
+          header: headers && rowIndex === 0,
+          element: !headers || rowIndex > 0,
+        })}
+      >
+        {element}
+      </div>
+    ))
+  );
 
+  if (tableRows.length > 0) {
     for (let i = 0; i < rows.length; i++) {
       gridTemplateRows += " auto";
     }

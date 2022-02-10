@@ -1,92 +1,125 @@
-# 4.0.0
+# Modular-ui changelog
 
-- `Toggle` multi icon support, and type definition updates
-- `Card` types cleaned
-- `Drawer` types updates
-- Refactoring
-- All components type definitions exported, to make easier their integration into another project
-- Components UI completely customizable by defining custom CSS variables into app css:
-  - `--modular-custom-background-dark`
-  - `--modular-custom-background-color-dark`
-  - `--modular-custom-text-color-dark`
-  - `--modular-custom-background-light`
-  - `--modular-custom-background-color-light`
-  - `--modular-custom-text-color-light`
+## Versions
 
-# 3.1.0
+-   [4.0.2](#402)
+-   [4.0.0](#400)
+-   [3.1.0](#310)
+-   [3.0.0](#300)
+-   [2.0.0](#200)
+-   [1.2.0](#120)
+-   [1.1.0](#110)
+-   [1.0.0](#100)
+-   [0.9.4](#094)
+-   [0.9.0](#090)
+-   [0.8.0](#080)
+-   [0.7.0](#070)
+-   [0.6.0](#060)
+-   [0.5.0](#050)
 
-- `Drawer` ease-out transition fix
-- Clean up
+<br>
 
-# 3.0.0
+* * *
 
-- New `Container` component
-- New `Label` component
-- `Header` component removed
-- `Page` component removed
-- Clean up
+## Changes
 
-# 2.0.0
+<br>
 
-- `Rater` component
-- `Counter` component
-- `Carousel` component
-- Clean up
-- Refactoring
-- Shared component building process, with new common props
-- Fully documented components, with working examples
+### 4.0.2
 
-# 1.2.0
+-   Code properly formatted
+-   Styles fix
+-   Integrations with various CI and analysis system
 
-- Bugfixes
-- Dark mode driven by wrapper with CSS variables
-- Clean up
-- Styles better optimized
-- Refactoring
+### 4.0.0
 
-# 1.1.0
+-   `Toggle` multi icon support, and type definition updates
+-   `Card` types cleaned
+-   `Drawer` types updates
+-   Refactoring
+-   All components type definitions exported, to make easier their integration into another project
+-   Components UI completely customizable by defining custom CSS variables into app css:
+    -   `--modular-custom-background-dark`
+    -   `--modular-custom-background-color-dark`
+    -   `--modular-custom-text-color-dark`
+    -   `--modular-custom-background-light`
+    -   `--modular-custom-background-color-light`
+    -   `--modular-custom-text-color-light`
 
-- Bugfixes
-- `Toggle` component
-- Shadow feature for all components
-- Clean up
-- Refactoring
+### 3.1.0
 
-# 1.0.0
+-   `Drawer` ease-out transition fix
+-   Clean up
 
-- Bugfixes
-- `CodeBox` component highlight feature with Js, Python and Terminal highlight basic support
-- Dark mode and Hide features available for every component
-- Better styled components
-- Test-suites system improved
+### 3.0.0
 
-# 0.9.4
+-   New `Container` component
+-   New `Label` component
+-   `Header` component removed
+-   `Page` component removed
+-   Clean up
 
-- Bugfixes
-- New `Input` component
-- New `CheckBox` component
-- New `CodeBox` component
+### 2.0.0
 
-# 0.9.0
+-   `Rater` component
+-   `Counter` component
+-   `Carousel` component
+-   Clean up
+-   Refactoring
+-   Shared component building process, with new common props
+-   Fully documented components, with working examples
 
-- New `Table` component
-- styles clean up
+### 1.2.0
 
-# 0.8.0
+-   Bugfixes
+-   Dark mode driven by wrapper with CSS variables
+-   Clean up
+-   Styles better optimized
+-   Refactoring
 
-- New unit testing system
-- Re-designed playground
+### 1.1.0
 
-# 0.7.0
+-   Bugfixes
+-   `Toggle` component
+-   Shadow feature for all components
+-   Clean up
+-   Refactoring
 
-- SVG moved inside components
-- refactoring
-- Minor fixes
+### 1.0.0
 
-# 0.6.0
+-   Bugfixes
+-   `CodeBox` component highlight feature with Js, Python and Terminal highlight basic support
+-   Dark mode and Hide features available for every component
+-   Better styled components
+-   Test-suites system improved
 
-- Clean up and optimizations
+### 0.9.4
 
-# 0.5.0
+-   Bugfixes
+-   New `Input` component
+-   New `CheckBox` component
+-   New `CodeBox` component
 
-- Modular-ui library setup
+### 0.9.0
+
+-   New `Table` component
+-   styles clean up
+
+### 0.8.0
+
+-   New unit testing system
+-   Re-designed playground
+
+### 0.7.0
+
+-   SVG moved inside components
+-   refactoring
+-   Minor fixes
+
+### 0.6.0
+
+-   Clean up and optimizations
+
+### 0.5.0
+
+-   Modular-ui library setup

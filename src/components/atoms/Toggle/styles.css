@@ -33,7 +33,7 @@
 
 #modular-toggle .container .toggle-icon.flip-back {
   transform: translate(0%);
-  
+
   --svginternalcolor: white;
   --svgexternalcolor: #7a7878;
 }
