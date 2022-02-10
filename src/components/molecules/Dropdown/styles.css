@@ -1,3 +1,12 @@
+#modular-dropdown,
+#modular-dropdown .options,
+#modular-dropdown .options .option,
+#modular-dropdown .option .regular:focus,
+#modular-dropdown .option .regular:hover {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 #modular-dropdown .options {
   position: absolute;
   animation: fadeIn 0.2s ease-in forwards;
@@ -82,15 +91,6 @@
 
 #modular-dropdown .option .regular:hover {
   background-color: rgba(191, 219, 254, 0.7);
-}
-
-#modular-dropdown,
-#modular-dropdown .options,
-#modular-dropdown .options .option,
-#modular-dropdown .option .regular:focus,
-#modular-dropdown .option .regular:hover {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 #modular-dropdown .option .last {

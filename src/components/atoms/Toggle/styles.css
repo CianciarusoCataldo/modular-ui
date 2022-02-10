@@ -11,7 +11,7 @@
 #modular-toggle.styled .container {
   background-image: var(--modular-background);
   border-radius: 14px;
-  border-width: 0px;
+  border-width: 0;
 }
 
 #modular-toggle.styled .container.off {
