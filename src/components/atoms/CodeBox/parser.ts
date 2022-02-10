@@ -1,6 +1,7 @@
 import { CODE_LANGUAGES } from "./languages";
 import { CodeBlock, SupportedEnvironment } from "./types";
 
+/** Basic code parsers */
 const BASIC_PARSER = (
   code: string,
   handleOtherElements: ((code: string) => CodeBlock[]) | null
