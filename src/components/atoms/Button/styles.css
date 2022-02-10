@@ -23,9 +23,6 @@
 #modular-button.styled button.enabled:hover {
   position: relative;
   transform: scaleX(1.15) scaleY(1.1);
-}
-
-#modular-button.styled button.enabled:hover {
   background: linear-gradient(to right, #c9cacc, #e1e1e4, #c8c9ca);
 }
 

@@ -33,12 +33,14 @@
 
 #modular-toggle .container .toggle-icon.flip-back {
   transform: translate(0%);
+  
   --svginternalcolor: white;
   --svgexternalcolor: #7a7878;
 }
 
 #modular-toggle .toggle-icon.flip {
   transform: translate(35px);
+
   --svginternalcolor: #a5a5a5;
   --svgexternalcolor: #7a7878;
 }
