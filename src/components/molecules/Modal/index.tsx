@@ -1,9 +1,11 @@
 import "./styles.css";
-import { ModalProps } from "./types";
 
 import React from "react";
 
+import { ModalProps } from "./types";
+
 import { buildBoxComponent } from "../../../utils";
+
 import Button from "../../atoms/Button";
 
 /**

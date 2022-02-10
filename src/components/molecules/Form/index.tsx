@@ -4,7 +4,9 @@ import React from "react";
 import classNames from "classnames";
 
 import { FormProps } from "./types";
+
 import { buildBoxComponent } from "../../../utils";
+
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 

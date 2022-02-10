@@ -1,6 +1,7 @@
 import "./styles.css";
 
 import { LinkProps } from "./types";
+
 import { buildComponent } from "../../../utils";
 
 /**

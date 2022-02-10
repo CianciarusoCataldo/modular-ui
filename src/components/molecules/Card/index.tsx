@@ -4,8 +4,9 @@ import React from "react";
 
 import { CardProps } from "./types";
 
-import Divider from "../../atoms/Divider";
 import { buildBoxComponent } from "../../../utils";
+
+import Divider from "../../atoms/Divider";
 
 /**
  * A Card component. Its UI depends on given parameters (header, body and footer)

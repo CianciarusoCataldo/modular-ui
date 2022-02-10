@@ -1,11 +1,12 @@
 import "./styles.css";
+
 import React from "react";
 import classnames from "classnames";
 
 import { DropdownProps } from "./types";
 
-import classNames from "classnames";
 import { buildBoxComponent } from "../../../utils";
+
 import Button from "../../atoms/Button";
 
 /**
@@ -72,7 +73,7 @@ const Dropdown = ({
             </div>
             <div
               key="icon"
-              className={classNames("icon", {
+              className={classnames("icon", {
                 rotate: isVisible,
                 "rotate-back": !isVisible,
               })}
