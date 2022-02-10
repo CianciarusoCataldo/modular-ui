@@ -84,7 +84,8 @@
   background-color: rgba(191, 219, 254, 0.7);
 }
 
-#modular-dropdown #modular-dropdown .options,
+#modular-dropdown,
+#modular-dropdown .options,
 #modular-dropdown .options .option,
 #modular-dropdown .option .regular:focus,
 #modular-dropdown .option .regular:hover {
@@ -122,6 +123,7 @@
   #modular-dropdown.styled .button:hover {
     color: var(--modular-text-color);
   }
+
   #modular-dropdown .icon:hover {
     animation: none;
   }

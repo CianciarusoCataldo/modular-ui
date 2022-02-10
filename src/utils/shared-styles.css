@@ -63,10 +63,10 @@
 
 [id^="modular-"].shadowed,
 [id^="modular-"] .shadowed {
-  -webkit-box-shadow: 0px 5px 13px -1px #464545;
-  -moz-box-shadow: 0px 5px 13px -1px #464545;
-  -o-box-shadow: 0px 5px 13px -1px #464545;
-  box-shadow: 0px 5px 13px -1px #464545;
+  -webkit-box-shadow: 0 5px 13px -1px #464545;
+  -moz-box-shadow: 0 5px 13px -1px #464545;
+  -o-box-shadow: 0 5px 13px -1px #464545;
+  box-shadow: 0 5px 13px -1px #464545;
   box-decoration-break: clone;
 }
 
@@ -89,7 +89,7 @@
   padding: 0.1rem;
 }
 
-/* Fade in  effect*/
+/* Fade in  effect */
 
 @keyframes fadein {
   from {
@@ -136,7 +136,7 @@
   }
 }
 
-/* Fade out effect*/
+/* Fade out effect */
 
 @keyframes fadeOut {
   from {
@@ -183,7 +183,7 @@
   }
 }
 
-/* Slide in to left effect*/
+/* Slide in to left effect */
 
 @-webkit-keyframes slideLeft {
   0% {
@@ -193,6 +193,7 @@
     transform: translateX(0);
   }
 }
+
 @-moz-keyframes slideLeft {
   0% {
     transform: translateX(-100%);
@@ -201,6 +202,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes slideLeft {
   0% {
     transform: translateX(-100%);
@@ -210,7 +212,7 @@
   }
 }
 
-/* Slide out to left effect*/
+/* Slide out to left effect */
 
 @-webkit-keyframes slideOutLeft {
   0% {
@@ -229,6 +231,7 @@
     transform: translateX(-100%);
   }
 }
+
 @keyframes slideOutLeft {
   0% {
     transform: translateX(0);
@@ -238,7 +241,7 @@
   }
 }
 
-/* Slide in to right effect*/
+/* Slide in to right effect */
 
 @-webkit-keyframes slideRight {
   0% {
@@ -248,6 +251,7 @@
     transform: translateX(0);
   }
 }
+
 @-moz-keyframes slideRight {
   0% {
     transform: translateX(100%);
@@ -256,6 +260,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes slideRight {
   0% {
     transform: translateX(100%);

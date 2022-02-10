@@ -1,12 +1,12 @@
+#modular-ratebox .container {
+  display: flex;
+  align-items: center;
+}
+
 #modular-ratebox.styled .container {
   background: var(--modular-background);
   border-radius: 8px;
   padding: 0.4rem;
-}
-
-#modular-ratebox .container {
-  display: flex;
-  align-items: center;
 }
 
 #modular-ratebox .container.horizontal {

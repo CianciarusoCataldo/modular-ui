@@ -52,17 +52,13 @@
   flex-direction: row;
   align-items: center;
   overflow: hidden;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 #modular-carousel > .box-component > .container .dots .dot {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-}
-
-#modular-carousel > .box-component > .container .elements,
-#modular-carousel > .box-component > .container .dots {
-  padding: 0.5rem;
-  width: 100%;
 }
 
 @media (hover: none) {
