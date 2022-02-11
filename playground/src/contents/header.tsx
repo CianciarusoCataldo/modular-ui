@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   BurgerIcon,
   DarkModeIcon,
+  DocsIcon,
   LANGUAGES_ICONS,
   LeftArrowIcon,
   LightModeIcon,
@@ -10,6 +11,7 @@ import {
 } from "assets/images";
 
 import { useCallback } from "react";
+import { useCommonTranslation } from "hooks/localization";
 
 import {
   changeLanguage,
@@ -37,6 +39,8 @@ const HeaderContent = () => {
   const language = useSelector(getLanguage);
   const LANGUAGES = Object.keys(LANGUAGES_ICONS);
 
+  const t = useCommonTranslation();
+
   return (
     <div className="flex flex-col">
       <div
@@ -47,6 +51,23 @@ const HeaderContent = () => {
         }}
       >
         <div style={{ display: "flex", flexDirection: "row" }}>
+          <div className="flex flex-row m-auto pr-4">
+            <Link
+              to="https://cianciarusocataldo.gitbook.io/modular-ui/"
+              className="m-auto"
+              newTab
+            >
+              {DocsIcon}
+            </Link>
+            <Link
+              dark={dark}
+              to="https://cianciarusocataldo.gitbook.io/modular-ui/"
+              className="m-auto"
+              newTab
+            >
+              {t("docs")}
+            </Link>
+          </div>
           <Dropdown
             dark={false}
             value={LANGUAGES.findIndex((lang) => lang === language)}

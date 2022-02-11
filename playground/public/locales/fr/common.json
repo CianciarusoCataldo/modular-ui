@@ -2,5 +2,6 @@
   "atoms": "Atoms",
   "molecules": "Molecules",
   "organisms": "Organisms",
-  "component": "{{componentName}} component"
+  "component": "{{componentName}} component",
+  "docs": "Documentation"
 }
