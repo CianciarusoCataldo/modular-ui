@@ -177,9 +177,9 @@ If you want to customize the UI globally, initialize the dedicated [CSS variable
 
 ```css
 *{
-  --modular-text-color : red;
-  --modular-background-color: green;
-}
+  --modular-text-color : #f5f5f5;
+  --modular-background-color: #1b1b1b;
+ }
 
 ```
 
