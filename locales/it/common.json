@@ -2,5 +2,6 @@
   "atoms": "Atomi",
   "molecules": "Molecole",
   "organisms": "Organismi",
-  "component": "Componente {{componentName}}"
+  "component": "Componente {{componentName}}",
+  "docs": "Documentazione"
 }
