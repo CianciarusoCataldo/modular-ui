@@ -31,11 +31,15 @@
 -   Docs updated
 -   Styles fix
 
+<br>
+
 ### 4.0.2
 
 -   Code properly formatted
 -   Styles fix
 -   Integrations with various CI and analysis system
+
+<br>
 
 ### 4.0.0
 
@@ -52,10 +56,14 @@
     -   `--modular-custom-background-color-light`
     -   `--modular-custom-text-color-light`
 
+<br>
+
 ### 3.1.0
 
 -   `Drawer` ease-out transition fix
 -   Clean up
+
+<br>
 
 ### 3.0.0
 
@@ -64,6 +72,8 @@
 -   `Header` component removed
 -   `Page` component removed
 -   Clean up
+
+<br>
 
 ### 2.0.0
 
@@ -75,6 +85,8 @@
 -   Shared component building process, with new common props
 -   Fully documented components, with working examples
 
+<br>
+
 ### 1.2.0
 
 -   Bugfixes
@@ -82,6 +94,8 @@
 -   Clean up
 -   Styles better optimized
 -   Refactoring
+
+<br>
 
 ### 1.1.0
 
@@ -91,6 +105,8 @@
 -   Clean up
 -   Refactoring
 
+<br>
+
 ### 1.0.0
 
 -   Bugfixes
@@ -99,6 +115,8 @@
 -   Better styled components
 -   Test-suites system improved
 
+<br>
+
 ### 0.9.4
 
 -   Bugfixes
@@ -106,15 +124,21 @@
 -   New `CheckBox` component
 -   New `CodeBox` component
 
+<br>
+
 ### 0.9.0
 
 -   New `Table` component
 -   styles clean up
 
+<br>
+
 ### 0.8.0
 
 -   New unit testing system
 -   Re-designed playground
+
+<br>
 
 ### 0.7.0
 
@@ -122,9 +146,13 @@
 -   refactoring
 -   Minor fixes
 
+<br>
+
 ### 0.6.0
 
 -   Clean up and optimizations
+
+<br>
 
 ### 0.5.0
 
