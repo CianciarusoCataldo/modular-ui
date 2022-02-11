@@ -1,8 +1,6 @@
 #modular-dropdown,
 #modular-dropdown .options,
-#modular-dropdown .options .option,
-#modular-dropdown .option .regular:focus,
-#modular-dropdown .option .regular:hover {
+#modular-dropdown .options .option {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -89,8 +87,15 @@
   flex-direction: row;
 }
 
+#modular-dropdown .option .regular:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 #modular-dropdown .option .regular:hover {
   background-color: rgba(191, 219, 254, 0.7);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 #modular-dropdown .option .last {

@@ -193,12 +193,17 @@ Unit tests for every component are located inside `tests` folder. The test scrip
 
 This lib is analyzed and tested with different automated code analysis systems:
 
+-   [AppVeyor](https://ci.appveyor.com/project/CianciarusoCataldo/modular-ui)
 -   [CircleCI](https://app.circleci.com/pipelines/github/CianciarusoCataldo/modular-ui)
+-   [Cirrus CI](https://cirrus-ci.com/github/CianciarusoCataldo/modular-ui)
+-   [Codacy](https://app.codacy.com/gh/CianciarusoCataldo/modular-ui)
 -   [Code Climate](https://codeclimate.com/github/CianciarusoCataldo/modular-ui)
 -   [CodeCov](https://app.codecov.io/gh/CianciarusoCataldo/modular-ui)
 -   [CodeFactor](https://www.codefactor.io/repository/github/cianciarusocataldo/modular-ui)
--   [Scrutinizer](https://scrutinizer-ci.com/g/CianciarusoCataldo/modular-ui/)
 -   [Coveralls](https://coveralls.io/github/CianciarusoCataldo/modular-ui)
+-   [Hound](https://houndci.com/)
+-   [Scrutinizer](https://scrutinizer-ci.com/g/CianciarusoCataldo/modular-ui/)
+-   [Wercker](https://app.wercker.com/CianciarusoCataldo/modular-ui/runs)
 
 <br>
 
