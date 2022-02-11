@@ -173,6 +173,16 @@ render(<Page>
 
 <br>
 
+If you want to customize the UI globally, initialize the dedicated [CSS variables](#customizable-ui):
+
+```css
+*{
+  --modular-text-color : red;
+  --modular-background-color: green;
+}
+
+```
+
 * * *
 
 ## Tests
