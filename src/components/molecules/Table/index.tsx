@@ -28,7 +28,7 @@ import { buildBoxComponent } from "../../../utils";
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Table = ({ label, headers, rows = [], ...commonProps }: TableProps) => {
+const Table = ({ label, headers, rows, ...commonProps }: TableProps) => {
   let gridTemplateRows = "";
   let gridTemplateColumns = "";
 
