@@ -52,8 +52,8 @@
 
 ## Summary
 
--   [Main Concepts](#main-concepts)
--   [Component building process](#component-building-process)
+-   [Modular-ui philosophy](#modular-ui-philosophy)
+-   [Components building process](#components-building-process)
     -   [Shared components properties](#shared-components-properties)
     -   [Customizable UI](#customizable-ui)
     -   [Box components](#box-components)
@@ -68,7 +68,7 @@
 
 * * *
 
-## Main Concepts
+## Modular-ui philosophy
 
 This library is built upon few (but important) concepts:
 
@@ -129,6 +129,10 @@ Some components are designed with a specific structure, to better control and cu
 -   `label`, a string or a component rendered above the final component
 -   `value`, a specific property that drive the component UI, its type vary depends on component itself (for example, for the CheckBox component, it is the check status, as a `boolean` ) 
 -   `defaultValue`, the default value to use when `value` is not given or is `undefined`
+
+<div align="center">
+<img width="380px" alt="" src="https://user-images.githubusercontent.com/47371276/153539556-be82468f-b7c1-4753-8fe6-c832c35b7027.png" />
+</div>
 
 <br>
 
