@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/main.c8827c92.css",
-    "main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/main.758117b6.js",
-    "static/css/994.7ef8757a.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/994.7ef8757a.chunk.css",
-    "static/js/994.1a9d6c32.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/994.1a9d6c32.chunk.js",
+    "main.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/main.3004a3eb.css",
+    "main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/main.faeeaeba.js",
+    "static/css/994.7e80f47a.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/994.7e80f47a.chunk.css",
+    "static/js/994.c969ebee.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/994.c969ebee.chunk.js",
     "static/js/168.71a31751.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/168.71a31751.chunk.js",
     "static/css/554.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/554.d7e74088.chunk.css",
     "static/js/554.5aecf0fc.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/554.5aecf0fc.chunk.js",
@@ -25,10 +25,10 @@
     "static/css/721.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/721.d7e74088.chunk.css",
     "static/js/721.b0a7c85d.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/721.b0a7c85d.chunk.js",
     "static/css/722.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/722.d7e74088.chunk.css",
-    "static/js/722.8fc93e9c.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/722.8fc93e9c.chunk.js",
+    "static/js/722.fc43e6f6.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/722.fc43e6f6.chunk.js",
     "static/css/488.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/488.d7e74088.chunk.css",
     "static/js/488.f7aed779.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/488.f7aed779.chunk.js",
-    "static/js/439.e88a3cc2.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/439.e88a3cc2.chunk.js",
+    "static/js/439.79731163.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/439.79731163.chunk.js",
     "static/css/405.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/405.d7e74088.chunk.css",
     "static/js/405.74b529ab.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/405.74b529ab.chunk.js",
     "static/css/420.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/420.d7e74088.chunk.css",
@@ -66,7 +66,7 @@
     "static/media/left-arrow.svg": "https://cianciarusocataldo.github.io/modular-ui/static/media/left-arrow.2371d25ae4da5666885314488cd7e031.svg"
   },
   "entrypoints": [
-    "static/css/main.c8827c92.css",
-    "static/js/main.758117b6.js"
+    "static/css/main.3004a3eb.css",
+    "static/js/main.faeeaeba.js"
   ]
 }
