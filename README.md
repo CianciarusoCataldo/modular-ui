@@ -187,7 +187,7 @@ If you want to customize the UI globally, initialize the dedicated [CSS variable
 
 ## Tests
 
-Unit tests for every lib function are located inside `tests` folder. The test script is executed with pre-defined test command:
+Unit tests for every component are located inside `tests` folder. The test script is executed with pre-defined test command:
 
     npm run test
 
