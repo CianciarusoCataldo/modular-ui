@@ -1,7 +1,7 @@
 [id^="modular-"] {
   --modular-background-color-light: #f5f5f5;
   --modular-background-color-dark: #1d232e;
-  --modular-text-color-light: rgb(27, 27, 27);
+  --modular-text-color-light: #1b1b1b;
   --modular-text-color-dark: white;
   --modular-background-dark: linear-gradient(to right, #2d3748, #1d232e);
   --modular-background-light: linear-gradient(to right, #fff, #eaebec);

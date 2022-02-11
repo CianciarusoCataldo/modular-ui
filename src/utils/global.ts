@@ -2,25 +2,26 @@ import { CSSProperties } from "react";
 
 /** Props shared between all components */
 export interface CommonProps {
-  /** custom className (to better customize it)*/
+  /** custom className applied on main container */
   className?: string;
-
-  /** `data-id` parameter (for testing purpose, to easily find the component into the DOM) */
-  id?: string;
-
-  /** Hide/show component */
-  hide?: boolean;
 
   /** Enable/disable dark mode */
   dark?: boolean;
 
-  /** Enable/disable shadow behind component (to better customize it) */
+  /** Hide/show component */
+  hide?: boolean;
+
+  /** `data-id` parameter (for testing purpose, to easily find the component into the DOM) */
+  id?: string;
+
+  /** Enable/disable shadow behind component */
   shadow?: boolean;
 
-  /** Style/unstyle component (to better customize it) */
-  unstyled?: boolean;
-
+  /** Css inline properties applied on main container */
   style?: CSSProperties;
+
+  /** If true, no standard modular-ui styles will be applied on the components (useful for example, with image buttons) */
+  unstyled?: boolean;
 }
 
 export interface BoxComponent<T = any, K = JSX.Element | Element> {
