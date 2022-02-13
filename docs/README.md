@@ -1,0 +1,165 @@
+<div align="center">
+<img width="640px" width="380px" alt="" src="https://user-images.githubusercontent.com/47371276/148471124-9955a41b-693e-4c6c-b6da-bf3590f5eec5.png" />
+</div>
+
+# modular-ui
+
+![NPM](https://img.shields.io/npm/l/@cianciarusocataldo/modular-ui?label=License&style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IArs4c6QAAAEtQTFRFAAAAbdrhbtrhlOPoqejsvby8wL+/33pu6ebm6enp6ufm6urq6+vr7u7u8fHx8vLy8/Pz9PT0+aaY+5uL+6yf+/v7/o97/4x4/456XOpx3wAAAAF0Uk5TAEDm2GYAAAClSURBVCjPxdHZEsIgDAXQxA3jUkXF+P9fKkmgRUOnj70PDNND0iEArBjKOce5KNMCZ2fmWX6y5dXlI7Oe8g1AvzIlCbk/GGfd4k49xr1E1tvEiAk3iTrVJ35EtFzfveafi1Zj01xy/22O3ebCpEy1+hCbanW5l784lHmwrTMzL0N1j1OYQuAQ6tvZYFouxf/ljmmBqw95CxOTZxi5TWXos/kAK+cLKQEkGY0V3h4AAAAASUVORK5CYII=) 
+![npm (scoped)](https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?color=orange%20&label=Latest%20version&style=for-the-badge&logo=npm) 
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=Package%20size&style=for-the-badge&logo=npm)
+![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained&style=for-the-badge)
+
+* * *
+
+## Modular-ui philosophy
+
+This library is built upon few (but important) concepts:
+
+-   Small library size, to not impact on final app bundle size
+-   Few dependencies, to not introduce a bunch of additional packages (that could also introduce bugs or version conflicts with pre-existent packages)
+-   Let the user customize every part as desired, but with default values set otherwise, to make every component ready to be used without so many parameters
+-   Every component should be integrable into every react app, so their behaviour must be customizable too (with callbacks, for example)
+
+The same concepts are also the base of another project I maintain, [modular-app](https://github.com/CianciarusoCataldo/modular-app), a ready to use react app template that use this library internally (check it out, it is also the base of [Modular-ui guide page](https://cianciarusocataldo.github.io/modular-ui/) !)
+
+<br>
+
+## Components building process
+
+This library use a standardized process to build every component. As result, every component has a shared initial logic, shared CSS styles and shared properties.
+
+<br>
+
+### Shared components properties
+
+Some properties are shared between all components, for a smoother dev experience. In addition, this makes every single component easily re-usable. Let's see them in details:
+
+| Property    | Description                                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| `className` | custom className applied on main container                                                                          |
+| `dark`      | Enable/disable dark mode                                                                                            |
+| `hide`      | Hide/show component                                                                                                 |
+| `id`        | `data-id` parameter (for testing purpose, to easily find the component into the DOM)                                |
+| `shadow`    | Enable/disable shadow behind component                                                                              |
+| `style`     | [Css inline properties](https://www.w3schools.com/html/html_css.asp) applied on main container                      |
+| `unstyled`  | If `true`, no standard modular-ui styles will be applied on the components (useful for example, with image buttons) |
+
+With these shared properties is possible to drive every component behaviour and UI with an external state management system ([modular](https://github.com/CianciarusoCataldo/modular) library uses these components internally in conjunction with [redux](https://redux.js.org/))
+
+<br>
+
+### Customizable UI
+
+Modular-ui components UI is globally configurable, with CSS variables. By defining some specific custom CSS variables into your app css, you'll change the UI of all components:
+
+| CSS variable                              | Description                                                                                                 | Default value                                 | Related CSS attribute |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------------- |
+| `--modular-custom-background-dark`        | Components background, when in dark-mode ([dark](#shared-components-properties) is set to true).            | `linear-gradient(to right, #2d3748, #1d232e)` | `background-image`    |
+| `--modular-custom-background-color-dark`  | Components background color, when in dark-mode ([dark](#shared-components-properties) is set to true).      | `#1d232e`                                     | `background-color`    |
+| `--modular-custom-text-color-dark`        | Components text color, when in dark-mode ([dark](#shared-components-properties) is set to true).            | `white`                                       | `text-color`          |
+| `--modular-custom-background-light`       | Components background, when not in dark-mode ([dark](#shared-components-properties) is set to false).       | `linear-gradient(to right, #fff, #eaebec)`    | `background-image`    |
+| `--modular-custom-background-color-light` | Components background color, when not in dark-mode ([dark](#shared-components-properties) is set to false). | `#f5f5f5`                                     | `background-color`    |
+| `--modular-custom-text-color-light`       | Components text color, when not in dark-mode ([dark](#shared-components-properties) is set to false).       | `#1b1b1b`                                     | `text-color`          |
+
+If you don't set these variables, the default values will be used.
+
+<br>
+
+### Box components
+
+Some components are designed with a specific structure, to better control and customize their look and feel. This type of components is called `Box Component`, for their particular structure. In addition to the [shared properties](#shared-components-properties), as they are part of modular-ui, they accept 3 additional (and optional) properties:
+
+-   `label`, a string or a component rendered above the final component
+-   `value`, a specific property that drive the component UI, its type vary depends on component itself (for example, for the CheckBox component, it is the check status, as a `boolean` ) 
+-   `defaultValue`, the default value to use when `value` is not given or is `undefined`
+
+<div align="center">
+<img width="380px" alt="" src="https://user-images.githubusercontent.com/47371276/153539556-be82468f-b7c1-4753-8fe6-c832c35b7027.png" />
+</div>
+
+<br>
+
+* * *
+
+## Getting started
+
+### Installation
+
+If you want to use this library inside your project, just install it:
+
+```
+
+npm i @cianciarusocataldo/modular-ui
+
+```
+
+### Usage
+
+After installation, you can use every `modular-ui` component in your app. Run this example to see them in action:
+
+```tsx
+import { Card, Link, Page } from "@cianciarusocataldo/modular-ui";
+import { render } from "react-dom";
+
+render(<Page>
+          <Card
+             dark={true}
+             body={<p>This page is entirely made with modular-ui components !</p>}
+             footer={<Link to="https://cianciarusocataldo.github.io/modular-ui">Modular-ui page</Link>}
+          />
+       </Page>,     
+       document.getElementById("root"));
+
+```
+
+[![Edit modular-ui playground](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/modular-ui-playground-gfpbb?fontsize=14&hidenavigation=1&theme=dark&view=preview)
+
+<br>
+
+If you want to customize the UI globally, initialize the dedicated [CSS variables](#customizable-ui):
+
+```css
+*{
+  --modular-text-color : #f5f5f5;
+  --modular-background-color: #1b1b1b;
+ }
+
+```
+
+* * *
+
+## Tests
+
+Unit tests for every component are located inside `tests` folder. The test script is executed with pre-defined test command:
+
+    npm run test
+
+This lib is analyzed and tested with different automated code analysis systems:
+
+-   [AppVeyor](https://ci.appveyor.com/project/CianciarusoCataldo/modular-ui)
+-   [CircleCI](https://app.circleci.com/pipelines/github/CianciarusoCataldo/modular-ui)
+-   [Cirrus CI](https://cirrus-ci.com/github/CianciarusoCataldo/modular-ui)
+-   [Codacy](https://app.codacy.com/gh/CianciarusoCataldo/modular-ui)
+-   [Code Climate](https://codeclimate.com/github/CianciarusoCataldo/modular-ui)
+-   [CodeCov](https://app.codecov.io/gh/CianciarusoCataldo/modular-ui)
+-   [CodeFactor](https://www.codefactor.io/repository/github/cianciarusocataldo/modular-ui)
+-   [Coveralls](https://coveralls.io/github/CianciarusoCataldo/modular-ui)
+-   [Hound](https://houndci.com/)
+-   [Scrutinizer](https://scrutinizer-ci.com/g/CianciarusoCataldo/modular-ui/)
+-   [Wercker](https://app.wercker.com/CianciarusoCataldo/modular-ui/runs)
+
+<br>
+
+* * *
+
+## Authors
+
+-   [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
+
+<br>
+
+* * *
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
