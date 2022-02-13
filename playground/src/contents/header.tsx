@@ -53,7 +53,7 @@ const HeaderContent = () => {
         <div style={{ display: "flex", flexDirection: "row" }}>
           <div className="flex flex-row m-auto pr-4">
             <Link
-              to="https://cianciarusocataldo.gitbook.io/modular-ui/"
+              to="https://cianciarusocataldo.github.io/modular-ui/docs"
               className="m-auto"
               newTab
             >
@@ -61,7 +61,7 @@ const HeaderContent = () => {
             </Link>
             <Link
               dark={dark}
-              to="https://cianciarusocataldo.gitbook.io/modular-ui/"
+              to="https://cianciarusocataldo.github.io/modular-ui/docs"
               className="m-auto"
               newTab
             >
