@@ -10,14 +10,5 @@
   "footer": {
     "height": "10%",
     "className": ""
-  },
-  "body": {
-    "darkColor": "linear-gradient(to right, #3c4a5f, #4d5f7d)",
-    "lightColor": "linear-gradient(to right, #eaebec, #cccdcf)"
-  },
-  "dark": {
-    "textColor": "",
-    "background": "",
-    "backgroundColor": ""
   }
 }

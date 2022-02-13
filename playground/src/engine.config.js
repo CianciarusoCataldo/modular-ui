@@ -6,6 +6,7 @@ const engineConfig = {
     epics: [],
     reducers: {},
     preload: {},
+    darkMode: true,
   },
   router: {
     basename: "/modular-ui",

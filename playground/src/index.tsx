@@ -1,4 +1,5 @@
 import "assets/styles/styles.output.css";
+import theme from "theme.config.json";
 
 if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   navigator.serviceWorker
@@ -16,11 +17,17 @@ if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
 }
 
 import("@cianciarusocataldo/modular").then(({ initApplication }) => {
-  initApplication((App) => {
-    import("react-dom").then(({ render }) => {
-      render(App, document.getElementById("root"));
-      let Preloader = document.getElementById("preloader");
-      if (Preloader) Preloader.style.visibility = "hidden";
+  import("engine.config").then(({ default: engine }) => {
+    initApplication({
+      engine,
+      theme,
+      onComplete: (App) => {
+        import("react-dom").then(({ render }) => {
+          render(App, document.getElementById("root"));
+          let Preloader = document.getElementById("preloader");
+          if (Preloader) Preloader.style.visibility = "hidden";
+        });
+      },
     });
   });
 });
