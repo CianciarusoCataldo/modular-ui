@@ -2,14 +2,7 @@
 <img width="640px" width="380px" alt="" src="https://user-images.githubusercontent.com/47371276/148471124-9955a41b-693e-4c6c-b6da-bf3590f5eec5.png" />
 </div>
 
-# modular-ui
-
-![NPM](https://img.shields.io/npm/l/@cianciarusocataldo/modular-ui?label=License&style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IArs4c6QAAAEtQTFRFAAAAbdrhbtrhlOPoqejsvby8wL+/33pu6ebm6enp6ufm6urq6+vr7u7u8fHx8vLy8/Pz9PT0+aaY+5uL+6yf+/v7/o97/4x4/456XOpx3wAAAAF0Uk5TAEDm2GYAAAClSURBVCjPxdHZEsIgDAXQxA3jUkXF+P9fKkmgRUOnj70PDNND0iEArBjKOce5KNMCZ2fmWX6y5dXlI7Oe8g1AvzIlCbk/GGfd4k49xr1E1tvEiAk3iTrVJ35EtFzfveafi1Zj01xy/22O3ebCpEy1+hCbanW5l784lHmwrTMzL0N1j1OYQuAQ6tvZYFouxf/ljmmBqw95CxOTZxi5TWXos/kAK+cLKQEkGY0V3h4AAAAASUVORK5CYII=) 
-![npm (scoped)](https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?color=orange%20&label=Latest%20version&style=for-the-badge&logo=npm) 
-![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@cianciarusocataldo/modular-ui?label=Package%20size&style=for-the-badge&logo=npm)
-![Maintenance](https://img.shields.io/maintenance/yes/2025?label=Maintained&style=for-the-badge)
-
-* * *
+<br>
 
 ## Modular-ui philosophy
 
@@ -22,13 +15,11 @@ This library is built upon few (but important) concepts:
 
 The same concepts are also the base of another project I maintain, [modular-app](https://github.com/CianciarusoCataldo/modular-app), a ready to use react app template that use this library internally (check it out, it is also the base of [Modular-ui guide page](https://cianciarusocataldo.github.io/modular-ui/) !)
 
-<br>
+<br><br>
 
 ## Components building process
 
 This library use a standardized process to build every component. As result, every component has a shared initial logic, shared CSS styles and shared properties.
-
-<br>
 
 ### Shared components properties
 
@@ -77,9 +68,7 @@ Some components are designed with a specific structure, to better control and cu
 <img width="380px" alt="" src="https://user-images.githubusercontent.com/47371276/153539556-be82468f-b7c1-4753-8fe6-c832c35b7027.png" />
 </div>
 
-<br>
-
-* * *
+<br><br>
 
 ## Getting started
 
@@ -98,16 +87,16 @@ npm i @cianciarusocataldo/modular-ui
 After installation, you can use every `modular-ui` component in your app. Run this example to see them in action:
 
 ```tsx
-import { Card, Link, Page } from "@cianciarusocataldo/modular-ui";
+import { Card, Container, Link } from "@cianciarusocataldo/modular-ui";
 import { render } from "react-dom";
 
-render(<Page>
+render(<Container animated>
           <Card
              dark={true}
              body={<p>This page is entirely made with modular-ui components !</p>}
              footer={<Link to="https://cianciarusocataldo.github.io/modular-ui">Modular-ui page</Link>}
           />
-       </Page>,     
+       </Container>,     
        document.getElementById("root"));
 
 ```
@@ -125,8 +114,7 @@ If you want to customize the UI globally, initialize the dedicated [CSS variable
  }
 
 ```
-
-* * *
+<br><br>
 
 ## Tests
 
@@ -148,17 +136,13 @@ This lib is analyzed and tested with different automated code analysis systems:
 -   [Scrutinizer](https://scrutinizer-ci.com/g/CianciarusoCataldo/modular-ui/)
 -   [Wercker](https://app.wercker.com/CianciarusoCataldo/modular-ui/runs)
 
-<br>
-
-* * *
+<br><br>
 
 ## Authors
 
 -   [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
 
-<br>
-
-* * *
+<br><br>
 
 ## License
 
