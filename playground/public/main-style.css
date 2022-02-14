@@ -31,6 +31,15 @@ body.light {
   background: linear-gradient(to right, #f0f3fa, #f4f6fa);
 }
 
+#modular-drawer {
+  border-right-width: 2px;
+  border-right-color: #9e9d9d;
+}
+
+#modular-drawer.dark {
+  border-right-color: #c0c0c0;
+}
+
 header {
   border-bottom-width: 2px;
   border-bottom-color: #9e9d9d;
