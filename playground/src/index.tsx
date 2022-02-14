@@ -23,9 +23,10 @@ import("@cianciarusocataldo/modular").then(({ initApplication }) => {
       theme,
       onComplete: (App) => {
         import("react-dom").then(({ render }) => {
-          render(App, document.getElementById("root"));
-          let Preloader = document.getElementById("preloader");
-          if (Preloader) Preloader.style.visibility = "hidden";
+          render(App, document.getElementById("root"), () => {
+            let Preloader = document.getElementById("preloader");
+            if (Preloader) Preloader.style.visibility = "hidden";
+          });
         });
       },
     });
