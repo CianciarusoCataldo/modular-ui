@@ -12,7 +12,7 @@
 
 * * *
 
-## Status
+## Status<img align="left" alt="" src="https://user-images.githubusercontent.com/47371276/153876497-124aa299-63d9-46bf-a090-6d53a7417f4d.png" width="30"/>
 
 ### Security
 
@@ -51,7 +51,7 @@
 
 <br>
 
-## Summary
+## Summary<img align="left" alt="" src="https://user-images.githubusercontent.com/47371276/153879131-3e4416a4-b3fd-4208-beee-ccf672345bcc.png" width="30"/>
 
 -   [Modular-ui philosophy](#modular-ui-philosophy)
 -   [Components building process](#components-building-process)
