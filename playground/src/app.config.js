@@ -9,11 +9,7 @@ const appConfig = {
   modals: {},
   darkMode: true,
   useQueryParams: true,
-  preloader: () => (
-    <div>
-      <div className="preloader" />
-    </div>
-  ),
+  preloader: () => <div className="preloader" />,
   header: HeaderContent,
   footer: FooterContent,
   drawer: {
