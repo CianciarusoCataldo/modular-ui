@@ -213,6 +213,7 @@ This lib is analyzed and tested with different automated code analysis systems:
 
 * * *
 
+
 ## Authors<img align="left" src="https://user-images.githubusercontent.com/47371276/154069439-eece1dc0-a82c-4322-95f4-cf2211226fcf.png" alt="" width="30" />
 
 -   [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
@@ -221,6 +222,9 @@ This lib is analyzed and tested with different automated code analysis systems:
 
 * * *
 
-## License
+
+                            
+
+## License<img align="left" src="https://user-images.githubusercontent.com/47371276/154152300-69b2ebbd-2461-49a7-b1c9-3570f4b51156.png" alt="" width="30" />
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
