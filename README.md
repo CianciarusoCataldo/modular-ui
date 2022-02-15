@@ -139,7 +139,10 @@ Some components are designed with a specific structure, to better control and cu
 
 * * *
 
-## Getting started
+
+
+## Getting started<img src="https://user-images.githubusercontent.com/47371276/154059478-c044b278-5ef4-4036-8113-a18531e35194.svg" align="left" width="30" />
+
 
 ### Installation
 
@@ -210,7 +213,7 @@ This lib is analyzed and tested with different automated code analysis systems:
 
 * * *
 
-## Authors
+## Authors<img align="left" src="https://user-images.githubusercontent.com/47371276/154069439-eece1dc0-a82c-4322-95f4-cf2211226fcf.png" alt="" width="30" />
 
 -   [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
 
