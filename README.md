@@ -1,5 +1,5 @@
 <div align="center">
-<img width="640px" width="380px" alt="" src="https://user-images.githubusercontent.com/47371276/148471124-9955a41b-693e-4c6c-b6da-bf3590f5eec5.png" />
+<img width="640px" alt="" src="https://user-images.githubusercontent.com/47371276/154092183-2564fd3d-d50b-430c-94f5-dcf1fb43b86c.png" />
 </div>
 
 # modular-ui<img src="https://user-images.githubusercontent.com/47371276/153836684-89e0f709-afd8-46d5-b2b0-41cb38614809.png" align="left" alt="" width="40"/>
