@@ -1,9 +1,8 @@
 <div align="center">
-<img width="640px" alt="" src="https://user-images.githubusercontent.com/47371276/154092183-2564fd3d-d50b-430c-94f5-dcf1fb43b86c.png" />
+<img width="640px" alt="" src="https://user-images.githubusercontent.com/47371276/154186533-0ef65901-018c-4151-a5cc-c9bc2e25fc51.png" />
 </div>
 
 # modular-ui<img src="https://user-images.githubusercontent.com/47371276/153836684-89e0f709-afd8-46d5-b2b0-41cb38614809.png" align="left" alt="" width="40"/>
-
 
 ![NPM](https://img.shields.io/npm/l/@cianciarusocataldo/modular-ui?label=License&style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IArs4c6QAAAEtQTFRFAAAAbdrhbtrhlOPoqejsvby8wL+/33pu6ebm6enp6ufm6urq6+vr7u7u8fHx8vLy8/Pz9PT0+aaY+5uL+6yf+/v7/o97/4x4/456XOpx3wAAAAF0Uk5TAEDm2GYAAAClSURBVCjPxdHZEsIgDAXQxA3jUkXF+P9fKkmgRUOnj70PDNND0iEArBjKOce5KNMCZ2fmWX6y5dXlI7Oe8g1AvzIlCbk/GGfd4k49xr1E1tvEiAk3iTrVJ35EtFzfveafi1Zj01xy/22O3ebCpEy1+hCbanW5l784lHmwrTMzL0N1j1OYQuAQ6tvZYFouxf/ljmmBqw95CxOTZxi5TWXos/kAK+cLKQEkGY0V3h4AAAAASUVORK5CYII=) 
 ![npm (scoped)](https://img.shields.io/npm/v/@cianciarusocataldo/modular-ui?color=orange%20&label=Latest%20version&style=for-the-badge&logo=npm) 
@@ -12,7 +11,7 @@
 
 * * *
 
-## Status<img align="left" alt="" src="https://user-images.githubusercontent.com/47371276/153876497-124aa299-63d9-46bf-a090-6d53a7417f4d.png" width="30"/>
+## Status<img align="left" alt="" src="https://user-images.githubusercontent.com/47371276/154184535-be975554-62a7-47ff-bda4-a0dea502b3a3.png" width="15"  height="30" />
 
 ### Security
 
@@ -189,7 +188,7 @@ If you want to customize the UI globally, initialize the dedicated [CSS variable
 
 * * *
 
-## Tests
+## Tests<img align="left" alt="" src="https://user-images.githubusercontent.com/47371276/153876497-124aa299-63d9-46bf-a090-6d53a7417f4d.png" width="30"/>
 
 Unit tests for every component are located inside `tests` folder. The test script is executed with pre-defined test command:
 
@@ -213,17 +212,13 @@ This lib is analyzed and tested with different automated code analysis systems:
 
 * * *
 
-
 ## Authors<img align="left" src="https://user-images.githubusercontent.com/47371276/154069439-eece1dc0-a82c-4322-95f4-cf2211226fcf.png" alt="" width="30" />
 
 -   [**Cataldo Cianciaruso**](https://github.com/CianciarusoCataldo)
 
 <br>
 
-* * *
-
-
-                            
+* * *                       
 
 ## License<img align="left" src="https://user-images.githubusercontent.com/47371276/154152300-69b2ebbd-2461-49a7-b1c9-3570f4b51156.png" alt="" width="30" />
 
