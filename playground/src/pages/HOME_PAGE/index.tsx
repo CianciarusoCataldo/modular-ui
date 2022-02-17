@@ -86,7 +86,7 @@ const HomePage = () => {
       </AppLabel>
       <div
         key="homepage_container"
-        className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row 3xl:flex-row 4xl:flex-row"
+        className="flex flex-col lg:flex-row"
       >
         <div>
           <Card shadow body={description} />

@@ -1,7 +1,9 @@
 {
-  "header": {},
-  "router": {},
-  "footer": {},
+  "header": {
+    "style": { "height": "19%", "borderBottom": "2px solid #c0c0c0" }
+  },
+  "router": { "style": { "height": "74%" } },
+  "footer": { "style": { "height": "7%", "borderTop": "2px solid #c0c0c0" } },
   "drawer": {},
   "body": {
     "default": "linear-gradient(to right, #f0f3fa, #f4f6fa)",

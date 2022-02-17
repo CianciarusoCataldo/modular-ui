@@ -44,9 +44,8 @@ const HeaderContent = () => {
   return (
     <div className="flex flex-col">
       <div
+        className="mb-2 flex flex-col"
         style={{
-          display: "flex",
-          flexDirection: "column",
           alignItems: "flex-end",
         }}
       >
@@ -59,14 +58,15 @@ const HeaderContent = () => {
             >
               {DocsIcon}
             </Link>
-            <Link
-              dark={dark}
-              to="https://cianciarusocataldo.github.io/modular-ui/docs"
-              className="m-auto"
-              newTab
-            >
-              {t("docs")}
-            </Link>
+            <div className="m-auto hidden xsm:block">
+              <Link
+                dark={dark}
+                to="https://cianciarusocataldo.github.io/modular-ui/docs"
+                newTab
+              >
+                {t("docs")}
+              </Link>
+            </div>
           </div>
           <Dropdown
             dark={false}
@@ -101,7 +101,7 @@ const HeaderContent = () => {
             unstyled
             className="outline-none"
           >
-            <div className="p-1 sm:p-2 md:p-2 lg:p-2 xl:p-2">{BurgerIcon}</div>
+            <div className="p-1 sm:p-2 md:p-2">{BurgerIcon}</div>
           </Button>
         </div>
         <div className="my-auto">
@@ -125,7 +125,7 @@ const HeaderContent = () => {
               newTab
               to="https://github.com/CianciarusoCataldo/modular-ui"
             >
-              <p className="break-words text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-4xl 4xl:text-4xl">
+              <p className="break-words text-lg sm:text-xl md:text-2xl lg:text-4xl">
                 {APP_NAME}
               </p>
             </Link>
