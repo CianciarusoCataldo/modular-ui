@@ -47,7 +47,7 @@ const DropdownPage = () => (
         ];
 
         return (
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center bg-transparent ">
             <Dropdown
               className={props.className}
               hide={props.hide}

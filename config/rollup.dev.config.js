@@ -1,6 +1,7 @@
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
+
 import pkg from "../package.json";
 
 export default [
@@ -10,7 +11,7 @@ export default [
       {
         file: "playground/src/modular-ui-preview/index.cjs",
         format: "cjs",
-        banner: "import './styles.css'",
+        banner: "require('./styles.css')",
         plugins: [terser()],
       },
       {
@@ -22,7 +23,7 @@ export default [
         file: pkg.main,
         format: "cjs",
         plugins: [terser()],
-        banner: "import './styles.css'",
+        banner: "require('./styles.css')",
       },
       {
         file: pkg.module,

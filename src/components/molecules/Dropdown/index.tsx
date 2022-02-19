@@ -8,6 +8,7 @@ import { DropdownProps } from "./types";
 import { buildBoxComponent } from "../../../utils";
 
 import Button from "../../atoms/Button";
+import Container from "../Container";
 
 /**
  * Show a list of elements in a dropdown menu (by default, with fade-in and out effects).
@@ -36,7 +37,6 @@ import Button from "../../atoms/Button";
 const Dropdown = ({
   content = [],
   onChange,
-  shadow,
   value,
   label,
   icon,
@@ -61,7 +61,6 @@ const Dropdown = ({
             onClick={() => {
               setVisible(!isVisible);
             }}
-            shadow={shadow}
             dark={commonProps.dark}
             className="button"
             id="options-menu"
@@ -83,12 +82,13 @@ const Dropdown = ({
               </p>
             </div>
           </Button>,
-          <div
+          <Container
             key="options"
-            className={classnames("options", {
-              "component-hidden": !isVisible,
-              shadowed: shadow,
-            })}
+            animated
+            shadow={commonProps.shadow}
+            dark={commonProps.dark}
+            hide={!isVisible}
+            className="options"
           >
             {content.map((item, index) => (
               <div key={`dropdown_option_${index}`} className="option">
@@ -106,12 +106,14 @@ const Dropdown = ({
                     last: index === content.length - 1,
                   })}
                 >
-                  {item.icon}
-                  <div className="label">{item.name}</div>
+                  <div className="content">
+                    {item.icon}
+                    <div className="label">{item.name}</div>
+                  </div>
                 </Button>
               </div>
             ))}
-          </div>,
+          </Container>,
         ],
         commonProps,
       };

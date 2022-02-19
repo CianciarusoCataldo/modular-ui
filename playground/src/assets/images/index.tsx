@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 import Logo from "./icons/commons/logo.png";
 
 import DarkMode from "./icons/commons/dark-mode.svg";
@@ -22,16 +24,6 @@ export const LogoIcon = (
 );
 
 export const DocsIcon = <img alt="" src={Docs} width={30} height={30} />;
-
-export const LeftArrowIcon = (
-  <svg
-    className="w-8 h-8 fill-[white] hover:fill-[#ff9f51] active:fill-[#fb7a10] xsm:w-12 xsm:h-12"
-    viewBox="0 0 11 18"
-  >
-    <path d="M8.681.196l2.121 2.12-8.484 8.487-2.12-2.12z" />
-    <path d="M10.803 15.047l-2.121 2.121L.197 8.683l2.121-2.121z" />
-  </svg>
-);
 
 export const BurgerIcon = (
   <svg
@@ -133,9 +125,9 @@ export const DarkModeIcon = <img alt="" src={DarkMode} width={30} />;
 export const LightModeIcon = <img alt="" src={LightMode} width={30} />;
 
 export const LANGUAGES_ICONS: Record<string, JSX.Element> = {
-  it: <img alt="" width={20} height={20} src={IT_FLAG} />,
-  de: <img alt="" width={20} height={20} src={DE_FLAG} />,
-  fr: <img alt="" width={20} height={20} src={FR_FLAG} />,
-  es: <img alt="" width={20} height={20} src={ES_FLAG} />,
-  en: <img alt="" width={20} height={20} src={EN_FLAG} />,
+  it: <img alt="" width={15} height={15} src={IT_FLAG} />,
+  de: <img alt="" width={15} height={15} src={DE_FLAG} />,
+  fr: <img alt="" width={15} height={15} src={FR_FLAG} />,
+  es: <img alt="" width={15} height={15} src={ES_FLAG} />,
+  en: <img alt="" width={15} height={15} src={EN_FLAG} />,
 };

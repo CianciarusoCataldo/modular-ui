@@ -25,7 +25,7 @@ export const DrawerLogo = () => {
       {DrawerLogoIcon}
       <div className="flex flex-col align-middle items-center">
         <LinkComponent
-          to="https://github.com/CianciarusoCataldo/modular-app"
+          to="https://github.com/CianciarusoCataldo/modular-ui"
           className="my-auto ml-2 text-xl break-all"
           newTab
         >

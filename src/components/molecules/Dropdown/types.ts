@@ -6,7 +6,7 @@ import {
 
 /** Single dropdown element */
 export interface DropdownElement {
-  name: string;
+  name: string | JSX.Element;
   icon?: JSX.Element;
 }
 

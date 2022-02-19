@@ -67,7 +67,6 @@
   -moz-box-shadow: 0 5px 13px -1px #464545;
   -o-box-shadow: 0 5px 13px -1px #464545;
   box-shadow: 0 5px 13px -1px #464545;
-  box-decoration-break: clone;
 }
 
 [id^="modular-"] .box-label {
