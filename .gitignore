@@ -3,3 +3,4 @@ dist
 playground/src/modular-ui-preview
 build
 coverage
+stats.html
