@@ -2,6 +2,7 @@
 
 ## Versions
 
+-   [4.1.0](#410)
 -   [4.0.3](#403)
 -   [4.0.2](#402)
 -   [4.0.0](#400)
@@ -23,6 +24,15 @@
 * * *
 
 ## Changes
+
+<br>
+
+### 4.1.0
+
+-   Dropdown better styled
+-   Minor bugfixes
+-   Cleanup
+-   Refactoring
 
 <br>
 
