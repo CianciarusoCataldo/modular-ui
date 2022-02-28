@@ -75,7 +75,7 @@
     "predeploy": "npm run build-playground",
     "deploy": "gh-pages -d playground/build",
     "test": "sh ./scripts/start-tests.sh",
-    "update:docs": "node scripts/update-version.js",
+    "update:docs": "node scripts/update-docs.js",
     "update:version:patch": "npm version patch --commit-hooks=false --git-tag-version=false && sh ./scripts/update-version.sh",
     "update:version:minor": "npm version minor && sh ./scripts/update-version.sh",
     "update:version:major": "npm version major && sh ./scripts/update-version.sh"
