@@ -75,9 +75,9 @@
     "predeploy": "npm run build-playground",
     "deploy": "gh-pages -d playground/build",
     "test": "sh ./scripts/start-tests.sh",
-    "update:docs": "node scripts/update-docs.js",
-    "update:version:patch": "npm version patch --commit-hooks=false --git-tag-version=false && sh ./scripts/update-version.sh",
-    "update:version:minor": "npm version minor && sh ./scripts/update-version.sh",
-    "update:version:major": "npm version major && sh ./scripts/update-version.sh"
+    "update:docs": "sh ./scripts/update-docs.sh",
+    "update:version:patch": "npm version patch --commit-hooks=false --git-tag-version=false && npm run update:docs",
+    "update:version:minor": "npm version minor --commit-hooks=false --git-tag-version=false && npm run update:docs",
+    "update:version:major": "npm version major --commit-hooks=false --git-tag-version=false && sh npm run update:docs"
   }
 }

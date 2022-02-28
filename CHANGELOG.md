@@ -29,7 +29,7 @@
 
 ### 4.2.0
 
--   List component
+-   `List` component
 
 <br>
 
