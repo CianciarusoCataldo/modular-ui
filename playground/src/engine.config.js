@@ -35,7 +35,7 @@ const engineConfig = {
   i18n: {
     fallbackLanguage: "en",
     supportedLanguages: ["en", "it", "es", "fr", "de"],
-    namespaces: ["overview", "common"],
+    namespaces: ["list", "overview", "common"],
     defaultNamespace: "common",
     loadPath: "/modular-ui/locales/{{lng}}/{{ns}}.json",
     pagesNamespace: "titles",
