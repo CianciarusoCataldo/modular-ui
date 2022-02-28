@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/main.a5f5d519.css",
-    "main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/main.b25131fa.js",
+    "main.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/main.1ca5dffc.js",
     "static/css/60.9ed1603c.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/60.9ed1603c.chunk.css",
-    "static/js/60.4dedbb33.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/60.4dedbb33.chunk.js",
-    "static/js/637.5015df2e.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/637.5015df2e.chunk.js",
+    "static/js/60.80a06514.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/60.80a06514.chunk.js",
+    "static/js/637.fdd44f28.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/637.fdd44f28.chunk.js",
     "static/js/168.71a31751.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/168.71a31751.chunk.js",
     "static/css/554.d7e74088.chunk.css": "https://cianciarusocataldo.github.io/modular-ui/static/css/554.d7e74088.chunk.css",
     "static/js/554.462e75be.chunk.js": "https://cianciarusocataldo.github.io/modular-ui/static/js/554.462e75be.chunk.js",
@@ -69,6 +69,6 @@
   },
   "entrypoints": [
     "static/css/main.a5f5d519.css",
-    "static/js/main.b25131fa.js"
+    "static/js/main.1ca5dffc.js"
   ]
 }
