@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import PKG from "../../../package.json";
 
 var fs = require("fs");
@@ -19,24 +19,26 @@ export const describeTest = (component: string, testSuite: () => void) => {
 
 export const renderingTest = (
   TestComponent: (props: any) => JSX.Element,
-  params?: Record<string, any>
+  params?: Record<string, any>,
+  mountComponent?: boolean
 ) => {
+  const method = mountComponent ? mount : shallow;
   describeTest("rendering test", () => {
     test("no parameters", () => {
-      const wrapper = shallow(<TestComponent />);
+      const wrapper = method(<TestComponent />);
       expect(wrapper);
     });
     params &&
       test("with parameters", () => {
-        const wrapper = shallow(
+        const wrapper = method(
           <TestComponent
-            {...params}
             hide
             dark
             unstyled
             shadow={false}
             id="test-id"
             className="test-className"
+            {...params}
           />
         );
         expect(wrapper);

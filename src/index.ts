@@ -27,6 +27,9 @@ export { default as Label } from "./components/atoms/Label";
 export { LinkProps } from "./components/atoms/Link/types";
 export { default as Link } from "./components/atoms/Link";
 
+export { ListProps } from "./components/atoms/List/types";
+export { default as List } from "./components/atoms/List";
+
 export { ToggleProps } from "./components/atoms/Toggle/types";
 export { default as Toggle } from "./components/atoms/Toggle";
 

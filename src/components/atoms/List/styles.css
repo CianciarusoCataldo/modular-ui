@@ -1,0 +1,24 @@
+#modular-list.styled {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  padding: 0.6rem;
+}
+
+#modular-list .element {
+  display: flex;
+  flex-direction: row;
+}
+
+#modular-list.styled .element {
+  color: var(--modular-text-color);
+}
+
+#modular-list .element .dot {
+  width: 6px;
+  height: 6px;
+  fill: var(--modular-text-color);
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 0.3rem;
+}

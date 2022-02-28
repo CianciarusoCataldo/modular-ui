@@ -1,3 +1,5 @@
+import { TFunction, useTranslation } from "react-i18next";
+
 import { useCommonTranslation } from "hooks/localization";
 
 import { AllowedComponent, Table } from "modular-ui-preview";
@@ -7,14 +9,16 @@ import AppPage from "../AppPage";
 export const ComponentPage = ({
   children,
   name: componentName,
+  render,
   props,
 }: {
-  children: AllowedComponent | AllowedComponent[];
+  children?: AllowedComponent | AllowedComponent[];
+  render?: (t: TFunction) => AllowedComponent | AllowedComponent[];
   name: string;
   props?: string[][];
 }) => {
   const t = useCommonTranslation();
-
+  const { t: tComponent } = useTranslation(componentName.toLowerCase());
   return (
     <AppPage>
       <AppLabel className="text-4xl mt-12 mb-5 ml-3">
@@ -22,6 +26,7 @@ export const ComponentPage = ({
       </AppLabel>
       <div className="flex flex-col p-3 items-center">
         {children}
+        {render && render(tComponent)}
         {props && <Table headers rows={props} />}
       </div>
     </AppPage>
