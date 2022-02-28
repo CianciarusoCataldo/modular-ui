@@ -74,6 +74,9 @@
     "build-playground": "cd playground && npm run build",
     "predeploy": "npm run build-playground",
     "deploy": "gh-pages -d playground/build",
-    "test": "sh ./tests/start-tests.sh"
+    "test": "sh ./scripts/start-tests.sh",
+    "update:version:patch": "npm version patch --commit-hooks=false --git-tag-version=false && sh ./scripts/update-version.sh",
+    "update:version:minor": "npm version minor && sh ./scripts/update-version.sh",
+    "update:version:major": "npm version major && sh ./scripts/update-version.sh"
   }
 }

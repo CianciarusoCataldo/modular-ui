@@ -1,7 +1,13 @@
-# Modular-ui changelog
+const fs = require("fs");
+const PKG = require("../package.json");
+
+fs.writeFileSync(
+  "./CHANGELOG.md",
+  `# Modular-ui changelog
 
 ## Versions
 
+-   [${PKG.version}](#${PKG.version})
 -   [4.2.0](#420)
 -   [4.1.0](#410)
 -   [4.0.3](#403)
@@ -28,9 +34,17 @@
 
 <br>
 
+### ${PKG.version}
+
+-   
+
+<br>
+
 ### 4.2.0
 
 -   List component
+
+<br>
 
 <br>
 
@@ -60,43 +74,43 @@
 
 ### 4.0.0
 
--   `Toggle` multi icon support, and type definition updates
--   `Card` types cleaned
--   `Drawer` types updates
+-   \`Toggle\` multi icon support, and type definition updates
+-   \`Card\` types cleaned
+-   \`Drawer\` types updates
 -   Refactoring
 -   All components type definitions exported, to make easier their integration into another project
 -   Components UI completely customizable by defining custom CSS variables into app css:
-    -   `--modular-custom-background-dark`
-    -   `--modular-custom-background-color-dark`
-    -   `--modular-custom-text-color-dark`
-    -   `--modular-custom-background-light`
-    -   `--modular-custom-background-color-light`
-    -   `--modular-custom-text-color-light`
+    -   \`--modular-custom-background-dark\`
+    -   \`--modular-custom-background-color-dark\`
+    -   \`--modular-custom-text-color-dark\`
+    -   \`--modular-custom-background-light\`
+    -   \`--modular-custom-background-color-light\`
+    -   \`--modular-custom-text-color-light\`
 
 <br>
 
 ### 3.1.0
 
--   `Drawer` ease-out transition fix
+-   \`Drawer\` ease-out transition fix
 -   Clean up
 
 <br>
 
 ### 3.0.0
 
--   New `Container` component
--   New `Label` component
--   `Header` component removed
--   `Page` component removed
+-   New \`Container\` component
+-   New \`Label\` component
+-   \`Header\` component removed
+-   \`Page\` component removed
 -   Clean up
 
 <br>
 
 ### 2.0.0
 
--   `Rater` component
--   `Counter` component
--   `Carousel` component
+-   \`Rater\` component
+-   \`Counter\` component
+-   \`Carousel\` component
 -   Clean up
 -   Refactoring
 -   Shared component building process, with new common props
@@ -117,7 +131,7 @@
 ### 1.1.0
 
 -   Bugfixes
--   `Toggle` component
+-   \`Toggle\` component
 -   Shadow feature for all components
 -   Clean up
 -   Refactoring
@@ -127,7 +141,7 @@
 ### 1.0.0
 
 -   Bugfixes
--   `CodeBox` component highlight feature with Js, Python and Terminal highlight basic support
+-   \`CodeBox\` component highlight feature with Js, Python and Terminal highlight basic support
 -   Dark mode and Hide features available for every component
 -   Better styled components
 -   Test-suites system improved
@@ -137,15 +151,15 @@
 ### 0.9.4
 
 -   Bugfixes
--   New `Input` component
--   New `CheckBox` component
--   New `CodeBox` component
+-   New \`Input\` component
+-   New \`CheckBox\` component
+-   New \`CodeBox\` component
 
 <br>
 
 ### 0.9.0
 
--   New `Table` component
+-   New \`Table\` component
 -   styles clean up
 
 <br>
@@ -174,3 +188,5 @@
 ### 0.5.0
 
 -   Modular-ui library setup
+`
+);
