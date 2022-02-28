@@ -1,7 +1,6 @@
 # Modular-ui changelog
 
 ## Versions
-
 -   [4.2.0](#420)
 -   [4.1.0](#410)
 -   [4.0.3](#403)
