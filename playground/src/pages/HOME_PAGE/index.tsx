@@ -4,7 +4,13 @@ import { useHomePageTranslation } from "hooks/localization";
 
 import { getPages } from "@cianciarusocataldo/modular-engine";
 
-import { Card, CodeBox, Link, SupportedEnvironment } from "modular-ui-preview";
+import {
+  Card,
+  CodeBox,
+  Link,
+  List,
+  SupportedEnvironment,
+} from "modular-ui-preview";
 
 import AppLabel from "app/components/AppLabel";
 import AppPage from "app/components/AppPage";
@@ -84,10 +90,7 @@ const HomePage = () => {
       <AppLabel key="homepage_header" className="text-4xl mt-12 mb-5 ml-3">
         {t("title")}
       </AppLabel>
-      <div
-        key="homepage_container"
-        className="flex flex-col lg:flex-row"
-      >
+      <div key="homepage_container" className="flex flex-col lg:flex-row">
         <div>
           <Card shadow body={description} />
           <Card
@@ -102,22 +105,22 @@ const HomePage = () => {
           shadow
           header={t("componentsList_header")}
           body={
-            <ul>
-              {Object.keys(PATHS)
+            <List
+              elements={Object.keys(PATHS)
                 .sort()
                 .map((routeKey, index) => {
                   return (
-                    <li key={`link_${index}`}>
+                    <div key={`link_${index}`}>
                       <RouterLink
                         className="text-gray-700 hover:text-blue-700 py-1 text-lg"
                         to={PATHS[routeKey]}
                       >
-                        {` - ${routeKey}`}
+                        {routeKey}
                       </RouterLink>
-                    </li>
+                    </div>
                   );
                 })}
-            </ul>
+            ></List>
           }
         />
       </div>

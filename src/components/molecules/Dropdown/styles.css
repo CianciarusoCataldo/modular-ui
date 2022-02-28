@@ -55,7 +55,7 @@
 }
 
 #modular-dropdown .icon {
-  margin: auto 0.25rem auto 0.25rem;
+  margin: auto 0.25rem;
 }
 
 #modular-dropdown .arrow-icon {
@@ -95,7 +95,6 @@
   outline-offset: 2px;
   display: flex;
   flex-direction: column;
-  width: "100%";
 }
 
 #modular-dropdown .option .regular .content {

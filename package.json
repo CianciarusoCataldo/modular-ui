@@ -1,6 +1,6 @@
 {
   "name": "@cianciarusocataldo/modular-ui",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "React components for every app, easy to use and customize",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -74,6 +74,10 @@
     "build-playground": "cd playground && npm run build",
     "predeploy": "npm run build-playground",
     "deploy": "gh-pages -d playground/build",
-    "test": "sh ./tests/start-tests.sh"
+    "test": "sh ./scripts/start-tests.sh",
+    "update:docs": "sh ./scripts/update-docs.sh",
+    "update:version:patch": "npm version patch --commit-hooks=false --git-tag-version=false && npm run update:docs",
+    "update:version:minor": "npm version minor --commit-hooks=false --git-tag-version=false && npm run update:docs",
+    "update:version:major": "npm version major --commit-hooks=false --git-tag-version=false && sh npm run update:docs"
   }
 }

@@ -1,7 +1,7 @@
 # Modular-ui changelog
 
 ## Versions
-
+-   [4.2.0](#420)
 -   [4.1.0](#410)
 -   [4.0.3](#403)
 -   [4.0.2](#402)
@@ -24,6 +24,12 @@
 * * *
 
 ## Changes
+
+<br>
+
+### 4.2.0
+
+-   `List` component
 
 <br>
 

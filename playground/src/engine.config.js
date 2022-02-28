@@ -25,6 +25,7 @@ const engineConfig = {
       Input: "/components/atoms/Input",
       Label: "/components/atoms/Label",
       Link: "/components/atoms/Link",
+      List: "/components/atoms/List",
       Modal: "/components/atoms/Modal",
       Rater: "/components/molecules/Rater",
       Table: "/components/molecules/Table",
