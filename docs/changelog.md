@@ -1,6 +1,7 @@
 # Modular-ui changelog
 
 ## Versions
+-   [5.0.0](#500)
 -   [4.2.0](#420)
 -   [4.1.0](#410)
 -   [4.0.3](#403)
@@ -24,6 +25,13 @@
 * * *
 
 ## Changes
+
+<br>
+
+### 5.0.0
+
+-   Fully revisited `Form` component
+-   Refactoring
 
 <br>
 
