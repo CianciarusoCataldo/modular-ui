@@ -10,7 +10,6 @@ renderingTest(Drawer, {
   hide: false,
   children: <div>Test content</div>,
   position: "right",
-  logo: () => <div />,
 });
 
 describeTest("click test", () => {

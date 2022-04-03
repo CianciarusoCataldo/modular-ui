@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-import { DrawerContent, DrawerLogo } from "contents/drawer";
+import { DrawerContent } from "contents/drawer";
 import FooterContent from "contents/footer";
 import HeaderContent from "contents/header";
 
@@ -13,7 +13,6 @@ const appConfig = {
   footer: FooterContent,
   drawer: {
     content: DrawerContent,
-    //logo: DrawerLogo,
   },
 };
 

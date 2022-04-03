@@ -45,7 +45,6 @@ const ALLOWED_POSITIONS = [
 const Drawer = ({
   children,
   onClose,
-  logo: Logo,
   hide,
   className,
   position,
@@ -69,7 +68,6 @@ const Drawer = ({
     Component: (
       <div className="container-internal">
         <div className="buttons-panel">
-          {Logo && <Logo />}
           <Button
             dark={commonProps.dark}
             unstyled
