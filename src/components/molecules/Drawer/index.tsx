@@ -23,7 +23,6 @@ const ALLOWED_POSITIONS = [
  * A modern drawer, easy to integrate and to customize.
  *
  * @param {DrawerProps["position"]} position drawer position (relative to the entire window). Possible values are `bottom`, `top`, `right`, `left`, `bottom-left`, `bottom-right`, `top-left` and `top-right`
- * @param {DrawerProps["logo"]} logo Drawer logo, displayed on top (when Drawer is open)
  * @param {DrawerProps["onClose"]} onClose Callback triggered on Drawer close
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
  * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)

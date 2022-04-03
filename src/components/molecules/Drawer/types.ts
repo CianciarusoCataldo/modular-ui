@@ -10,9 +10,6 @@ export type DrawerProps = CommonProps &
     /** Callback triggered on Drawer close */
     onClose?: () => void;
 
-    /** Drawer logo, displayed on top (when Drawer is open) */
-    logo?: () => JSX.Element;
-
     /** Drawer position, relative to entire window */
     position?:
       | "right"
