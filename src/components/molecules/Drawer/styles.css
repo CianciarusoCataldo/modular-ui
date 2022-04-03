@@ -1,9 +1,6 @@
 #modular-drawer {
   position: fixed;
   z-index: 10;
-  top: 0;
-  bottom: 0;
-  left: 0;
   width: auto;
   padding: 0.5rem;
   background-image: var(--modular-background);
@@ -15,12 +12,66 @@
   -o-animation: var(--modular-drawer-animation);
 }
 
+#modular-drawer.left,
+#modular-drawer.right {
+  top: 0;
+  bottom: 0;
+}
+
+#modular-drawer.top,
+#modular-drawer.bottom {
+  left: 0;
+  right: 0;
+}
+
+#modular-drawer.top,
+#modular-drawer.top-left,
+#modular-drawer.top-right {
+  --modular-drawer-animation-in: slideTop 0.3s forwards;
+  --modular-drawer-animation-out: slideOutTop 0.3s forwards;
+  bottom: auto;
+  top: 0;
+}
+
+#modular-drawer.bottom,
+#modular-drawer.bottom-left,
+#modular-drawer.bottom-right {
+  --modular-drawer-animation-in: slideBottom 0.3s forwards;
+  --modular-drawer-animation-out: slideOutBottom 0.3s forwards;
+  top: auto;
+  bottom: 0;
+}
+
+#modular-drawer.top-left,
+#modular-drawer.bottom-left,
+#modular-drawer.left {
+  right: auto;
+  left: 0;
+}
+
+#modular-drawer.top-right,
+#modular-drawer.bottom-right,
+#modular-drawer.right {
+  left: auto;
+  right: 0;
+}
+
+#modular-drawer.left {
+  --modular-drawer-animation-in: slideLeft 0.3s forwards;
+  --modular-drawer-animation-out: slideOutLeft 0.3s forwards;
+}
+
+#modular-drawer.right {
+  --modular-drawer-animation-in: slideRight 0.3s forwards;
+  --modular-drawer-animation-out: slideOutRight 0.3s forwards;
+}
+
 #modular-drawer.ease-in {
-  --modular-drawer-animation: slideLeft 0.3s forwards;
+  --modular-drawer-animation: var(--modular-drawer-animation-in);
 }
 
 #modular-drawer.ease-out {
-  --modular-drawer-animation: slideOutLeft 0.3s forwards;
+  --modular-drawer-animation: var(--modular-drawer-animation-out);
 }
 
 #modular-drawer .elements {
@@ -30,6 +81,22 @@
 #modular-drawer .close-button {
   outline: 0 solid transparent;
   outline-offset: 2px;
+}
+
+#modular-drawer.top .close-button svg,
+#modular-drawer.top-left .close-button svg,
+#modular-drawer.top-right .close-button svg {
+  transform: rotate(90deg);
+}
+
+#modular-drawer.bottom .close-button svg,
+#modular-drawer.bottom-left .close-button svg,
+#modular-drawer.bottom-right .close-button svg {
+  transform: rotate(-90deg);
+}
+
+#modular-drawer.right .close-button svg {
+  transform: rotate(180deg);
 }
 
 #modular-drawer .close-button:focus {

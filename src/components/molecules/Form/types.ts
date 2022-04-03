@@ -3,10 +3,7 @@ import { BoxComponent, CommonProps } from "../../../utils/global";
 /** Single Form component field */
 export interface FormField {
   header?: string;
-  required?: boolean;
-  placeholder?: string;
-  error?: string;
-  validate?: (value: string) => boolean;
+  type?: "boolean" | "text" | "numeric";
 }
 
 /** Form component props */
@@ -22,5 +19,5 @@ export type FormProps = CommonProps &
     submitLabel?: string;
 
     /** Callback on Form submit */
-    onSubmit?: (values: Record<string, string>) => void;
+    onSubmit?: (values: Record<string, string | boolean | number>) => void;
   };

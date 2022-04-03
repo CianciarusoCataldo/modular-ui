@@ -4,16 +4,27 @@ import classNames from "classnames";
 
 import { DrawerProps } from "./types";
 
-import Button from "../../atoms/Button";
-import Divider from "../../atoms/Divider";
 import { buildComponent } from "../../../utils";
+
+import Button from "../../atoms/Button";
+
+const ALLOWED_POSITIONS = [
+  "right",
+  "left",
+  "top",
+  "bottom",
+  "top-left",
+  "top-right",
+  "bottom-left",
+  "bottom-right",
+];
 
 /**
  * A modern drawer, easy to integrate and to customize.
  *
- * @param elements Drawer elements array
- * @param {JSX.Element | Element} logo Drawer logo, displayed on top (when Drawer is open)
- * @param {()=>void} onClose Callback triggered on Drawer close
+ * @param {DrawerProps["position"]} position drawer position (relative to the entire window). Possible values are `bottom`, `top`, `right`, `left`, `bottom-left`, `bottom-right`, `top-left` and `top-right`
+ * @param {DrawerProps["logo"]} logo Drawer logo, displayed on top (when Drawer is open)
+ * @param {DrawerProps["onClose"]} onClose Callback triggered on Drawer close
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
  * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
  * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
@@ -25,7 +36,7 @@ import { buildComponent } from "../../../utils";
  *import { render } from "react-dom";
  *import { Drawer } from '@cianciarusocataldo/modular-ui';
  *
- * render(<Drawer elements={[{ text:"Element 0" }]} />, document.getElementById("root"));
+ * render(<Drawer children={<div>Drawer content</div>} position="top-left" />, document.getElementById("root"));
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -33,19 +44,21 @@ import { buildComponent } from "../../../utils";
  */
 const Drawer = ({
   children,
-  elements,
   onClose,
-  logo,
+  logo: Logo,
   hide,
   className,
+  position,
   ...commonProps
 }: DrawerProps) => {
-
+  const drawerLocation =
+    position && ALLOWED_POSITIONS.includes(position) ? position : "left";
   return buildComponent({
     name: "modular-drawer",
     commonProps: {
       ...commonProps,
       className: classNames(
+        drawerLocation,
         {
           "ease-in": !hide,
           "ease-out": hide,
@@ -56,7 +69,7 @@ const Drawer = ({
     Component: (
       <div className="container-internal">
         <div className="buttons-panel">
-          {logo}
+          {Logo && <Logo />}
           <Button
             dark={commonProps.dark}
             unstyled
@@ -79,43 +92,7 @@ const Drawer = ({
             }
           </Button>
         </div>
-        <div className="elements">
-          <div>
-            {elements &&
-              elements.map((element, index) => {
-                const isActive =
-                  element.isActiveCallback && element.isActiveCallback();
-
-                return (
-                  <div
-                    key={`drawer_element_${index}`}
-                    data-id={`drawer_element_${index}`}
-                    className="element"
-                  >
-                    <Button
-                      unstyled
-                      id={`drawer_button_${index}`}
-                      onClick={element.actionCallback}
-                    >
-                      <div className="button">
-                        <div className="icon">{element.icon}</div>
-                        <div
-                          className={classNames("text", {
-                            active: isActive,
-                            inactive: !isActive,
-                          })}
-                        >
-                          {element.text}
-                        </div>
-                      </div>
-                    </Button>
-                    <Divider dark={commonProps.dark} />
-                  </div>
-                );
-              })}
-            {children}
-          </div>
-        </div>
+        <div className="elements">{children}</div>
       </div>
     ),
   });

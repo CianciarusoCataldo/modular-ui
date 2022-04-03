@@ -5,10 +5,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.2s ease-in forwards;
   display: flex;
   flex-direction: column;
+}
+
+#modular-modal.styled{
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.2s ease-in forwards;
 }
 
 #modular-modal .box-component {
@@ -16,7 +19,7 @@
   height: 100%;
 }
 
-#modular-modal .container {
+#modular-modal.styled .container {
   display: flex;
   flex-direction: column;
   max-width: 75%;
@@ -26,13 +29,13 @@
   color: var(--modular-text-color);
 }
 
-#modular-modal .container .header {
+#modular-modal.styled .container .header {
   display: flex;
   flex-direction: row;
   margin: 0.25rem 0.5rem;
 }
 
-#modular-modal .container .header .title {
+#modular-modal.styled .container .header .title {
   margin: auto;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -40,21 +43,21 @@
   font-weight: 700;
 }
 
-#modular-modal .container .header .close-button {
+#modular-modal.styled .container .header .close-button {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-#modular-modal .container .header .close-button:hover svg path {
+#modular-modal.styled .container .header .close-button:hover svg path {
   fill: rgba(185, 28, 28, 1);
 }
 
-#modular-modal .container .header .close-button,
-#modular-modal .container .header .close-button:focus {
+#modular-modal.styled .container .header .close-button,
+#modular-modal.styled .container .header .close-button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-#modular-modal .container .content {
+#modular-modal.styled .container .content {
   padding: 1rem;
 }

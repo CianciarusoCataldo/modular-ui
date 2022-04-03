@@ -7,6 +7,7 @@ const engineConfig = {
     reducers: {},
     preload: {},
     darkMode: true,
+    titles: true,
   },
   router: {
     basename: "/modular-ui",
@@ -20,6 +21,7 @@ const engineConfig = {
       Container: "/components/molecules/Container",
       Counter: "/components/molecules/Counter",
       Divider: "/components/atoms/Divider",
+      Drawer: "/components/molecules/Drawer",
       Dropdown: "/components/molecules/Dropdown",
       Form: "/components/molecules/Form",
       Input: "/components/atoms/Input",
@@ -35,11 +37,10 @@ const engineConfig = {
   i18n: {
     fallbackLanguage: "en",
     supportedLanguages: ["en", "it", "es", "fr", "de"],
-    namespaces: ["list", "overview", "common"],
+    namespaces: ["list", "overview", "common", "drawer", "codebox"],
     defaultNamespace: "common",
     loadPath: "/modular-ui/locales/{{lng}}/{{ns}}.json",
     pagesNamespace: "titles",
-    modalsNamespace: "forms",
   },
 };
 

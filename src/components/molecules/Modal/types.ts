@@ -1,4 +1,5 @@
 import {
+  BoxComponent,
   BuilderComponent,
   CommonProps,
   ComponentWithChildren,
@@ -6,10 +7,8 @@ import {
 
 /** Modal component props */
 export type ModalProps = CommonProps &
-  ComponentWithChildren<BuilderComponent | BuilderComponent[]> & {
-    /** A custom className applied on the Modal container */
-    overlayClassName?: string;
-
+  ComponentWithChildren<BuilderComponent | BuilderComponent[]> &
+  Omit<BoxComponent, "value"> & {
     /** Modal title */
     title?: string;
 

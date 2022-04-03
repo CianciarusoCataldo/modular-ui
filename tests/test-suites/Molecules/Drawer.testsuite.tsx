@@ -8,10 +8,9 @@ import { Drawer } from "../../../src";
 renderingTest(Drawer, {
   onClose: () => {},
   hide: false,
-  elements: [
-    { text: "Testing element 1", actionCallback: () => {} },
-    { text: "Testing element 2", isActiveCallback: () => true },
-  ],
+  children: <div>Test content</div>,
+  position: "right",
+  logo: () => <div />,
 });
 
 describeTest("click test", () => {
@@ -19,34 +18,9 @@ describeTest("click test", () => {
   const onCloseStub = jest.fn();
 
   test("onClose callback", () => {
-    let wrapper = mount(
-      <Drawer
-        onClose={onCloseStub}
-        hide={false}
-        elements={[
-          { text: "Testing element 1", actionCallback: () => {} },
-          { text: "Testing element 2", isActiveCallback: () => true },
-        ]}
-      />
-    );
+    let wrapper = mount(<Drawer onClose={onCloseStub} hide={false} />);
 
     wrapper.find('button[data-id="drawer_close_button"]').simulate("click");
     expect(onCloseStub).toBeCalled;
-  });
-
-  test("element callback", () => {
-    let wrapper = mount(
-      <Drawer
-        onClose={() => {}}
-        hide={false}
-        elements={[
-          { text: "Testing element 1", actionCallback: elementStub },
-          { text: "Testing element 2", isActiveCallback: () => true },
-        ]}
-      />
-    );
-
-    wrapper.find('div[data-id="drawer_button_0"] button').simulate("click");
-    expect(elementStub).toBeCalled;
   });
 });

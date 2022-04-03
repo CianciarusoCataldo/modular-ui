@@ -12,7 +12,7 @@ import { buildBoxComponent } from "../../../utils";
 import Button from "../../atoms/Button";
 
 /**
- * A compact carousel, to show any components (or images) as slides, with dots and arrow button to go next/previous
+ * A compact carousel, to show any component (or image) into a slide, with dots and arrow button to go next/previous
  *
  * @param {(string | JSX.Element | Element)[]} elements carousel elements
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)

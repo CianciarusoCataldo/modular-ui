@@ -1,4 +1,7 @@
-import "./shared-styles.css";
+import "../styles/animations.css";
+
+import "../styles/shared-styles.css";
+
 import classNames from "classnames";
 import React from "react";
 import { BoxComponent, BuilderProps } from "./global";

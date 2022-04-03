@@ -6,4 +6,5 @@ renderingTest(Modal, {
   hide: false,
   children: "Testing modal",
   title: "Modal title",
+  onClose: () => {},
 });

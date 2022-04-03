@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import Logo from "./icons/commons/logo.png";
 
 import DarkMode from "./icons/commons/dark-mode.svg";

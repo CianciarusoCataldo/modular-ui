@@ -6,7 +6,6 @@
   padding: 0.75rem;
   border-radius: 0.7rem;
   background-image: var(--modular-background);
-  color: var(--modular-text-color);
 }
 
 #modular-form .title {
@@ -14,6 +13,7 @@
   margin-bottom: 0.9rem;
   font-size: 1.35rem;
   line-height: 1.75rem;
+  color: var(--modular-text-color);
 }
 
 #modular-form .field {
@@ -34,6 +34,8 @@
 #modular-form .field .form-input {
   border-radius: 0.375rem;
   margin-bottom: 1.25rem;
+  border-width: 1px;
+  border-color: var(--modular-text-color);
 }
 
 #modular-form .field .form-input:focus {
@@ -41,36 +43,7 @@
   outline-offset: 2px;
 }
 
-#modular-form .field .error-box {
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-#modular-form .field .error-label {
-  color: rgba(239, 68, 68, 1);
-  font-size: 0.75rem;
-  line-height: 1rem;
-  animation: fadeIn 0.2s ease-in forwards;
-}
-
-#modular-form .field-error {
-  color: rgba(239, 68, 68, 1);
-  border-color: rgba(239, 68, 68, 1);
-  border-width: 2px;
-  border-radius: 10px;
-}
-
-#modular-form .submit-button:enabled {
-  margin-top: 0.5rem;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  background-color: rgba(37, 99, 235, 1);
-  color: white;
-}
-
-#modular-form .submit-button:enabled:hover {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  background-color: rgba(37, 99, 235, 1);
-  color: white;
+#modular-form .submit-button {
+  margin-top: 0.9rem;
+  color: var(--modular-text-color);
 }

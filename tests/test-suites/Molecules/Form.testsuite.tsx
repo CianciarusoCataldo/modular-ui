@@ -8,18 +8,15 @@ import { Form } from "../../../src";
 renderingTest(Form, {
   fields: {
     field1: {
-      placeholder: "Field 1 placeholder",
-      required: false,
       header: "Field 1 header",
-      error: "Custom error label",
-      validate: (value: string) => {
-        return value.includes("s");
-      },
     },
     field2: {
-      placeholder: "Field 2 placeholder",
-      required: true,
+      type: "boolean",
       header: "Field 2 header",
+    },
+    field3: {
+      type: "numeric",
+      header: "Field 3 header",
     },
   },
   submitLabel: "Submit test button",
@@ -32,26 +29,17 @@ describeTest("submit click test", () => {
       <Form
         fields={{
           field1: {
-            placeholder: "Field 1 placeholder",
-            required: false,
+            type: "boolean",
             header: "Field 1 header",
-            error: "Custom error label",
-            validate: (value: string) => {
-              return value.includes("s");
-            },
           },
           field2: {
-            placeholder: "Field 2 placeholder",
-            required: true,
             header: "Field 2 header",
           },
         }}
         submitLabel="Submit"
       />
     );
-    wrapper
-      .find('div[data-id="form-field-0"] input')
-      .simulate("change", { target: { value: "aaas" } });
+    wrapper.find('div[data-id="form-field-0"]').simulate("click");
     wrapper
       .find('div[data-id="form-field-1"] input')
       .simulate("change", { target: { value: "" } });
@@ -72,16 +60,14 @@ describeTest("submit click test", () => {
         fields={{
           "Field 1": {
             header: "Field 1 - header",
-            required: false,
-            placeholder: "placeholder",
-            error: "error",
-            validate: () => true,
+            type: "numeric",
           },
           "Field 2": {
             header: "Field 2 - header",
-            required: true,
-            placeholder: "placeholder-2",
-            error: "error-2",
+          },
+          "Field 3": {
+            header: "Field 3 - header",
+            type: "boolean",
           },
         }}
         onSubmit={submitStub}
@@ -90,14 +76,17 @@ describeTest("submit click test", () => {
     );
     wrapper
       .find('div[data-id="form-field-0"] input')
-      .simulate("change", { target: { value: "test input 1" } });
+      .simulate("change", { target: { value: 3 } });
     wrapper
       .find('div[data-id="form-field-1"] input')
       .simulate("change", { target: { value: "test input 2" } });
+    wrapper.find('div[data-id="form-field-2"] .container').simulate("click");
+
     wrapper.find('div[data-id="form-submit-button"] button').simulate("click");
     expect(submitStub).toBeCalledWith({
-      "Field 1": "test input 1",
+      "Field 1": 3,
       "Field 2": "test input 2",
+      "Field 3": true,
     });
   });
 });

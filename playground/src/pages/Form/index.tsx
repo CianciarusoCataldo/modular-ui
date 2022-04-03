@@ -22,18 +22,15 @@ const FormPage = () => (
             {...props}
             fields={{
               field1: {
-                placeholder: "Field 1 placeholder",
-                required: false,
                 header: "Field 1 header",
-                error: "Custom error label",
-                validate: (value: string) => {
-                  return value.includes("s");
-                },
               },
               field2: {
-                placeholder: "Field 2 placeholder",
-                required: true,
+                type: "boolean",
                 header: "Field 2 header",
+              },
+              field3: {
+                type: "numeric",
+                header: "Field 4 header",
               },
             }}
             onSubmit={(values: any) => console.log(values)}

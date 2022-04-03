@@ -1,19 +1,20 @@
 import "./styles.css";
 
 import React from "react";
-import classNames from "classnames";
 
 import { FormProps } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
 import Button from "../../atoms/Button";
+import CheckBox from "../../atoms/CheckBox";
+import Counter from "../../atoms/Counter";
 import Input from "../../atoms/Input";
 
 /**
  *
  * @param {string} title Form title
- * @param {Record<string, { header?: string; required?: boolean; placeholder?: string; error?: string; validate?: (value: string) => boolean;}>} fields Form fields array
+ * @param {Record<string,  header?: string; type?: "boolean" | "text" | "numeric";>} fields Form fields array
  * @param {(values: Record<string, string>) => void} onSubmit callback triggered on Form submit
  * @param {string} submitLabel custom submit button label
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
@@ -27,7 +28,7 @@ import Input from "../../atoms/Input";
  *import { render } from "react-dom";
  *import { Field } from '@cianciarusocataldo/modular-ui';
  *
- * render(<Form fields={{ "Field 0": { header:"FIeld 0 header" } }} />, document.getElementById("root"));
+ * render(<Form fields={{ "Field 0": { header:"Field 0 header" } }} onSubmit={()=>alert('Submitted !')} />, document.getElementById("root"));
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -41,32 +42,23 @@ const Form = ({
   label,
   ...commonProps
 }: FormProps) => {
-  const dropdownFields: Record<string, string> = fields
-    ? Object.keys(fields).reduce((o, key) => ({ ...o, [key]: "" }), {})
+  const dropdownFields: Record<string, string | boolean | number> = fields
+    ? Object.keys(fields).reduce(
+        (o, key) => ({
+          ...o,
+          [key]:
+            fields[key].type === "boolean"
+              ? false
+              : fields[key].type === "numeric"
+              ? 0
+              : "",
+        }),
+        {}
+      )
     : {};
 
-  const fieldErrors: Record<string, boolean> = Object.keys(
-    dropdownFields
-  ).reduce(
-    (o, element) => ({
-      ...o,
-      [element]:
-        fields[element].required ||
-        (fields[element].validate && !fields[element].validate("")) ||
-        false,
-    }),
-    {}
-  );
-
   const [values, setValues] =
-    React.useState<Record<string, string>>(dropdownFields);
-
-  const [errors, setErrors] =
-    React.useState<Record<string, boolean>>(fieldErrors);
-  let canSubmit =
-    Object.keys(errors).length > 1
-      ? !Object.values(errors).find((element) => element === true)
-      : true;
+    React.useState<Record<string, string | boolean | number>>(dropdownFields);
 
   return buildBoxComponent({
     callBack: () => ({
@@ -77,51 +69,79 @@ const Form = ({
         </p>,
         ...Object.keys(dropdownFields).map((field, index) => {
           const name = field;
+          const { type, header } = fields[field];
+
+          let FieldElement: (props: any) => JSX.Element = Input;
+
+          let fieldProps: Record<string, any> = {
+            label: <span className="header">{header}</span>,
+            value: String(values[field]),
+            id: `form-field-${index}`,
+            onChange: (newValue: string) => {
+              let tmpValues = { ...values };
+              let value = String(newValue);
+              if (value.length < 1) {
+                tmpValues[name] = "";
+              } else {
+                tmpValues[name] = value;
+              }
+
+              setValues(tmpValues);
+            },
+            className: "form-input",
+          };
+
+          if (type) {
+            switch (type) {
+              case "boolean":
+                {
+                  FieldElement = CheckBox;
+                  fieldProps = {
+                    ...fieldProps,
+                    className: "",
+                    value: values[field] as boolean,
+                    onChange: (value: boolean) => {
+                      let tmpValues = { ...values };
+                      tmpValues[field] = value;
+                      setValues(tmpValues);
+                    },
+                  };
+                }
+                break;
+              case "numeric":
+                {
+                  FieldElement = Counter;
+                  fieldProps = {
+                    ...fieldProps,
+                    value: values[field] as number,
+                    onChange: (value: number) => {
+                      let tmpValues = { ...values };
+                      tmpValues[field] = value;
+                      setValues(tmpValues);
+                    },
+                  };
+                }
+                break;
+            }
+          }
+
           return (
             <div className="field" key={`form_field_${index}`}>
-              <Input
-                label={<span className="header">{fields[field].header}</span>}
-                value={values[name] || ""}
-                id={`form-field-${index}`}
-                placeholder={fields[field].placeholder}
-                onChange={(value: string) => {
-                  let tmpValues = { ...values };
-                  let tmpErrors = { ...errors };
-                  tmpValues[name] = value;
-                  if (value.length < 1 && fields[field].required) {
-                    tmpErrors[name] = true;
-                  } else {
-                    tmpErrors[name] = fields[field].validate
-                      ? !fields[field].validate(value)
-                      : false;
-                  }
-                  setErrors(tmpErrors);
-                  setValues(tmpValues);
-                }}
-                className={classNames({
-                  "field-error": errors[name],
-                  "form-input": !errors[name],
-                })}
-              />
-              <div className="error-box">
-                {errors[name] && (
-                  <p className="error-label">{fields[field].error}</p>
-                )}
-              </div>
+              {<FieldElement {...fieldProps} />}
             </div>
           );
         }),
-        <Button
-          disabled={!canSubmit}
-          className="submit-button"
-          key="form_submit_button"
-          id="form-submit-button"
-          onClick={() => {
-            onSubmit && onSubmit(values);
-          }}
-        >
-          {submitLabel}
-        </Button>,
+        <div key="form_submit_button" className="submit-button">
+          <Button
+            dark={!commonProps.dark}
+            id="form-submit-button"
+            onClick={() => {
+              onSubmit && onSubmit(values);
+            }}
+          >
+            {submitLabel}
+          </Button>
+        </div>,
       ],
       commonProps,
     }),

@@ -43,10 +43,7 @@ export { default as Carousel } from "./components/molecules/Carousel";
 export { ContainerProps } from "./components/molecules/Container/types";
 export { default as Container } from "./components/molecules/Container";
 
-export {
-  DrawerElement,
-  DrawerProps,
-} from "./components/molecules/Drawer/types";
+export { DrawerProps } from "./components/molecules/Drawer/types";
 export { default as Drawer } from "./components/molecules/Drawer";
 
 export {

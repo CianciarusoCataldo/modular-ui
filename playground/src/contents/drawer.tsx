@@ -14,7 +14,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { Button, Divider, Link } from "@cianciarusocataldo/modular-ui";
+import { Button, Divider, Link } from "modular-ui-preview";
 
 export const DrawerLogo = () => {
   const APP_NAME = useSelector(getAppName);

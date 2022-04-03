@@ -1,6 +1,4 @@
 /** Modular-app main component */
-const App = () => {
-  return <div />;
-};
+const App = () => <div />;
 
 export default App;

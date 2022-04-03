@@ -1,5 +1,5 @@
 import React from "react";
-import { Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 
 import { Button, Modal } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
@@ -7,6 +7,11 @@ import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
 export const ModalWrapper = () => {
   const [isModalisible, setModalVisible] = React.useState(false);
+
+  let demoProps = { ...DEMO_COMMON_PROPS };
+
+  delete demoProps.hide;
+
   return (
     <Demo
       startColor="#999"
@@ -14,25 +19,31 @@ export const ModalWrapper = () => {
       props={{
         title: StringProp("Modal title"),
         children: StringProp("Modal content"),
-        overlayClassName: StringProp(""),
-        ...DEMO_COMMON_PROPS,
+        "With close button": BooleanProp(true),
+        ...demoProps,
       }}
-      rows={[
-        ["title", "children", "dark"],
-        ["className", "overlayClassName"],
-      ]}
     >
-      {(props: any) => (
-        <div className="flex flex-col items-center">
-          <Button onClick={() => setModalVisible(true)}>{"Open modal"}</Button>
-          <Modal
-            {...props}
-            children={<div>{props.children}</div>}
-            hide={!isModalisible}
-            onClose={() => setModalVisible(false)}
-          />
-        </div>
-      )}
+      {(props: any) => {
+        let modalProps = { ...props };
+        
+        delete modalProps["With close button"];
+
+        return (
+          <div className="flex flex-col items-center">
+            <Button onClick={() => setModalVisible(true)}>
+              {"Open modal"}
+            </Button>
+            <Modal
+              {...modalProps}
+              children={<div>{modalProps.children}</div>}
+              hide={!isModalisible}
+              onClose={
+                props["With close button"] && (() => setModalVisible(false))
+              }
+            />
+          </div>
+        );
+      }}
     </Demo>
   );
 };
