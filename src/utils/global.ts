@@ -79,3 +79,7 @@ export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
   /** Component wrapper (like `div` or `button`, for example) */
   wrapper?: Wrappers;
 };
+
+export type ModularComponent<T = any, K = JSX.Element | Element> = (
+  props: T
+) => K;

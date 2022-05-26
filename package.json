@@ -1,6 +1,6 @@
 {
   "name": "@cianciarusocataldo/modular-ui",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "React components for every app, easy to use and customize",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

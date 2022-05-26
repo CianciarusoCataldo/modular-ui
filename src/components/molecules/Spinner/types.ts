@@ -1,5 +1,17 @@
-import { BoxComponent, CommonProps } from "../../../utils/global";
+import {
+  BoxComponent,
+  BuilderComponent,
+  CommonProps,
+  ModularComponent,
+} from "../../../utils/global";
 
 /** Spinner component props */
-export type SpinnerProps = CommonProps &
-  BoxComponent<"success" | "error" | "loading">;
+export type SpinnerProps<T = Record<string, BuilderComponent>> = CommonProps &
+  BoxComponent<keyof T> & {
+    statuses?: T;
+  };
+
+export type SpinnerComponent<T = any> = ModularComponent<
+  SpinnerProps<T>,
+  JSX.Element
+>;

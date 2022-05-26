@@ -2,9 +2,10 @@ import React from "react";
 
 import { SpinnerProps } from "./types";
 
-const ICONS: Record<SpinnerProps["value"], JSX.Element> = {
+const DEFAULT_ICONS: Record<SpinnerProps["value"], JSX.Element> = {
   loading: (
     <svg
+      data-id="loading-icon"
       id="Layer_1"
       version="1.1"
       viewBox="0 0 512 512"
@@ -75,4 +76,4 @@ const ICONS: Record<SpinnerProps["value"], JSX.Element> = {
   ),
 };
 
-export default ICONS;
+export default DEFAULT_ICONS;

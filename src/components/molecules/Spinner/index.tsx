@@ -1,16 +1,16 @@
 import "./styles.css";
 import React from "react";
 
-import { SpinnerProps } from "./types";
+import { SpinnerComponent } from "./types";
 
-import ICONS from "./icons";
+import DEFAULT_ICONS from "./icons";
 
 import { buildBoxComponent } from "../../../utils";
 
 import Container from "../Container";
 
 /**
- * A smart status indicator
+ * A smart status indicator, with customizable imgages showed for every state (defaults are `loading`,`success` and `error`)
  *
  * @param {number} value Spinner status
  * @param {JSX.Element | Element | string} label Component label, showed at the top
@@ -31,12 +31,19 @@ import Container from "../Container";
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Spinner = ({ value, icon, label, ...commonProps }: SpinnerProps) => {
+const Spinner: SpinnerComponent = ({
+  value,
+  icon,
+  label,
+  statuses,
+  ...commonProps
+}) => {
   return buildBoxComponent({
     label,
     value,
     defaultValue: "loading",
     callBack: (value, setValue) => {
+      const ICONS = statuses || DEFAULT_ICONS;
       const StatusIcon = () => (
         <Container unstyled animated>
           {value && ICONS[value] ? ICONS[value] : ICONS.loading}

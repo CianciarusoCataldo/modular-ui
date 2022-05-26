@@ -2,6 +2,7 @@
 
 ## Versions
 
+- [5.1.1](#511)
 - [5.1.0](#510)
 - [5.0.1](#501)
 - [5.0.0](#500)
@@ -28,6 +29,12 @@
 ---
 
 ## Changes
+
+<br>
+
+### 5.1.1
+
+- Customizable states for `Spinner` component
 
 <br>
 
