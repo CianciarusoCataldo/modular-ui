@@ -61,6 +61,9 @@ export { default as Modal } from "./components/molecules/Modal";
 export { RaterProps } from "./components/molecules/Rater/types";
 export { default as Rater } from "./components/molecules/Rater";
 
+export { SpinnerProps } from "./components/molecules/Spinner/types";
+export { default as Spinner } from "./components/molecules/Spinner";
+
 export { TableProps } from "./components/molecules/Table/types";
 export { default as Table } from "./components/molecules/Table";
 

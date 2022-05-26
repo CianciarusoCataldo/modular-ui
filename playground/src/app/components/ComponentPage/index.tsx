@@ -11,14 +11,18 @@ export const ComponentPage = ({
   name: componentName,
   render,
   props,
+  translations,
 }: {
   children?: AllowedComponent | AllowedComponent[];
   render?: (t: TFunction) => AllowedComponent | AllowedComponent[];
   name: string;
   props?: string[][];
+  translations?: boolean;
 }) => {
   const t = useCommonTranslation();
-  const { t: tComponent } = useTranslation(componentName.toLowerCase());
+  const { t: tComponent } = useTranslation(
+    translations ? componentName.toLowerCase() : "common"
+  );
   return (
     <AppPage>
       <AppLabel className="text-4xl mt-12 mb-5 ml-3">

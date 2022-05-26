@@ -14,6 +14,7 @@ const DrawerPage = () => {
   return (
     <ComponentPage
       name="Drawer"
+      translations
       render={(t) => (
         <Demo
           label="Drawer"

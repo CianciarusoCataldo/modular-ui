@@ -7,6 +7,7 @@ import { ComponentPage } from "app/components/ComponentPage";
 
 const ListPage = () => (
   <ComponentPage
+    translations
     name="List"
     render={(t) => {
       const elementsLabel = t("props", { context: "elements" });

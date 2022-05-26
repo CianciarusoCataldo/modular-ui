@@ -13,6 +13,7 @@ import { ComponentPage } from "app/components/ComponentPage";
 const CodeBoxPage = () => (
   <ComponentPage
     name="CodeBox"
+    translations
     render={(t) => {
       return (
         <Demo

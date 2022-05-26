@@ -15,6 +15,7 @@ import Divider from "../../atoms/Divider";
  * @param {JSX.Element | Element | string} header Card header content
  * @param {JSX.Element | Element | string} body Card body content
  * @param {JSX.Element | Element | string} footer Card footer content
+ * @param {JSX.Element | Element | string} label Component label, showed at the top
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
  * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
  * @param {string} id `common modular-ui prop` - `data-id` parameter (for testing purpose, to easily find the component into the DOM)
