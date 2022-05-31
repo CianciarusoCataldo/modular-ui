@@ -87,17 +87,18 @@ const HomePage = () => {
 
   return (
     <AppPage>
-      <AppLabel key="homepage_header" className="text-4xl mt-12 mb-5 ml-3">
-        {t("title")}
-      </AppLabel>
+      <AppLabel
+        key="homepage_header"
+        className="text-4xl mt-12 mb-5 ml-3"
+        value={t("title")}
+      />
+
       <div key="homepage_container" className="flex flex-col lg:flex-row">
         <div>
           <Card shadow body={description} />
           <Card
             shadow
-            label={
-              <AppLabel>{t("installation", { context: "title" })}</AppLabel>
-            }
+            label={<AppLabel value={t("installation", { context: "title" })} />}
             body={installationGuide}
           />
         </div>

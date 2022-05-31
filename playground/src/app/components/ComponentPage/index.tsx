@@ -25,9 +25,10 @@ export const ComponentPage = ({
   );
   return (
     <AppPage>
-      <AppLabel className="text-4xl mt-12 mb-5 ml-3">
-        {t("component", { componentName })}
-      </AppLabel>
+      <AppLabel
+        className="text-4xl mt-12 mb-5 ml-3"
+        value={t("component", { componentName })}
+      />
       <div className="flex flex-col p-3 items-center">
         {children}
         {render && render(tComponent)}

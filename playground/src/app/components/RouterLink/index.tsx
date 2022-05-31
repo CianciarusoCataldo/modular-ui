@@ -13,9 +13,7 @@ import { RouterLinkProps } from "./types";
  */
 const RouterLink = ({ children, className, to }: RouterLinkProps) => (
   <NavLink to={to}>
-    <Label className={className} unstyled>
-      {children}
-    </Label>
+    <Label className={className} unstyled value={children} />
   </NavLink>
 );
 
