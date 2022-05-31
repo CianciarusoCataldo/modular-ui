@@ -5,7 +5,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Label component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Label component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Label
  *
@@ -20,7 +20,7 @@ export type LabelProps = Omit<
   CommonProps;
 
 /**
- * Modular-ui Label component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Label component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Label
  *

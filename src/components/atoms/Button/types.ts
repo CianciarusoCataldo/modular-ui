@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Button component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Button component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Button
  *
@@ -32,7 +32,7 @@ export type ButtonProps = ComponentWithChildren<
   };
 
 /**
- *  Modular-ui Button component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Button component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Button
  *

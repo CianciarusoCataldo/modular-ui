@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Link component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Link component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Link
  *
@@ -24,7 +24,7 @@ export type LinkProps = CommonProps &
   };
 
 /**
- * Modular-ui Link component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Link component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Link
  *

@@ -4,14 +4,14 @@ import {
   ModularComponent,
 } from "../../../utils/global";
 
-/** Form component field */
+/** [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Form component field */
 export interface FormField {
   header?: string;
   type?: "boolean" | "text" | "numeric";
 }
 
 /**
- * Modular-ui Form component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Form component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Form
  *
@@ -35,7 +35,7 @@ export type FormProps = CommonProps &
   };
 
 /**
- * Modular-ui Form component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Form component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Form
  *

@@ -4,14 +4,14 @@ import {
   ModularComponent,
 } from "../../../utils/global";
 
-/** Supported environments */
+/** [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Codebox supported environments */
 export type SupportedEnvironment =
   | "javascript"
   | "python"
   | "terminal"
   | "common";
 
-/** Partial code block */
+/** [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Codebox partial code block */
 export interface CodeBlock<T = string | null> {
   /** Highlight color */
   color: T;
@@ -21,7 +21,7 @@ export interface CodeBlock<T = string | null> {
 }
 
 /**
- * Modular-ui CodeBox component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) CodeBox component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CodeBox
  *

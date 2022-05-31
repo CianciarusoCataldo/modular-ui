@@ -7,7 +7,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Counter component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Counter component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Counter
  *
@@ -21,7 +21,7 @@ export type CounterProps = CommonProps &
   ComponentWithCallback<number>;
 
 /**
- *  Modular-ui Counter component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Counter component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Counter
  *

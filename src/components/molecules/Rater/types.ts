@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Rater component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Rater component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Rater
  *
@@ -34,7 +34,7 @@ export type RaterProps = CommonProps &
   };
 
 /**
- * Modular-ui Rater component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Rater component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Rater
  *

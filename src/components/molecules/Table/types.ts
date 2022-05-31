@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Table component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Table component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Table
  *
@@ -24,7 +24,7 @@ export type TableProps = CommonProps &
   };
 
 /**
- * Modular-ui Table component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Table component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Table
  *

@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Drawer component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Drawer component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Drawer
  *

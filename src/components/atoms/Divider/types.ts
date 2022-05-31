@@ -1,6 +1,7 @@
 import { CommonProps, ModularComponent } from "../../../utils/global";
 
-/** Modular-ui Divider component props
+/** 
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Divider component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Divider
  *
@@ -10,7 +11,8 @@ import { CommonProps, ModularComponent } from "../../../utils/global";
  */
 export type DividerProps = CommonProps;
 
-/** Modular-ui Divider component
+/** 
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Divider component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Divider
  *

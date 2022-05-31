@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Container component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Container component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Container
  *
@@ -23,7 +23,7 @@ export type ContainerProps = ComponentWithChildren<
   };
 
 /**
- * Modular-ui Container component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Container component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Container
  *

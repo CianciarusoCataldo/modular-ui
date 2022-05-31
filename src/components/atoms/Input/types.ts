@@ -7,7 +7,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Input component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Input component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Input
  *
@@ -20,7 +20,7 @@ import {
   ComponentWithCallback;
 
 /**
- * Modular-ui Input component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Input component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Input
  *

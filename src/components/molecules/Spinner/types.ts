@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Spinner component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Spinner component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Spinner
  *
@@ -20,7 +20,7 @@ export type SpinnerProps<T extends string = string> = CommonProps &
   };
 
 /**
- * Modular-ui Spinner component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Spinner component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Spinner
  *

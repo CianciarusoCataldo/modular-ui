@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Dropdown component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Dropdown component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Dropdown
  *
@@ -20,7 +20,7 @@ export interface DropdownElement {
 }
 
 /**
- * Modular-ui Dropdown component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Dropdown component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Dropdown
  *

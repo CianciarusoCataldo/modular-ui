@@ -7,7 +7,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Card component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Card component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Card
  *

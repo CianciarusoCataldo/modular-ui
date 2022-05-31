@@ -7,7 +7,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Toggle component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Toggle component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Toggle
  *
@@ -23,7 +23,7 @@ export type ToggleProps = CommonProps &
   };
 
 /**
- * Modular-ui Toggle component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Toggle component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Toggle
  *

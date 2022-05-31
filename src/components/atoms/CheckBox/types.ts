@@ -6,7 +6,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui CheckBox component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) CheckBox component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CheckBox
  *
@@ -19,7 +19,7 @@ export type CheckBoxProps = CommonProps &
   ComponentWithCallback<boolean>;
 
 /**
- * Modular-ui CheckBox component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) CheckBox component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CheckBox
  *

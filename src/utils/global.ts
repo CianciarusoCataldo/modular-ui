@@ -1,6 +1,10 @@
 import { CSSProperties } from "react";
 
-/** Props shared between all components */
+/**
+ * Props shared between all [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) components
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/docs/#/guide?id=shared-components-properties
+ * */
 export interface CommonProps {
   /** custom className applied on main container */
   className?: string;
@@ -24,6 +28,11 @@ export interface CommonProps {
   unstyled?: boolean;
 }
 
+/**
+ * A standard [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) box component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/docs/#/guide?id=box-components
+ */
 export interface BoxComponent<T = any, K = JSX.Element | Element> {
   /** Actual component value */
   value?: T;
@@ -35,7 +44,15 @@ export interface BoxComponent<T = any, K = JSX.Element | Element> {
   label?: string | Element | JSX.Element;
 }
 
-/** An input element, to handle various input content type (like strings or numbers) */
+/**
+ * A generic [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) input component, to handle various input content type (like strings or numbers)
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export interface GenericInputComponent<T = string> {
   /** if true, the input content won't be editable */
   readOnly?: boolean;
@@ -44,25 +61,58 @@ export interface GenericInputComponent<T = string> {
   placeholder?: T;
 }
 
-/** A component that provide a callback to handle its content changes */
+/**
+ * A [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) component that provide a callback to handle its content changes
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ *
+ */
 export interface ComponentWithCallback<T = string> {
   /** Callback triggered when input content changes */
   onChange?: (newValue: T) => void;
 }
 
-/** A component with children element */
+/**
+ * A [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) component with children element
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export interface ComponentWithChildren<T = JSX.Element> {
   /** Component children */
   children?: T;
 }
 
-/** Allowed component type for component builder */
+/**
+ *  Allowed [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) component type for component builder
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type BuilderComponent = Element | JSX.Element | string;
 
 /** Supported components wrappers */
 export type Wrappers = "div" | "a" | "header" | "button" | "footer" | "p";
 
-/** Component builder props */
+/**
+ * Modular-ui components builder props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
   /** Component name (its DOM id) */
   name: string;
@@ -81,6 +131,12 @@ export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
 };
 
 /**
- * A standard Modular-ui component
+ * A standard [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
  */
 export type ModularComponent<T = any, K = JSX.Element> = (props: T) => K;

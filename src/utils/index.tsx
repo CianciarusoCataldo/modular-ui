@@ -4,6 +4,7 @@ import "../styles/shared-styles.css";
 
 import classNames from "classnames";
 import React from "react";
+
 import { BoxComponent, BuilderProps } from "./global";
 
 /**
@@ -16,6 +17,8 @@ import { BoxComponent, BuilderProps } from "./global";
  * @param wrapper component external wrapper (like `button`, `a` or `p`, if not set will be `div`)
  *
  * @returns built component, ready to be rendered
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -57,6 +60,9 @@ export const buildComponent = ({
  * @param callback a function that returns an Object containing Component Builder props, properly formatted
  *
  * @returns built component, ready to be rendered, enhanced with some functionalities (like the top label)
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/docs/#/guide?id=box-components
+ * @see https://cianciarusocataldo.github.io/modular-ui/
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *

@@ -7,7 +7,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Modal component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Modal component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Modal
  *
@@ -26,7 +26,7 @@ export type ModalProps = CommonProps &
   };
 
 /**
- * Modular-ui Modal component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Modal component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Modal
  *

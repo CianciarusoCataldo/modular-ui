@@ -5,7 +5,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui List component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) List component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/List
  *
@@ -19,7 +19,7 @@ export type ListProps = CommonProps & {
 };
 
 /**
- * Modular-ui List component
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) List component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/List
  *

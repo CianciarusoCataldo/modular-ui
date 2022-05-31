@@ -7,7 +7,7 @@ import {
 } from "../../../utils/global";
 
 /**
- * Modular-ui Carousel component props
+ * [Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Carousel component props
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Carousel
  *
@@ -23,7 +23,7 @@ export type CarouselProps = CommonProps &
   };
 
 /**
- * Modular-ui Carousel component
+ * M[Modular-ui]({@link https://cianciarusocataldo.github.io/modular.ui}) Carousel component
  *
  * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Carousel
  *
