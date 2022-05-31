@@ -2,6 +2,7 @@
 
 ## Versions
 
+- [5.2.0](#520)
 - [5.1.1](#511)
 - [5.1.0](#510)
 - [5.0.1](#501)
@@ -29,6 +30,16 @@
 ---
 
 ## Changes
+
+<br>
+
+### 5.2.0
+
+- Better type definitions, with a common interface structure for every component
+- Cleanup
+- Refactoring
+- Better docs
+- `Label` component re-designed
 
 <br>
 
@@ -158,26 +169,26 @@
 ### 1.0.0
 
 - Bugfixes
-- `CodeBox` component highlight feature with Js, Python and Terminal highlight basic support
+- `CodeBox` component with highlight feature, including Js, Python and Terminal highlight basic support
 - Dark mode and Hide features available for every component
 - Better styled components
 - Test-suites system improved
-
-<br>
-
-### 0.9.4
-
-- Bugfixes
 - New `Input` component
 - New `CheckBox` component
 - New `CodeBox` component
 
 <br>
 
+### 0.9.1
+
+- Bugfixes
+
+<br>
+
 ### 0.9.0
 
-- New `Table` component
-- styles clean up
+- `Table` component
+- Styles clean up
 
 <br>
 
@@ -185,23 +196,54 @@
 
 - New unit testing system
 - Re-designed playground
+- `Form` component
 
 <br>
 
 ### 0.7.0
 
 - SVG moved inside components
-- refactoring
+- Refactoring
 - Minor fixes
+- `Dropdown` component
 
 <br>
 
 ### 0.6.0
 
+- `Drawer` component
 - Clean up and optimizations
 
 <br>
 
 ### 0.5.0
 
+- `Modal` component
+- Refactoring
+
+<br>
+
+### 0.4.0
+
+- `Divider` component
+- Cleanup
+  <br>
+
+### 0.3.0
+
+- `Card` component
+- New tests
+
+<br>
+
+### 0.2.0
+
+- `Link` component
+- Better type definitions
+
+<br>
+
+### 0.1.0
+
 - Modular-ui library setup
+- `Button` component
