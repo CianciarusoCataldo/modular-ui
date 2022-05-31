@@ -9,12 +9,12 @@ const ListPage = () => (
   <ComponentPage
     translations
     name="List"
-    render={(t) => {
+    render={(t, componentLabel) => {
       const elementsLabel = t("props", { context: "elements" });
 
       return (
         <Demo
-          label="List"
+          label={componentLabel}
           props={{
             ...DEMO_COMMON_PROPS,
             shadow: BooleanProp(false),

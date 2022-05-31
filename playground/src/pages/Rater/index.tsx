@@ -12,33 +12,36 @@ import { Rater } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
 
 const RaterPage = () => (
-  <ComponentPage name="Rater">
-    <Demo
-      label="Rater"
-      props={{
-        label: StringProp("Rater label"),
-        max: NumberProp(6),
-        value: NumberProp(2),
-        vertical: BooleanProp(false),
-        type: SelectProp({
-          Stars: "star",
-          Circles: "circle",
-        }),
-        ...DEMO_COMMON_PROPS,
-      }}
-      rows={[
-        ["value", "max", "type", "vertical"],
-        ["label", "className", "dark"],
-        ["shadow", "unstyled", "hide"],
-      ]}
-    >
-      {(props: any) => (
-        <div className="flex flex-col items-center">
-          <Rater {...props} />
-        </div>
-      )}
-    </Demo>
-  </ComponentPage>
+  <ComponentPage
+    name="Rater"
+    render={(_, componentLabel) => (
+      <Demo
+        label={componentLabel}
+        props={{
+          label: StringProp("label"),
+          max: NumberProp(6),
+          value: NumberProp(2),
+          vertical: BooleanProp(false),
+          type: SelectProp({
+            star: "star",
+            circle: "circle",
+          }),
+          ...DEMO_COMMON_PROPS,
+        }}
+        rows={[
+          ["value", "max", "type", "vertical"],
+          ["label", "className", "dark"],
+          ["shadow", "unstyled", "hide"],
+        ]}
+      >
+        {(props: any) => (
+          <div className="flex flex-col items-center">
+            <Rater {...props} />
+          </div>
+        )}
+      </Demo>
+    )}
+  />
 );
 
 export default RaterPage;

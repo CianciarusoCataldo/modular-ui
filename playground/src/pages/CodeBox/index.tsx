@@ -14,16 +14,18 @@ const CodeBoxPage = () => (
   <ComponentPage
     name="CodeBox"
     translations
-    render={(t) => {
+    render={(t, componentLabel) => {
+      const terminalText = t("props_environment", { context: "default" });
+
       return (
         <Demo
-          label="CodeBox"
+          label={componentLabel}
           props={{
             value: StringProp("npm i @cianciarusocataldo/modular-ui"),
-            label: StringProp("Codebox label"),
+            label: StringProp("label"),
             enhanced: BooleanProp(true),
             environment: SelectProp({
-              [t("props_environment", { context: "default" })]: "terminal",
+              [terminalText]: "terminal",
               Javascript: "javascript",
               Python: "python",
             }),

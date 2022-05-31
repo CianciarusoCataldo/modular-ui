@@ -9,39 +9,48 @@ import { Toggle } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
 
 const TogglePage = () => (
-  <ComponentPage name="Toggle">
-    <Demo
-      label="Toggle"
-      startColor="#999"
-      props={{
-        value: BooleanProp(true),
-        "Custom icons": BooleanProp(false),
-        label: StringProp("Label"),
-        ...DEMO_COMMON_PROPS,
-      }}
-      rows={[
-        ["value", "Custom icons", "label", "dark"],
-        ["className", "shadow", "unstyled", "hide"],
-      ]}
-    >
-      {(props: any, setProps: (props: any) => void) => {
-        let actualProps = { ...props };
-        delete actualProps["Custom icons"];
-        if (props["Custom icons"]) {
-          actualProps.onIcon = <img alt="" src={OnIcon} width={30} />;
-          actualProps.offIcon = <img alt="" src={OffIcon} width={30} />;
-        }
-        return (
-          <div className="flex flex-col items-center">
-            <Toggle
-              {...actualProps}
-              onChange={() => setProps({ ...props, value: !props.value })}
-            />
-          </div>
-        );
-      }}
-    </Demo>
-  </ComponentPage>
+  <ComponentPage
+    name="Toggle"
+    translations
+    render={(t, componentLabel) => {
+      const iconLabel = t("props_icons");
+
+      return (
+        <Demo
+          label={componentLabel}
+          startColor="#999"
+          props={{
+            value: BooleanProp(true),
+            [iconLabel]: BooleanProp(false),
+            label: StringProp("label"),
+            ...DEMO_COMMON_PROPS,
+          }}
+          rows={[
+            ["value", "Custom icons", "label", "dark"],
+            ["className", "shadow", "unstyled", "hide"],
+          ]}
+        >
+          {(props: any, setProps: (props: any) => void) => {
+            let actualProps = { ...props };
+            delete actualProps[iconLabel];
+            if (props[iconLabel]) {
+              actualProps.onIcon = <img alt="" src={OnIcon} width={30} />;
+              actualProps.offIcon = <img alt="" src={OffIcon} width={30} />;
+            }
+
+            return (
+              <div className="flex flex-col items-center">
+                <Toggle
+                  {...actualProps}
+                  onChange={() => setProps({ ...props, value: !props.value })}
+                />
+              </div>
+            );
+          }}
+        </Demo>
+      );
+    }}
+  />
 );
 
 export default TogglePage;

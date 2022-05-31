@@ -11,28 +11,40 @@ import { Table } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
 
 const TablePage = () => (
-  <ComponentPage name="Table">
-    <Demo
-      label="Table"
-      props={{
-        label: StringProp("Table label"),
-        Rows: NumberProp(2),
-        headers: BooleanProp(true),
-        ...DEMO_COMMON_PROPS,
-      }}
-    >
-      {({ Rows: numberOfRows, ...props }: any) => {
-        let rows = [];
-        if (numberOfRows) {
-          for (let i = 0; i < numberOfRows; i++) {
-            rows.push(["Table cell", "Table cell", "Table cell"]);
-          }
-        }
+  <ComponentPage
+    name="Table"
+    translations
+    render={(t, componentLabel) => {
+      const cell = t("props_element");
+      const header = t("props_header");
 
-        return <Table {...props} headers={props.headers} rows={rows} />;
-      }}
-    </Demo>
-  </ComponentPage>
+      return (
+        <Demo
+          label={componentLabel}
+          props={{
+            label: StringProp("label"),
+            Rows: NumberProp(2),
+            headers: BooleanProp(true),
+            ...DEMO_COMMON_PROPS,
+          }}
+        >
+          {({ Rows: numberOfRows, ...props }: any) => {
+            let rows = [];
+            if (numberOfRows) {
+              if (props.headers) {
+                rows.push([header, header, header]);
+              }
+              for (let i = 0; i < numberOfRows; i++) {
+                rows.push([cell, cell, cell]);
+              }
+            }
+
+            return <Table {...props} headers={props.headers} rows={rows} />;
+          }}
+        </Demo>
+      );
+    }}
+  />
 );
 
 export default TablePage;

@@ -9,64 +9,80 @@ import { Spinner } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
 
 const SpinnerPage = () => (
-  <ComponentPage name="Spinner">
-    <Demo
-      label="Spinner"
-      props={{
-        value: SelectProp({
-          "Not set": undefined,
-          success: "success",
-          error: "error",
-          loading: "loading",
-        }),
-        "With custom states": BooleanProp(false),
-        "Custom value": SelectProp({ react: "react", redux: "redux" }),
-        ...DEMO_COMMON_PROPS,
-        shadow: BooleanProp(false),
-      }}
-    >
-      {(props: any) => {
-        let componentProps = { ...props };
+  <ComponentPage
+    name="Spinner"
+    translations
+    render={(t, componentLabel) => {
+      const notSetLabel = t("props_value_notSet");
+      const customValueLabel = t("props_value_custom");
+      const customStatesLabel = t("props_statuses_custom");
 
-        delete componentProps["With custom states"];
-        delete componentProps["Custom value"];
+      return (
+        <Demo
+          label={componentLabel}
+          props={{
+            value: SelectProp({
+              [notSetLabel]: undefined,
+              success: "success",
+              error: "error",
+              loading: "loading",
+            }),
+            [customStatesLabel]: BooleanProp(false),
+            [customValueLabel]: SelectProp({
+              [notSetLabel]: undefined,
+              react: "react",
+              redux: "redux",
+            }),
+            ...DEMO_COMMON_PROPS,
+            shadow: BooleanProp(false),
+          }}
+        >
+          {(props: any) => {
+            let componentProps = { ...props };
 
-        if (props["With custom states"]) {
-          componentProps.statuses = {
-            react: (
-              <div style={{ width: "8rem", height: "8rem" }}>
-                <img src={ReactImage} width="125px" height="125px" alt="" />
+            delete componentProps[customStatesLabel];
+            delete componentProps[customValueLabel];
+
+            if (props[customStatesLabel]) {
+              componentProps.statuses = {
+                react: (
+                  <div style={{ width: "8rem", height: "8rem" }}>
+                    <img src={ReactImage} width="125px" height="125px" alt="" />
+                  </div>
+                ),
+                redux: (
+                  <div style={{ width: "8rem", height: "8rem" }}>
+                    <img src={ReduxImage} alt="" width="125px" height="125px" />
+                  </div>
+                ),
+              };
+              componentProps.value = props[customValueLabel];
+            } else {
+              componentProps.statuses = undefined;
+              componentProps.value = props.value;
+            }
+
+            return (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Spinner
+                  {...componentProps}
+                  className={
+                    props.className.length > 0 ? props.className : "w-32"
+                  }
+                />
               </div>
-            ),
-            redux: (
-              <div style={{ width: "8rem", height: "8rem" }}>
-                <img src={ReduxImage} alt="" width="125px" height="125px" />
-              </div>
-            ),
-          };
-          componentProps.value = props["Custom value"];
-        } else {
-          componentProps.statuses = undefined;
-          componentProps.value = props.value;
-        }
-
-        return (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Spinner
-              {...componentProps}
-              className={props.className.length > 0 ? props.className : "w-32"}
-            />
-          </div>
-        );
-      }}
-    </Demo>
-  </ComponentPage>
+            );
+          }}
+        </Demo>
+      );
+    }}
+  />
 );
 
 export default SpinnerPage;

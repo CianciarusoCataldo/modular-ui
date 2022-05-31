@@ -1,57 +1,63 @@
 import React from "react";
-import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
+import {
+  BooleanProp,
+  Demo,
+  HiddenProp,
+  StringProp,
+} from "@cianciarusocataldo/demo-ui";
 
 import { Button, Modal } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
 import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
-export const ModalWrapper = () => {
-  const [isModalisible, setModalVisible] = React.useState(false);
-
-  let demoProps = { ...DEMO_COMMON_PROPS };
-
-  delete demoProps.hide;
-
+export const ModalPage = () => {
   return (
-    <Demo
-      startColor="#999"
-      label="Modal"
-      props={{
-        title: StringProp("Modal title"),
-        children: StringProp("Modal content"),
-        "With close button": BooleanProp(true),
-        ...demoProps,
-      }}
-    >
-      {(props: any) => {
-        let modalProps = { ...props };
-        
-        delete modalProps["With close button"];
+    <ComponentPage
+      name="Modal"
+      translations
+      render={(t, componentLabel) => {
+        const closeButtonLabel = t("props_closeButton");
+        const openModalLabel = t("props_openButton");
 
         return (
-          <div className="flex flex-col items-center">
-            <Button onClick={() => setModalVisible(true)}>
-              {"Open modal"}
-            </Button>
-            <Modal
-              {...modalProps}
-              children={<div>{modalProps.children}</div>}
-              hide={!isModalisible}
-              onClose={
-                props["With close button"] && (() => setModalVisible(false))
-              }
-            />
-          </div>
+          <Demo
+            startColor="#999"
+            label={componentLabel}
+            props={{
+              title: StringProp("title"),
+              children: StringProp("children"),
+              [closeButtonLabel]: BooleanProp(true),
+              ...DEMO_COMMON_PROPS,
+              hide: HiddenProp(true),
+            }}
+          >
+            {(props: any, setProps: (props: any) => any) => {
+              let modalProps = { ...props };
+
+              delete modalProps[closeButtonLabel];
+
+              return (
+                <div className="flex flex-col items-center">
+                  <Button onClick={() => setProps({ ...props, hide: false })}>
+                    {openModalLabel}
+                  </Button>
+
+                  <Modal
+                    {...modalProps}
+                    children={<div>{modalProps.children}</div>}
+                    onClose={
+                      props[closeButtonLabel] &&
+                      (() => setProps({ ...props, hide: true }))
+                    }
+                  />
+                </div>
+              );
+            }}
+          </Demo>
         );
       }}
-    </Demo>
+    />
   );
 };
-
-const ModalPage = () => (
-  <ComponentPage name="Modal">
-    <ModalWrapper />
-  </ComponentPage>
-);
 
 export default ModalPage;

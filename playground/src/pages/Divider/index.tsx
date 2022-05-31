@@ -5,16 +5,19 @@ import { ComponentPage } from "app/components/ComponentPage";
 import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
 const DividerPage = () => (
-  <ComponentPage name="Divider">
-    <Demo
-      label="Divider"
-      props={{
-        ...DEMO_COMMON_PROPS,
-      }}
-    >
-      {(props: any) => <Divider {...props} />}
-    </Demo>
-  </ComponentPage>
+  <ComponentPage
+    name="Divider"
+    render={(_, componentLabel) => (
+      <Demo
+        label={componentLabel}
+        props={{
+          ...DEMO_COMMON_PROPS,
+        }}
+      >
+        {(props: any) => <Divider {...props} />}
+      </Demo>
+    )}
+  />
 );
 
 export default DividerPage;
