@@ -2,18 +2,37 @@ import {
   BoxComponent,
   CommonProps,
   ComponentWithCallback,
+  ModularComponent,
 } from "../../../utils/global";
 
-/** Single dropdown element */
+/**
+ * Modular-ui Dropdown component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Dropdown
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export interface DropdownElement {
   name: string | JSX.Element;
   icon?: JSX.Element;
 }
 
-/** Dropdown component props */
+/**
+ * Modular-ui Dropdown component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Dropdown
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type DropdownProps = CommonProps &
-  BoxComponent<number> &
+  Omit<BoxComponent<number>, "icon"> &
   ComponentWithCallback<number> & {
     /** Dropdown content elements */
     content?: DropdownElement[];
   };
+
+export type DropdownComponent = ModularComponent<DropdownProps>;

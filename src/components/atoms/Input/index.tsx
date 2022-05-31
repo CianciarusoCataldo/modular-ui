@@ -2,12 +2,14 @@ import "./styles.css";
 
 import React from "react";
 
-import { InputProps } from "./types";
+import { InputComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
 /**
  * A flexible text input element
+ *
+ * @since 1.0.0
  *
  * @param {string} value text input value
  * @param {(newValue:string)=>void} onChange callback triggered when numeric input changes
@@ -19,24 +21,25 @@ import { buildBoxComponent } from "../../../utils";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Input usage</caption>
- *import { render } from "react-dom";
- *import { Input } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Input usage</caption>
+ * import { render } from "react-dom";
+ * import { Input } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Input value="example text" />, document.getElementById("root"));
  *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Input
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
- * @copyright 2022 Cataldo Cianciaruso
- */
-const Input = ({
+ * @copyright 2022 Cataldo Cianciaruso*/
+const Input: InputComponent = ({
   onChange = () => {},
   value,
   placeholder,
   readOnly,
   label,
   ...commonProps
-}: InputProps) =>
+}) =>
   buildBoxComponent({
     callBack: (value, setValue) => ({
       name: "modular-inputbox",

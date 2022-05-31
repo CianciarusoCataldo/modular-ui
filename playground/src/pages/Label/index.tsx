@@ -1,6 +1,6 @@
 import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 
-import { Label } from "modular-ui-preview";
+import { Label, LabelProps } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
 import { DEMO_COMMON_PROPS } from "app/constants/demo-props";
 
@@ -9,16 +9,16 @@ const LabelPage = () => (
     <Demo
       label="Label"
       props={{
-        children: StringProp("Label content"),
+        value: StringProp("Label content"),
         ...DEMO_COMMON_PROPS,
         shadow: BooleanProp(false),
       }}
       rows={[
-        ["children", "dark", "shadow"],
+        ["value", "dark", "shadow"],
         ["className", "hide", "unstyled"],
       ]}
     >
-      {(props: any) => {
+      {(props: LabelProps) => {
         return <Label {...props} />;
       }}
     </Demo>

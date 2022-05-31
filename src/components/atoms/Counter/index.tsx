@@ -2,12 +2,14 @@ import "./styles.css";
 
 import React from "react";
 
-import { CounterProps } from "./types";
+import { CounterComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
 /**
  * A flexible numeric input element
+ *
+ * @since 2.0.0
  *
  * @param {number} value numeric input value
  * @param {(newValue:number)=>void} onChange callback triggered when numeric input changes
@@ -19,24 +21,27 @@ import { buildBoxComponent } from "../../../utils";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Counter usage</caption>
- *import { render } from "react-dom";
- *import { Counter } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Counter usage</caption>
+ *
+ * import { render } from "react-dom";
+ * import { Counter } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Counter value={3} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Counter
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Counter = ({
+const Counter: CounterComponent = ({
   onChange,
   value,
   placeholder,
   readOnly,
   label,
   ...commonProps
-}: CounterProps) =>
+}) =>
   buildBoxComponent<number>({
     callBack: (value, setValue) => ({
       name: "modular-counterbox",

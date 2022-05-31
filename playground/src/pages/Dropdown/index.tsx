@@ -1,4 +1,4 @@
-import { BooleanProp, Demo } from "@cianciarusocataldo/demo-ui";
+import { BooleanProp, Demo, StringProp } from "@cianciarusocataldo/demo-ui";
 
 import { Dropdown } from "modular-ui-preview";
 import { ComponentPage } from "app/components/ComponentPage";
@@ -10,6 +10,7 @@ const DropdownPage = () => (
       label="Dropdown"
       props={{
         "With icons": BooleanProp(false),
+        label: StringProp(""),
         ...DEMO_COMMON_PROPS,
       }}
       startColor="#ebe5e2"
@@ -54,6 +55,7 @@ const DropdownPage = () => (
               dark={props.dark}
               shadow={props.shadow}
               unstyled={props.unstyled}
+              label={props.label}
               content={elements}
             />
           </div>

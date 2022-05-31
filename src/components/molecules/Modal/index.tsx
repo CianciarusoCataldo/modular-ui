@@ -2,7 +2,7 @@ import "./styles.css";
 
 import React from "react";
 
-import { ModalProps } from "./types";
+import { ModalComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
@@ -11,6 +11,8 @@ import Button from "../../atoms/Button";
 /**
  * A light Modal component. Can be totally customized (the overlay too, through `overlayClassName` parameter)
  * and can be driven with redux-state or internal state parameters.
+ *
+ * @since 0.5.0
  *
  * @param {JSX.Element | Element} children Modal Content
  * @param {()=>void} onClose Callback triggered when modal is closed
@@ -29,18 +31,13 @@ import Button from "../../atoms/Button";
  *
  * render(<Modal><div>Example modal content</div></Modal>, document.getElementById("root"));
  *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Modal
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Modal = ({
-  children,
-  onClose,
-  title,
-  icon,
-  label,
-  ...commonProps
-}: ModalProps) =>
+const Modal: ModalComponent = ({ children, onClose, title, ...commonProps }) =>
   buildBoxComponent({
     callBack: () => ({
       name: "modular-modal",

@@ -1,12 +1,14 @@
 import React from "react";
 
 import "./styles.css";
-import { ListProps } from "./types";
+import { ListComponent } from "./types";
 
 import { buildComponent } from "../../../utils";
 
 /**
  * A custom bullet list, that support any type of elements (types can vary from element to element)
+ *
+ * @since 4.2.0
  *
  * @param {ListProps["elements"]} elements list elements (if unstyled == `false`, every element will include a dot at its start)
  * @param {ListProps["className"]} className `common modular-ui prop` - custom className (to better customize it)
@@ -16,17 +18,19 @@ import { buildComponent } from "../../../utils";
  * @param {ListProps["hide"]} hide `common modular-ui prop` - Hide/show component
  * @param {ListProps["shadow"]} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Link usage</caption>
- *import { render } from "react-dom";
- *import { List } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Link usage</caption>
+ * import { render } from "react-dom";
+ * import { List } from '@cianciarusocataldo/modular-ui';
  *
  * render(<List elements={["element 1", "element 2"]} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/List
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const List = ({ elements: inputElements, ...commonProps }: ListProps) => {
+const List: ListComponent = ({ elements: inputElements, ...commonProps }) => {
   const elements = inputElements || [];
   return buildComponent({
     name: "modular-list",

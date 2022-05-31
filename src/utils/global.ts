@@ -80,6 +80,7 @@ export type BuilderProps<T = BuilderComponent | BuilderComponent[]> = {
   wrapper?: Wrappers;
 };
 
-export type ModularComponent<T = any, K = JSX.Element | Element> = (
-  props: T
-) => K;
+/**
+ * A standard Modular-ui component
+ */
+export type ModularComponent<T = any, K = JSX.Element> = (props: T) => K;

@@ -10,7 +10,9 @@ import { buildBoxComponent } from "../../../utils";
 import Container from "../Container";
 
 /**
- * A smart status indicator, with customizable imgages showed for every state (defaults are `loading`,`success` and `error`)
+ * A smart status indicator, optionally with custom images showed for every state (defaults are `loading`,`success` and `error`)
+ *
+ * @since 5.1.0
  *
  * @param {number} value Spinner status
  * @param {JSX.Element | Element | string} label Component label, showed at the top
@@ -21,11 +23,14 @@ import Container from "../Container";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Dropdown usage</caption>
- *import { render } from "react-dom";
- *import { Spinner } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Dropdown usage</caption>
+ *
+ * import { render } from "react-dom";
+ * import { Spinner } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Spinner value="error" />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Spinner
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -33,7 +38,6 @@ import Container from "../Container";
  */
 const Spinner: SpinnerComponent = ({
   value,
-  icon,
   label,
   statuses,
   ...commonProps

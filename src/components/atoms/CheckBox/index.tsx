@@ -2,12 +2,14 @@ import "./styles.css";
 
 import React from "react";
 
-import { CheckboxProps } from "./types";
+import { CheckBoxComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
 /**
  * A checkbox element, totally customizable. The tick icon can be a custom image or Element (using `icon` prop).
+ *
+ * @since 1.0.0
  *
  * @param {boolean} value Checkbox initial value (checked / unchecked)
  * @param {(newValue: boolean) => void} onChange onChange callback called when Checkbox is clicked
@@ -20,27 +22,28 @@ import { buildBoxComponent } from "../../../utils";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example CheckBox usage</caption>
- *import { render } from "react-dom";
- *import { CheckBox } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example CheckBox usage</caption>
+ * import { render } from "react-dom";
+ * import { CheckBox } from '@cianciarusocataldo/modular-ui';
  *
  * render(<CheckBox value={true} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CheckBox
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Checkbox = ({
+const Checkbox: CheckBoxComponent = ({
   value,
   onChange,
   label,
   icon,
   ...commonProps
-}: CheckboxProps) =>
+}) =>
   buildBoxComponent<boolean>({
-    callBack: (actualValue, setValue) => ({
-      name: "modular-checkbox",
-      Component: actualValue && (
+    callBack: (actualValue, setValue) => {
+      const iconToShow = icon || (
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
@@ -61,15 +64,20 @@ const Checkbox = ({
             />
           </g>
         </svg>
-      ),
-      commonProps,
-      additionalProps: {
-        onClick: () => {
-          onChange && onChange(!actualValue);
-          setValue(!actualValue);
+      );
+
+      return {
+        name: "modular-checkbox",
+        Component: actualValue && iconToShow,
+        commonProps,
+        additionalProps: {
+          onClick: () => {
+            onChange && onChange(!actualValue);
+            setValue(!actualValue);
+          },
         },
-      },
-    }),
+      };
+    },
     value,
     defaultValue: false,
     label,

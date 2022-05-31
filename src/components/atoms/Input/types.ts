@@ -3,10 +3,29 @@ import {
   CommonProps,
   ComponentWithCallback,
   GenericInputComponent,
+  ModularComponent,
 } from "../../../utils/global";
 
-/** Input component props */
-export type InputProps<T = any> = CommonProps &
+/**
+ * Modular-ui Input component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Input
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */export type InputProps<T = any> = CommonProps &
   GenericInputComponent &
   Omit<BoxComponent<string>, "icon"> &
   ComponentWithCallback;
+
+/**
+ * Modular-ui Input component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Input
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type InputComponent = ModularComponent<InputProps>;

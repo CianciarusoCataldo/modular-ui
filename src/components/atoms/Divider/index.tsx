@@ -1,11 +1,13 @@
 import "./styles.css";
 
-import { DividerProps } from "./types";
+import { DividerComponent } from "./types";
 
 import { buildComponent } from "../../../utils";
 
 /**
  * A simple divider, useful to separate sections and paragraphs
+ *
+ * @since 0.4.0
  *
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
  * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
@@ -20,11 +22,13 @@ import { buildComponent } from "../../../utils";
  *
  * render(<Divider />, document.getElementById("root"));
  *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Divider
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Divider = (props: DividerProps) =>
+const Divider: DividerComponent = (props) =>
   buildComponent({
     name: "modular-divider",
     commonProps: props,

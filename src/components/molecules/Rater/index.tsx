@@ -3,7 +3,7 @@ import "./styles.css";
 import React from "react";
 import classNames from "classnames";
 
-import { RaterProps } from "./types";
+import { RaterComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 import { ICONS } from "./icons";
@@ -12,6 +12,8 @@ import Button from "../../atoms/Button";
 
 /**
  * A vote manager component, really useful to let the user leave a review
+ *
+ * @since 2.0.0
  *
  * @param {number} value actual vote
  * @param {number} max max vote (max number of icons showed)
@@ -24,27 +26,28 @@ import Button from "../../atoms/Button";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Rater usage</caption>
- *import { render } from "react-dom";
- *import { Rater } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Rater usage</caption>
+ * import { render } from "react-dom";
+ * import { Rater } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Rater type="circle" value={3} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Rater
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Rater = ({
+const Rater: RaterComponent = ({
   value,
   max,
   type,
   onChange,
   className,
   vertical,
-  icon,
   label,
   ...commonProps
-}: RaterProps) => {
+}) => {
   const voteType = type || "star";
   let startMax = max || 5;
 

@@ -3,7 +3,7 @@ import "./styles.css";
 import React from "react";
 import classNames from "classnames";
 
-import { CarouselProps } from "./types";
+import { CarouselComponent, CarouselProps } from "./types";
 
 import { ICONS } from "../Rater/icons";
 
@@ -14,6 +14,8 @@ import Button from "../../atoms/Button";
 /**
  * A compact carousel, to show any component (or image) into a slide, with dots and arrow button to go next/previous
  *
+ * @since 2.0.0
+ *
  * @param {(string | JSX.Element | Element)[]} elements carousel elements
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
  * @param {boolean} unstyled `common modular-ui prop` - Style/unstyle component (to better customize it)
@@ -22,23 +24,25 @@ import Button from "../../atoms/Button";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Carousel usage</caption>
- *import { render } from "react-dom";
- *import { Carousel } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Carousel usage</caption>
+ * import { render } from "react-dom";
+ * import { Carousel } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Carousel elements={[<div>Element 0</div>,<div>Element 1</div>]} value={1} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Carousel
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Carousel = ({
+const Carousel: CarouselComponent = ({
   elements: actualElements,
   label,
   onChange,
   value,
   ...commonProps
-}: CarouselProps) => {
+}) => {
   const arrowIcon = (
     <svg viewBox="0 0 250 250" width="2em" height="2em">
       <path d="M186.1 70.6c2.5-3.1 1.6-4.3-2-2.6L65.2 122c-3.6 1.6-3.6 4.3 0 6l118.9 54c3.6 1.6 4.5.5 2-2.6l-39.8-48.2c-2.5-3.1-2.5-8.1-.1-11.2l39.9-49.4z" />

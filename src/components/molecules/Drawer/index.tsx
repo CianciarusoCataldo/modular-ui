@@ -2,7 +2,7 @@ import "./styles.css";
 import React from "react";
 import classNames from "classnames";
 
-import { DrawerProps } from "./types";
+import { DrawerComponent } from "./types";
 
 import { buildComponent } from "../../../utils";
 
@@ -22,6 +22,8 @@ const ALLOWED_POSITIONS = [
 /**
  * A modern drawer, easy to integrate and to customize.
  *
+ * @since 0.6.0
+ *
  * @param {DrawerProps["position"]} position drawer position (relative to the entire window). Possible values are `bottom`, `top`, `right`, `left`, `bottom-left`, `bottom-right`, `top-left` and `top-right`
  * @param {DrawerProps["onClose"]} onClose Callback triggered on Drawer close
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
@@ -37,18 +39,20 @@ const ALLOWED_POSITIONS = [
  *
  * render(<Drawer children={<div>Drawer content</div>} position="top-left" />, document.getElementById("root"));
  *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Drawer
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Drawer = ({
+const Drawer: DrawerComponent = ({
   children,
   onClose,
   hide,
   className,
   position,
   ...commonProps
-}: DrawerProps) => {
+}) => {
   const drawerLocation =
     position && ALLOWED_POSITIONS.includes(position) ? position : "left";
   return buildComponent({

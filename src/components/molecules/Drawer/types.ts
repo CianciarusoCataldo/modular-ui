@@ -2,9 +2,18 @@ import {
   BuilderComponent,
   CommonProps,
   ComponentWithChildren,
+  ModularComponent,
 } from "../../../utils/global";
 
-/** Drawer component props */
+/**
+ * Modular-ui Drawer component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Drawer
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type DrawerProps = CommonProps &
   ComponentWithChildren<BuilderComponent | BuilderComponent[]> & {
     /** Callback triggered on Drawer close */
@@ -21,3 +30,14 @@ export type DrawerProps = CommonProps &
       | "bottom-left"
       | "bottom-right";
   };
+
+/**
+ * Modular-ui Drawer component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Drawer
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type DrawerComponent = ModularComponent<DrawerProps>;

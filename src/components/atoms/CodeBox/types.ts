@@ -1,4 +1,8 @@
-import { BoxComponent, CommonProps } from "../../../utils/global";
+import {
+  BoxComponent,
+  CommonProps,
+  ModularComponent,
+} from "../../../utils/global";
 
 /** Supported environments */
 export type SupportedEnvironment =
@@ -16,7 +20,15 @@ export interface CodeBlock<T = string | null> {
   code: string;
 }
 
-/** CodeBox component props */
+/**
+ * Modular-ui CodeBox component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CodeBox
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type CodeBoxProps = CommonProps &
   Omit<BoxComponent<string>, "icon"> & {
     /** Enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight */
@@ -25,3 +37,14 @@ export type CodeBoxProps = CommonProps &
     /** Environment for text highlight feature, default to "terminal" (only enabled into enhanced mode) */
     environment?: SupportedEnvironment | undefined;
   };
+
+/**
+ * Modular-ui CodeBox component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CodeBox
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type CodeBoxComponent = ModularComponent<CodeBoxProps>;

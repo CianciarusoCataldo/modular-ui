@@ -14,14 +14,29 @@ renderingTest(
   true
 );
 
-test("with a non valid status", () => {
+test("with loading state", () => {
+  const wrapper = mount(<Spinner value="error" />);
+  expect(wrapper.find("[data-id='error-icon']").length > 0);
+});
+
+test("with success state", () => {
+  const wrapper = mount(<Spinner value="success" />);
+  expect(wrapper.find("[data-id='success-icon']").length > 0);
+});
+
+test("with error state", () => {
+  const wrapper = mount(<Spinner value="loading" />);
+  expect(wrapper.find("[data-id='loading-icon']").length > 0);
+});
+
+test("with a non valid state", () => {
   /* eslint-disable */
   const wrapper = mount(<Spinner value="non-valid-state" />);
   expect(wrapper.find("[data-id='loading-icon']").length > 0);
 });
 
 test("with custom states", () => {
-  const CustomSpinner: SpinnerComponent<{ custom: JSX.Element }> = Spinner;
+  const CustomSpinner: SpinnerComponent<"custom"> = Spinner;
   /* eslint-disable */
   const wrapper = mount(
     <CustomSpinner

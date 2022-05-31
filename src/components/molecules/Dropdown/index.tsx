@@ -3,7 +3,7 @@ import "./styles.css";
 import React from "react";
 import classnames from "classnames";
 
-import { DropdownProps } from "./types";
+import { DropdownComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
@@ -15,6 +15,8 @@ import Container from "../Container";
  * Can be easily customized and every element style and behaviour (with a callback) can
  * be customized too.
  *
+ * @since 0.7.0
+ * 
  * @param {number} value actual selected element (as index). If not set, default value (0) will be used.
  * @param {{ name: string; icon?: JSX.Element }[]} content Dropdown content elements
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
@@ -30,23 +32,25 @@ import Container from "../Container";
  *
  * render(<Dropdown content={[{ name:"Element 0" }]} />, document.getElementById("root"));
  *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Dropdown
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Dropdown = ({
+const Dropdown: DropdownComponent = ({
   content = [],
   onChange,
   value,
   label,
-  icon,
   ...commonProps
-}: DropdownProps) => {
+}) => {
   const [isVisible, setVisible] = React.useState(false);
 
   return buildBoxComponent<number>({
     defaultValue: 0,
     value,
+    label,
     callBack: (value, setValue) => {
       const selectedItem = content[value] || {
         name: "",

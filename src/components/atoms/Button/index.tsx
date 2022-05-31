@@ -3,13 +3,15 @@ import "./styles.css";
 import React from "react";
 import classNames from "classnames";
 
-import { ButtonProps } from "./types";
+import { ButtonComponent } from "./types";
 
 import { buildComponent } from "../../../utils";
 
 /**
  * A button component, designed for a lot of scenarios. Can be used as is, or as a clickable image
  * (through `unstyled` prop that removes all its standard styles).
+ *
+ * @since 0.1.0
  *
  * @param {boolean} disabled enable or disable the button functionalities (UI will reflect it too)
  * @param children button content
@@ -23,19 +25,21 @@ import { buildComponent } from "../../../utils";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Button usage</caption>
- *import { render } from "react-dom";
- *import { Button } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Button usage</caption>
+ * import { render } from "react-dom";
+ * import { Button } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Button onClick={()=>alert("Click !")}>
  *            Example button
  *        </Button>, document.getElementById("root"));
  *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Button
+ *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Button = ({
+const Button: ButtonComponent = ({
   disabled,
   children,
   onClick,
@@ -43,7 +47,7 @@ const Button = ({
   onMouseEnter,
   onMouseLeave,
   ...commonProps
-}: ButtonProps) =>
+}) =>
   buildComponent({
     name: "modular-button",
     Component: (

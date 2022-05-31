@@ -2,7 +2,7 @@ import "./styles.css";
 
 import React from "react";
 
-import { FormProps } from "./types";
+import { FormComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 
@@ -12,9 +12,20 @@ import Counter from "../../atoms/Counter";
 import Input from "../../atoms/Input";
 
 /**
+ * A
+ *
+ * @since 0.8.0
  *
  * @param {string} title Form title
- * @param {Record<string,  header?: string; type?: "boolean" | "text" | "numeric";>} fields Form fields array
+ * @param {Record<string,  { header?: string; type?: "boolean" | "text" | "numeric" }>} fields Form fields array. Every field must be an object with optionally 2 properties:
+ *     - `header` - the text showed upon the field component)
+ *     - `type` - the field type (will determine a specific type when returned, and also the UI component associated)
+ *
+ * allowed types are:
+ *     - `boolean` (rendered as a {@link CheckBox})
+ *     - `numeric` (rendered as a {@link Counter})
+ *
+ * A field object can be empty, in this case default values will be used (`input` type with empty header)
  * @param {(values: Record<string, string>) => void} onSubmit callback triggered on Form submit
  * @param {string} submitLabel custom submit button label
  * @param {string} className `common modular-ui prop` - custom className (to better customize it)
@@ -24,24 +35,26 @@ import Input from "../../atoms/Input";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Form usage</caption>
- *import { render } from "react-dom";
- *import { Field } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Form usage</caption>
+ * import { render } from "react-dom";
+ * import { Field } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Form fields={{ "Field 0": { header:"Field 0 header" } }} onSubmit={()=>alert('Submitted !')} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Form
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Form = ({
+const Form: FormComponent = ({
   title,
   fields,
   onSubmit,
   submitLabel,
   label,
   ...commonProps
-}: FormProps) => {
+}) => {
   const dropdownFields: Record<string, string | boolean | number> = fields
     ? Object.keys(fields).reduce(
         (o, key) => ({

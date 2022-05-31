@@ -1,64 +1,84 @@
 /** Atoms */
-export { ButtonProps } from "./components/atoms/Button/types";
+export { ButtonComponent, ButtonProps } from "./components/atoms/Button/types";
 export { default as Button } from "./components/atoms/Button";
 
-export { CheckboxProps } from "./components/atoms/CheckBox/types";
+export {
+  CheckBoxComponent,
+  CheckBoxProps,
+} from "./components/atoms/CheckBox/types";
 export { default as CheckBox } from "./components/atoms/CheckBox";
 
 export {
-  CodeBoxProps,
   CodeBlock,
+  CodeBoxComponent,
+  CodeBoxProps,
   SupportedEnvironment,
 } from "./components/atoms/CodeBox/types";
 export { default as CodeBox } from "./components/atoms/CodeBox";
 
-export { CounterProps } from "./components/atoms/Counter/types";
+export {
+  CounterComponent,
+  CounterProps,
+} from "./components/atoms/Counter/types";
 export { default as Counter } from "./components/atoms/Counter";
 
-export { DividerProps } from "./components/atoms/Divider/types";
+export {
+  DividerComponent,
+  DividerProps,
+} from "./components/atoms/Divider/types";
 export { default as Divider } from "./components/atoms/Divider";
 
-export { InputProps } from "./components/atoms/Input/types";
+export { InputComponent, InputProps } from "./components/atoms/Input/types";
 export { default as Input } from "./components/atoms/Input";
 
-export { LabelProps } from "./components/atoms/Label/types";
+export { LabelComponent, LabelProps } from "./components/atoms/Label/types";
 export { default as Label } from "./components/atoms/Label";
 
-export { LinkProps } from "./components/atoms/Link/types";
+export { LinkComponent, LinkProps } from "./components/atoms/Link/types";
 export { default as Link } from "./components/atoms/Link";
 
-export { ListProps } from "./components/atoms/List/types";
+export { ListComponent, ListProps } from "./components/atoms/List/types";
 export { default as List } from "./components/atoms/List";
 
-export { ToggleProps } from "./components/atoms/Toggle/types";
+export { ToggleComponent, ToggleProps } from "./components/atoms/Toggle/types";
 export { default as Toggle } from "./components/atoms/Toggle";
 
 /** Molecules */
-export { CardProps } from "./components/molecules/Card/types";
+export { CardComponent, CardProps } from "./components/molecules/Card/types";
 export { default as Card } from "./components/molecules/Card";
 
-export { CarouselProps } from "./components/molecules/Carousel/types";
+export {
+  CarouselComponent,
+  CarouselProps,
+} from "./components/molecules/Carousel/types";
 export { default as Carousel } from "./components/molecules/Carousel";
 
-export { ContainerProps } from "./components/molecules/Container/types";
+export {
+  ContainerComponent,
+  ContainerProps,
+} from "./components/molecules/Container/types";
 export { default as Container } from "./components/molecules/Container";
 
-export { DrawerProps } from "./components/molecules/Drawer/types";
+export {
+  DrawerComponent,
+  DrawerProps,
+} from "./components/molecules/Drawer/types";
 export { default as Drawer } from "./components/molecules/Drawer";
 
 export {
+  DropdownComponent,
   DropdownElement,
   DropdownProps,
 } from "./components/molecules/Dropdown/types";
 export { default as Dropdown } from "./components/molecules/Dropdown";
 
-export { FormProps } from "./components/molecules/Form/types";
+export { FormComponent, FormProps } from "./components/molecules/Form/types";
 export { default as Form } from "./components/molecules/Form";
 
-export { ModalProps } from "./components/molecules/Modal/types";
+export { ModalComponent, ModalProps } from "./components/molecules/Modal/types";
 export { default as Modal } from "./components/molecules/Modal";
 
-export { RaterProps } from "./components/molecules/Rater/types";
+export { RaterComponent, RaterProps } from "./components/molecules/Rater/types";
 export { default as Rater } from "./components/molecules/Rater";
 
 export {
@@ -67,7 +87,7 @@ export {
 } from "./components/molecules/Spinner/types";
 export { default as Spinner } from "./components/molecules/Spinner";
 
-export { TableProps } from "./components/molecules/Table/types";
+export { TableComponent, TableProps } from "./components/molecules/Table/types";
 export { default as Table } from "./components/molecules/Table";
 
 /** Shared types */

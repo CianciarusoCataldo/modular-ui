@@ -1,5 +1,5 @@
 import "./styles.css";
-import { ToggleProps } from "./types";
+import { ToggleComponent } from "./types";
 import React from "react";
 import classNames from "classnames";
 
@@ -37,6 +37,8 @@ const DEFAULT_ICON = (
 /**
  * A compact Toggle switcher, customized to reflect its actual status
  *
+ * @since 1.1.0
+ * 
  * @param {boolean} value toggle status (true - on/false - off)
  * @param {JSX.Element | Element } icon custom toggle icon, used as a default icon
  * @param {JSX.Element | Element } onIcon custom toggle "on" icon (`value` === `true`)
@@ -49,18 +51,19 @@ const DEFAULT_ICON = (
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Toggle usage</caption>
- *import { render } from "react-dom";
- *import { Toggle } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Toggle usage</caption>
+ * import { render } from "react-dom";
+ * import { Toggle } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Toggle value={true} />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Toggle
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
- *
  */
-const Toggle = ({
+const Toggle: ToggleComponent = ({
   value,
   icon,
   onChange,
@@ -70,7 +73,7 @@ const Toggle = ({
   offIcon,
   onIcon,
   ...commonProps
-}: ToggleProps) => {
+}) => {
   const toggleIcon = icon || DEFAULT_ICON;
   const iconOn = onIcon || toggleIcon;
   const iconOff = offIcon || toggleIcon;

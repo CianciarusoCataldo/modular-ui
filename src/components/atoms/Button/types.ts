@@ -2,9 +2,18 @@ import {
   BuilderComponent,
   CommonProps,
   ComponentWithChildren,
+  ModularComponent,
 } from "../../../utils/global";
 
-/** Button component props */
+/**
+ * Modular-ui Button component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Button
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ * */
 export type ButtonProps = ComponentWithChildren<
   BuilderComponent | BuilderComponent[]
 > &
@@ -21,3 +30,14 @@ export type ButtonProps = ComponentWithChildren<
     /**enable or disable the button functionalities (UI will reflect it too) */
     disabled?: boolean;
   };
+
+/**
+ *  Modular-ui Button component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/Button
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type ButtonComponent = ModularComponent<ButtonProps>;

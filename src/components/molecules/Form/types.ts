@@ -1,12 +1,24 @@
-import { BoxComponent, CommonProps } from "../../../utils/global";
+import {
+  BoxComponent,
+  CommonProps,
+  ModularComponent,
+} from "../../../utils/global";
 
-/** Single Form component field */
+/** Form component field */
 export interface FormField {
   header?: string;
   type?: "boolean" | "text" | "numeric";
 }
 
-/** Form component props */
+/**
+ * Modular-ui Form component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Form
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type FormProps = CommonProps &
   Omit<BoxComponent, "value" | "icon"> & {
     /** Form title */
@@ -21,3 +33,14 @@ export type FormProps = CommonProps &
     /** Callback on Form submit */
     onSubmit?: (values: Record<string, string | boolean | number>) => void;
   };
+
+/**
+ * Modular-ui Form component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Form
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type FormComponent = ModularComponent<FormProps>;

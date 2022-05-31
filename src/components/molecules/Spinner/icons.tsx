@@ -22,7 +22,11 @@ const DEFAULT_ICONS: Record<SpinnerProps["value"], JSX.Element> = {
     </svg>
   ),
   success: (
-    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+      data-id="success-icon"
+    >
       <defs>
         <linearGradient
           id="a"
@@ -43,7 +47,12 @@ const DEFAULT_ICONS: Record<SpinnerProps["value"], JSX.Element> = {
     </svg>
   ),
   error: (
-    <svg version="1.0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      version="1.0"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      data-id="error-icon"
+    >
       <path
         style={{
           fill: "none",

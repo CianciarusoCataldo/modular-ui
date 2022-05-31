@@ -2,13 +2,25 @@ import {
   BoxComponent,
   CommonProps,
   ComponentWithCallback,
+  ModularComponent,
 } from "../../../utils/global";
 
-/** Rater component props */
+/**
+ * Modular-ui Rater component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Rater
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
 export type RaterProps = CommonProps &
-  BoxComponent<
-    number,
-    { FULL: JSX.Element | Element; EMPTY: JSX.Element | Element }
+  Omit<
+    BoxComponent<
+      number,
+      { FULL: JSX.Element | Element; EMPTY: JSX.Element | Element }
+    >,
+    "icon"
   > &
   ComponentWithCallback<number> & {
     /** If true, vote icons will be showed vertically (instead of default setting, horizontal) */
@@ -20,3 +32,14 @@ export type RaterProps = CommonProps &
     /** vote icons type */
     type?: "star" | "circle";
   };
+
+/**
+ * Modular-ui Rater component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Rater
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type RaterComponent = ModularComponent<RaterProps>;

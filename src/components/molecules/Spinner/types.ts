@@ -5,13 +5,29 @@ import {
   ModularComponent,
 } from "../../../utils/global";
 
-/** Spinner component props */
-export type SpinnerProps<T = Record<string, BuilderComponent>> = CommonProps &
-  BoxComponent<keyof T> & {
-    statuses?: T;
+/**
+ * Modular-ui Spinner component props
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Spinner
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type SpinnerProps<T extends string = string> = CommonProps &
+  Omit<BoxComponent<T>, "icon"> & {
+    statuses?: Record<T, BuilderComponent>;
   };
 
-export type SpinnerComponent<T = any> = ModularComponent<
-  SpinnerProps<T>,
-  JSX.Element
+/**
+ * Modular-ui Spinner component
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Spinner
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright 2022 Cataldo Cianciaruso
+ */
+export type SpinnerComponent<T extends string = string> = ModularComponent<
+  SpinnerProps<T>
 >;

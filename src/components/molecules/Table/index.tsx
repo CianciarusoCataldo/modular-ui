@@ -1,5 +1,5 @@
 import "./styles.css";
-import { TableProps } from "./types";
+import { TableComponent } from "./types";
 
 import React from "react";
 
@@ -8,6 +8,8 @@ import { buildBoxComponent } from "../../../utils";
 
 /**
  * A standard Table component. It follows a CSV-like format for its content.
+ *
+ * @since 0.9.0
  *
  * @param {(string | JSX.Element | Element)[][]} rows Table rows
  * @param {boolean} headers if true, the first row will be used as headers (and not generic data)
@@ -18,17 +20,20 @@ import { buildBoxComponent } from "../../../utils";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example Table usage</caption>
- *import { render } from "react-dom";
- *import { Table } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example Table usage</caption>
+ *
+ * import { render } from "react-dom";
+ * import { Table } from '@cianciarusocataldo/modular-ui';
  *
  * render(<Table rows={[["Header 1", "Header 2"],["Cell 1", "Cell 2"]]} headers />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/molecules/Table
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const Table = ({ label, headers, rows, ...commonProps }: TableProps) => {
+const Table: TableComponent = ({ label, headers, rows, ...commonProps }) => {
   let gridTemplateRows = "";
   let gridTemplateColumns = "";
 

@@ -2,7 +2,7 @@ import "./styles.css";
 
 import React from "react";
 
-import { CodeBoxProps } from "./types";
+import { CodeBoxComponent } from "./types";
 
 import { buildBoxComponent } from "../../../utils";
 import { parseCode } from "./parser";
@@ -12,6 +12,8 @@ import Button from "../Button";
 /**
  * A smart code box. Display code text as a compiler, with properly UI.
  * Optionally, can highlight code text, with a selectable environment
+ *
+ * @since 1.0.0
  *
  * @param {string} value code to display
  * @param {boolean} enhanced enable/disable advanced mode, to access extra features, like the integrated copy button and text highlight
@@ -24,23 +26,25 @@ import Button from "../Button";
  * @param {boolean} hide `common modular-ui prop` - Hide/show component
  * @param {boolean} shadow `common modular-ui prop` - Enable/disable shadow behind component (to better customize it)
  *
- *@example <caption>Example CodeBox usage</caption>
- *import { render } from "react-dom";
- *import { CodeBox } from '@cianciarusocataldo/modular-ui';
+ * @example <caption>Example CodeBox usage</caption>
+ * import { render } from "react-dom";
+ * import { CodeBox } from '@cianciarusocataldo/modular-ui';
  *
  * render(<CodeBox value="node version" />, document.getElementById("root"));
+ *
+ * @see https://cianciarusocataldo.github.io/modular-ui/components/atoms/CodeBox
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright 2022 Cataldo Cianciaruso
  */
-const CodeBox = ({
+const CodeBox: CodeBoxComponent = ({
   value,
   enhanced,
   environment,
   label,
   ...commonProps
-}: CodeBoxProps) =>
+}) =>
   buildBoxComponent<string>({
     defaultValue: "",
     value,
